@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidflow — Upload once. Publish everywhere.</title>
+  <meta name="description" content="Vidflow turns one podcast episode into a week of content across every social platform. AI clips, captions, scheduling, and approvals — automated." />
+  <meta property="og:title" content="Vidflow — Upload once. Publish everywhere." />
+  <meta property="og:description" content="Turn one podcast episode into a week of social content. AI clips, captions, scheduling, and approvals — automated." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vidflow.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 12l-6-4 6-4v8z'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a0a0c;
+      color: #e8e8eb;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    /* Subtle radial backdrop */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.18), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.10), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    /* Nav */
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon svg { width: 18px; height: 18px; color: #fff; }
+    nav .nav-cta {
+      font-size: 14px;
+      color: #a1a1aa;
+      transition: color 0.15s ease;
+    }
+    nav .nav-cta:hover { color: #e8e8eb; }
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      flex: 1;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #a5a5ff;
+      margin-bottom: 24px;
+    }
+    .badge .dot {
+      width: 6px;
+      height: 6px;
+      background: #6366f1;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #6366f1;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 24px;
+      background: linear-gradient(180deg, #fff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtitle {
+      font-size: clamp(16px, 2vw, 20px);
+      color: #a1a1aa;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    /* Waitlist form */
+    form.waitlist {
+      display: flex;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    form.waitlist input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.15s ease;
+    }
+    form.waitlist input[type="email"]:focus {
+      outline: none;
+      border-color: rgba(99,102,241,0.6);
+      background: rgba(255,255,255,0.06);
+    }
+    form.waitlist input[type="email"]::placeholder { color: #71717a; }
+    form.waitlist button {
+      padding: 14px 22px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+    }
+    form.waitlist button:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+    form.waitlist button:active { transform: translateY(0); }
+    form.waitlist button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-note { font-size: 13px; color: #71717a; }
+    .form-success {
+      display: none;
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 10px;
+      color: #86efac;
+      font-size: 14px;
+    }
+    .form-success.visible { display: block; }
+    .form-error {
+      display: none;
+      max-width: 460px;
+      margin: 12px auto 0;
+      padding: 12px 16px;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 10px;
+      color: #fca5a5;
+      font-size: 14px;
+    }
+    .form-error.visible { display: block; }
+    /* Features */
+    .features {
+      padding: 60px 0 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .feature {
+      padding: 28px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .feature:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(99,102,241,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .feature-icon svg { width: 20px; height: 20px; color: #a5a5ff; }
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .feature p {
+      margin: 0;
+      font-size: 14px;
+      color: #a1a1aa;
+      line-height: 1.55;
+    }
+    /* Footer */
+    footer {
+      padding: 40px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #71717a;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: #a1a1aa; transition: color 0.15s ease; }
+    footer a:hover { color: #fff; }
+    @media (max-width: 600px) {
+      nav { padding: 20px 0; }
+      .hero { padding: 60px 0 40px; }
+      form.waitlist { flex-direction: column; }
+      form.waitlist input[type="email"], form.waitlist button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 12l-6-4 6-4v8z"/></svg>
+        </span>
+        Vidflow
+      </div>
+      <a class="nav-cta" href="mailto:landon@cosmicarcmedia.com">Contact</a>
+    </nav>
+
+    <section class="hero">
+      <div class="badge"><span class="dot"></span> Launching soon</div>
+      <h1>Upload once.<br />Publish everywhere.</h1>
+      <p class="subtitle">
+        Vidflow turns one podcast episode into a week of social content.
+        AI clips, captions, scheduling, and client approvals — automated.
+      </p>
+
+      <form class="waitlist" id="waitlist-form">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+        <button type="submit" id="submit-btn">Join the waitlist</button>
+      </form>
+      <p class="form-note">Be among the first creators in. No spam, ever.</p>
+      <div class="form-success" id="form-success">
+        ✓ You're on the list. We'll be in touch.
+      </div>
+      <div class="form-error" id="form-error"></div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8.5 9 12l-3.5 3.5L2 12z"/><path d="M12 2 8.5 5.5 12 9l3.5-3.5z"/><path d="m18.5 8.5 3.5 3.5-3.5 3.5L15 12z"/><path d="M12 15l-3.5 3.5L12 22l3.5-3.5z"/></svg>
+          </div>
+          <h3>AI clip generation</h3>
+          <p>10–30 short-form clips per episode, cut natively with transcript-aware moment detection.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Every platform</h3>
+          <p>Publish video, image, and text to YouTube, Instagram, TikTok, LinkedIn, X, and Facebook from one queue.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Client approvals</h3>
+          <p>Send shareable review links. Clients approve or comment — no login required.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Vidflow</div>
+      <div><a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('waitlist-form');
+    const btn = document.getElementById('submit-btn');
+    const success = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = new FormData(form).get('email');
+      btn.disabled = true;
+      btn.textContent = 'Joining…';
+      errorEl.classList.remove('visible');
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || `Submit failed (${res.status})`);
+        }
+        form.style.display = 'none';
+        document.querySelector('.form-note').style.display = 'none';
+        success.classList.add('visible');
+      } catch (err) {
+        errorEl.textContent = err.message || 'Something went wrong. Try again or email landon@cosmicarcmedia.com.';
+        errorEl.classList.add('visible');
+        btn.disabled = false;
+        btn.textContent = 'Join the waitlist';
+      }
+    });
+  </script>
+</body>
+</html>
