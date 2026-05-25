@@ -733,6 +733,10 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Google Apps Script web-app URL (deploys to a Google Sheet + emails on submit).
+    // Replace with your deployed /exec URL — see apps-script.gs for setup.
+    const WAITLIST_ENDPOINT = "__REPLACE_WITH_APPS_SCRIPT_EXEC_URL__";
+
     function wireForm(form) {
       if (!form) return;
       const btn = form.querySelector('button');
@@ -748,15 +752,20 @@
         btn.textContent = 'Joining…';
         if (errorEl) errorEl.classList.remove('visible');
         try {
-          const res = await fetch('/api/waitlist', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
-          });
-          if (!res.ok) {
-            const data = await res.json().catch(() => ({}));
-            throw new Error(data.error || `Submit failed (${res.status})`);
+          if (!WAITLIST_ENDPOINT || WAITLIST_ENDPOINT.indexOf('__REPLACE') === 0) {
+            throw new Error('Waitlist endpoint not configured yet.');
           }
+          // Apps Script web apps don't return CORS headers, so we POST with a
+          // simple content-type + no-cors. The request still reaches Apps Script
+          // (which appends to the Sheet and emails). The response is opaque, so
+          // we treat a resolved fetch as success — the email is already validated
+          // client-side by the required type="email" input.
+          await fetch(WAITLIST_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ email, source: 'vidflow.io' }),
+          });
           if (isTopForm) {
             form.style.display = 'none';
             document.querySelector('.form-note').style.display = 'none';

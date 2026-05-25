@@ -1,84 +1,55 @@
 # Vidflow Landing Page
 
 Static marketing/waitlist page for [vidflow.io](https://vidflow.io). Hosted on
-Cloudflare Pages, free tier.
+Cloudflare Pages (free tier). Waitlist signups go straight to a Google Sheet
+and email you on each submit — via a Google Apps Script web app (no API keys,
+no third-party services).
 
 ## Stack
 
-- Single `index.html` (no framework, no build step)
-- Cloudflare Pages Function at `functions/api/waitlist.ts` captures signups
+- Single `index.html` — no framework, no build step
+- `apps-script.gs` — Google Apps Script web app: appends signups to a Sheet + emails you
 
 ## Deploy steps
 
-### 1. Push to GitHub
+### 1. Push to GitHub (already done)
 
-```bash
-cd ~/vidflow-landing
-git init
-git add .
-git commit -m "Initial Vidflow landing page"
-gh repo create cosmicarcmedia/vidflow-landing --public --source=. --push
-```
+Repo: `cosmicarcmedia/vidflow-landing`. Push to `main` to auto-redeploy.
 
 ### 2. Connect Cloudflare Pages
 
-1. Go to [Cloudflare Dashboard → Pages](https://dash.cloudflare.com/?to=/:account/pages)
-2. **Create a project → Connect to Git**
-3. Pick the `vidflow-landing` repo
-4. Build settings:
+1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** tab → **Connect to Git**
+   (Make sure you pick **Pages**, not Workers — a Worker will just serve "hello world".)
+2. Pick the `vidflow-landing` repo
+3. Build settings:
+   - **Framework preset:** None
    - **Build command:** _(leave blank — no build step)_
    - **Build output directory:** `/`
-5. **Save and deploy**
+4. **Save and Deploy** → you get a `*.pages.dev` preview URL
 
-You'll get a preview URL like `vidflow-landing-abc.pages.dev`.
+### 3. Custom domain
 
-### 3. Wire up the custom domain
+1. In the Pages project → **Custom domains → Set up a custom domain**
+2. Add `vidflow.io`, then `www.vidflow.io` (Cloudflare auto-adds the DNS records)
 
-1. In the new Pages project: **Custom domains → Set up a custom domain**
-2. Add `vidflow.io` — Cloudflare will auto-add the DNS records since the zone is already on Cloudflare
-3. Add `www.vidflow.io` as well (it'll redirect)
+### 4. Waitlist → Google Sheet + email (one-time)
 
-In 1–2 minutes, `https://vidflow.io` will serve the page over HTTPS.
+Follow the setup steps at the top of [`apps-script.gs`](./apps-script.gs):
+1. Create a Google Sheet "Vidflow Waitlist" with headers `Timestamp | Email | Source`
+2. Extensions → Apps Script → paste `apps-script.gs` → Save → authorize
+3. Deploy as a **Web app** (Execute as: Me, Who has access: Anyone)
+4. Copy the `/exec` URL
+5. Put that URL in `index.html` → `WAITLIST_ENDPOINT` constant → commit/push (Cloudflare redeploys)
 
-### 4. (Optional but recommended) Wire up waitlist capture
-
-The form already POSTs to `/api/waitlist`. By default, signups are logged to
-the Cloudflare Pages function logs only. To persist them and get email
-notifications:
-
-**KV storage** (free, ~100k reads/day):
-1. Cloudflare Dashboard → **Storage & Databases → KV → Create namespace** named `vidflow-waitlist`
-2. In the Pages project → **Settings → Functions → KV namespace bindings**
-3. Add binding: **Variable name** `WAITLIST` → **KV namespace** `vidflow-waitlist`
-4. Redeploy
-
-After this, each signup is stored as `signup:<email>`. List them anytime with:
-```bash
-npx wrangler kv:key list --binding=WAITLIST --remote
-```
-
-**Email notifications via Resend** (3k emails/month free):
-1. Sign up at [resend.com](https://resend.com) and add `vidflow.io` as a verified domain (paste the DNS records Resend gives you into Cloudflare DNS)
-2. Get an API key from Resend
-3. In the Pages project → **Settings → Environment variables → Production**
-   - `RESEND_API_KEY` = your Resend key
-   - `OWNER_EMAIL` = `landon@cosmicarcmedia.com`
-   - `FROM_EMAIL` = `waitlist@vidflow.io` (must be on a Resend-verified domain)
-4. Redeploy
-
-After this, every signup also pings `landon@cosmicarcmedia.com`.
+After that, every signup appends a row to the Sheet and emails `landon@cosmicarcmedia.com`.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run a tiny static server:
 ```bash
 npx serve .
 ```
-The waitlist form will fail locally because the Pages Function isn't running.
-To test the function locally, install Wrangler and run:
-```bash
-npx wrangler pages dev .
-```
+The waitlist submit only works once `WAITLIST_ENDPOINT` points at a deployed
+Apps Script URL.
 
 ## Updating
 
