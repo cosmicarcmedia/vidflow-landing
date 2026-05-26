@@ -35,6 +35,7 @@
       inset: 0;
       background:
         radial-gradient(ellipse 90% 55% at 50% -5%, rgba(99,102,241,0.28), transparent 55%),
+        radial-gradient(ellipse 38% 24% at 90% 4%, rgba(236,72,153,0.13), transparent 60%),
         radial-gradient(ellipse 50% 35% at 85% 85%, rgba(139,92,246,0.14), transparent 65%),
         radial-gradient(ellipse 40% 30% at 15% 75%, rgba(99,102,241,0.08), transparent 60%);
       pointer-events: none;
@@ -88,14 +89,15 @@
     nav .nav-links a:hover { color: #e8e8eb; }
     nav .btn-nav {
       padding: 8px 16px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, #2563eb, #8b5cf6 55%, #ec4899);
+      border: none;
       border-radius: 8px;
       color: #fff;
-      font-weight: 500;
-      transition: background 0.15s ease;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(139,92,246,0.35);
+      transition: opacity 0.15s ease, box-shadow 0.15s ease;
     }
-    nav .btn-nav:hover { background: rgba(255,255,255,0.14); }
+    nav .btn-nav:hover { opacity: 0.88; box-shadow: 0 4px 18px rgba(139,92,246,0.45); }
     @media (max-width: 700px) {
       nav .nav-links .nav-link-hide { display: none; }
     }
@@ -155,16 +157,16 @@
     .hero-sub-wrap {
       display: block;
       position: relative;
-      margin-top: -0.32em;
+      margin-top: -0.52em;
       z-index: 2;
     }
     .hero-sub-wrap::before {
       content: '';
       position: absolute;
       inset: 0;
-      top: -1.2em;
+      top: -0.45em;
       left: -200px; right: -200px;
-      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,12,0.72) 55%, rgba(10,10,12,0.88) 100%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,12,0.75) 50%, rgba(10,10,12,0.9) 100%);
       pointer-events: none;
       z-index: -1;
     }
@@ -217,7 +219,7 @@
     form.waitlist input[type="email"]::placeholder { color: #71717a; }
     form.waitlist button {
       padding: 14px 22px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      background: linear-gradient(135deg, #2563eb, #8b5cf6 55%, #ec4899);
       border: none;
       border-radius: 10px;
       color: #fff;
@@ -226,9 +228,9 @@
       font-family: inherit;
       cursor: pointer;
       transition: transform 0.1s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+      box-shadow: 0 4px 20px rgba(139,92,246,0.35);
     }
-    form.waitlist button:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+    form.waitlist button:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(139,92,246,0.5); }
     form.waitlist button:active { transform: translateY(0); }
     form.waitlist button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-note { font-size: 13px; color: #71717a; }
@@ -388,16 +390,30 @@
       background: rgba(99,102,241,0.2);
     }
     .feature-icon {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background: rgba(99,102,241,0.12);
-      border-radius: 10px;
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
+      box-shadow: 0 0 16px rgba(99,102,241,0.18);
+      flex-shrink: 0;
     }
-    .feature-icon svg { width: 20px; height: 20px; color: #a5a5ff; }
+    .feature-icon svg { width: 22px; height: 22px; color: #818cf8; }
+    /* Icon color variants */
+    .fi-cyan { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.3); box-shadow: 0 0 16px rgba(6,182,212,0.16); }
+    .fi-cyan svg { color: #22d3ee; }
+    .fi-amber { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); box-shadow: 0 0 16px rgba(245,158,11,0.14); }
+    .fi-amber svg { color: #fbbf24; }
+    .fi-emerald { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); box-shadow: 0 0 16px rgba(16,185,129,0.14); }
+    .fi-emerald svg { color: #34d399; }
+    .fi-pink { background: rgba(236,72,153,0.1); border-color: rgba(236,72,153,0.3); box-shadow: 0 0 16px rgba(236,72,153,0.2); }
+    .fi-pink svg { color: #ec4899; }
+    .fi-violet { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.3); box-shadow: 0 0 16px rgba(167,139,250,0.16); }
+    .fi-violet svg { color: #c084fc; }
     .feature p {
       margin: 0;
       font-size: 14px;
@@ -754,6 +770,12 @@
     }
     .bento-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(99,102,241,0.3); }
     .bento-item:hover .feature-icon { background: rgba(99,102,241,0.2); }
+    /* Colored card backgrounds */
+    .bento-item--tint-pink { background: radial-gradient(ellipse at top left, rgba(236,72,153,0.08) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(236,72,153,0.18); }
+    .bento-item--tint-violet { background: radial-gradient(ellipse at top left, rgba(167,139,250,0.08) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(167,139,250,0.18); }
+    .bento-item--tint-amber { background: radial-gradient(ellipse at top left, rgba(245,158,11,0.07) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(245,158,11,0.16); }
+    .bento-item--tint-emerald { background: radial-gradient(ellipse at top left, rgba(16,185,129,0.07) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(16,185,129,0.16); }
+    .bento-item--tint-cyan { background: radial-gradient(ellipse at top left, rgba(6,182,212,0.07) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(6,182,212,0.16); }
     .bento-item--wide { grid-column: span 4; }
     .bento-item h3 { font-size: 16px; font-weight: 600; color: #fff; margin: 0; }
     .bento-item p { font-size: 14px; color: #a1a1aa; line-height: 1.55; margin: 0; }
@@ -1086,35 +1108,35 @@
 
         <!-- Regular: Vertical reframing -->
         <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg></div>
+          <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg></div>
           <h3>Vertical reframing</h3>
           <p>One click converts 16:9 to 9:16. Face-aware cropping keeps the speaker in frame.</p>
         </div>
 
         <!-- Regular: Burn-in captions -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <div class="bento-item bento-item--tint-cyan">
+          <div class="feature-icon fi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
           <h3>Burn-in captions</h3>
           <p>Word-level captions in your brand style. Editable, configurable positioning, platform-aware sizing.</p>
         </div>
 
         <!-- Regular: Brand voice -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
+        <div class="bento-item bento-item--tint-amber">
+          <div class="feature-icon fi-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
           <h3>Brand voice profiles</h3>
           <p>Import your YouTube channel and Vidflow learns your tone, vocabulary, and themes.</p>
         </div>
 
         <!-- Regular: Calendar -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="bento-item bento-item--tint-emerald">
+          <div class="feature-icon fi-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
           <h3>Drag-and-drop calendar</h3>
           <p>Recurring slots like "Mondays at 10am for TikTok" — Vidflow auto-fills the queue.</p>
         </div>
 
         <!-- Wide: Client approval -->
-        <div class="bento-item bento-item--wide">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="bento-item bento-item--wide bento-item--tint-pink">
+          <div class="feature-icon fi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Client approval workflow</h3>
           <p>Send clients a review link — they approve or leave comments with no account needed. Built for agencies running content across multiple brands.</p>
           <div class="bento-visual">
@@ -1130,21 +1152,21 @@
 
         <!-- Regular: Workflow builder -->
         <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
           <h3>Visual workflow builder</h3>
           <p>Drag nodes to design custom automation — upload → clip → approve → publish.</p>
         </div>
 
         <!-- Regular: AI Image -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <div class="bento-item bento-item--tint-pink">
+          <div class="feature-icon fi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
           <h3>AI image &amp; thumbnail studio</h3>
           <p>Generate quote cards, thumbnails, and visual posts — style-locked to your brand.</p>
         </div>
 
         <!-- Regular: Blog -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="bento-item bento-item--tint-cyan">
+          <div class="feature-icon fi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <h3>Blog &amp; long-form generator</h3>
           <p>Turn a transcript into a LinkedIn article, Substack post, or blog draft — on-voice, ready to publish.</p>
         </div>
@@ -1157,15 +1179,15 @@
         </div>
 
         <!-- Regular: Auto-import -->
-        <div class="bento-item">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+        <div class="bento-item bento-item--tint-emerald">
+          <div class="feature-icon fi-emerald"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
           <h3>Auto-import &amp; bulk upload</h3>
           <p>Watch a Drive or Dropbox folder. Vidflow ingests, transcribes, and tags everything automatically.</p>
         </div>
 
         <!-- Wide: Analytics -->
-        <div class="bento-item bento-item--wide">
-          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+        <div class="bento-item bento-item--wide bento-item--tint-violet">
+          <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
           <h3>Cross-platform analytics</h3>
           <p>Track views, engagement, and audience growth across every connected platform. Export branded reports for clients in one click.</p>
           <div class="bento-visual">
