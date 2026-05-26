@@ -146,8 +146,27 @@
       display: block;
     }
     .hero-the {
-      color: #fff;
-      -webkit-text-fill-color: #fff;
+      background: linear-gradient(180deg, #fff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .hero-sub-wrap {
+      display: block;
+      position: relative;
+      margin-top: -0.32em;
+      z-index: 2;
+    }
+    .hero-sub-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      top: -1.2em;
+      left: -200px; right: -200px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,12,0.72) 55%, rgba(10,10,12,0.88) 100%);
+      pointer-events: none;
+      z-index: -1;
     }
     .hero-sub {
       font-family: 'Inter', system-ui, sans-serif;
@@ -541,71 +560,257 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── Flow diagram: Video → Content → Calendar ── */
-    .flow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* ── Flow viz: Episode → Content → Calendar ─── */
+    .fviz {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
       gap: 0;
-      max-width: 720px;
-      margin: 0 auto 60px;
+      align-items: center;
+      margin: 0 auto 56px;
+      max-width: 1000px;
     }
-    .flow-node {
+
+    /* Episode card */
+    .fviz-ep-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 16px;
+      padding: 18px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fviz.visible .fviz-ep-card { opacity: 1; transform: none; transition-delay: 0.1s; }
+    .fviz-ep-wave { height: 36px; }
+    .fviz-ep-wave svg { width: 100%; height: 100%; }
+    .fviz-ep-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .fviz-ep-play {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg,#6366f1,#a855f7);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .fviz-ep-play svg { width: 11px; height: 11px; color: #fff; margin-left: 2px; }
+    .fviz-ep-info { min-width: 0; }
+    .fviz-ep-name { display: block; font-size: 11px; font-weight: 600; color: #e4e4e7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fviz-ep-dur { display: block; font-size: 10px; color: #71717a; }
+    .fviz-col-label { font-size: 11px; font-weight: 600; color: #6366f1; text-transform: uppercase; letter-spacing: 0.08em; text-align: center; margin-top: 10px; }
+
+    /* Arrows */
+    .fviz-arrow {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      flex: 0 0 auto;
+      gap: 6px;
+      padding: 0 12px;
     }
-    .flow-card {
-      width: 116px;
-      height: 100px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.09);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #c4b5fd;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      transform: scale(0.72);
-      opacity: 0;
-      transition: transform 0.55s cubic-bezier(.2,.8,.2,1), opacity 0.5s ease, border-color 0.5s ease;
-    }
-    .flow-card svg { width: 38px; height: 38px; }
-    .flow-label { font-size: 13px; font-weight: 600; color: #d4d4d8; }
-    .flow-sub { font-size: 11px; color: #71717a; margin-top: -6px; }
-    .flow-connector {
-      flex: 1 1 auto;
+    .fviz-arrow-line {
+      width: 48px;
       height: 2px;
-      max-width: 90px;
-      margin: 0 6px 44px;
-      background: linear-gradient(90deg, #6366f1, #a855f7);
+      background: linear-gradient(90deg,#6366f1,#a855f7);
       border-radius: 2px;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.45s ease;
+      transition: transform 0.4s ease;
     }
-    /* sequence: card1, line1, card2, line2, card3 (children 1..5) */
-    .flow.visible .flow-node:nth-child(1) .flow-card { transform: none; opacity: 1; transition-delay: 0.05s; }
-    .flow.visible .flow-connector:nth-child(2) { transform: scaleX(1); transition-delay: 0.3s; }
-    .flow.visible .flow-node:nth-child(3) .flow-card { transform: none; opacity: 1; transition-delay: 0.45s; }
-    .flow.visible .flow-connector:nth-child(4) { transform: scaleX(1); transition-delay: 0.7s; }
-    .flow.visible .flow-node:nth-child(5) .flow-card { transform: none; opacity: 1; transition-delay: 0.85s; }
-    .flow.visible .flow-card { border-color: rgba(139,92,246,0.35); }
-    /* mini clip bars inside the content node */
-    .clip-bars { display: flex; gap: 4px; align-items: flex-end; height: 34px; }
-    .clip-bars span { width: 6px; background: linear-gradient(180deg,#a855f7,#6366f1); border-radius: 2px; }
-    @media (max-width: 560px) {
-      .flow { max-width: 100%; }
-      .flow-card { width: 84px; height: 78px; border-radius: 16px; }
-      .flow-card svg { width: 28px; height: 28px; }
-      .flow-connector { margin-bottom: 38px; }
-      .flow-sub { display: none; }
+    .fviz.visible .fviz-arrow-1 .fviz-arrow-line { transform: scaleX(1); transition-delay: 0.55s; }
+    .fviz.visible .fviz-arrow-2 .fviz-arrow-line { transform: scaleX(1); transition-delay: 1.6s; }
+    .fviz-arrow-tip { font-size: 16px; color: #a855f7; line-height: 1; margin-top: -2px; opacity: 0; transition: opacity 0.3s; }
+    .fviz.visible .fviz-arrow-1 .fviz-arrow-tip { opacity: 1; transition-delay: 0.9s; }
+    .fviz.visible .fviz-arrow-2 .fviz-arrow-tip { opacity: 1; transition-delay: 1.95s; }
+    .fviz-arrow-label { font-size: 9px; font-weight: 600; color: #52525b; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+
+    /* Content pieces column */
+    .fviz-content-col { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+
+    /* Clip cards (portrait / vertical) */
+    .fviz-clips { display: flex; gap: 6px; justify-content: center; }
+    .fviz-clip {
+      width: 58px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .fviz-clip-thumb {
+      aspect-ratio: 9/16;
+      background: linear-gradient(160deg, rgba(99,102,241,0.18), rgba(139,92,246,0.08));
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .fviz-clip-play-icon {
+      width: 18px; height: 18px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fviz-clip-play-icon svg { width: 7px; height: 7px; color: #fff; margin-left: 1px; }
+    .fviz-clip-foot {
+      padding: 4px 5px;
+      background: rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .fviz-clip-plat { font-size: 7px; font-weight: 700; color: #a5b4fc; }
+    .fviz-clip-dur { font-size: 7px; color: #71717a; }
+    .fviz.visible .fviz-clip:nth-child(1) { opacity:1; transform:none; transition-delay:0.7s; }
+    .fviz.visible .fviz-clip:nth-child(2) { opacity:1; transform:none; transition-delay:0.85s; }
+    .fviz.visible .fviz-clip:nth-child(3) { opacity:1; transform:none; transition-delay:1.0s; }
+
+    /* Post cards */
+    .fviz-posts { display: flex; gap: 6px; justify-content: center; }
+    .fviz-post {
+      flex: 1;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 8px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .fviz-post-lines { display: flex; flex-direction: column; gap: 3px; }
+    .fviz-post-line { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.12); }
+    .fviz-post-line--lg { width: 100%; }
+    .fviz-post-line--md { width: 78%; }
+    .fviz-post-line--sm { width: 52%; }
+    .fviz-post-plat { font-size: 7px; font-weight: 700; color: #818cf8; margin-top: 2px; }
+    .fviz.visible .fviz-post:nth-child(1) { opacity:1; transform:none; transition-delay:1.1s; }
+    .fviz.visible .fviz-post:nth-child(2) { opacity:1; transform:none; transition-delay:1.25s; }
+    .fviz.visible .fviz-post:nth-child(3) { opacity:1; transform:none; transition-delay:1.4s; }
+
+    /* Calendar */
+    .fviz-cal {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fviz.visible .fviz-cal { opacity:1; transform:none; transition-delay:1.7s; }
+    .fviz-cal-head {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      background: rgba(99,102,241,0.1);
+      padding: 6px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .fviz-cal-head span { font-size: 8px; font-weight: 700; color: #818cf8; text-align: center; text-transform: uppercase; letter-spacing: 0.04em; }
+    .fviz-cal-body {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 2px;
+      padding: 4px;
+    }
+    .fviz-cal-cell {
+      min-height: 20px;
+      border-radius: 4px;
+    }
+    .fviz-cal-event {
+      font-size: 6px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 1px;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .fviz.visible .fviz-cal-event { opacity:1; transform:none; transition-delay: calc(1.9s + var(--ei,0) * 0.07s); }
+    .fviz-cal-event--clip { background: rgba(99,102,241,0.3); color: #a5b4fc; border-radius: 4px; }
+    .fviz-cal-event--post { background: rgba(168,85,247,0.25); color: #d8b4fe; border-radius: 4px; }
+    .fviz-cal-event--img  { background: rgba(20,184,166,0.2); color: #5eead4; border-radius: 4px; }
+
+    /* Bento features */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .bento-item {
+      grid-column: span 2;
+      padding: 26px 24px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bento-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(99,102,241,0.3); }
+    .bento-item:hover .feature-icon { background: rgba(99,102,241,0.2); }
+    .bento-item--wide { grid-column: span 4; }
+    .bento-item h3 { font-size: 16px; font-weight: 600; color: #fff; margin: 0; }
+    .bento-item p { font-size: 14px; color: #a1a1aa; line-height: 1.55; margin: 0; }
+    .bento-visual {
+      flex: 1;
+      margin-top: 4px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    /* Clip count mini-viz */
+    .bento-clips { display: flex; gap: 5px; align-items: flex-end; height: 36px; }
+    .bento-clips span { width: 8px; border-radius: 3px; background: linear-gradient(180deg,#818cf8,#6366f1); }
+    /* Approval flow mini-viz */
+    .bento-approval { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 600; }
+    .bento-app-node {
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
+      color: #a5b4fc;
+      white-space: nowrap;
+    }
+    .bento-app-arrow { color: #6366f1; font-size: 12px; }
+    .bento-app-done {
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #86efac;
+      white-space: nowrap;
+    }
+    /* Analytics mini-viz */
+    .bento-sparkline { display: flex; align-items: flex-end; gap: 3px; height: 36px; }
+    .bento-sparkline span { width: 10px; border-radius: 2px 2px 0 0; background: linear-gradient(180deg,#a855f7,#6366f1); }
+    @media (max-width: 800px) {
+      .bento { grid-template-columns: repeat(2,1fr); }
+      .bento-item, .bento-item--wide { grid-column: span 2; }
+    }
+    @media (max-width: 500px) {
+      .bento { grid-template-columns: 1fr; }
+      .bento-item, .bento-item--wide { grid-column: span 1; }
+    }
+
+    @media (max-width: 700px) {
+      .fviz { grid-template-columns: 1fr; grid-template-rows: auto; gap: 16px; }
+      .fviz-arrow { flex-direction: row; padding: 0; }
+      .fviz-arrow-line { width: 32px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal, .flow-card, .flow-connector { transition: none; opacity: 1; transform: none; }
+      .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
+      .fviz-arrow-line, .fviz-arrow-tip { transition: none; opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -629,7 +834,7 @@
     <!-- ── HERO ──────────────────────────────────── -->
     <section class="hero" id="waitlist">
       <div class="badge"><span class="dot"></span> Built for content agencies — early access now</div>
-      <h1><span class="hero-display"><span class="hero-the">THE </span><span class="grad">CONTENT ENGINE</span></span><span class="hero-sub">that replaces your editing stack</span></h1>
+      <h1><span class="hero-display"><span class="hero-the">THE </span><span class="grad">CONTENT ENGINE</span></span><span class="hero-sub-wrap"><span class="hero-sub">that replaces your editing stack</span></span></h1>
       <p class="subtitle">
         Vidflow turns one client episode into a week of social posts in under an hour.
         AI clips, vertical reframes, captions, posts, approvals, and scheduling —
@@ -706,29 +911,133 @@
       <h2>From raw episode to a full client content calendar in minutes.</h2>
       <p class="section-intro">Three steps. No Franken-stack of five tools, no spreadsheets, no client logins.</p>
 
-      <div class="flow" aria-hidden="true">
-        <div class="flow-node">
-          <div class="flow-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polygon points="10 9 15 12 10 15 10 9" fill="currentColor" stroke="none"/></svg>
+      <div class="fviz" id="fviz" aria-hidden="true">
+
+        <!-- ① Episode -->
+        <div>
+          <div class="fviz-ep-card">
+            <div class="fviz-ep-wave">
+              <svg viewBox="0 0 160 40" preserveAspectRatio="none">
+                <polyline points="0,20 10,12 18,28 26,8 34,32 42,14 50,22 58,6 66,30 74,16 82,24 90,10 98,28 106,18 114,26 122,10 130,22 140,16 150,20 160,20" fill="none" stroke="rgba(99,102,241,0.6)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="fviz-ep-bottom">
+              <div class="fviz-ep-play">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg>
+              </div>
+              <div class="fviz-ep-info">
+                <span class="fviz-ep-name">Ep. 47 — Full Interview.mp4</span>
+                <span class="fviz-ep-dur">1:23:14</span>
+              </div>
+            </div>
           </div>
-          <span class="flow-label">Episode</span>
-          <span class="flow-sub">video or audio</span>
+          <div class="fviz-col-label">Episode upload</div>
         </div>
-        <div class="flow-connector"></div>
-        <div class="flow-node">
-          <div class="flow-card">
-            <span class="clip-bars"><span style="height:60%"></span><span style="height:100%"></span><span style="height:42%"></span><span style="height:80%"></span><span style="height:30%"></span></span>
-          </div>
-          <span class="flow-label">Content</span>
-          <span class="flow-sub">clips · posts · captions</span>
+
+        <!-- Arrow 1 -->
+        <div class="fviz-arrow fviz-arrow-1">
+          <div class="fviz-arrow-line"></div>
+          <div class="fviz-arrow-tip">›</div>
+          <div class="fviz-arrow-label">AI clips</div>
         </div>
-        <div class="flow-connector"></div>
-        <div class="flow-node">
-          <div class="flow-card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
+
+        <!-- ② Content pieces -->
+        <div class="fviz-content-col">
+          <div class="fviz-clips">
+            <div class="fviz-clip">
+              <div class="fviz-clip-thumb">
+                <div class="fviz-clip-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+              </div>
+              <div class="fviz-clip-foot"><span class="fviz-clip-plat">TikTok</span><span class="fviz-clip-dur">:45s</span></div>
+            </div>
+            <div class="fviz-clip">
+              <div class="fviz-clip-thumb">
+                <div class="fviz-clip-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+              </div>
+              <div class="fviz-clip-foot"><span class="fviz-clip-plat">Reels</span><span class="fviz-clip-dur">:32s</span></div>
+            </div>
+            <div class="fviz-clip">
+              <div class="fviz-clip-thumb">
+                <div class="fviz-clip-play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+              </div>
+              <div class="fviz-clip-foot"><span class="fviz-clip-plat">Shorts</span><span class="fviz-clip-dur">:58s</span></div>
+            </div>
           </div>
-          <span class="flow-label">Calendar</span>
-          <span class="flow-sub">scheduled everywhere</span>
+          <div class="fviz-posts">
+            <div class="fviz-post">
+              <div class="fviz-post-lines">
+                <div class="fviz-post-line fviz-post-line--lg"></div>
+                <div class="fviz-post-line fviz-post-line--md"></div>
+                <div class="fviz-post-line fviz-post-line--sm"></div>
+              </div>
+              <div class="fviz-post-plat">LinkedIn</div>
+            </div>
+            <div class="fviz-post">
+              <div class="fviz-post-lines">
+                <div class="fviz-post-line fviz-post-line--lg"></div>
+                <div class="fviz-post-line fviz-post-line--md"></div>
+              </div>
+              <div class="fviz-post-plat">X / Twitter</div>
+            </div>
+            <div class="fviz-post">
+              <div class="fviz-post-lines">
+                <div class="fviz-post-line fviz-post-line--lg"></div>
+                <div class="fviz-post-line fviz-post-line--sm"></div>
+              </div>
+              <div class="fviz-post-plat">Instagram</div>
+            </div>
+          </div>
+          <div class="fviz-col-label">AI-generated content</div>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div class="fviz-arrow fviz-arrow-2">
+          <div class="fviz-arrow-line"></div>
+          <div class="fviz-arrow-tip">›</div>
+          <div class="fviz-arrow-label">scheduled</div>
+        </div>
+
+        <!-- ③ Calendar -->
+        <div>
+          <div class="fviz-cal">
+            <div class="fviz-cal-head">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="fviz-cal-body">
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:0">TikTok</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:1">LinkedIn</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:2">Reels</div>
+              <div class="fviz-cal-cell"></div>
+
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:3">X</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:4">Shorts</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:5">Insta</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--img" style="--ei:6">Thumb</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:7">TikTok</div>
+
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:8">Reels</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:9">LinkedIn</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--img" style="--ei:10">Quote</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:11">TikTok</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:12">X</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:13">Insta</div>
+
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:14">Shorts</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:15">LinkedIn</div>
+              <div class="fviz-cal-cell"></div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--clip" style="--ei:16">Reels</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--img" style="--ei:17">Thumb</div>
+              <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:18">X</div>
+            </div>
+          </div>
+          <div class="fviz-col-label">Content calendar</div>
         </div>
       </div>
 
@@ -757,91 +1066,122 @@
       <h2>Everything an agency needs to run client content at scale.</h2>
       <p class="section-intro">One native workflow for your team and your clients — multi-brand workspaces, approvals, and publishing in a single place.</p>
 
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          </div>
+      <div class="bento">
+
+        <!-- Wide: AI clips -->
+        <div class="bento-item bento-item--wide">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
           <h3>AI clip generation</h3>
-          <p>Best-in-class AI clipping cuts 10–30 short-form clips per episode, built right into your workflow — nothing extra to wire up or manage.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+          <p>Best-in-class AI clipping cuts 10–30 short-form clips per episode, built right into your workflow — nothing extra to wire up.</p>
+          <div class="bento-visual">
+            <div class="bento-clips">
+              <span style="height:55%"></span><span style="height:90%"></span><span style="height:40%"></span>
+              <span style="height:75%"></span><span style="height:30%"></span><span style="height:100%"></span>
+              <span style="height:60%"></span><span style="height:45%"></span><span style="height:80%"></span>
+              <span style="height:35%"></span><span style="height:70%"></span><span style="height:55%"></span>
+            </div>
+            <div style="font-size:11px;color:#71717a;margin-left:10px;line-height:1.5">10–30 clips<br/>per episode</div>
           </div>
+        </div>
+
+        <!-- Regular: Vertical reframing -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg></div>
           <h3>Vertical reframing</h3>
-          <p>One click converts 16:9 clips to 9:16 for Reels, Shorts, and TikTok. Face-aware cropping keeps the speaker in frame.</p>
+          <p>One click converts 16:9 to 9:16. Face-aware cropping keeps the speaker in frame.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-          </div>
+
+        <!-- Regular: Burn-in captions -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
           <h3>Burn-in captions</h3>
-          <p>Word-level captions that match your brand. Editable styles, configurable positioning, and platform-aware sizing.</p>
+          <p>Word-level captions in your brand style. Editable, configurable positioning, platform-aware sizing.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-          </div>
+
+        <!-- Regular: Brand voice -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
           <h3>Brand voice profiles</h3>
-          <p>Import your YouTube channel and Vidflow learns your tone, vocabulary, and themes. Every caption sounds like you.</p>
+          <p>Import your YouTube channel and Vidflow learns your tone, vocabulary, and themes.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
+
+        <!-- Regular: Calendar -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
           <h3>Drag-and-drop calendar</h3>
-          <p>Queue-based scheduling with recurring time slots. Set "Mondays at 10am for TikTok" and let Vidflow auto-fill.</p>
+          <p>Recurring slots like "Mondays at 10am for TikTok" — Vidflow auto-fills the queue.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
+
+        <!-- Wide: Client approval -->
+        <div class="bento-item bento-item--wide">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Client approval workflow</h3>
-          <p>Send clients a review link — they approve or comment with no signup required. Built for agencies juggling multiple brands.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <p>Send clients a review link — they approve or leave comments with no account needed. Built for agencies running content across multiple brands.</p>
+          <div class="bento-visual">
+            <div class="bento-approval">
+              <div class="bento-app-node">Content ready</div>
+              <div class="bento-app-arrow">→</div>
+              <div class="bento-app-node">Review link sent</div>
+              <div class="bento-app-arrow">→</div>
+              <div class="bento-app-done">✓ Approved</div>
+            </div>
           </div>
+        </div>
+
+        <!-- Regular: Workflow builder -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
           <h3>Visual workflow builder</h3>
-          <p>Drag nodes to design custom automation: "Episode upload → generate clips → require approval → publish to LinkedIn."</p>
+          <p>Drag nodes to design custom automation — upload → clip → approve → publish.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
+
+        <!-- Regular: AI Image -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
           <h3>AI image &amp; thumbnail studio</h3>
-          <p>Generate quote cards, episode thumbnails, and visual posts. Style-locked to your brand's visual identity.</p>
+          <p>Generate quote cards, thumbnails, and visual posts — style-locked to your brand.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
+
+        <!-- Regular: Blog -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
           <h3>Blog &amp; long-form generator</h3>
-          <p>Turn an episode transcript into a LinkedIn article, Substack post, or blog draft — formatted, on-voice, ready to publish.</p>
+          <p>Turn a transcript into a LinkedIn article, Substack post, or blog draft — on-voice, ready to publish.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
+
+        <!-- Regular: Magic posts -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
           <h3>Magic text posts</h3>
-          <p>One-click generation of LinkedIn posts, X threads, and Instagram captions from your episode content.</p>
+          <p>One-click LinkedIn posts, X threads, and Instagram captions from your episode.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </div>
+
+        <!-- Regular: Auto-import -->
+        <div class="bento-item">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
           <h3>Auto-import &amp; bulk upload</h3>
-          <p>Watch a Google Drive or Dropbox folder. Drop a folder of files. Vidflow ingests, transcribes, and tags everything.</p>
+          <p>Watch a Drive or Dropbox folder. Vidflow ingests, transcribes, and tags everything automatically.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-          </div>
+
+        <!-- Wide: Analytics -->
+        <div class="bento-item bento-item--wide">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
           <h3>Cross-platform analytics</h3>
-          <p>Track views, engagement, and audience growth across every connected platform. Export reports for clients.</p>
+          <p>Track views, engagement, and audience growth across every connected platform. Export branded reports for clients in one click.</p>
+          <div class="bento-visual">
+            <div class="bento-sparkline">
+              <span style="height:30%"></span><span style="height:45%"></span><span style="height:38%"></span>
+              <span style="height:60%"></span><span style="height:52%"></span><span style="height:75%"></span>
+              <span style="height:68%"></span><span style="height:88%"></span><span style="height:82%"></span>
+              <span style="height:100%"></span>
+            </div>
+            <div style="margin-left:14px;display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:11px;color:#a5b4fc;font-weight:600">↑ 34% reach this month</div>
+              <div style="font-size:10px;color:#52525b">across 6 platforms</div>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -1002,14 +1342,14 @@
       document.querySelectorAll('section.section .eyebrow, section.section h2, section.section .section-intro, .final-cta h2, .final-cta .subtitle')
         .forEach((el) => el.classList.add('reveal'));
       // Stagger cards within each grid.
-      document.querySelectorAll('.steps, .features, .audience, .platforms, .faq').forEach((group) => {
+      document.querySelectorAll('.steps, .bento, .audience, .platforms, .faq').forEach((group) => {
         [...group.children].forEach((child, i) => {
           child.classList.add('reveal');
-          child.style.setProperty('--reveal-delay', (i * 70) + 'ms');
+          child.style.setProperty('--reveal-delay', (i * 60) + 'ms');
         });
       });
 
-      const animated = [...document.querySelectorAll('.reveal, .flow')];
+      const animated = [...document.querySelectorAll('.reveal, .fviz')];
       if (reduce || !('IntersectionObserver' in window)) {
         animated.forEach((el) => el.classList.add('visible'));
         return;
