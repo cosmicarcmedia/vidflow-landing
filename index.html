@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Pathway+Gothic+One&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 12l-6-4 6-4v8z'/%3E%3C/svg%3E" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -131,10 +131,37 @@
       letter-spacing: -0.03em;
       line-height: 1.04;
       margin: 0 0 24px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero-display {
+      font-family: 'Pathway Gothic One', sans-serif;
+      font-weight: 400;
+      font-size: clamp(58px, 10vw, 110px);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      background: linear-gradient(120deg, #818cf8 0%, #a855f7 52%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      display: block;
+    }
+    .hero-sub {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: clamp(24px, 4vw, 46px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
       background: linear-gradient(180deg, #fff 30%, #a1a1aa 100%);
       -webkit-background-clip: text;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: transparent;
+      display: block;
     }
     .subtitle {
       font-size: clamp(17px, 2vw, 21px);
@@ -603,7 +630,7 @@
     <!-- ── HERO ──────────────────────────────────── -->
     <section class="hero" id="waitlist">
       <div class="badge"><span class="dot"></span> Built for content agencies — early access now</div>
-      <h1>The <span class="grad">content engine</span> that replaces your editing stack.</h1>
+      <h1><span class="hero-display">THE CONTENT ENGINE</span><span class="hero-sub">that replaces your editing stack</span></h1>
       <p class="subtitle">
         Vidflow turns one client episode into a week of social posts in under an hour.
         AI clips, vertical reframes, captions, posts, approvals, and scheduling —
