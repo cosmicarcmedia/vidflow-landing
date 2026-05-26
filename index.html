@@ -394,8 +394,8 @@
       background: rgba(255,255,255,0.04);
       border-color: rgba(99,102,241,0.3);
     }
-    .feature:hover .feature-icon {
-      background: rgba(99,102,241,0.2);
+    .feature:hover .feature-icon:not([class*="fi-"]) {
+      background: rgba(99,102,241,0.22);
     }
     .feature-icon {
       width: 44px;
@@ -779,7 +779,7 @@
       gap: 12px;
     }
     .bento-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(99,102,241,0.3); }
-    .bento-item:hover .feature-icon { background: rgba(99,102,241,0.2); }
+    .bento-item:hover .feature-icon:not([class*="fi-"]) { background: rgba(99,102,241,0.22); }
     /* Colored card backgrounds */
     .bento-item--tint-pink { background: radial-gradient(ellipse at top left, rgba(236,72,153,0.08) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(236,72,153,0.18); }
     .bento-item--tint-violet { background: radial-gradient(ellipse at top left, rgba(167,139,250,0.08) 0%, transparent 65%), rgba(255,255,255,0.02); border-color: rgba(167,139,250,0.18); }
@@ -841,21 +841,28 @@
     }
 
     /* ── Icon hover glow (all cards) ────────────── */
-    .feature-icon { transition: box-shadow 0.25s ease, transform 0.25s ease; }
+    .feature-icon { transition: box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease; }
     .bento-item:hover .feature-icon,
     .feature:hover .feature-icon,
-    .step:hover .feature-icon { transform: scale(1.12); }
-    /* Default indigo */
-    .bento-item:hover .feature-icon,
-    .feature:hover .feature-icon,
-    .step:hover .feature-icon { box-shadow: 0 0 28px rgba(99,102,241,0.5); }
-    /* Color-matched glows */
-    .bento-item:hover .fi-cyan   { box-shadow: 0 0 28px rgba(6,182,212,0.55); }
-    .bento-item:hover .fi-amber  { box-shadow: 0 0 28px rgba(245,158,11,0.5); }
-    .bento-item:hover .fi-emerald{ box-shadow: 0 0 28px rgba(16,185,129,0.5); }
-    .bento-item:hover .fi-pink   { box-shadow: 0 0 28px rgba(236,72,153,0.55); }
-    .bento-item:hover .fi-violet { box-shadow: 0 0 28px rgba(167,139,250,0.5); }
-    #problem .feature:hover .feature-icon { box-shadow: 0 0 28px rgba(244,63,94,0.55); }
+    .step:hover .feature-icon { transform: scale(1.12); box-shadow: 0 0 30px rgba(99,102,241,0.55); }
+    /* Color-matched: brighter bg + own-color glow, no purple contamination */
+    .bento-item:hover .fi-cyan,    .feature:hover .fi-cyan    { background: rgba(6,182,212,0.26);   box-shadow: 0 0 30px rgba(6,182,212,0.7); }
+    .bento-item:hover .fi-amber,   .feature:hover .fi-amber   { background: rgba(245,158,11,0.26);  box-shadow: 0 0 30px rgba(245,158,11,0.65); }
+    .bento-item:hover .fi-emerald, .feature:hover .fi-emerald { background: rgba(16,185,129,0.26);  box-shadow: 0 0 30px rgba(16,185,129,0.65); }
+    .bento-item:hover .fi-pink,    .feature:hover .fi-pink    { background: rgba(236,72,153,0.26);  box-shadow: 0 0 30px rgba(236,72,153,0.7); }
+    .bento-item:hover .fi-violet,  .feature:hover .fi-violet  { background: rgba(167,139,250,0.26); box-shadow: 0 0 30px rgba(167,139,250,0.65); }
+    #problem .feature:hover .feature-icon { background: rgba(244,63,94,0.24); box-shadow: 0 0 30px rgba(244,63,94,0.7); }
+
+    /* ── Workflow mini-viz ───────────────────────── */
+    .wf-wrap {
+      margin-top: 14px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 16px 14px 12px;
+    }
+    .wf-wrap svg { display: block; width: 100%; max-width: 480px; margin: 0 auto; overflow: visible; }
 
     /* ── Distribution infographic ────────────────── */
     .distrib-wrap { margin-top: 48px; overflow: hidden; }
@@ -1280,11 +1287,129 @@
           </div>
         </div>
 
-        <!-- Regular: Workflow builder -->
-        <div class="bento-item">
+        <!-- Wide: Workflow builder (with mini flow viz) -->
+        <div class="bento-item bento-item--wide bento-item--tint-violet">
           <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
           <h3>Visual workflow builder</h3>
-          <p>Drag nodes to design custom automation — upload → clip → approve → publish.</p>
+          <p>Drag nodes to design custom automation — one episode fans out to clips, captions, posts, and approvals automatically.</p>
+          <!-- Mini workflow diagram -->
+          <div class="wf-wrap">
+            <svg viewBox="0 0 480 138" xmlns="http://www.w3.org/2000/svg">
+              <!-- ── Connection lines ── -->
+              <!-- Upload → Router -->
+              <line x1="36" y1="70" x2="93" y2="70" stroke="rgba(99,102,241,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="62,66 66,70 62,74 58,70" fill="rgba(99,102,241,0.55)"/>
+              <!-- Router → branches -->
+              <line x1="135" y1="70" x2="189" y2="31" stroke="rgba(139,92,246,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="135" y1="70" x2="189" y2="70" stroke="rgba(139,92,246,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="135" y1="70" x2="189" y2="109" stroke="rgba(139,92,246,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="158,66 162,70 158,74 154,70" fill="rgba(139,92,246,0.5)"/>
+              <!-- Branch nodes → Queue nodes -->
+              <line x1="228" y1="31" x2="300" y2="31" stroke="rgba(236,72,153,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="228" y1="70" x2="300" y2="70" stroke="rgba(236,72,153,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="228" y1="109" x2="300" y2="109" stroke="rgba(236,72,153,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="259,27 263,31 259,35 255,31" fill="rgba(236,72,153,0.5)"/>
+              <polygon points="259,66 263,70 259,74 255,70" fill="rgba(236,72,153,0.5)"/>
+              <polygon points="259,105 263,109 259,113 255,109" fill="rgba(236,72,153,0.5)"/>
+              <!-- Queue nodes → Approve -->
+              <line x1="339" y1="31" x2="399" y2="67" stroke="rgba(244,63,94,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="339" y1="70" x2="399" y2="70" stroke="rgba(244,63,94,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="339" y1="109" x2="399" y2="73" stroke="rgba(244,63,94,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <polygon points="368,66 372,70 368,74 364,70" fill="rgba(244,63,94,0.5)"/>
+
+              <!-- ── Nodes ── -->
+
+              <!-- Episode Upload (blue) -->
+              <rect x="0" y="52" width="36" height="36" rx="10" fill="#2563eb"/>
+              <g transform="translate(10,62)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="12" x2="8" y2="2"/><polyline points="4,6 8,2 12,6"/>
+                <polyline points="2,14 2,16 14,16 14,14"/>
+              </g>
+              <circle cx="0" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="36" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="18" y="100" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">EPISODE</text>
+              <text x="18" y="109" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">UPLOAD</text>
+
+              <!-- Router (dark circle) -->
+              <circle cx="114" cy="70" r="21" fill="rgba(30,30,35,0.95)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <circle cx="114" cy="70" r="7" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+              <circle cx="114" cy="70" r="2.5" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="93" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="135" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="114" y="103" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">ROUTER</text>
+
+              <!-- Generate Clips (violet) -->
+              <rect x="192" y="13" width="36" height="36" rx="10" fill="#7c3aed"/>
+              <g transform="translate(202,21)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="3" cy="3" r="3"/><circle cx="13" cy="13" r="3"/>
+                <line x1="5.5" y1="0.5" x2="16" y2="11"/><line x1="0.5" y1="5.5" x2="11" y2="16"/>
+              </g>
+              <circle cx="192" cy="31" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="228" cy="31" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="210" y="61" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">GEN CLIPS</text>
+
+              <!-- Magic Text Posts (purple) -->
+              <rect x="192" y="52" width="36" height="36" rx="10" fill="#6d28d9"/>
+              <g transform="translate(202,62)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="0" y="0" width="16" height="13" rx="2"/>
+                <polyline points="0,13 3,16 16,13"/>
+                <line x1="3" y1="4" x2="13" y2="4"/><line x1="3" y1="7" x2="10" y2="7"/>
+              </g>
+              <circle cx="192" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="228" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="210" y="100" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">TEXT POSTS</text>
+
+              <!-- Blog Posts (purple) -->
+              <rect x="192" y="91" width="36" height="36" rx="10" fill="#7c3aed"/>
+              <g transform="translate(202,101)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="0" width="14" height="16" rx="2"/>
+                <line x1="4" y1="5" x2="12" y2="5"/><line x1="4" y1="8" x2="12" y2="8"/><line x1="4" y1="11" x2="9" y2="11"/>
+              </g>
+              <circle cx="192" cy="109" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="228" cy="109" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="210" y="138" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">BLOG POSTS</text>
+
+              <!-- Queue 1 (pink) -->
+              <rect x="303" y="13" width="36" height="36" rx="10" fill="#be185d"/>
+              <g transform="translate(313,21)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
+                <line x1="1" y1="4" x2="15" y2="4"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="12" x2="11" y2="12"/>
+                <polyline points="11,14 15,8 11,2"/>
+              </g>
+              <circle cx="303" cy="31" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="339" cy="31" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="321" y="61" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">TO QUEUE</text>
+
+              <!-- Queue 2 (pink) -->
+              <rect x="303" y="52" width="36" height="36" rx="10" fill="#be185d"/>
+              <g transform="translate(313,60)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
+                <line x1="1" y1="4" x2="15" y2="4"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="12" x2="11" y2="12"/>
+                <polyline points="11,14 15,8 11,2"/>
+              </g>
+              <circle cx="303" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="339" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="321" y="100" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">TO QUEUE</text>
+
+              <!-- Queue 3 (pink) -->
+              <rect x="303" y="91" width="36" height="36" rx="10" fill="#be185d"/>
+              <g transform="translate(313,99)" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round">
+                <line x1="1" y1="4" x2="15" y2="4"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="12" x2="11" y2="12"/>
+                <polyline points="11,14 15,8 11,2"/>
+              </g>
+              <circle cx="303" cy="109" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="339" cy="109" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="321" y="138" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">TO QUEUE</text>
+
+              <!-- Approvals (rose) -->
+              <rect x="402" y="52" width="36" height="36" rx="10" fill="#e11d48"/>
+              <g transform="translate(412,62)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="8" cy="8" r="8"/>
+                <polyline points="4,8 7,11 12,5"/>
+              </g>
+              <circle cx="402" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <circle cx="438" cy="70" r="3.5" fill="#fbbf24" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+              <text x="420" y="100" text-anchor="middle" font-size="6.5" font-weight="700" fill="#52525b" font-family="Inter,system-ui,sans-serif" letter-spacing="0.07em">APPROVALS</text>
+            </svg>
+          </div>
         </div>
 
         <!-- Regular: AI Image -->
