@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 12l-6-4 6-4v8z'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23ec4899'/%3E%3Cstop offset='100%25' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='3' y='26' width='20' height='7' rx='3.5' fill='url(%23g)'/%3E%3Crect x='7' y='37' width='27' height='7' rx='3.5' fill='url(%23g)'/%3E%3Crect x='3' y='50' width='25' height='7' rx='3.5' fill='url(%23g)'/%3E%3Crect x='7' y='61' width='27' height='7' rx='3.5' fill='url(%23g)'/%3E%3Cpath fill='url(%23g)' fill-rule='evenodd' d='M91.39 44.60 L99.61 44.99 A32 32 0 0 1 99.61 55.01 L91.39 55.40 A24 24 0 0 1 88.35 62.72 L93.89 68.81 A32 32 0 0 1 86.81 75.89 L80.72 70.35 A24 24 0 0 1 73.40 73.39 L73.01 81.61 A32 32 0 0 1 62.99 81.61 L62.60 73.39 A24 24 0 0 1 55.28 70.35 L49.19 75.89 A32 32 0 0 1 42.11 68.81 L47.65 62.72 A24 24 0 0 1 44.61 55.40 L36.39 55.01 A32 32 0 0 1 36.39 44.99 L44.61 44.60 A24 24 0 0 1 47.65 37.28 L42.11 31.19 A32 32 0 0 1 49.19 24.11 L55.28 29.65 A24 24 0 0 1 62.60 26.61 L62.99 18.39 A32 32 0 0 1 73.01 18.39 L73.40 26.61 A24 24 0 0 1 80.72 29.65 L86.81 24.11 A32 32 0 0 1 93.89 31.19 L88.35 37.28 A24 24 0 0 1 91.39 44.60 Z M84 50 A16 16 0 0 0 52 50 A16 16 0 0 0 84 50 Z'/%3E%3Cpolygon fill='url(%23g)' points='63,41 63,59 80,50'/%3E%3C/svg%3E" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -69,15 +69,16 @@
       letter-spacing: -0.01em;
     }
     .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      border-radius: 8px;
+      width: 40px;
+      height: 37px;
+      background: transparent;
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
-    .logo-icon svg { width: 18px; height: 18px; color: #fff; }
+    .logo-icon svg { width: 40px; height: 37px; }
     nav .nav-links {
       display: flex;
       align-items: center;
@@ -841,7 +842,34 @@
     <nav>
       <div class="logo">
         <span class="logo-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-4 12l-6-4 6-4v8z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 100">
+            <defs>
+              <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ec4899"/>
+                <stop offset="100%" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+            <!-- Speed lines -->
+            <rect x="3" y="26" width="20" height="7" rx="3.5" fill="url(#lg)"/>
+            <rect x="7" y="37" width="27" height="7" rx="3.5" fill="url(#lg)"/>
+            <rect x="3" y="50" width="25" height="7" rx="3.5" fill="url(#lg)"/>
+            <rect x="7" y="61" width="27" height="7" rx="3.5" fill="url(#lg)"/>
+            <!-- Gear ring (evenodd cuts the center hole) -->
+            <path fill="url(#lg)" fill-rule="evenodd" d="
+              M91.39 44.60 L99.61 44.99 A32 32 0 0 1 99.61 55.01 L91.39 55.40
+              A24 24 0 0 1 88.35 62.72 L93.89 68.81 A32 32 0 0 1 86.81 75.89 L80.72 70.35
+              A24 24 0 0 1 73.40 73.39 L73.01 81.61 A32 32 0 0 1 62.99 81.61 L62.60 73.39
+              A24 24 0 0 1 55.28 70.35 L49.19 75.89 A32 32 0 0 1 42.11 68.81 L47.65 62.72
+              A24 24 0 0 1 44.61 55.40 L36.39 55.01 A32 32 0 0 1 36.39 44.99 L44.61 44.60
+              A24 24 0 0 1 47.65 37.28 L42.11 31.19 A32 32 0 0 1 49.19 24.11 L55.28 29.65
+              A24 24 0 0 1 62.60 26.61 L62.99 18.39 A32 32 0 0 1 73.01 18.39 L73.40 26.61
+              A24 24 0 0 1 80.72 29.65 L86.81 24.11 A32 32 0 0 1 93.89 31.19 L88.35 37.28
+              A24 24 0 0 1 91.39 44.60 Z
+              M84 50 A16 16 0 0 0 52 50 A16 16 0 0 0 84 50 Z
+            "/>
+            <!-- Play triangle -->
+            <polygon fill="url(#lg)" points="63,41 63,59 80,50"/>
+          </svg>
         </span>
         Vidflow
       </div>
