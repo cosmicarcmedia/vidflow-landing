@@ -300,7 +300,7 @@
 
     /* ── Section shared ─────────────────────────── */
     section.section {
-      padding: 72px 0;
+      padding: 112px 0;
       position: relative;
     }
     section.section + section.section {
@@ -552,7 +552,7 @@
     @media (max-width: 600px) {
       nav { padding: 16px 0; }
       .hero { padding: 56px 0 36px; }
-      section.section { padding: 56px 0; }
+      section.section { padding: 72px 0; }
       form.waitlist { flex-direction: column; }
       form.waitlist input[type="email"], form.waitlist button { width: 100%; }
       .final-cta { padding: 50px 22px; border-radius: 16px; }
@@ -761,9 +761,11 @@
     .bento-item {
       grid-column: span 2;
       padding: 26px 24px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
       border-radius: 16px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       transition: border-color 0.2s, background 0.2s;
       display: flex;
       flex-direction: column;
@@ -830,6 +832,32 @@
       .fviz-arrow { flex-direction: row; padding: 0; }
       .fviz-arrow-line { width: 32px; }
     }
+
+    /* ── Cursor glow ─────────────────────────────── */
+    #cursor-glow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(236,72,153,0.13) 0%, rgba(236,72,153,0.06) 38%, transparent 68%);
+      pointer-events: none;
+      z-index: 2;
+      mix-blend-mode: screen;
+      will-change: transform;
+      margin: -280px 0 0 -280px;
+    }
+
+    /* ── Problem section — red/negative palette ── */
+    #problem {
+      background: radial-gradient(ellipse 80% 55% at 50% -5%, rgba(239,68,68,0.08), transparent 65%);
+    }
+    #problem .eyebrow { color: #f43f5e; }
+    #problem .feature-icon {
+      background: rgba(244,63,94,0.1);
+      border-color: rgba(244,63,94,0.28);
+      box-shadow: 0 0 16px rgba(244,63,94,0.16);
+    }
+    #problem .feature-icon svg { color: #fb7185; }
 
     @media (prefers-reduced-motion: reduce) {
       .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
@@ -1462,6 +1490,22 @@
 
     wireForm(document.getElementById('waitlist-form'));
     wireForm(document.getElementById('waitlist-form-bottom'));
+
+    // ── Cursor glow ───────────────────────────────────────────────────────
+    (function () {
+      const glow = document.createElement('div');
+      glow.id = 'cursor-glow';
+      document.body.appendChild(glow);
+      let tx = -9999, ty = -9999, cx = -9999, cy = -9999, raf;
+      document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+      function tick() {
+        cx += (tx - cx) * 0.1;
+        cy += (ty - cy) * 0.1;
+        glow.style.transform = `translate(${cx}px,${cy}px)`;
+        raf = requestAnimationFrame(tick);
+      }
+      tick();
+    })();
   </script>
 </body>
 </html>
