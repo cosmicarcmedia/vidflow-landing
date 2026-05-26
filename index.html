@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidflow — Upload once. Publish everywhere.</title>
-  <meta name="description" content="Vidflow turns one podcast episode into a week of content across every social platform. AI clips, captions, scheduling, and approvals — automated." />
-  <meta property="og:title" content="Vidflow — Upload once. Publish everywhere." />
-  <meta property="og:description" content="Turn one podcast episode into a week of social content. AI clips, captions, scheduling, and approvals — automated." />
+  <title>Vidflow — The content engine that replaces your editing stack.</title>
+  <meta name="description" content="Vidflow turns one client episode into a week of social posts in under an hour. AI clips, vertical reframes, captions, posts, approvals, and scheduling — built for content agencies, in one place instead of five tools." />
+  <meta property="og:title" content="Vidflow — The content engine that replaces your editing stack." />
+  <meta property="og:description" content="Built for content agencies. Turn one client episode into a week of social posts — AI clips, captions, approvals, and scheduling in one workflow." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vidflow.io" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -34,8 +34,9 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.18), transparent 60%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.10), transparent 70%);
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(99,102,241,0.28), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 85% 85%, rgba(139,92,246,0.14), transparent 65%),
+        radial-gradient(ellipse 40% 30% at 15% 75%, rgba(99,102,241,0.08), transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -101,7 +102,7 @@
 
     /* ── Hero ─────────────────────────────────────── */
     .hero {
-      padding: 100px 0 80px;
+      padding: 80px 0 48px;
       text-align: center;
     }
     .badge {
@@ -186,6 +187,44 @@
     form.waitlist button:active { transform: translateY(0); }
     form.waitlist button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-note { font-size: 13px; color: #71717a; }
+
+    /* ── Social proof strip ──────────────────────── */
+    .social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      flex-wrap: wrap;
+    }
+    .proof-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .proof-stat-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .proof-stat-label {
+      font-size: 12px;
+      color: #71717a;
+      white-space: nowrap;
+    }
+    .proof-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.08);
+    }
+    @media (max-width: 560px) {
+      .proof-divider { display: none; }
+      .social-proof { gap: 16px; }
+    }
     .form-success {
       display: none;
       max-width: 480px;
@@ -213,7 +252,7 @@
 
     /* ── Section shared ─────────────────────────── */
     section.section {
-      padding: 90px 0;
+      padding: 72px 0;
       position: relative;
     }
     section.section + section.section {
@@ -298,7 +337,10 @@
     }
     .feature:hover {
       background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.1);
+      border-color: rgba(99,102,241,0.3);
+    }
+    .feature:hover .feature-icon {
+      background: rgba(99,102,241,0.2);
     }
     .feature-icon {
       width: 40px;
@@ -420,10 +462,12 @@
       padding: 80px 32px;
       text-align: center;
       background:
-        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(99,102,241,0.12), transparent 70%);
-      border: 1px solid rgba(99,102,241,0.2);
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(99,102,241,0.18), transparent 70%),
+        rgba(99,102,241,0.04);
+      border: 1px solid rgba(99,102,241,0.28);
       border-radius: 24px;
       margin: 40px 0 80px;
+      box-shadow: 0 0 80px rgba(99,102,241,0.08);
     }
     .final-cta h2 { margin-bottom: 14px; }
     .final-cta .subtitle { margin-bottom: 28px; }
@@ -445,11 +489,97 @@
 
     @media (max-width: 600px) {
       nav { padding: 16px 0; }
-      .hero { padding: 60px 0 50px; }
-      section.section { padding: 60px 0; }
+      .hero { padding: 56px 0 36px; }
+      section.section { padding: 56px 0; }
       form.waitlist { flex-direction: column; }
       form.waitlist input[type="email"], form.waitlist button { width: 100%; }
       .final-cta { padding: 50px 22px; border-radius: 16px; }
+    }
+
+    /* ── Gradient accent text ────────────────────── */
+    .grad {
+      background: linear-gradient(120deg, #818cf8 0%, #a855f7 52%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    /* ── Scroll reveal ───────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Flow diagram: Video → Content → Calendar ── */
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .flow-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+    .flow-card {
+      width: 116px;
+      height: 100px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c4b5fd;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      transform: scale(0.72);
+      opacity: 0;
+      transition: transform 0.55s cubic-bezier(.2,.8,.2,1), opacity 0.5s ease, border-color 0.5s ease;
+    }
+    .flow-card svg { width: 38px; height: 38px; }
+    .flow-label { font-size: 13px; font-weight: 600; color: #d4d4d8; }
+    .flow-sub { font-size: 11px; color: #71717a; margin-top: -6px; }
+    .flow-connector {
+      flex: 1 1 auto;
+      height: 2px;
+      max-width: 90px;
+      margin: 0 6px 44px;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s ease;
+    }
+    /* sequence: card1, line1, card2, line2, card3 (children 1..5) */
+    .flow.visible .flow-node:nth-child(1) .flow-card { transform: none; opacity: 1; transition-delay: 0.05s; }
+    .flow.visible .flow-connector:nth-child(2) { transform: scaleX(1); transition-delay: 0.3s; }
+    .flow.visible .flow-node:nth-child(3) .flow-card { transform: none; opacity: 1; transition-delay: 0.45s; }
+    .flow.visible .flow-connector:nth-child(4) { transform: scaleX(1); transition-delay: 0.7s; }
+    .flow.visible .flow-node:nth-child(5) .flow-card { transform: none; opacity: 1; transition-delay: 0.85s; }
+    .flow.visible .flow-card { border-color: rgba(139,92,246,0.35); }
+    /* mini clip bars inside the content node */
+    .clip-bars { display: flex; gap: 4px; align-items: flex-end; height: 34px; }
+    .clip-bars span { width: 6px; background: linear-gradient(180deg,#a855f7,#6366f1); border-radius: 2px; }
+    @media (max-width: 560px) {
+      .flow { max-width: 100%; }
+      .flow-card { width: 84px; height: 78px; border-radius: 16px; }
+      .flow-card svg { width: 28px; height: 28px; }
+      .flow-connector { margin-bottom: 38px; }
+      .flow-sub { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .flow-card, .flow-connector { transition: none; opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -463,7 +593,7 @@
         Vidflow
       </div>
       <div class="nav-links">
-        <a href="#features" class="nav-link-hide">Features</a>
+        <a href="#who" class="nav-link-hide">For agencies</a>
         <a href="#how" class="nav-link-hide">How it works</a>
         <a href="#faq" class="nav-link-hide">FAQ</a>
         <a href="#waitlist" class="btn-nav">Join waitlist</a>
@@ -472,55 +602,134 @@
 
     <!-- ── HERO ──────────────────────────────────── -->
     <section class="hero" id="waitlist">
-      <div class="badge"><span class="dot"></span> Launching soon — early access opening</div>
-      <h1>Upload once.<br />Publish everywhere.</h1>
+      <div class="badge"><span class="dot"></span> Built for content agencies — early access now</div>
+      <h1>The <span class="grad">content engine</span> that replaces your editing stack.</h1>
       <p class="subtitle">
-        Vidflow turns one podcast episode into a week of social content.
-        AI-generated clips, captions, vertical reframing, scheduling, and
-        client approvals — all automated, all in one place.
+        Vidflow turns one client episode into a week of social posts in under an hour.
+        AI clips, vertical reframes, captions, posts, approvals, and scheduling —
+        in one place instead of five tools.
       </p>
 
       <form class="waitlist" id="waitlist-form">
-        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-        <button type="submit" id="submit-btn">Join the waitlist</button>
+        <input type="email" name="email" placeholder="you@agency.com" required autocomplete="email" />
+        <button type="submit" id="submit-btn">Join the agency waitlist</button>
       </form>
-      <p class="form-note">Be among the first creators in. No spam, ever.</p>
+      <p class="form-note">Early access, 1:1 onboarding, and founder pricing locked in for life — first 100 accounts.</p>
       <div class="form-success" id="form-success">
         ✓ You're on the list. We'll be in touch.
       </div>
       <div class="form-error" id="form-error"></div>
+
+      <div class="social-proof">
+        <div class="proof-stat">
+          <span class="proof-stat-num">&lt; 1 hr</span>
+          <span class="proof-stat-label">per client episode</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-stat-num">10–30</span>
+          <span class="proof-stat-label">clips per upload</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-stat-num">6+</span>
+          <span class="proof-stat-label">platforms at once</span>
+        </div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat">
+          <span class="proof-stat-num">0</span>
+          <span class="proof-stat-label">client logins needed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE PROBLEM ───────────────────────────── -->
+    <section class="section section-center" id="problem">
+      <span class="eyebrow">The problem</span>
+      <h2>Agencies are drowning in Franken-stacks.</h2>
+      <p class="section-intro">If you run content for multiple clients, this is probably you.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>Five tools, duct-taped together</h3>
+          <p>A clip tool, an editor, a scheduler, Drive, spreadsheets, and endless email chains — none of them talking to each other.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>"v2_final_final.mp4"</h3>
+          <p>Clients stuck in endless approval threads, with no clean way to review and sign off on a week of content at once.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>No single source of truth</h3>
+          <p>No shared calendar, no clear status per client, missed posts everywhere. Vidflow is the clean-up crew that replaces the whole stack.</p>
+        </div>
+      </div>
     </section>
 
     <!-- ── HOW IT WORKS ──────────────────────────── -->
     <section class="section section-center" id="how">
       <span class="eyebrow">How it works</span>
-      <h2>From raw episode to a full content calendar in minutes.</h2>
-      <p class="section-intro">Three steps. No third-party clip tools, no spreadsheets, no manual scheduling.</p>
+      <h2>From raw episode to a full client content calendar in minutes.</h2>
+      <p class="section-intro">Three steps. No Franken-stack of five tools, no spreadsheets, no client logins.</p>
+
+      <div class="flow" aria-hidden="true">
+        <div class="flow-node">
+          <div class="flow-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><polygon points="10 9 15 12 10 15 10 9" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <span class="flow-label">Episode</span>
+          <span class="flow-sub">video or audio</span>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-node">
+          <div class="flow-card">
+            <span class="clip-bars"><span style="height:60%"></span><span style="height:100%"></span><span style="height:42%"></span><span style="height:80%"></span><span style="height:30%"></span></span>
+          </div>
+          <span class="flow-label">Content</span>
+          <span class="flow-sub">clips · posts · captions</span>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-node">
+          <div class="flow-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <span class="flow-label">Calendar</span>
+          <span class="flow-sub">scheduled everywhere</span>
+        </div>
+      </div>
 
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
-          <h3>Drop in your episode</h3>
-          <p>Upload your long-form video or audio. We transcribe it, find the best moments, and pull metadata automatically. Or auto-import from Google Drive or Dropbox.</p>
+          <h3>Drop in the episode</h3>
+          <p>Upload long-form video or audio, or auto-import from Google Drive or Dropbox. Vidflow transcribes it, finds the key moments, and tags everything.</p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
-          <h3>AI does the work</h3>
-          <p>Vidflow cuts 10–30 short clips, reframes them vertical, generates platform-specific captions in your brand voice, and creates supporting image and text posts.</p>
+          <h3>AI builds the campaign</h3>
+          <p>Vidflow cuts 10–30 short clips, reframes them vertical, generates platform-native captions in your client's brand voice, and creates matching image and text posts.</p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Approve and schedule</h3>
-          <p>Drag content onto your calendar, send clients a link to approve (no login needed), and publish across YouTube, Instagram, TikTok, LinkedIn, X, and Facebook.</p>
+          <h3>Approve and schedule everywhere</h3>
+          <p>Drag posts onto a single calendar, send clients an approval link (no login), and publish across YouTube, Instagram, TikTok, LinkedIn, X, Facebook, and podcast platforms.</p>
         </div>
       </div>
     </section>
 
     <!-- ── FEATURES ──────────────────────────────── -->
     <section class="section" id="features">
-      <span class="eyebrow">Features</span>
-      <h2>Everything you need to run a content engine.</h2>
-      <p class="section-intro">Built from the ground up for creators and agencies who post across every platform. No clunky integrations or third-party clipping tools.</p>
+      <span class="eyebrow">What you get</span>
+      <h2>Everything an agency needs to run client content at scale.</h2>
+      <p class="section-intro">One native workflow for your team and your clients — multi-brand workspaces, approvals, and publishing in a single place.</p>
 
       <div class="features">
         <div class="feature">
@@ -528,7 +737,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
           </div>
           <h3>AI clip generation</h3>
-          <p>Transcript-aware moment detection cuts 10–30 short-form clips per episode. Native pipeline — no Opus, no Zapier.</p>
+          <p>Best-in-class AI clipping cuts 10–30 short-form clips per episode, built right into your workflow — nothing extra to wire up or manage.</p>
         </div>
         <div class="feature">
           <div class="feature-icon">
@@ -631,41 +840,72 @@
     </section>
 
     <!-- ── WHO IT'S FOR ──────────────────────────── -->
-    <section class="section">
+    <section class="section" id="who">
       <span class="eyebrow">Who it's for</span>
-      <h2>Built for creators and agencies who post everywhere.</h2>
-      <p class="section-intro">Vidflow scales from solo podcasters to multi-brand agencies. Multi-workspace support, role-based access, and client review built in.</p>
+      <h2>Designed for agencies. Still great for creators and podcasters.</h2>
+      <p class="section-intro">Vidflow is built first for the people with the heaviest workload — agencies running content for multiple brands — and works just as well for solo creators.</p>
 
       <div class="audience">
         <div class="audience-card">
-          <h3>Podcasters</h3>
-          <p>You record one episode a week. You should be promoting it everywhere — not editing clips at midnight.</p>
+          <h3>Content &amp; social agencies</h3>
+          <p>Run content for multiple brands without the chaos. Workspaces, role-based access, and built-in approvals.</p>
           <ul>
-            <li>Auto-generated YouTube Shorts &amp; Reels</li>
-            <li>Episode artwork &amp; quote cards</li>
-            <li>RSS feed for Apple &amp; Spotify</li>
-            <li>Recurring posting schedule</li>
+            <li>Unlimited client workspaces</li>
+            <li>Client review &amp; comment links</li>
+            <li>Brand-locked voice &amp; visual styles</li>
+            <li>White-labelable approval emails</li>
           </ul>
         </div>
         <div class="audience-card">
-          <h3>Video creators</h3>
-          <p>Long-form YouTube videos, livestreams, and interviews. Vidflow turns every one into platform-native short content.</p>
+          <h3>Creators &amp; YouTubers</h3>
+          <p>Turn every upload into a full week of short-form, without editing clips at midnight.</p>
           <ul>
             <li>9:16 reframing with face tracking</li>
-            <li>Burn-in captions per platform</li>
-            <li>Thumbnail variants &amp; A/B testing</li>
+            <li>Per-platform captions and hooks</li>
+            <li>Thumbnail variants &amp; A/B tests</li>
             <li>Auto-import from Drive</li>
           </ul>
         </div>
         <div class="audience-card">
-          <h3>Agencies</h3>
-          <p>Manage multiple client brands without losing the plot. Workspaces, role-based access, and built-in approvals.</p>
+          <h3>Podcasters</h3>
+          <p>Stop editing at midnight just to promote the show. One episode becomes a week of content.</p>
           <ul>
-            <li>Unlimited brand workspaces</li>
-            <li>Client review &amp; comment links</li>
-            <li>Brand-locked voice &amp; visual style</li>
-            <li>White-labelable approval flow</li>
+            <li>Auto Shorts &amp; Reels for every episode</li>
+            <li>Episode artwork &amp; quote cards</li>
+            <li>RSS to Apple &amp; Spotify</li>
+            <li>Recurring promo schedule</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOUNDER PRICING ───────────────────────── -->
+    <section class="section section-center" id="founder">
+      <span class="eyebrow">Early access &amp; founder pricing</span>
+      <h2>Join the first 100 accounts and keep founder pricing for life.</h2>
+      <p class="section-intro">While we're in early access, the people who join now get the best deal we'll ever offer.</p>
+
+      <div class="audience">
+        <div class="audience-card">
+          <div class="feature-icon" style="margin-bottom:20px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Free trial to kick the tires</h3>
+          <p>Early-access accounts get a hands-on trial period to run real client work through the product before committing to a plan.</p>
+        </div>
+        <div class="audience-card">
+          <div class="feature-icon" style="margin-bottom:20px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-4 0v2"/></svg>
+          </div>
+          <h3>Founder pricing, locked for life</h3>
+          <p>A meaningful discount off public pricing — locked in for as long as your account stays active. Public plans will cost more. Founder rates don't.</p>
+        </div>
+        <div class="audience-card">
+          <div class="feature-icon" style="margin-bottom:20px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Direct line to the founder</h3>
+          <p>Early access means real influence over what gets built next — you'll have a direct channel to shape the roadmap around how your agency actually works.</p>
         </div>
       </div>
     </section>
@@ -680,35 +920,31 @@
         <div class="faq">
           <details class="faq-item">
             <summary>When does Vidflow launch?</summary>
-            <div class="faq-body">Public launch is targeting later this year. Waitlist members get early access — typically a week of free use to try the platform before opening to the broader audience.</div>
+            <div class="faq-body">We're rolling out early access to waitlist members now, then opening to the public later this year. Waitlist members get invited in batches before everyone else.</div>
           </details>
           <details class="faq-item">
-            <summary>Is Vidflow only for podcasters?</summary>
-            <div class="faq-body">No. Vidflow works for anyone with long-form video — podcasters, YouTubers, agencies, content marketers, course creators. Anywhere you have a recording and want to multiply it across platforms.</div>
+            <summary>Is Vidflow only for agencies?</summary>
+            <div class="faq-body">No. Vidflow works for anyone with long-form video or audio — we're just building and pricing it first for the people with the heaviest workload: agencies running content for multiple clients.</div>
           </details>
           <details class="faq-item">
             <summary>What platforms can I publish to?</summary>
-            <div class="faq-body">YouTube (long-form and Shorts), Instagram (Reels, posts, carousels), TikTok, Facebook, LinkedIn (posts and articles), X / Twitter, and podcast platforms via RSS (Apple Podcasts, Spotify, Overcast, etc.). More on the roadmap.</div>
-          </details>
-          <details class="faq-item">
-            <summary>Do I need to install anything?</summary>
-            <div class="faq-body">No. Vidflow runs entirely in the browser. Upload videos directly, or connect a Google Drive or Dropbox folder and we pull files automatically.</div>
-          </details>
-          <details class="faq-item">
-            <summary>How does the AI handle my brand voice?</summary>
-            <div class="faq-body">Import your existing YouTube channel and Vidflow analyzes your tone, vocabulary, recurring themes, and typical caption style. Every generated caption, post, and clip title is grounded in your voice — not generic AI-speak.</div>
+            <div class="faq-body">YouTube (long-form and Shorts), Instagram (Reels, posts, carousels), TikTok, Facebook, LinkedIn (posts and articles), X / Twitter, and podcast apps via RSS (Apple Podcasts, Spotify, and more). More on the roadmap.</div>
           </details>
           <details class="faq-item">
             <summary>How much will it cost?</summary>
-            <div class="faq-body">Pricing isn't finalized, but the goal is tiered plans starting affordable for individual creators and scaling to per-workspace pricing for agencies. Waitlist members will get founder pricing locked in for life.</div>
+            <div class="faq-body">Final pricing launches with tiers for creators and agencies — expect creator plans starting under $50/month and agency plans in the low hundreds. Waitlist members get discounted founder rates on day one, locked in for life.</div>
           </details>
           <details class="faq-item">
-            <summary>Can I bring my own AI provider keys?</summary>
-            <div class="faq-body">On higher tiers, yes. Bring-your-own-key (Gemini, OpenAI) lets you scale without per-clip costs — useful for agencies running high volume.</div>
+            <summary>Can I bring my own AI keys?</summary>
+            <div class="faq-body">On higher-volume plans, yes. Agencies can plug in their own clipping and AI provider keys per workspace to control costs at scale — otherwise Vidflow's built-in engine handles it with nothing for you to set up.</div>
           </details>
           <details class="faq-item">
-            <summary>What about client approvals — do my clients need a Vidflow account?</summary>
-            <div class="faq-body">No. You send them a single shareable link. They can review, approve, or comment on every piece of content with no signup required. The flow is built specifically for agencies that don't want to onboard every client to a new tool.</div>
+            <summary>Do my clients need a Vidflow account?</summary>
+            <div class="faq-body">No. You send them a secure review link and they approve or comment on all content with no login. The flow is built specifically for agencies that don't want to onboard every client to a new tool.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need to install anything?</summary>
+            <div class="faq-body">No. Vidflow runs in the browser. Upload directly, or connect a Google Drive or Dropbox folder and we pull episodes for you.</div>
           </details>
         </div>
       </div>
@@ -717,10 +953,10 @@
     <!-- ── FINAL CTA ─────────────────────────────── -->
     <div class="final-cta">
       <h2>Get on the waitlist.</h2>
-      <p class="subtitle">Early access opens soon. Founder pricing locked in for everyone who joins now.</p>
+      <p class="subtitle">If you run content for multiple clients and you're tired of babysitting five tools, Vidflow is being built for you. Early access. Better pricing. Less chaos.</p>
       <form class="waitlist" id="waitlist-form-bottom">
-        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
-        <button type="submit">Join the waitlist</button>
+        <input type="email" name="email" placeholder="you@agency.com" required autocomplete="email" />
+        <button type="submit">Join the agency waitlist</button>
       </form>
     </div>
 
@@ -732,6 +968,36 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Scroll-reveal animations ──────────────────────────────────────────
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Fade in section headings and intros.
+      document.querySelectorAll('section.section .eyebrow, section.section h2, section.section .section-intro, .final-cta h2, .final-cta .subtitle')
+        .forEach((el) => el.classList.add('reveal'));
+      // Stagger cards within each grid.
+      document.querySelectorAll('.steps, .features, .audience, .platforms, .faq').forEach((group) => {
+        [...group.children].forEach((child, i) => {
+          child.classList.add('reveal');
+          child.style.setProperty('--reveal-delay', (i * 70) + 'ms');
+        });
+      });
+
+      const animated = [...document.querySelectorAll('.reveal, .flow')];
+      if (reduce || !('IntersectionObserver' in window)) {
+        animated.forEach((el) => el.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+      animated.forEach((el) => io.observe(el));
+    })();
 
     // Google Apps Script web-app URL (deploys to a Google Sheet + emails on submit).
     // Replace with your deployed /exec URL — see apps-script.gs for setup.
