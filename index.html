@@ -228,7 +228,7 @@
     form.waitlist input[type="email"]::placeholder { color: #71717a; }
     form.waitlist button {
       padding: 14px 22px;
-      background: linear-gradient(135deg, #2563eb, #8b5cf6 55%, #ec4899);
+      background: linear-gradient(135deg, #f378a2, #ef4e84 50%, #ab347a);
       border: none;
       border-radius: 10px;
       color: #fff;
@@ -236,10 +236,10 @@
       font-size: 15px;
       font-family: inherit;
       cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 20px rgba(139,92,246,0.35);
+      transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 4px 20px rgba(236,72,153,0.35);
     }
-    form.waitlist button:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(139,92,246,0.5); }
+    form.waitlist button:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(236,72,153,0.5); }
     form.waitlist button:active { transform: translateY(0); }
     form.waitlist button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-note { font-size: 13px; color: #71717a; }
@@ -516,6 +516,8 @@
     .audience-card--indigo ul li::before { content: '✓'; color: #818cf8; font-weight: 700; flex-shrink: 0; }
     /* Hover glow for feature icons inside audience/founder cards */
     .audience-card:hover .feature-icon:not([class*="fi-"]) { transform: scale(1.1); box-shadow: 0 0 28px rgba(99,102,241,0.5); }
+    .audience-card:hover .fi-pink   { background: rgba(236,72,153,0.26);  box-shadow: 0 0 30px rgba(236,72,153,0.7);  transform: scale(1.1); }
+    .audience-card:hover .fi-violet { background: rgba(167,139,250,0.26); box-shadow: 0 0 30px rgba(167,139,250,0.65); transform: scale(1.1); }
 
     /* ── FAQ ─────────────────────────────────────── */
     .faq { display: flex; flex-direction: column; gap: 12px; }
@@ -583,6 +585,70 @@
       color: #a1a1aa;
       font-size: 14.5px;
       line-height: 1.65;
+    }
+
+    /* ── Contact form ────────────────────────────── */
+    .contact-section { max-width: 620px; margin: 0 auto; }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 0;
+    }
+    .contact-form .cf-row { display: flex; gap: 14px; }
+    .contact-form .cf-row .cf-field { flex: 1; }
+    .cf-field { display: flex; flex-direction: column; gap: 6px; }
+    .cf-field label { font-size: 13px; font-weight: 500; color: #a1a1aa; }
+    .cf-field input,
+    .cf-field textarea {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.15s ease, background 0.15s ease;
+      resize: none;
+    }
+    .cf-field input:focus,
+    .cf-field textarea:focus {
+      outline: none;
+      border-color: rgba(236,72,153,0.5);
+      background: rgba(255,255,255,0.06);
+    }
+    .cf-field input::placeholder,
+    .cf-field textarea::placeholder { color: #52525b; }
+    .cf-field textarea { min-height: 120px; }
+    .contact-form .cf-submit {
+      align-self: flex-start;
+      padding: 13px 28px;
+      background: linear-gradient(135deg, #f378a2, #ef4e84 50%, #ab347a);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: opacity 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 20px rgba(236,72,153,0.3);
+    }
+    .contact-form .cf-submit:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 6px 26px rgba(236,72,153,0.45); }
+    .contact-form .cf-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .cf-success {
+      display: none;
+      padding: 14px 18px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 10px;
+      color: #86efac;
+      font-size: 14px;
+    }
+    .cf-success.visible { display: block; }
+    @media (max-width: 560px) {
+      .contact-form .cf-row { flex-direction: column; gap: 14px; }
+      .contact-form .cf-submit { align-self: stretch; }
     }
 
     /* ── Final CTA ───────────────────────────────── */
@@ -992,6 +1058,96 @@
       .distrib-container { transform: scale(0.52); transform-origin: top center; margin-bottom: -200px; }
     }
 
+    /* ── Section infographics ────────────────────── */
+    .section-infographic {
+      margin: 0 auto 56px;
+      display: flex;
+      justify-content: center;
+    }
+    /* Problem infographic: Franken-stack */
+    .franken-svg { width: 100%; max-width: 680px; height: auto; }
+    /* Features infographic: media burst */
+    .burst-svg { width: 100%; max-width: 520px; height: auto; }
+    @keyframes floatUp {
+      0%   { transform: translateY(0px) rotate(var(--fr, 0deg)); }
+      50%  { transform: translateY(-8px) rotate(var(--fr, 0deg)); }
+      100% { transform: translateY(0px) rotate(var(--fr, 0deg)); }
+    }
+    @keyframes floatUpB {
+      0%   { transform: translateY(0px) rotate(var(--fr, 0deg)); }
+      50%  { transform: translateY(-12px) rotate(var(--fr, 0deg)); }
+      100% { transform: translateY(0px) rotate(var(--fr, 0deg)); }
+    }
+    .burst-icon { animation: floatUp 3.2s ease-in-out infinite; animation-delay: var(--fd, 0s); }
+    .burst-icon-b { animation: floatUpB 2.8s ease-in-out infinite; animation-delay: var(--fd, 0s); }
+    @keyframes frankenWiggle {
+      0%,100% { transform: rotate(var(--fw,0deg)); }
+      50%     { transform: rotate(calc(var(--fw,0deg) + 4deg)); }
+    }
+    .franken-tool { animation: frankenWiggle 4s ease-in-out infinite; animation-delay: var(--fd,0s); transform-origin: center; }
+
+    /* ── Screen recording placeholders ──────────── */
+    .screenrec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+    }
+    @media (max-width: 800px) { .screenrec-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .screenrec-grid { grid-template-columns: 1fr; } }
+    .screenrec-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .screenrec-card:hover { border-color: rgba(99,102,241,0.3); box-shadow: 0 0 28px rgba(99,102,241,0.1); }
+    .screenrec-placeholder {
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .screenrec-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 14px,
+        rgba(255,255,255,0.013) 14px,
+        rgba(255,255,255,0.013) 28px
+      );
+    }
+    .screenrec-play-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(99,102,241,0.15);
+      border: 1.5px solid rgba(99,102,241,0.4);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .screenrec-play-btn svg { width: 16px; height: 16px; color: #818cf8; margin-left: 2px; }
+    .screenrec-placeholder-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3f3f50;
+      position: relative; z-index: 1;
+    }
+    .screenrec-info { padding: 14px 16px; }
+    .screenrec-info h4 { font-size: 13px; font-weight: 600; color: #e4e4e7; margin: 0 0 4px; }
+    .screenrec-info p { font-size: 12px; color: #71717a; margin: 0; line-height: 1.5; }
+
     /* ── Cursor glow ─────────────────────────────── */
     #cursor-glow {
       position: fixed;
@@ -1099,8 +1255,8 @@
         Vidflow
       </div>
       <div class="nav-links">
-        <a href="#who" class="nav-link-hide">For agencies</a>
         <a href="#how" class="nav-link-hide">How it works</a>
+        <a href="#who" class="nav-link-hide">For agencies</a>
         <a href="#faq" class="nav-link-hide">FAQ</a>
         <a href="#waitlist" class="btn-nav">Join waitlist</a>
       </div>
@@ -1154,6 +1310,71 @@
       <span class="eyebrow">The problem</span>
       <h2>Agencies are drowning in Franken-stacks.</h2>
       <p class="section-intro">If you run content for multiple clients, this is probably you.</p>
+
+      <!-- Franken-stack infographic -->
+      <div class="section-infographic reveal">
+        <svg class="franken-svg" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Tool boxes — misaligned, different sizes, broken connectors -->
+          <!-- Box 1: Clip tool (leftmost) -->
+          <g class="franken-tool" style="--fw:-3deg;--fd:0s">
+            <rect x="18" y="38" width="90" height="58" rx="9" fill="rgba(244,63,94,0.09)" stroke="rgba(244,63,94,0.35)" stroke-width="1.3"/>
+            <text x="63" y="62" text-anchor="middle" font-size="8" font-weight="700" fill="#fb7185" font-family="Inter,sans-serif" letter-spacing="0.06em">CLIP TOOL</text>
+            <polygon points="52,70 52,82 72,76" fill="rgba(244,63,94,0.55)"/>
+          </g>
+          <!-- Broken connector 1→2 -->
+          <path d="M108 67 Q130 67 130 90 Q130 112 148 112" fill="none" stroke="rgba(244,63,94,0.25)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <text x="125" y="86" font-size="7" fill="rgba(244,63,94,0.4)" font-family="Inter,sans-serif">✕</text>
+
+          <!-- Box 2: Editor (up and right) -->
+          <g class="franken-tool" style="--fw:2deg;--fd:0.3s">
+            <rect x="148" y="88" width="96" height="52" rx="9" fill="rgba(245,158,11,0.09)" stroke="rgba(245,158,11,0.35)" stroke-width="1.3"/>
+            <text x="196" y="110" text-anchor="middle" font-size="8" font-weight="700" fill="#fbbf24" font-family="Inter,sans-serif" letter-spacing="0.06em">EDITOR</text>
+            <rect x="162" y="118" width="11" height="9" rx="1" fill="rgba(245,158,11,0.4)"/>
+            <rect x="176" y="116" width="8" height="11" rx="1" fill="rgba(245,158,11,0.3)"/>
+            <rect x="187" y="119" width="14" height="8" rx="1" fill="rgba(245,158,11,0.45)"/>
+          </g>
+          <!-- Broken connector 2→3 -->
+          <path d="M244 114 Q268 114 268 82 Q268 52 290 52" fill="none" stroke="rgba(245,158,11,0.22)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <text x="263" y="76" font-size="7" fill="rgba(245,158,11,0.4)" font-family="Inter,sans-serif">✕</text>
+
+          <!-- Box 3: Scheduler (top-center) -->
+          <g class="franken-tool" style="--fw:-4deg;--fd:0.6s">
+            <rect x="290" y="22" width="100" height="58" rx="9" fill="rgba(99,102,241,0.09)" stroke="rgba(99,102,241,0.35)" stroke-width="1.3"/>
+            <text x="340" y="46" text-anchor="middle" font-size="8" font-weight="700" fill="#818cf8" font-family="Inter,sans-serif" letter-spacing="0.06em">SCHEDULER</text>
+            <rect x="304" y="52" width="72" height="20" rx="3" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+            <rect x="307" y="55" width="10" height="8" rx="1" fill="rgba(99,102,241,0.5)"/>
+            <rect x="320" y="55" width="10" height="8" rx="1" fill="rgba(99,102,241,0.25)"/>
+            <rect x="333" y="55" width="10" height="8" rx="1" fill="rgba(99,102,241,0.4)"/>
+          </g>
+          <!-- Broken connector 3→4 -->
+          <path d="M390 52 Q420 52 420 90 Q420 128 436 128" fill="none" stroke="rgba(99,102,241,0.22)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <text x="416" y="108" font-size="7" fill="rgba(99,102,241,0.4)" font-family="Inter,sans-serif">✕</text>
+
+          <!-- Box 4: Drive / spreadsheets (right-center) -->
+          <g class="franken-tool" style="--fw:3deg;--fd:0.9s">
+            <rect x="436" y="106" width="100" height="52" rx="9" fill="rgba(16,185,129,0.09)" stroke="rgba(16,185,129,0.32)" stroke-width="1.3"/>
+            <text x="486" y="126" text-anchor="middle" font-size="8" font-weight="700" fill="#34d399" font-family="Inter,sans-serif" letter-spacing="0.04em">SPREADSHEET</text>
+            <line x1="450" y1="136" x2="518" y2="136" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+            <line x1="450" y1="143" x2="500" y2="143" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+          </g>
+          <!-- Broken connector 4→5 -->
+          <path d="M536 106 Q548 80 560 72" fill="none" stroke="rgba(16,185,129,0.2)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <text x="555" y="90" font-size="7" fill="rgba(16,185,129,0.4)" font-family="Inter,sans-serif">✕</text>
+
+          <!-- Box 5: Email chains (far-right, askew) -->
+          <g class="franken-tool" style="--fw:-5deg;--fd:1.2s">
+            <rect x="558" y="34" width="100" height="52" rx="9" fill="rgba(167,139,250,0.09)" stroke="rgba(167,139,250,0.32)" stroke-width="1.3"/>
+            <text x="608" y="56" text-anchor="middle" font-size="8" font-weight="700" fill="#c084fc" font-family="Inter,sans-serif" letter-spacing="0.04em">EMAIL CHAIN</text>
+            <path d="M572 64 L608 76 L644 64" fill="none" stroke="rgba(167,139,250,0.55)" stroke-width="1.2"/>
+            <line x1="572" y1="64" x2="572" y2="82" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+            <line x1="644" y1="64" x2="644" y2="82" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+            <line x1="572" y1="82" x2="644" y2="82" stroke="rgba(167,139,250,0.3)" stroke-width="1"/>
+          </g>
+
+          <!-- Chaos label at bottom -->
+          <text x="340" y="185" text-anchor="middle" font-size="9.5" font-weight="600" fill="rgba(244,63,94,0.45)" font-family="Inter,sans-serif" letter-spacing="0.06em">— none of them talking to each other —</text>
+        </svg>
+      </div>
 
       <div class="features">
         <div class="feature">
@@ -1340,6 +1561,88 @@
       <span class="eyebrow">What you get</span>
       <h2>Everything an agency needs to run client content at scale.</h2>
       <p class="section-intro">One native workflow for your team and your clients — multi-brand workspaces, approvals, and publishing in a single place.</p>
+
+      <!-- Burst infographic: video screen → platform icons -->
+      <div class="section-infographic reveal">
+        <svg class="burst-svg" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Screen / monitor -->
+          <rect x="155" y="60" width="210" height="130" rx="14" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.4)" stroke-width="1.5"/>
+          <!-- Screen glow -->
+          <rect x="155" y="60" width="210" height="130" rx="14" fill="url(#sg)" opacity="0.5"/>
+          <defs>
+            <radialGradient id="sg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- Monitor stand -->
+          <rect x="243" y="190" width="34" height="12" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <rect x="228" y="202" width="64" height="6" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <!-- Video play button inside screen -->
+          <circle cx="260" cy="125" r="24" fill="rgba(99,102,241,0.25)" stroke="rgba(99,102,241,0.5)" stroke-width="1.5"/>
+          <polygon points="253,115 253,135 274,125" fill="rgba(255,255,255,0.85)"/>
+          <!-- Progress bar -->
+          <rect x="175" y="170" width="170" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+          <rect x="175" y="170" width="80"  height="3" rx="1.5" fill="rgba(99,102,241,0.6)"/>
+
+          <!-- Burst lines from screen to icons -->
+          <line x1="260" y1="60"  x2="260" y2="18"  stroke="rgba(239,68,68,0.4)"   stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="365" y1="90"  x2="420" y2="52"  stroke="rgba(20,184,166,0.4)"  stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="365" y1="155" x2="428" y2="185" stroke="rgba(236,72,153,0.4)"  stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="260" y1="190" x2="260" y2="240" stroke="rgba(59,130,246,0.4)"  stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="155" y1="155" x2="92"  y2="185" stroke="rgba(180,180,190,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+          <line x1="155" y1="90"  x2="100" y2="52"  stroke="rgba(96,165,250,0.4)"  stroke-width="1" stroke-dasharray="3 3"/>
+
+          <!-- YouTube (top) -->
+          <g class="burst-icon" style="--fd:0s">
+            <rect x="234" y="-4" width="52" height="36" rx="10" fill="rgba(239,68,68,0.14)" stroke="rgba(239,68,68,0.4)" stroke-width="1.2"/>
+            <path d="M248 8h16a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-16a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3z" fill="rgba(239,68,68,0.7)"/>
+            <polygon points="254,14 254,22 261,18" fill="white"/>
+            <text x="260" y="38" text-anchor="middle" font-size="7.5" font-weight="700" fill="#f87171" font-family="Inter,sans-serif" letter-spacing="0.05em">YouTube</text>
+          </g>
+
+          <!-- TikTok (upper-right) -->
+          <g class="burst-icon-b" style="--fd:0.4s">
+            <rect x="408" y="30" width="52" height="36" rx="10" fill="rgba(20,184,166,0.12)" stroke="rgba(20,184,166,0.4)" stroke-width="1.2"/>
+            <path d="M428 40h2a5 5 0 0 0 5 5v3a8 8 0 0 1-5-1.5v6a6 6 0 1 1-6-6h1v3h-1a3 3 0 1 0 3 3v-9h2a5 5 0 0 0 5 5v-3.5a5 5 0 0 1-5-5h-1z" fill="rgba(20,184,166,0.8)" stroke="none"/>
+            <text x="434" y="74" text-anchor="middle" font-size="7.5" font-weight="700" fill="#2dd4bf" font-family="Inter,sans-serif" letter-spacing="0.05em">TikTok</text>
+          </g>
+
+          <!-- Instagram (lower-right) -->
+          <g class="burst-icon" style="--fd:0.8s">
+            <rect x="416" y="168" width="52" height="36" rx="10" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.4)" stroke-width="1.2"/>
+            <rect x="425" y="176" width="16" height="16" rx="5" fill="none" stroke="rgba(236,72,153,0.8)" stroke-width="1.5"/>
+            <circle cx="433" cy="184" r="3.5" fill="none" stroke="rgba(236,72,153,0.8)" stroke-width="1.5"/>
+            <circle cx="440" cy="177.5" r="1.2" fill="rgba(236,72,153,0.9)"/>
+            <text x="442" y="212" text-anchor="middle" font-size="7.5" font-weight="700" fill="#f472b6" font-family="Inter,sans-serif" letter-spacing="0.05em">Instagram</text>
+          </g>
+
+          <!-- LinkedIn (bottom) -->
+          <g class="burst-icon-b" style="--fd:1.2s">
+            <rect x="234" y="226" width="52" height="36" rx="10" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.4)" stroke-width="1.2"/>
+            <rect x="243" y="234" width="16" height="16" rx="3" fill="none" stroke="rgba(59,130,246,0.8)" stroke-width="1.5"/>
+            <line x1="247" y1="240" x2="247" y2="246" stroke="rgba(59,130,246,0.9)" stroke-width="1.5"/>
+            <circle cx="247" cy="237.5" r="1.2" fill="rgba(59,130,246,0.9)"/>
+            <path d="M250 240v3a2.5 2.5 0 0 1 5 0v3" fill="none" stroke="rgba(59,130,246,0.9)" stroke-width="1.5"/>
+            <line x1="250" y1="240" x2="250" y2="246" stroke="rgba(59,130,246,0.9)" stroke-width="1.5"/>
+            <text x="260" y="271" text-anchor="middle" font-size="7.5" font-weight="700" fill="#60a5fa" font-family="Inter,sans-serif" letter-spacing="0.05em">LinkedIn</text>
+          </g>
+
+          <!-- X / Twitter (lower-left) -->
+          <g class="burst-icon" style="--fd:1.6s">
+            <rect x="52" y="168" width="52" height="36" rx="10" fill="rgba(200,200,210,0.08)" stroke="rgba(200,200,210,0.3)" stroke-width="1.2"/>
+            <path d="M64 178l4 5.5-4 5.5h1.5l3.2-4.4 2.8 4.4H75l-4.2-5.8 3.8-5.2H73l-3 4.2-2.6-4.2z" fill="rgba(210,210,220,0.85)"/>
+            <text x="78" y="212" text-anchor="middle" font-size="7.5" font-weight="700" fill="#a1a1aa" font-family="Inter,sans-serif" letter-spacing="0.05em">X / Twitter</text>
+          </g>
+
+          <!-- Facebook (upper-left) -->
+          <g class="burst-icon-b" style="--fd:2.0s">
+            <rect x="40" y="30" width="52" height="36" rx="10" fill="rgba(96,165,250,0.12)" stroke="rgba(96,165,250,0.4)" stroke-width="1.2"/>
+            <path d="M66 38h-2a3 3 0 0 0-3 3v2h-2v3h2v8h3v-8h2.5l.5-3h-3v-1.5a1 1 0 0 1 1-1H66z" fill="rgba(96,165,250,0.85)"/>
+            <text x="66" y="74" text-anchor="middle" font-size="7.5" font-weight="700" fill="#93c5fd" font-family="Inter,sans-serif" letter-spacing="0.05em">Facebook</text>
+          </g>
+        </svg>
+      </div>
 
       <div class="bento">
 
@@ -1583,6 +1886,7 @@
       <span class="eyebrow">Distribution</span>
       <h2>One queue. Every platform.</h2>
       <p class="section-intro">Publish video, image, and text from one place. Connect each account once — Vidflow handles the rest.</p>
+      <p class="section-intro" style="margin-top:-30px;font-size:15px">Every clip gets optimized for its platform: aspect ratio, caption style, length, and timing. No reformatting. No copy-paste. Just hit publish and Vidflow puts the right content in front of the right audience on every channel simultaneously.</p>
 
       <div class="distrib-wrap" id="distrib-section">
         <div class="distrib-container">
@@ -1658,6 +1962,77 @@
 
         </div><!-- /distrib-container -->
       </div><!-- /distrib-wrap -->
+
+      <!-- Screen recording placeholders -->
+      <div class="screenrec-grid">
+
+        <div class="screenrec-card reveal">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>Upload &amp; auto-import</h4>
+            <p>Show dragging an episode file in, then the auto-import from a connected Google Drive folder triggering automatically.</p>
+          </div>
+        </div>
+
+        <div class="screenrec-card reveal" style="--reveal-delay:80ms">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>AI clip generation</h4>
+            <p>Walk through the clip review screen — AI-selected moments, trim handles, reframe preview, caption overlay toggle.</p>
+          </div>
+        </div>
+
+        <div class="screenrec-card reveal" style="--reveal-delay:160ms">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>Content calendar &amp; scheduling</h4>
+            <p>Drag posts onto calendar slots, set recurring times per platform, confirm the queue populates automatically.</p>
+          </div>
+        </div>
+
+        <div class="screenrec-card reveal" style="--reveal-delay:240ms">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>Client approval flow</h4>
+            <p>Send a review link, show the client-side approval view (no login), then watch status update to Approved in the dashboard.</p>
+          </div>
+        </div>
+
+        <div class="screenrec-card reveal" style="--reveal-delay:320ms">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>Multi-workspace dashboard</h4>
+            <p>Switch between client workspaces, show brand voice profiles, role-based access controls, and white-label approval emails.</p>
+          </div>
+        </div>
+
+        <div class="screenrec-card reveal" style="--reveal-delay:400ms">
+          <div class="screenrec-placeholder">
+            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
+            <span class="screenrec-placeholder-label">Recording needed</span>
+          </div>
+          <div class="screenrec-info">
+            <h4>Cross-platform analytics</h4>
+            <p>Show unified analytics view across platforms, then export a branded client report in one click.</p>
+          </div>
+        </div>
+
+      </div><!-- /screenrec-grid -->
     </section>
 
     <!-- ── WHO IT'S FOR ──────────────────────────── -->
@@ -1728,8 +2103,8 @@
           <div class="feature-icon" style="margin-bottom:20px">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Direct line to the founder</h3>
-          <p>Early access means real influence over what gets built next — you'll have a direct channel to shape the roadmap around how your agency actually works.</p>
+          <h3>Shape the roadmap</h3>
+          <p>Founder members get priority input on what gets built next. If something in your workflow needs to work differently, we want to hear it — and we build accordingly.</p>
         </div>
       </div>
     </section>
@@ -1739,28 +2114,28 @@
       <div class="narrow">
         <span class="eyebrow">FAQ</span>
         <h2>Frequently asked questions</h2>
-        <p class="section-intro">If you have a question we haven't answered, email <a href="mailto:landon@cosmicarcmedia.com" style="color:#a5a5ff">landon@cosmicarcmedia.com</a> — we read every one.</p>
+        <p class="section-intro">If you have a question we haven't answered, use the contact form below — we read every one.</p>
 
         <div class="faq">
           <details class="faq-item">
             <summary>When does Vidflow launch?</summary>
-            <div class="faq-body">We're rolling out early access to waitlist members now, then opening to the public later this year. Waitlist members get invited in batches before everyone else.</div>
+            <div class="faq-body">We're rolling out early access to waitlist members soon, then opening to the public later this year. Waitlist members get invited in batches before anyone else.</div>
           </details>
           <details class="faq-item">
             <summary>Is Vidflow only for agencies?</summary>
-            <div class="faq-body">No. Vidflow works for anyone with long-form video or audio — we're just building and pricing it first for the people with the heaviest workload: agencies running content for multiple clients.</div>
+            <div class="faq-body">No. It's made for anyone with long-form video or audio. We're just building and pricing it first for the people with the heaviest workload, agencies running content for multiple clients.</div>
           </details>
           <details class="faq-item">
             <summary>What platforms can I publish to?</summary>
-            <div class="faq-body">YouTube (long-form and Shorts), Instagram (Reels, posts, carousels), TikTok, Facebook, LinkedIn (posts and articles), X / Twitter, and podcast apps via RSS (Apple Podcasts, Spotify, and more). More on the roadmap.</div>
+            <div class="faq-body">YouTube (long-form and Shorts), Instagram (Reels, posts, carousels), TikTok, Facebook, LinkedIn (posts and articles), and X / Twitter. More on the roadmap.</div>
           </details>
           <details class="faq-item">
             <summary>How much will it cost?</summary>
-            <div class="faq-body">Final pricing launches with tiers for creators and agencies — expect creator plans starting under $50/month and agency plans in the low hundreds. Waitlist members get discounted founder rates on day one, locked in for life.</div>
+            <div class="faq-body">We will be announcing pricing soon. Our founder rates will be the best deal, locked in forever.</div>
           </details>
           <details class="faq-item">
             <summary>Can I bring my own AI keys?</summary>
-            <div class="faq-body">On higher-volume plans, yes. Agencies can plug in their own clipping and AI provider keys per workspace to control costs at scale — otherwise Vidflow's built-in engine handles it with nothing for you to set up.</div>
+            <div class="faq-body">On higher-volume plans, yes. Agencies can plug in their own clipping and AI provider keys per workspace to control costs at scale, otherwise Vidflow's built-in engine handles it with nothing for you to set up.</div>
           </details>
           <details class="faq-item">
             <summary>Do my clients need a Vidflow account?</summary>
@@ -1771,6 +2146,33 @@
             <div class="faq-body">No. Vidflow runs in the browser. Upload directly, or connect a Google Drive or Dropbox folder and we pull episodes for you.</div>
           </details>
         </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ──────────────────────────────── -->
+    <section class="section section-center" id="contact">
+      <div class="contact-section">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Have a question?</h2>
+        <p class="section-intro" style="margin-bottom:36px">Drop us a message and we'll get back to you.</p>
+        <form class="contact-form" id="contact-form">
+          <div class="cf-row">
+            <div class="cf-field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="cf-field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="cf-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="cf-submit">Send message</button>
+        </form>
+        <div class="cf-success" id="cf-success">✓ Message sent — we'll be in touch.</div>
       </div>
     </section>
 
@@ -1882,6 +2284,34 @@
 
     wireForm(document.getElementById('waitlist-form'));
     wireForm(document.getElementById('waitlist-form-bottom'));
+
+    // ── Contact form ──────────────────────────────────────────────────────
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      const btn = form.querySelector('.cf-submit');
+      const success = document.getElementById('cf-success');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form));
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        try {
+          await fetch(WAITLIST_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ ...data, source: 'vidflow.io-contact' }),
+          });
+          form.style.display = 'none';
+          success.classList.add('visible');
+        } catch {
+          btn.disabled = false;
+          btn.textContent = 'Try again';
+          setTimeout(() => { btn.textContent = 'Send message'; }, 3000);
+        }
+      });
+    })();
 
     // ── Distribution hub: staggered node entrance animation ──────────────
     (function () {
