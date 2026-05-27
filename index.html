@@ -62,10 +62,10 @@
       transition: background 0.35s ease, border-bottom-color 0.35s ease, backdrop-filter 0.35s ease;
     }
     nav.nav-scrolled {
-      background: rgba(10,10,12,0.72);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom-color: rgba(255,255,255,0.05);
+      background: rgba(12,12,22,0.48);
+      backdrop-filter: blur(20px) saturate(1.5);
+      -webkit-backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom-color: rgba(255,255,255,0.06);
     }
     .logo {
       display: flex;
@@ -96,16 +96,17 @@
     nav .nav-links a { transition: color 0.15s ease; }
     nav .nav-links a:hover { color: #e8e8eb; }
     nav .btn-nav {
-      padding: 8px 16px;
-      background: linear-gradient(135deg, #2563eb, #8b5cf6 55%, #ec4899);
+      padding: 8px 18px;
+      background: linear-gradient(135deg, #f378a2, #ef4e84 50%, #ab347a);
       border: none;
       border-radius: 8px;
       color: #fff;
       font-weight: 600;
-      box-shadow: 0 2px 12px rgba(139,92,246,0.35);
-      transition: opacity 0.15s ease, box-shadow 0.15s ease;
+      font-size: 14px;
+      box-shadow: 0 2px 14px rgba(236,72,153,0.3);
+      transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
-    nav .btn-nav:hover { opacity: 0.88; box-shadow: 0 4px 18px rgba(139,92,246,0.45); }
+    nav .btn-nav:hover { opacity: 0.9; box-shadow: 0 4px 22px rgba(236,72,153,0.45); transform: translateY(-1px); }
     @media (max-width: 700px) {
       nav .nav-links .nav-link-hide { display: none; }
     }
@@ -461,10 +462,39 @@
     }
     .audience-card {
       padding: 32px 28px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
       border-radius: 16px;
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
+    /* Per-tier color tints */
+    .audience-card--pink {
+      background: radial-gradient(ellipse at top left, rgba(236,72,153,0.1) 0%, transparent 65%), rgba(255,255,255,0.02);
+      border-color: rgba(236,72,153,0.22);
+    }
+    .audience-card--violet {
+      background: radial-gradient(ellipse at top left, rgba(167,139,250,0.1) 0%, transparent 65%), rgba(255,255,255,0.02);
+      border-color: rgba(167,139,250,0.22);
+    }
+    .audience-card--indigo {
+      background: radial-gradient(ellipse at top left, rgba(99,102,241,0.1) 0%, transparent 65%), rgba(255,255,255,0.02);
+      border-color: rgba(99,102,241,0.22);
+    }
+    .audience-card--pink:hover  { border-color: rgba(236,72,153,0.42);  box-shadow: 0 0 28px rgba(236,72,153,0.1);  }
+    .audience-card--violet:hover{ border-color: rgba(167,139,250,0.42); box-shadow: 0 0 28px rgba(167,139,250,0.1); }
+    .audience-card--indigo:hover{ border-color: rgba(99,102,241,0.42);  box-shadow: 0 0 28px rgba(99,102,241,0.1);  }
+    /* Tier badge on each card */
+    .audience-card .tier-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 16px;
+      border: 1px solid;
+    }
+    .audience-card--pink  .tier-badge { color: #f9a8d4; background: rgba(236,72,153,0.12);  border-color: rgba(236,72,153,0.3);  }
+    .audience-card--violet .tier-badge{ color: #c084fc; background: rgba(167,139,250,0.12); border-color: rgba(167,139,250,0.3); }
+    .audience-card--indigo .tier-badge{ color: #a5b4fc; background: rgba(99,102,241,0.12);  border-color: rgba(99,102,241,0.3);  }
     .audience-card h3 { font-size: 19px; margin-bottom: 12px; }
     .audience-card p { font-size: 14px; color: #a1a1aa; margin: 0 0 16px; }
     .audience-card ul {
@@ -478,13 +508,14 @@
       display: flex;
       gap: 10px;
       padding: 6px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
-    .audience-card ul li::before {
-      content: '✓';
-      color: #6366f1;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
+    .audience-card ul li:first-child { border-top: none; }
+    .audience-card--pink   ul li::before { content: '✓'; color: #f472b6; font-weight: 700; flex-shrink: 0; }
+    .audience-card--violet ul li::before { content: '✓'; color: #c084fc; font-weight: 700; flex-shrink: 0; }
+    .audience-card--indigo ul li::before { content: '✓'; color: #818cf8; font-weight: 700; flex-shrink: 0; }
+    /* Hover glow for feature icons inside audience/founder cards */
+    .audience-card:hover .feature-icon:not([class*="fi-"]) { transform: scale(1.1); box-shadow: 0 0 28px rgba(99,102,241,0.5); }
 
     /* ── FAQ ─────────────────────────────────────── */
     .faq { display: flex; flex-direction: column; gap: 12px; }
@@ -493,9 +524,18 @@
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 12px;
       overflow: hidden;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
-    details.faq-item[open] { border-color: rgba(99,102,241,0.3); }
+    details.faq-item:hover {
+      border-color: rgba(99,102,241,0.22);
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.08), 0 4px 24px rgba(99,102,241,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+    details.faq-item[open] {
+      border-color: rgba(99,102,241,0.35);
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.12), 0 4px 32px rgba(99,102,241,0.12);
+      background: rgba(99,102,241,0.04);
+    }
     details.faq-item summary {
       padding: 20px 24px;
       cursor: pointer;
@@ -503,22 +543,41 @@
       color: #fff;
       list-style: none;
       position: relative;
-      padding-right: 48px;
+      padding-right: 52px;
       font-size: 15px;
+      transition: color 0.2s ease;
     }
+    details.faq-item:hover summary { color: #e8e8ff; }
+    details.faq-item[open] summary { color: #c4c4ff; }
     details.faq-item summary::-webkit-details-marker { display: none; }
     details.faq-item summary::after {
       content: '+';
       position: absolute;
-      right: 24px;
+      right: 20px;
       top: 50%;
-      transform: translateY(-50%);
-      font-size: 22px;
+      transform: translateY(-50%) rotate(0deg);
+      font-size: 20px;
       font-weight: 300;
-      color: #71717a;
-      transition: transform 0.2s ease;
+      color: #6366f1;
+      transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), color 0.2s ease, opacity 0.2s ease;
+      width: 26px; height: 26px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 6px;
+      background: rgba(99,102,241,0.1);
     }
-    details.faq-item[open] summary::after { content: '−'; }
+    details.faq-item[open] summary::after {
+      content: '−';
+      transform: translateY(-50%) rotate(180deg);
+      color: #818cf8;
+      background: rgba(99,102,241,0.18);
+    }
+    @keyframes faqBodyIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    details.faq-item[open] .faq-body {
+      animation: faqBodyIn 0.22s cubic-bezier(.2,.8,.2,1) forwards;
+    }
     details.faq-item .faq-body {
       padding: 0 24px 22px;
       color: #a1a1aa;
@@ -912,6 +971,13 @@
     }
     .dp-center svg { width: 36px; height: 25px; }
     .dp-center-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.07em; color: #a1a1aa; text-transform: uppercase; }
+    /* Platform-specific hover glows */
+    .dp--yt:hover .dp-icon { box-shadow: 0 0 26px rgba(239,68,68,0.65);  border-color: rgba(239,68,68,0.6) !important; }
+    .dp--tk:hover .dp-icon { box-shadow: 0 0 26px rgba(20,184,166,0.65); border-color: rgba(20,184,166,0.6) !important; }
+    .dp--ig:hover .dp-icon { box-shadow: 0 0 26px rgba(236,72,153,0.65); border-color: rgba(236,72,153,0.6) !important; }
+    .dp--li:hover .dp-icon { box-shadow: 0 0 26px rgba(59,130,246,0.65); border-color: rgba(59,130,246,0.6) !important; }
+    .dp--x:hover  .dp-icon { box-shadow: 0 0 22px rgba(200,200,210,0.5); border-color: rgba(200,200,210,0.5) !important; }
+    .dp--fb:hover .dp-icon { box-shadow: 0 0 26px rgba(96,165,250,0.65); border-color: rgba(96,165,250,0.6) !important; }
     @keyframes hubPulse {
       0%,100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
       50%      { box-shadow: 0 0 38px rgba(236,72,153,0.25), 0 0 20px rgba(99,102,241,0.15); }
@@ -952,9 +1018,59 @@
     }
     #problem .feature-icon svg { color: #fb7185; }
 
+    /* ── Bento half-width (span 3 of 6) ─────────── */
+    .bento-item--half { grid-column: span 3; }
+    @media (max-width: 800px) { .bento-item--half { grid-column: span 2; } }
+    @media (max-width: 500px) { .bento-item--half { grid-column: span 1; } }
+
+    /* ── fviz column label color variants ────────── */
+    .fviz-col-label--blue    { color: #60a5fa; }
+    .fviz-col-label--emerald { color: #34d399; }
+
+    /* ── Step number color variants ──────────────── */
+    .step-number--blue    { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .step-number--violet  { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .step-number--emerald { background: linear-gradient(135deg, #059669, #34d399); }
+
+    /* ── Distribution node entrance animation ────── */
+    @keyframes nodeIn {
+      from { opacity: 0; transform: scale(0.6) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes lineIn {
+      from { stroke-dashoffset: 120; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .dp-node { opacity: 0; }
+    .dp-node.dp-visible {
+      animation: nodeIn 0.4s cubic-bezier(.34,1.4,.64,1) forwards;
+    }
+
+    /* ── Mobile optimizations ────────────────────── */
+    @media (max-width: 600px) {
+      nav { padding: 14px 0; }
+      .hero { padding: 48px 0 32px; }
+      section.section { padding: 64px 0; }
+      h2 { font-size: clamp(24px, 6vw, 38px); }
+      .subtitle { font-size: 16px; }
+      .section-intro { font-size: 15px; }
+      .faq .faq-item summary { font-size: 14px; padding: 16px 18px; padding-right: 46px; }
+      .faq .faq-item .faq-body { padding: 0 18px 18px; font-size: 14px; }
+      .audience-card { padding: 24px 20px; }
+      .bento-item { padding: 20px 18px; }
+      .final-cta { padding: 48px 20px; border-radius: 14px; }
+      .distrib-container { transform: scale(0.5); transform-origin: top center; margin-bottom: -210px; }
+    }
+    @media (max-width: 420px) {
+      .distrib-container { transform: scale(0.42); transform-origin: top center; margin-bottom: -240px; }
+    }
+    @media (min-width: 601px) and (max-width: 800px) {
+      .distrib-container { transform: scale(0.68); transform-origin: top center; margin-bottom: -134px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
-      .fviz-arrow-line, .fviz-arrow-tip { transition: none; opacity: 1; transform: none; }
+      .fviz-arrow-line, .fviz-arrow-tip, .dp-node { transition: none; opacity: 1; transform: none; animation: none; }
     }
   </style>
 </head>
@@ -1090,7 +1206,7 @@
               </div>
             </div>
           </div>
-          <div class="fviz-col-label">Episode upload</div>
+          <div class="fviz-col-label fviz-col-label--blue">Episode upload</div>
         </div>
 
         <!-- Arrow 1 -->
@@ -1146,7 +1262,7 @@
               <div class="fviz-post-plat">Instagram</div>
             </div>
           </div>
-          <div class="fviz-col-label">AI-generated content</div>
+          <div class="fviz-col-label">AI built content</div>
         </div>
 
         <!-- Arrow 2 -->
@@ -1196,23 +1312,23 @@
               <div class="fviz-cal-cell fviz-cal-event fviz-cal-event--post" style="--ei:18">X</div>
             </div>
           </div>
-          <div class="fviz-col-label">Content calendar</div>
+          <div class="fviz-col-label fviz-col-label--emerald">Content calendar</div>
         </div>
       </div>
 
       <div class="steps">
         <div class="step">
-          <div class="step-number">1</div>
+          <div class="step-number step-number--blue">1</div>
           <h3>Drop in the episode</h3>
           <p>Upload long-form video or audio, or auto-import from Google Drive or Dropbox. Vidflow transcribes it, finds the key moments, and tags everything.</p>
         </div>
         <div class="step">
-          <div class="step-number">2</div>
+          <div class="step-number step-number--violet">2</div>
           <h3>AI builds the campaign</h3>
           <p>Vidflow cuts 10–30 short clips, reframes them vertical, generates platform-native captions in your client's brand voice, and creates matching image and text posts.</p>
         </div>
         <div class="step">
-          <div class="step-number">3</div>
+          <div class="step-number step-number--emerald">3</div>
           <h3>Approve and schedule everywhere</h3>
           <p>Drag posts onto a single calendar, send clients an approval link (no login), and publish across YouTube, Instagram, TikTok, LinkedIn, X, Facebook, and podcast platforms.</p>
         </div>
@@ -1271,8 +1387,8 @@
           <p>Recurring slots like "Mondays at 10am for TikTok" — Vidflow auto-fills the queue.</p>
         </div>
 
-        <!-- Wide: Client approval -->
-        <div class="bento-item bento-item--wide bento-item--tint-pink">
+        <!-- Half: Client approval -->
+        <div class="bento-item bento-item--half bento-item--tint-pink">
           <div class="feature-icon fi-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Client approval workflow</h3>
           <p>Send clients a review link — they approve or leave comments with no account needed. Built for agencies running content across multiple brands.</p>
@@ -1287,8 +1403,8 @@
           </div>
         </div>
 
-        <!-- Wide: Workflow builder (with mini flow viz) -->
-        <div class="bento-item bento-item--wide bento-item--tint-violet">
+        <!-- Half: Workflow builder (with mini flow viz) -->
+        <div class="bento-item bento-item--half bento-item--tint-violet">
           <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
           <h3>Visual workflow builder</h3>
           <p>Drag nodes to design custom automation — one episode fans out to clips, captions, posts, and approvals automatically.</p>
@@ -1440,8 +1556,8 @@
           <p>Watch a Drive or Dropbox folder. Vidflow ingests, transcribes, and tags everything automatically.</p>
         </div>
 
-        <!-- Wide: Analytics -->
-        <div class="bento-item bento-item--wide bento-item--tint-violet">
+        <!-- Half: Analytics (pairs with auto-import to fill row) -->
+        <div class="bento-item bento-item--half bento-item--tint-violet">
           <div class="feature-icon fi-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
           <h3>Cross-platform analytics</h3>
           <p>Track views, engagement, and audience growth across every connected platform. Export branded reports for clients in one click.</p>
@@ -1468,99 +1584,76 @@
       <h2>One queue. Every platform.</h2>
       <p class="section-intro">Publish video, image, and text from one place. Connect each account once — Vidflow handles the rest.</p>
 
-      <div class="distrib-wrap">
+      <div class="distrib-wrap" id="distrib-section">
         <div class="distrib-container">
 
-          <!-- SVG connection lines -->
+          <!-- SVG connection lines — 6 platforms at 60° intervals, hub at (380,196) -->
           <svg class="distrib-svg" viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg">
-            <!-- hub center ~(380,196) to each platform icon center -->
-            <line class="dp-line" x1="380" y1="196" x2="380" y2="64"  stroke="rgba(239,68,68,0.5)"   stroke-width="1.5"/><!-- YouTube   -->
-            <line class="dp-line" x1="380" y1="196" x2="490" y2="109" stroke="rgba(20,184,166,0.5)"  stroke-width="1.5" style="animation-delay:-0.7s"/><!-- TikTok -->
-            <line class="dp-line" x1="380" y1="196" x2="535" y2="195" stroke="rgba(236,72,153,0.5)"  stroke-width="1.5" style="animation-delay:-1.4s"/><!-- Instagram -->
-            <line class="dp-line" x1="380" y1="196" x2="490" y2="305" stroke="rgba(59,130,246,0.5)"  stroke-width="1.5" style="animation-delay:-2.1s"/><!-- LinkedIn   -->
-            <line class="dp-line" x1="380" y1="196" x2="380" y2="350" stroke="rgba(180,180,190,0.4)" stroke-width="1.5" style="animation-delay:-2.8s"/><!-- X          -->
-            <line class="dp-line" x1="380" y1="196" x2="270" y2="305" stroke="rgba(96,165,250,0.5)"  stroke-width="1.5" style="animation-delay:-3.5s"/><!-- Facebook   -->
-            <line class="dp-line" x1="380" y1="196" x2="225" y2="195" stroke="rgba(34,197,94,0.5)"   stroke-width="1.5" style="animation-delay:-4.2s"/><!-- Spotify    -->
-            <line class="dp-line" x1="380" y1="196" x2="270" y2="109" stroke="rgba(168,85,247,0.5)"  stroke-width="1.5" style="animation-delay:-4.9s"/><!-- Apple      -->
+            <line class="dp-line" x1="380" y1="196" x2="380" y2="46"  stroke="rgba(239,68,68,0.55)"   stroke-width="1.5"/><!-- YouTube top     -->
+            <line class="dp-line" x1="380" y1="196" x2="570" y2="121" stroke="rgba(20,184,166,0.55)"  stroke-width="1.5" style="animation-delay:-0.9s"/><!-- TikTok upper-r  -->
+            <line class="dp-line" x1="380" y1="196" x2="570" y2="271" stroke="rgba(236,72,153,0.55)"  stroke-width="1.5" style="animation-delay:-1.8s"/><!-- Instagram lower-r-->
+            <line class="dp-line" x1="380" y1="196" x2="380" y2="346" stroke="rgba(59,130,246,0.55)"  stroke-width="1.5" style="animation-delay:-2.7s"/><!-- LinkedIn bottom  -->
+            <line class="dp-line" x1="380" y1="196" x2="190" y2="271" stroke="rgba(180,180,190,0.45)" stroke-width="1.5" style="animation-delay:-3.6s"/><!-- X lower-left     -->
+            <line class="dp-line" x1="380" y1="196" x2="190" y2="121" stroke="rgba(96,165,250,0.55)"  stroke-width="1.5" style="animation-delay:-4.5s"/><!-- Facebook upper-l  -->
           </svg>
 
-          <!-- ── Center hub (Vidflow) ── -->
+          <!-- ── Center hub — video/media icon ── -->
           <div class="dp-center" style="top:155px;left:339px">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1467.35 1007.59">
-              <defs>
-                <linearGradient id="dp-hub-g" x1="0" y1="503.8" x2="1467.35" y2="503.8" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#f378a2"/><stop offset=".54" stop-color="#ef4e84"/><stop offset="1" stop-color="#ab347a"/>
-                </linearGradient>
-              </defs>
-              <path fill="url(#dp-hub-g)" d="M1463.35,567.15c-1.77,13.94-13.63,24.39-27.69,24.35l-32.24-.09c-12.59-.04-23.72,8.37-26.92,20.55-5.25,19.95-12.01,39.76-20.34,59.3-7.44,17.45-15.91,34.15-25.31,50.06-6.43,10.88-4.66,24.73,4.25,33.69l22.74,22.87c9.91,9.96,10.81,25.75,2.15,36.81-25.85,33.01-55.45,62.25-87.89,87.34-11.1,8.59-26.86,7.56-36.76-2.39l-22.73-22.86c-8.89-8.94-22.72-10.84-33.61-4.48-34.27,20-71.18,35.17-109.6,45.03-12.21,3.14-20.71,14.2-20.75,26.81l-.09,32.22c-.04,14.03-10.53,25.84-24.46,27.54-40.73,4.97-82.33,4.99-123.9-.3-13.94-1.77-24.39-13.63-24.35-27.69l.09-32.24c.04-12.59-8.37-23.72-20.55-26.92-19.95-5.25-39.76-12.01-59.3-20.34-17.45-7.44-34.15-15.91-50.05-25.31-10.88-6.43-24.73-4.66-33.69,4.25l-22.86,22.73c-9.98,9.92-25.77,10.8-36.84,2.12-33.02-25.86-62.26-55.47-87.35-87.92-6.66-8.61-23.91-20.28-64.38-19.92-.18,0-.33-.01-.5-.01H125.21c-26.45,0-47.82-21.78-47.13-48.39.66-25.73,22.46-45.9,48.19-45.9h296.68s45.06,0,45.06,0h86.36c.71,0,1.41.02,2.11.05,0,0,43.52,0,74.9-.02,19.08,0,36.93,9.06,48.53,24.21,37.26,48.68,87.38,88.42,147.88,113.2,181.91,74.51,390.66-11.54,466.65-193.97,76.07-182.64-12.06-394.47-195.14-469.45-145.57-59.62-308.31-16.42-406.47,96.71-19.73,22.73-48.47,35.61-78.57,35.57-46.27-.06-107.07-.09-107.07-.09-.05-.03-.1-.06-.15-.1h-47.33c-26.45,0-47.82-21.78-47.13-48.39s22.46-45.9,48.19-45.9h34.09c.66-.05,1.35-.08,2.07-.08,52.04,0,63.98-8.96,70.13-16.82,25.86-33.03,55.45-62.27,87.9-87.37,11.11-8.6,26.89-7.6,36.79,2.36l22.73,22.86c8.89,8.94,22.72,10.84,33.61,4.48,34.27-20,71.18-35.17,109.6-45.03,12.21-3.14,20.71-14.2,20.75-26.81l.09-32.23c.04-14.03,10.53-25.84,24.46-27.54,40.73-4.97,82.33-5,123.9.3,13.94,1.77,24.39,13.63,24.35,27.69l-.09,32.24c-.04,12.59,8.37,23.72,20.55,26.92,19.95,5.25,39.76,12.01,59.3,20.34,17.45,7.44,34.15,15.91,50.06,25.31,10.88,6.43,24.73,4.66,33.69-4.25l22.87-22.74c9.96-9.91,25.75-10.81,36.81-2.15,33.01,25.85,62.25,55.45,87.34,87.89,8.59,11.1,7.56,26.86-2.39,36.76l-22.86,22.73c-8.94,8.89-10.84,22.72-4.48,33.61,20,34.27,35.17,71.18,45.03,109.6,3.14,12.21,14.2,20.71,26.81,20.75l32.23.09c14.03.04,25.84,10.53,27.54,24.46,4.97,40.73,4.99,82.33-.3,123.9ZM125.21,304.18h172.72c26.04,0,47.15-21.11,47.15-47.15s-21.11-47.15-47.15-47.15H125.21c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15ZM424.83,535.49c-.63,0-1.26-.02-1.88-.05h-73.34c-25.74,0-47.53,20.18-48.19,45.9s20.68,48.39,47.13,48.39h74.42c.62-.03,1.23-.05,1.86-.05h172.37c14.98,0,25.96-14.29,21.87-28.7-2.9-10.19-5.35-20.52-7.35-30.96-3.83-20.01-21.21-34.53-41.58-34.53h-46.76s-98.55,0-98.55,0ZM47.15,467.1h474.12c26.04,0,47.91-21.33,51.32-47.15,5.06-38.25,0-47.15-47.15-47.15H47.15c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15ZM180.65,582.58c0-26.04-21.11-47.15-47.15-47.15H47.15c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15h86.36c26.04,0,47.15-21.11,47.15-47.15ZM916.85,662.51l210.78-121.7c28.49-16.45,28.49-57.58,0-74.03l-210.78-121.7c-28.49-16.45-64.11,4.11-64.11,37.01v243.39c0,32.9,35.62,53.46,64.11,37.01Z"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+              <polygon points="9.5,9.5 16,12 9.5,14.5" fill="rgba(255,255,255,0.9)" stroke="none"/>
             </svg>
-            <span class="dp-center-lbl">Vidflow</span>
+            <span class="dp-center-lbl">Your Media</span>
           </div>
 
-          <!-- ── Platform nodes ── -->
+          <!-- ── Platform nodes — 6 evenly at 60° ── -->
 
-          <!-- YouTube (top-center) -->
-          <div class="dp-node" style="top:16px;left:350px">
+          <!-- YouTube — top (0°) -->
+          <div class="dp-node dp--yt" style="top:22px;left:350px">
             <div class="dp-icon" style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.35);color:#f87171">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="currentColor" opacity=".85"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0a0a0c"/></svg>
             </div>
             <span class="dp-label" style="color:#f87171">YouTube</span>
           </div>
 
-          <!-- TikTok (upper-right) -->
-          <div class="dp-node" style="top:61px;left:460px">
+          <!-- TikTok — upper-right (60°) -->
+          <div class="dp-node dp--tk" style="top:97px;left:540px">
             <div class="dp-icon" style="background:rgba(20,184,166,0.12);border-color:rgba(20,184,166,0.35);color:#2dd4bf">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </div>
             <span class="dp-label" style="color:#2dd4bf">TikTok</span>
           </div>
 
-          <!-- Instagram (right) -->
-          <div class="dp-node" style="top:171px;left:505px">
+          <!-- Instagram — lower-right (120°) -->
+          <div class="dp-node dp--ig" style="top:247px;left:540px">
             <div class="dp-icon" style="background:rgba(236,72,153,0.12);border-color:rgba(236,72,153,0.35);color:#f472b6">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </div>
             <span class="dp-label" style="color:#f472b6">Instagram</span>
           </div>
 
-          <!-- LinkedIn (lower-right) -->
-          <div class="dp-node" style="top:281px;left:460px">
+          <!-- LinkedIn — bottom (180°) -->
+          <div class="dp-node dp--li" style="top:322px;left:350px">
             <div class="dp-icon" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.35);color:#60a5fa">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><circle cx="8" cy="7.5" r="1.5" fill="currentColor" stroke="none"/><path d="M12 17v-4a2.5 2.5 0 0 1 5 0v4"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
             </div>
             <span class="dp-label" style="color:#60a5fa">LinkedIn</span>
           </div>
 
-          <!-- X / Twitter (bottom-center) -->
-          <div class="dp-node" style="top:326px;left:350px">
+          <!-- X / Twitter — lower-left (240°) -->
+          <div class="dp-node dp--x" style="top:247px;left:160px">
             <div class="dp-icon" style="background:rgba(200,200,210,0.1);border-color:rgba(200,200,210,0.28);color:#d4d4d8">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l6.9 9.1L4 20h2.5l5.3-6.1L16.2 20H20l-7.2-9.5L20 4h-2.5l-5 5.7L8 4z"/></svg>
             </div>
             <span class="dp-label" style="color:#a1a1aa">X / Twitter</span>
           </div>
 
-          <!-- Facebook (lower-left) -->
-          <div class="dp-node" style="top:281px;left:240px">
+          <!-- Facebook — upper-left (300°) -->
+          <div class="dp-node dp--fb" style="top:97px;left:160px">
             <div class="dp-icon" style="background:rgba(96,165,250,0.12);border-color:rgba(96,165,250,0.35);color:#93c5fd">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </div>
             <span class="dp-label" style="color:#93c5fd">Facebook</span>
-          </div>
-
-          <!-- Spotify (left) -->
-          <div class="dp-node" style="top:171px;left:165px">
-            <div class="dp-icon" style="background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.35);color:#4ade80">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c2.5-1 5.5-1 8 0" stroke-width="1.8"/><path d="M7 10.5c3.5-1.5 7.5-1.5 10 0" stroke-width="1.8"/><path d="M9 16.5c2-.7 4-.7 6 0" stroke-width="1.8"/></svg>
-            </div>
-            <span class="dp-label" style="color:#4ade80">Spotify</span>
-          </div>
-
-          <!-- Apple Podcasts (upper-left) -->
-          <div class="dp-node" style="top:61px;left:210px">
-            <div class="dp-icon" style="background:rgba(168,85,247,0.12);border-color:rgba(168,85,247,0.35);color:#c084fc">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg>
-            </div>
-            <span class="dp-label" style="color:#c084fc">Podcasts</span>
           </div>
 
         </div><!-- /distrib-container -->
@@ -1574,7 +1667,8 @@
       <p class="section-intro">Vidflow is built first for the people with the heaviest workload — agencies running content for multiple brands — and works just as well for solo creators.</p>
 
       <div class="audience">
-        <div class="audience-card">
+        <div class="audience-card audience-card--pink">
+          <div class="tier-badge">Agency Tier</div>
           <h3>Content &amp; social agencies</h3>
           <p>Run content for multiple brands without the chaos. Workspaces, role-based access, and built-in approvals.</p>
           <ul>
@@ -1584,7 +1678,8 @@
             <li>White-labelable approval emails</li>
           </ul>
         </div>
-        <div class="audience-card">
+        <div class="audience-card audience-card--violet">
+          <div class="tier-badge">Creator Tier</div>
           <h3>Creators &amp; YouTubers</h3>
           <p>Turn every upload into a full week of short-form, without editing clips at midnight.</p>
           <ul>
@@ -1594,7 +1689,8 @@
             <li>Auto-import from Drive</li>
           </ul>
         </div>
-        <div class="audience-card">
+        <div class="audience-card audience-card--indigo">
+          <div class="tier-badge">Podcast Tier</div>
           <h3>Podcasters</h3>
           <p>Stop editing at midnight just to promote the show. One episode becomes a week of content.</p>
           <ul>
@@ -1614,21 +1710,21 @@
       <p class="section-intro">While we're in early access, the people who join now get the best deal we'll ever offer.</p>
 
       <div class="audience">
-        <div class="audience-card">
-          <div class="feature-icon" style="margin-bottom:20px">
+        <div class="audience-card audience-card--pink">
+          <div class="feature-icon fi-pink" style="margin-bottom:20px">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3>Free trial to kick the tires</h3>
           <p>Early-access accounts get a hands-on trial period to run real client work through the product before committing to a plan.</p>
         </div>
-        <div class="audience-card">
-          <div class="feature-icon" style="margin-bottom:20px">
+        <div class="audience-card audience-card--violet">
+          <div class="feature-icon fi-violet" style="margin-bottom:20px">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-4 0v2"/></svg>
           </div>
           <h3>Founder pricing, locked for life</h3>
           <p>A meaningful discount off public pricing — locked in for as long as your account stays active. Public plans will cost more. Founder rates don't.</p>
         </div>
-        <div class="audience-card">
+        <div class="audience-card audience-card--indigo">
           <div class="feature-icon" style="margin-bottom:20px">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
@@ -1786,6 +1882,25 @@
 
     wireForm(document.getElementById('waitlist-form'));
     wireForm(document.getElementById('waitlist-form-bottom'));
+
+    // ── Distribution hub: staggered node entrance animation ──────────────
+    (function () {
+      const section = document.getElementById('distrib-section');
+      if (!section || !('IntersectionObserver' in window)) {
+        document.querySelectorAll('.dp-node').forEach(n => n.classList.add('dp-visible'));
+        return;
+      }
+      const nodes = [...section.querySelectorAll('.dp-node')];
+      const io = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          nodes.forEach((n, i) => {
+            setTimeout(() => n.classList.add('dp-visible'), 120 + i * 110);
+          });
+          io.disconnect();
+        }
+      }, { threshold: 0.3 });
+      io.observe(section);
+    })();
 
     // ── Nav: transparent → frosted glass on scroll ───────────────────────
     (function () {
