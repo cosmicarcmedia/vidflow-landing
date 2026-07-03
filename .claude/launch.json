@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vidflow-landing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", ".", "-p", "4040", "--no-clipboard"],
+      "port": 4040
+    }
+  ]
+}

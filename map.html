@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 1-to-30 Map | VidFlow</title>
+  <meta name="description" content="Turn one 30-minute video into 30 pieces of content. Get the exact checklist, in order, nothing skipped.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vidflow.io/map">
+  <meta property="og:title" content="The 1-to-30 Map">
+  <meta property="og:description" content="How one 30-minute video becomes 30 pieces of content, in order, nothing skipped.">
+  <meta property="og:url" content="https://vidflow.io/map">
+  <meta property="og:image" content="https://vidflow.io/og-image.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.55; }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 48px 22px 64px; }
+    .brand { font-weight: 700; font-size: 15px; color: #7c3aed; margin-bottom: 36px; }
+    h1 { font-size: 30px; line-height: 1.18; letter-spacing: -0.4px; margin-bottom: 14px; }
+    h1 em { font-style: normal; color: #7c3aed; }
+    p.lead { font-size: 17px; color: #333; margin-bottom: 10px; }
+    p.small { font-size: 14px; color: #666; margin-bottom: 22px; }
+    form { display: flex; flex-direction: column; gap: 10px; }
+    input[type=email] { font-size: 16px; padding: 13px 14px; border: 2px solid #cfc6ec; border-radius: 8px; width: 100%; }
+    input[type=email]:focus { outline: none; border-color: #7c3aed; }
+    button { font-size: 17px; font-weight: 700; padding: 14px; border: none; border-radius: 8px; background: #7c3aed; color: #fff; cursor: pointer; }
+    button:hover { background: #6b2fd6; }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    .fine { font-size: 12px; color: #999; margin-top: 12px; }
+    .fine a { color: #999; }
+    .thanks { display: none; }
+    .thanks h1 { margin-bottom: 12px; }
+    .thanks .next { background: #f5f2fd; border-left: 4px solid #7c3aed; padding: 14px 16px; margin-top: 20px; font-size: 15px; }
+    .err { display: none; color: #c0392b; font-size: 14px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">VidFlow</div>
+
+    <div id="optin">
+      <h1>One 30-minute video is a <em>full month of content.</em> You are just not mining it.</h1>
+      <p class="lead">Enter your email and I will send you the <b>1-to-30 Map</b>: the exact checklist that turns one recording into 30 pieces of content, in order, nothing skipped.</p>
+      <p class="small">It is the same map my agency runs on every client episode. It works with whatever tools you already use.</p>
+      <form id="f">
+        <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+        <button type="submit" id="btn">Send me the Map</button>
+      </form>
+      <p class="err" id="err">That did not go through. Give it another try, or email support@vidflow.io and we will send it by hand.</p>
+      <p class="fine">Instant delivery. No spam, unsubscribe anytime. <a href="https://app.vidflow.io/privacy">Privacy</a></p>
+    </div>
+
+    <div class="thanks" id="thanks">
+      <h1>Your Map is on its way.</h1>
+      <p class="lead">Check your inbox in the next two minutes (and the promotions tab, email is email).</p>
+      <div class="next">
+        <b>One more thing.</b> The Map takes about 9 hours to run by hand. VidFlow is the software my agency built to run it automatically: one upload becomes clips, posts in your voice, and a filled calendar, with a no-login approval link if a client signs off first. We are onboarding in waves, and <b>you are now on the invite list.</b> Watch your inbox.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("f").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var btn = document.getElementById("btn");
+      var err = document.getElementById("err");
+      err.style.display = "none";
+      btn.disabled = true; btn.textContent = "Sending...";
+      try {
+        var res = await fetch("https://app.vidflow.io/api/leadmagnet", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: document.getElementById("email").value.trim(), magnet: "map" })
+        });
+        if (!res.ok) throw new Error("bad status");
+        document.getElementById("optin").style.display = "none";
+        var t = document.getElementById("thanks"); t.style.display = "block";
+      } catch (_) {
+        err.style.display = "block";
+        btn.disabled = false; btn.textContent = "Send me the Map";
+      }
+    });
+  </script>
+</body>
+</html>

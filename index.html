@@ -1414,6 +1414,7 @@
         <a href="#how" class="nav-link-hide">How it works</a>
         <a href="#who" class="nav-link-hide">For agencies</a>
         <a href="#faq" class="nav-link-hide">FAQ</a>
+        <a href="https://app.vidflow.io" class="nav-link-hide">Sign in</a>
         <a href="#waitlist" class="btn-nav">Join waitlist</a>
       </div>
     </nav>
@@ -1434,9 +1435,10 @@
         <input type="email" name="email" placeholder="you@agency.com" required autocomplete="email" />
         <button type="submit" id="submit-btn">Join the agency waitlist</button>
       </form>
-      <p class="form-note">Early access, 1:1 onboarding, and founder pricing locked in for life — first 100 accounts.</p>
+      <p class="form-note">Join today and we send you the 1-to-30 Map instantly (the exact checklist that turns one video into 30 pieces of content), plus your invite when your wave opens. Founder pricing locked for the first 100 accounts.</p>
+      <p class="form-note" style="margin-top:6px;">Run an agency? <a href="/approvals" style="color:inherit;text-decoration:underline;">Grab the Approval Pack instead</a>.</p>
       <div class="form-success" id="form-success">
-        ✓ You're on the list. We'll be in touch.
+        ✓ You're on the list. The 1-to-30 Map is on its way to your inbox right now.
       </div>
       <div class="form-error" id="form-error"></div>
 
@@ -2417,6 +2419,14 @@
             headers: { 'Content-Type': 'text/plain;charset=utf-8' },
             body: JSON.stringify({ email, source: 'vidflow.io' }),
           });
+          // Also register with the app (instant 1-to-30 Map delivery + the
+          // in-app waitlist the invite waves are run from). Best-effort: the
+          // Sheet capture above already succeeded.
+          fetch('https://app.vidflow.io/api/leadmagnet', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, magnet: 'map' }),
+          }).catch(function () {});
           if (isTopForm) {
             form.style.display = 'none';
             document.querySelector('.form-note').style.display = 'none';
