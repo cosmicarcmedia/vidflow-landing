@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your data and privacy - Vidflow Help</title>
+<meta name="description" content="Disconnect platforms, delete workspaces or your whole account, and understand how Vidflow handles your data." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="data-privacy">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/" class="active" aria-current="page">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Plans, billing, and account</span>
+    </nav>
+    <article class="article-body">
+      <h1>Your data and privacy</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>You stay in control of the data Vidflow holds. This page covers disconnecting platforms, deleting content, deleting your account, and how Google and YouTube data is handled.</p>
+<p>You keep ownership of your content. Vidflow only receives the license it needs to operate the Service on your behalf.</p>
+<h2 id="disconnect-a-social-platform"><a class="heading-anchor" href="#disconnect-a-social-platform" aria-label="Link to this section">#</a>Disconnect a social platform</h2>
+<ol><li>Open <strong>Workspace Settings</strong> and go to the <strong>Connections</strong> tab.</li><li>Under <strong>Connected Accounts</strong>, disconnect the account.</li></ol>
+<p>Disconnecting immediately revokes Vidflow&#39;s stored access tokens for that platform and removes the associated profile data.</p>
+<h2 id="delete-a-workspace"><a class="heading-anchor" href="#delete-a-workspace" aria-label="Link to this section">#</a>Delete a workspace</h2>
+<p>Open <strong>Workspace Settings</strong>, then the <strong>Danger Zone</strong> tab. Two options:</p>
+<ul><li><strong>Freeze Workspace</strong> halts all operations immediately. The workspace is permanently deleted after 90 days unless you unfreeze it.</li><li><strong>Permanently Delete</strong> removes the workspace and all its content: episodes, clips, posts, schedules, and settings. You type the workspace name to confirm, and it cannot be undone.</li></ul>
+<!-- screenshot: the Danger Zone tab in Workspace Settings -->
+<h2 id="delete-your-entire-account"><a class="heading-anchor" href="#delete-your-entire-account" aria-label="Link to this section">#</a>Delete your entire account</h2>
+<p>Email support@vidflow.io from your account&#39;s email address and ask for account deletion. Your account and data are deleted within 30 days.</p>
+<h2 id="request-data-deletion-by-email"><a class="heading-anchor" href="#request-data-deletion-by-email" aria-label="Link to this section">#</a>Request data deletion by email</h2>
+<p>If you no longer have access to your account, or you want all data associated with you removed, email privacy@vidflow.io with the subject line &quot;Data Deletion Request&quot;. Send it from the email address on your account and say which account or connected platform the request covers. Vidflow may ask you to verify ownership first.</p>
+<p>For a verified request, personal information is deleted or anonymized within 30 days, except records Vidflow must keep for legal or regulatory reasons.</p>
+<p>A deletion request covers:</p>
+<ul><li>Your account and profile information.</li><li>OAuth access tokens and profile data from connected platforms.</li><li>Workspace content: episodes, clips, posts, images, transcripts, and scripts.</li><li>Usage and log data associated with your account.</li></ul>
+<blockquote class="callout callout-important"><span class="callout-label">Important</span><p><strong>Important:</strong> content already published to a third-party platform, for example a video posted to your TikTok or Instagram account, is not removed by deleting your Vidflow data. Delete those posts on the platform directly.</p></blockquote>
+<h2 id="how-google-and-youtube-data-is-handled"><a class="heading-anchor" href="#how-google-and-youtube-data-is-handled" aria-label="Link to this section">#</a>How Google and YouTube data is handled</h2>
+<p>Vidflow&#39;s use of information from Google APIs follows the Google API Services User Data Policy, including its Limited Use requirements.</p>
+<p>What Vidflow accesses when you connect Google or YouTube:</p>
+<ul><li>Basic YouTube channel information: name, ID, thumbnail, and public statistics.</li><li>Permission to upload and publish to your channel when you publish through Vidflow.</li><li>Files you choose to import from Google Drive, if you use that feature.</li></ul>
+<p>How that data is used:</p>
+<ul><li>Only to provide the features you request.</li><li>Never sold.</li><li>Never used for advertising.</li><li>Not shared with third parties, except as needed to provide the Service, comply with the law, or as part of a merger or acquisition.</li></ul>
+<p>To revoke access, disconnect the account in your workspace settings inside Vidflow, or revoke Vidflow directly in your Google security settings. Once revoked, stored tokens are invalidated and Vidflow no longer receives data from your Google account.</p>
+<h2 id="your-privacy-rights"><a class="heading-anchor" href="#your-privacy-rights" aria-label="Link to this section">#</a>Your privacy rights</h2>
+<p>Depending on where you live, you can request access, correction, deletion, or a portable export of your personal information, unsubscribe from marketing, or withdraw consent by disconnecting integrations. Contact privacy@vidflow.io to exercise any of these rights.</p>
+<p>Vidflow does not sell personal information. For full details, read the Vidflow Privacy Policy and Terms of Service.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/security/">Account security</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/security/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Account security</span></a>
+  <span></span>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

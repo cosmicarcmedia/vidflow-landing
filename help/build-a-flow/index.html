@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build your first flow - Vidflow Help</title>
+<meta name="description" content="Create a flow in the editor, connect nodes and router branches, add branch filters, then save and run it." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="build-a-flow">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/" class="active" aria-current="page">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Flows automation</span>
+    </nav>
+    <article class="article-body">
+      <h1>Build your first flow</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Build a flow that turns each new episode into content automatically. This walkthrough covers the editor, connecting nodes, router branches, branch filters, and the first run.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Flows require the Pro or Agency plan. See <a href="/help/plans-and-features/">Plans and features</a>.</p></blockquote>
+<h2 id="create-the-flow"><a class="heading-anchor" href="#create-the-flow" aria-label="Link to this section">#</a>Create the flow</h2>
+<ol><li>Open <strong>Flows</strong> in the sidebar.</li><li>Click <strong>New Flow</strong>, or click <strong>Use Template</strong> on a template to start from a prebuilt pipeline.</li><li>In the left panel, enter a <strong>Workflow Name</strong> and an optional <strong>Description</strong>.</li><li>In the toolbar, pick the trigger: <strong>Episode Upload</strong>, <strong>Google Drive File</strong>, or <strong>Manual Trigger</strong>.</li></ol>
+<h2 id="get-to-know-the-editor"><a class="heading-anchor" href="#get-to-know-the-editor" aria-label="Link to this section">#</a>Get to know the editor</h2>
+<p>The left panel holds the node palette, grouped into Triggers, Processing, Publishing, Logic, and Reviews. The toolbar has the trigger picker, the <strong>Active</strong> switch, an <strong>Episode ID for Run</strong> field, undo and redo, the node legend, <strong>Snap</strong>, <strong>Tidy up</strong>, zoom controls with a recenter button, <strong>Run</strong>, and <strong>Save</strong>.</p>
+<p>A few useful controls:</p>
+<ul><li>Drag the empty canvas to pan, and scroll to zoom.</li><li><strong>Snap</strong> aligns nodes to the grid while you drag. <strong>Tidy up</strong> auto-arranges the whole flow into clean columns.</li><li>The question mark button opens the <strong>Node Type Legend</strong>, a searchable catalog of every node. Clicking a node there adds it to the canvas.</li><li>Keyboard shortcuts: Cmd+S (Ctrl+S on Windows) saves, Cmd+Z undoes, Cmd+Y redoes, Delete removes the selected node or connection, and G toggles the grid.</li></ul>
+<!-- screenshot: the flow editor with the palette on the left and a trigger, processing node, and save node connected on the canvas -->
+<h2 id="add-and-connect-nodes"><a class="heading-anchor" href="#add-and-connect-nodes" aria-label="Link to this section">#</a>Add and connect nodes</h2>
+<ol><li>Drag a node from the palette onto the canvas, or click it to place it.</li><li>Drop the node near an existing node&#39;s output and it connects automatically. Drop it onto an existing connection and it splices in between the two nodes.</li><li>To connect manually, click the small port on the right edge of a node, then click the node it should feed into.</li><li>Click a node to open its configuration panel. Every node has a <strong>Label</strong> field so you can rename it; the other options are listed in the <a href="/help/flow-nodes/">Flow nodes reference</a>.</li></ol>
+<p>Right-click a node for <strong>Edit</strong>, <strong>Duplicate</strong>, <strong>Disconnect</strong> (removes all of that node&#39;s connections), and <strong>Delete</strong>. Right-click a connection for <strong>Delete Connection</strong>.</p>
+<h2 id="router-branches"><a class="heading-anchor" href="#router-branches" aria-label="Link to this section">#</a>Router branches</h2>
+<p>A <strong>Router</strong> splits the flow into parallel branches, and every connected branch runs. To add a branch, drag a node close to the router and it connects on its own.</p>
+<p>To remove a branch, right-click the connected node and choose <strong>Disconnect</strong>. You can also right-click the connection line itself and choose <strong>Delete Connection</strong> to remove only that link. Moving a node around the canvas never detaches it; removal is always an explicit action.</p>
+<h2 id="branch-filters"><a class="heading-anchor" href="#branch-filters" aria-label="Link to this section">#</a>Branch filters</h2>
+<p>Any connection can carry a filter, so only matching content continues down that branch. Click the filter icon in the middle of a connection to open the <strong>Branch filter</strong> panel, then click <strong>+ Add condition</strong>.</p>
+<p>Each condition is a field, an operator, and a value:</p>
+<ul><li>Fields: <strong>Content type</strong>, <strong>Title / name</strong>, <strong>Status</strong>, <strong>Tags</strong>, <strong>Trigger</strong>.</li><li>Operators: <strong>is</strong>, <strong>is not</strong>, <strong>contains</strong>, <strong>starts with</strong>, <strong>ends with</strong>.</li><li>Content type values: <strong>Clip</strong>, <strong>Image</strong>, <strong>Text post</strong>, <strong>Video</strong>, <strong>Blog / article</strong>, <strong>Carousel</strong>, <strong>Episode</strong>.</li></ul>
+<p>All conditions on a connection must pass. A connection with no conditions always passes. This is how one router can send clips to one queue and text posts to another.</p>
+<!-- screenshot: the Branch filter panel on a router connection with a Content type is Clip condition -->
+<h2 id="save-and-run"><a class="heading-anchor" href="#save-and-run" aria-label="Link to this section">#</a>Save and run</h2>
+<ol><li>Click <strong>Save</strong> (or press Cmd+S). A flow must be saved before it can run; <strong>Run</strong> stays disabled in a new, unsaved flow.</li><li>Run it from the Flows page with <strong>Run</strong>: pick an episode (uses its transcript) or a saved script (uses the script text), then click <strong>Run flow</strong>.</li><li>Or run from the editor: enter an episode&#39;s ID in <strong>Episode ID for Run</strong>, then click <strong>Run</strong>. Without an ID, the run has no source and generation steps are skipped.</li><li>For an episode-upload flow, switch <strong>Active</strong> on so it fires whenever a new episode is created.</li></ol>
+<p>If you navigate away with unsaved edits, the editor asks <strong>Leave with unsaved changes?</strong> with the choices <strong>Stay</strong>, <strong>Discard</strong>, and <strong>Save &amp; Leave</strong>.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<ul><li><strong>Run is disabled in the editor.</strong> The flow has never been saved. Click <strong>Save</strong> first.</li><li><strong>Nothing appeared in the library after a run.</strong> The flow has no Save node, so generated content was discarded at the end of the run. End the flow in <strong>Save to Library</strong>, <strong>Save to Queue</strong>, or a Post node.</li><li><strong>The flow never fires on upload.</strong> Check that the trigger is <strong>Episode Upload</strong> and the <strong>Active</strong> switch is on. Then see <a href="/help/flow-runs/">Runs, history, and troubleshooting</a> for the transcript wait.</li></ul>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/flows-overview/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Flows overview</span></a>
+  <a class="next-link" href="/help/flow-nodes/"><span class="prev-next-label">Next</span><span class="prev-next-title">Flow nodes reference</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

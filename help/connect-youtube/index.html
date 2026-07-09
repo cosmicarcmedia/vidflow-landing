@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Connect YouTube - Vidflow Help</title>
+<meta name="description" content="Link your YouTube channel to Vidflow to publish episodes and schedule clips." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="connect-youtube">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/" class="active" aria-current="page">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Connecting social accounts</span>
+    </nav>
+    <article class="article-body">
+      <h1>Connect YouTube</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Connect YouTube to upload full episodes and publish scheduled clips to your channel from Vidflow.</p>
+<h2 id="what-you-need-before-connecting"><a class="heading-anchor" href="#what-you-need-before-connecting" aria-label="Link to this section">#</a>What you need before connecting</h2>
+<p>A Google account with a YouTube channel. You will sign in with that Google account and grant Vidflow permission to upload and read your channel.</p>
+<h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
+<ol><li>Open <strong>Workspace Settings</strong>.</li><li>Click the <strong>Connections</strong> tab.</li><li>Click <strong>YouTube</strong>.</li><li>Sign in with the Google account that owns your channel and approve access.</li><li>You are returned to Vidflow with YouTube listed as connected.</li></ol>
+<h2 id="what-vidflow-can-publish"><a class="heading-anchor" href="#what-vidflow-can-publish" aria-label="Link to this section">#</a>What Vidflow can publish</h2>
+<p>YouTube works a little differently from the other platforms:</p>
+<ul><li><strong>Full episodes</strong> publish from the episode&#39;s own <strong>Publishing</strong> tab, not from Post now on library content. You choose the privacy for each upload: <strong>Public</strong>, <strong>Private</strong>, or <strong>Unlisted</strong>. Vidflow defaults new uploads to Private so you can review before making them public.</li><li><strong>Scheduled clips</strong> publish through your regular schedules and queues, and go out as Shorts-eligible videos set to Public.</li></ul>
+<h2 id="limits-enforced"><a class="heading-anchor" href="#limits-enforced" aria-label="Link to this section">#</a>Limits enforced</h2>
+<ul><li>Scheduled clip title: 100 characters.</li><li>Scheduled clip description: 4900 characters.</li><li>A video file is required.</li></ul>
+<h2 id="token-lifetime-and-reconnect"><a class="heading-anchor" href="#token-lifetime-and-reconnect" aria-label="Link to this section">#</a>Token lifetime and reconnect</h2>
+<p>Vidflow refreshes your YouTube authorization automatically, about 5 minutes before it would otherwise expire, so most connections never need attention. If Google reports that the authorization itself was revoked, for example if you removed Vidflow&#39;s access in your Google account, Vidflow pauses that account and emails you. Reconnect from the Connections tab and anything waiting resumes.</p>
+<h2 id="youtubes-daily-upload-quota"><a class="heading-anchor" href="#youtubes-daily-upload-quota" aria-label="Link to this section">#</a>YouTube&#39;s daily upload quota</h2>
+<p>YouTube enforces its own daily quota separate from your Vidflow plan. If a scheduled post hits that quota, Vidflow does not count it as failed. It automatically reschedules the post for shortly after the next quota reset and tries again, no action needed from you.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>YouTube authorization was revoked.</strong> You will see &quot;YouTube authorization was revoked. Reconnect your YouTube account in Workspace Settings → Connections.&quot; Reconnect from the Connections tab.</p>
+<p><strong>A scheduled post to YouTube is stuck in a waiting state.</strong> Check whether it is a daily quota delay rather than a failure. Vidflow&#39;s note will say the daily quota was reached and that it will retry automatically after the reset.</p>
+<p><strong>I expected a private upload and got public, or the reverse.</strong> Full episode uploads use the privacy you chose on the Publishing tab. Scheduled clips always publish Public. If you need a clip to stay unlisted or private, publish it manually instead of through a schedule.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/connect-instagram-facebook/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Connect Instagram and Facebook</span></a>
+  <a class="next-link" href="/help/connect-linkedin/"><span class="prev-next-label">Next</span><span class="prev-next-title">Connect LinkedIn</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

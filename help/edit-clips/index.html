@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edit clips: captions, reframing, thumbnails - Vidflow Help</title>
+<meta name="description" content="Open a generated clip to rewrite its captions, adjust reframing, swap the video, or pick a new thumbnail." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="edit-clips">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/" class="active" aria-current="page">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>AI clips</span>
+    </nav>
+    <article class="article-body">
+      <h1>Edit clips: captions, reframing, thumbnails</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Once a clip lands in your Content Library, open it to rewrite the title and captions in your brand voice, adjust how it is reframed and captioned, pick a new thumbnail, or swap the underlying video.</p>
+<h2 id="open-a-clip"><a class="heading-anchor" href="#open-a-clip" aria-label="Link to this section">#</a>Open a clip</h2>
+<p>From the Content Library, open a clip item to reach the clip detail dialog. It has three tabs: <strong>Details</strong>, <strong>Reframe</strong>, and <strong>Captions</strong>.</p>
+<ul><li><strong>Details</strong>: review the clip, approve it, share it, and render edited exports.</li><li><strong>Reframe</strong>: adjust the crop used to reframe the clip.</li><li><strong>Captions</strong>: edit caption timing.</li></ul>
+<h2 id="ai-clip-writing"><a class="heading-anchor" href="#ai-clip-writing" aria-label="Link to this section">#</a>AI Clip Writing</h2>
+<p>The AI Clip Writing panel generates titles and captions from the clip&#39;s transcript, using your workspace&#39;s voice profile.</p>
+<ol><li>Choose a <strong>Caption Style</strong>.</li><li>Click <strong>Generate Title</strong> for a title, or generate captions per platform, or click <strong>Generate All Platform Captions</strong> to do every connected platform at once.</li><li>The panel shows badges for the active style (&quot;Style: {style}&quot;) and confirms &quot;Voice profile active&quot; when your brand voice is applied.</li></ol>
+<h2 id="render-your-edits"><a class="heading-anchor" href="#render-your-edits" aria-label="Link to this section">#</a>Render your edits</h2>
+<p>From the <strong>Details</strong> tab, under <strong>Rendered Export</strong>:</p>
+<ol><li>Make your reframing and caption edits in the other tabs.</li><li>Optionally check <strong>Add on-screen hook text during render</strong> and enter the text to burn in.</li><li>Click <strong>Render Edited Clip</strong>. This burns your caption and reframing edits into a fresh MP4.</li><li>Once rendering finishes, click <strong>Open Rendered MP4</strong> to view it.</li></ol>
+<h2 id="thumbnails"><a class="heading-anchor" href="#thumbnails" aria-label="Link to this section">#</a>Thumbnails</h2>
+<p>From the clip&#39;s media tools, you can:</p>
+<ul><li><strong>Use this frame as thumbnail</strong>: capture the current video frame as the clip&#39;s thumbnail.</li><li><strong>AI thumbnail for Shorts</strong>: generate a branded, high-CTR Shorts thumbnail from the current frame.</li></ul>
+<h2 id="replace-the-video-file"><a class="heading-anchor" href="#replace-the-video-file" aria-label="Link to this section">#</a>Replace the video file</h2>
+<p>Click <strong>Replace content</strong> to swap the underlying video file on a clip. Title, captions, tags, and schedule are all kept. If the replacement file is a different length than the original, Vidflow shows a confirmation: &quot;These clips aren&#39;t the same length.&quot;</p>
+<h2 id="round-trip-to-opusclip"><a class="heading-anchor" href="#round-trip-to-opusclip" aria-label="Link to this section">#</a>Round trip to OpusClip</h2>
+<p>If the clip came from OpusClip, click <strong>Edit in OpusClip</strong> to open the clip&#39;s project directly in OpusClip. Make your changes there, export, then come back to Vidflow and use <strong>Replace content</strong> to bring in the updated export.</p>
+<!-- screenshot: the clip detail dialog showing the Details/Reframe/Captions tabs and AI Clip Writing panel -->
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p>If a render gets stuck or a replaced clip will not save, see <a href="/help/clips-troubleshooting/">Clips troubleshooting</a>. For platform caption length limits when you post a clip, see <a href="/help/post-now/">Post now</a>.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/opusclip-engine/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Using OpusClip with Vidflow</span></a>
+  <a class="next-link" href="/help/clips-troubleshooting/"><span class="prev-next-label">Next</span><span class="prev-next-title">Clips troubleshooting</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

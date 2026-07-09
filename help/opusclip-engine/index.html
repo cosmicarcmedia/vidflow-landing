@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Using OpusClip with Vidflow - Vidflow Help</title>
+<meta name="description" content="Connect your own OpusClip API key to generate clips with brand templates, ClipAnything, and more." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="opusclip-engine">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/" class="active" aria-current="page">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>AI clips</span>
+    </nav>
+    <article class="article-body">
+      <h1>Using OpusClip with Vidflow</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>OpusClip is a third-party clip engine you connect to Vidflow with your own API key. Because it fetches source video itself, it works for YouTube-link episodes as well as uploaded files.</p>
+<p>Each workspace connects its own OpusClip account. Your clips, credits, and brand templates stay on your OpusClip account, not a shared Vidflow key.</p>
+<h2 id="connect-your-opusclip-api-key"><a class="heading-anchor" href="#connect-your-opusclip-api-key" aria-label="Link to this section">#</a>Connect your OpusClip API key</h2>
+<ol><li>Go to <strong>Workspace Settings</strong>, then the <strong>Connections</strong> tab.</li><li>Find the <strong>OpusClip</strong> card. If it is not connected, you will see <strong>Connect required</strong>.</li><li>Click <strong>Connect OpusClip account</strong>.</li><li>Paste your OpusClip API key. You can find it in the OpusClip dashboard under <strong>Settings &gt; API</strong>.</li><li>Optionally add an <strong>Organization ID</strong> (the <code>x-opus-org-id</code> header), needed only for multi-org OpusClip accounts.</li><li>Click <strong>Test &amp; Save</strong>. Vidflow validates the key with a zero-credit call before saving it.</li></ol>
+<p>Once connected, the card shows a <strong>Connected</strong> badge and a masked version of your key. Click <strong>Replace key</strong> to swap it, or <strong>Disconnect</strong> to remove it.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> OpusClip requires an OpusClip Pro (Beta) or Business plan with API access on your OpusClip account. Credits are billed by OpusClip directly and are metered separately from your Vidflow plan.</p></blockquote>
+<p>If OpusClip is not connected when you try to generate, the Clip Generator disables the <strong>Generate Clips</strong> button and shows: &quot;OpusClip isn&#39;t connected for this workspace yet. Add this workspace&#39;s OpusClip API key in Workspace Settings, Connections. Or switch to the Native engine above, no connector needed.&quot;</p>
+<h2 id="options"><a class="heading-anchor" href="#options" aria-label="Link to this section">#</a>Options</h2>
+<p>From the Clip Generator, select the <strong>OpusClip</strong> tab, then set:</p>
+<ul><li><strong>Brand template</strong>: pick a template from your connected OpusClip account, or leave it on <strong>Opus default</strong>.</li><li><strong>Clip mode</strong>: <strong>ClipBasic</strong> (Opus auto-detects the best moments; add genre or keywords to focus it) or <strong>ClipAnything</strong> (describe exactly what to clip in your own words).</li><li><strong>Genre</strong> and <strong>Keywords</strong> (ClipBasic only, both optional): keywords are comma-separated.</li><li><strong>What should Opus clip?</strong> (ClipAnything only): a free-text description, for example &quot;Every moment the guest gives concrete, actionable advice.&quot;</li><li><strong>Clip lengths</strong>: choose <strong>Auto</strong>, or one or more of <strong>&lt;30s</strong>, <strong>30-60s</strong>, <strong>60-90s</strong>, <strong>90s-3min</strong>. Auto is exclusive of the others.</li><li><strong>Aspect ratio</strong>: <strong>Portrait 9:16</strong> (default), <strong>Landscape 16:9</strong>, or <strong>Square 1:1</strong>.</li><li><strong>Remove filler words</strong>: a switch to strip filler words from the clip.</li><li><strong>Only clip part of the video</strong>: a switch that limits Opus to a specific time range. For uploaded files, you get a scrubbable video preview with <strong>Set start to</strong> and <strong>Set end to</strong> buttons. For YouTube-link episodes, enter start and end times manually as mm:ss. The end time must come after the start time.</li></ul>
+<p>Click <strong>Generate Clips</strong> to start the run.</p>
+<h2 id="what-happens-next"><a class="heading-anchor" href="#what-happens-next" aria-label="Link to this section">#</a>What happens next</h2>
+<p>You will see the toast &quot;OpusClip is generating clips, they&#39;ll appear in your library shortly.&quot; OpusClip clips arrive through a webhook and a background poller checks in periodically as a backup. Finished clips are copied to Vidflow&#39;s own storage automatically, so they stay available after OpusClip&#39;s temporary links expire.</p>
+<!-- screenshot: the OpusClip options panel showing clip mode, clip lengths, and aspect ratio -->
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p>If the OpusClip card will not validate your key, double check you copied the full key from the OpusClip dashboard and that your OpusClip plan includes API access. For stuck or missing clips after generating, see <a href="/help/clips-troubleshooting/">Clips troubleshooting</a>.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/native-clip-engine/"><span class="prev-next-label">Previous</span><span class="prev-next-title">The Native clip engine</span></a>
+  <a class="next-link" href="/help/edit-clips/"><span class="prev-next-label">Next</span><span class="prev-next-title">Edit clips: captions, reframing, thumbnails</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

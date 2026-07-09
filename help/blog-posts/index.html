@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog Post Generator - Vidflow Help</title>
+<meta name="description" content="Generate long-form articles from an episode, script, or prompt, then edit, copy, download, or save them to your library." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="blog-posts">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/" class="active" aria-current="page">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>AI writing and images</span>
+    </nav>
+    <article class="article-body">
+      <h1>Blog Post Generator</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>The Blog Post Generator turns an episode, script, or prompt into a long-form HTML article styled for LinkedIn Articles, Substack, or general publishing. You edit the draft directly in the preview, then copy it, download it, or save it to your Content Library.</p>
+<p>Find it as <strong>Blog Post</strong> under <strong>Magic Tools</strong> in the left rail.</p>
+<p><strong>Note:</strong> Article generation is available on paid plans. On the free plan the page opens but <strong>Generate Article</strong> is locked. See <a href="/help/plans-and-features/">Plans and features</a>.</p>
+<h2 id="generate-an-article"><a class="heading-anchor" href="#generate-an-article" aria-label="Link to this section">#</a>Generate an article</h2>
+<ol><li>Pick a source: <strong>Episode</strong>, <strong>Script</strong>, or <strong>Prompt</strong>.</li><li>Pick a platform style: <strong>LinkedIn Article</strong> (professional, high-signal, comment-friendly), <strong>Substack</strong> (newsletter-style, personal, opinionated), or <strong>General</strong> (the default).</li><li>Pick a tone: <strong>Professional</strong>, <strong>Conversational</strong> (the default), <strong>Thought Leadership</strong>, or <strong>Educational</strong>.</li><li>Pick a length: <strong>Short</strong> (around 600 words), <strong>Medium</strong> (around 1,200, the default), or <strong>Long</strong> (around 2,000).</li><li>Add anything specific under <strong>Additional Instructions</strong>.</li><li>Click <strong>Generate Article</strong>.</li></ol>
+<!-- screenshot: the Blog Post Generator with source, platform, tone, and length selected and a generated article in the preview -->
+<p>With an episode as the source, the article is written from its transcript. The page confirms when a transcript is found and ready, and warns when the episode may not have one yet. See <a href="/help/transcripts/">Transcripts</a>.</p>
+<p><strong>Note:</strong> Articles are written in your brand voice once it is set up; until then the page shows a banner and the AI writes in a generic voice. See <a href="/help/brand-voice-setup/">Set up your brand voice</a>. Each generation counts toward your plan&#39;s monthly AI allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
+<h2 id="edit-the-draft"><a class="heading-anchor" href="#edit-the-draft" aria-label="Link to this section">#</a>Edit the draft</h2>
+<p>The preview is directly editable. Click into the article, change the text in place, then use one of the actions below to keep your edits.</p>
+<h2 id="copy-download-or-save"><a class="heading-anchor" href="#copy-download-or-save" aria-label="Link to this section">#</a>Copy, download, or save</h2>
+<ul><li><strong>Copy HTML</strong> puts the article HTML on your clipboard, ready to paste into LinkedIn, Substack, or your CMS.</li><li><strong>Download</strong> exports the article as HTML (.html), Markdown (.md), or plain text (.txt).</li><li><strong>Save to Library</strong> stores the article in your Content Library. A dialog then offers to add it to a queue right away.</li></ul>
+<h2 id="edit-a-saved-article"><a class="heading-anchor" href="#edit-a-saved-article" aria-label="Link to this section">#</a>Edit a saved article</h2>
+<p>Open the article from your Content Library and click <strong>Edit in editor</strong>. It opens back in the Blog Post Generator, where <strong>Save changes</strong> updates the saved article.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<ul><li><strong>Generate Article is locked with an upgrade prompt.</strong> Generation requires a paid plan. See <a href="/help/plans-and-features/">Plans and features</a>.</li><li><strong>The episode source warns there may be no transcript.</strong> Generate the transcript on the episode first, then pick the episode again. See <a href="/help/transcripts/">Transcripts</a>.</li><li><strong>Generation stops with a monthly limit message.</strong> You have used this month&#39;s AI allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</li></ul>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/transcripts/">Transcripts</a></li><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/script-generator/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Script Generator</span></a>
+  <a class="next-link" href="/help/ai-images/"><span class="prev-next-label">Next</span><span class="prev-next-title">AI images and thumbnails</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

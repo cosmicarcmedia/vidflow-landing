@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publish episodes to YouTube and your podcast feed - Vidflow Help</title>
+<meta name="description" content="Upload a full episode to YouTube and publish it to your workspace&#39;s podcast RSS feed." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="youtube-publishing">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/" class="active" aria-current="page">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Publishing and scheduling</span>
+    </nav>
+    <article class="article-body">
+      <h1>Publish episodes to YouTube and your podcast feed</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Full episodes publish to YouTube, and to your podcast feed, from the episode itself rather than from Post now or the Calendar.</p>
+<h2 id="open-the-publishing-tab"><a class="heading-anchor" href="#open-the-publishing-tab" aria-label="Link to this section">#</a>Open the Publishing tab</h2>
+<ol><li>Open the episode from the <strong>Content Library</strong>.</li><li>Go to its <strong>Publishing</strong> tab.</li></ol>
+<p>You&#39;ll see two cards: <strong>YouTube</strong> and your podcast feed.</p>
+<!-- screenshot: the episode Publishing tab with the YouTube card and podcast feed card -->
+<h2 id="upload-to-youtube"><a class="heading-anchor" href="#upload-to-youtube" aria-label="Link to this section">#</a>Upload to YouTube</h2>
+<ol><li>On the <strong>YouTube</strong> card, choose a privacy setting: <strong>Public</strong>, <strong>Private</strong>, or <strong>Unlisted</strong>. The default is <strong>Private</strong>.</li><li>Start the upload.</li></ol>
+<p>The episode&#39;s title, description, and tags feed the upload automatically. Once the upload completes, the card shows a <strong>Published</strong> badge.</p>
+<p>Because the default is Private, double-check the privacy dropdown before uploading if you want the video visible right away.</p>
+<h2 id="publish-to-your-podcast-feed"><a class="heading-anchor" href="#publish-to-your-podcast-feed" aria-label="Link to this section">#</a>Publish to your podcast feed</h2>
+<p>Your workspace has its own podcast RSS feed, independent of YouTube. On the podcast feed card:</p>
+<ul><li><strong>Publish to Feed</strong> adds the episode to your feed.</li><li>Once added, the card reads <strong>Published to feed</strong>.</li><li>If it hasn&#39;t been added yet, it reads <strong>Not in podcast feed</strong>.</li></ul>
+<p>Your feed URL follows this pattern:</p>
+<pre><code>/api/rss/your-workspace-slug</code></pre>
+<p>It&#39;s a standard RSS 2.0 feed with iTunes podcast tags, so it works with Spotify for Podcasters, Apple Podcasts, and most other podcast apps and directories. The feed lists your published episodes, most recent first.</p>
+<p>Podcast feed settings (like the feed&#39;s title and artwork) live in your workspace settings.</p>
+<h2 id="clips-are-handled-separately"><a class="heading-anchor" href="#clips-are-handled-separately" aria-label="Link to this section">#</a>Clips are handled separately</h2>
+<p>The Publishing tab only uploads the full episode. To publish a clip to Instagram Reels or Facebook, open the clip itself from the <strong>Clips</strong> tab and use its <strong>Publish</strong> button. See <a href="/help/post-now/">Post now</a> and <a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a>.</p>
+<h2 id="scheduled-clips-on-youtube"><a class="heading-anchor" href="#scheduled-clips-on-youtube" aria-label="Link to this section">#</a>Scheduled clips on YouTube</h2>
+<p>If you schedule a clip through a schedule or queue rather than uploading the full episode manually, that clip publishes to YouTube as a Shorts-eligible public video. It uses the item&#39;s title and caption as the video&#39;s title and description, with the requested privacy set to public.</p>
+<p>This is different from the episode upload above, which respects whatever privacy you choose and defaults to Private.</p>
+<h2 id="youtubes-daily-upload-quota"><a class="heading-anchor" href="#youtubes-daily-upload-quota" aria-label="Link to this section">#</a>YouTube&#39;s daily upload quota</h2>
+<p>YouTube enforces a daily upload quota per connected channel. If a scheduled post hits that quota, Vidflow does not mark it failed. Instead, it defers the post and retries automatically once the daily quota resets, without any action from you. Any other YouTube posts still waiting in that same run are deferred the same way.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>The YouTube card won&#39;t let you upload</strong>: make sure YouTube is connected. See <a href="/help/connect-youtube/">Connect YouTube</a>.</p>
+<p><strong>&quot;YouTube authorization was revoked&quot;</strong>: your Google connection needs to be reconnected. Go to Workspace Settings &gt; Connections and reconnect YouTube.</p>
+<p><strong>A scheduled YouTube post seems stuck</strong>: check whether it&#39;s showing as deferred due to the daily quota. It will retry automatically after the reset; no action is needed.</p>
+<p><strong>The podcast feed looks empty or out of date</strong>: confirm the episodes you expect are marked <strong>Published to feed</strong> on their own Publishing tabs. Only published episodes appear in the feed.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/schedules-and-queues/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Schedules and queues</span></a>
+  <a class="next-link" href="/help/post-statuses/"><span class="prev-next-label">Next</span><span class="prev-next-title">Post statuses and failed posts</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

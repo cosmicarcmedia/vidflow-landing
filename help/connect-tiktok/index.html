@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Connect TikTok - Vidflow Help</title>
+<meta name="description" content="Link TikTok to Vidflow and understand the settings every TikTok post requires." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="connect-tiktok">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/" class="active" aria-current="page">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Connecting social accounts</span>
+    </nav>
+    <article class="article-body">
+      <h1>Connect TikTok</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Connect TikTok to publish and schedule videos to your TikTok account directly from Vidflow.</p>
+<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> TikTok posts currently publish as private (visible only to you) while the TikTok app review completes. Vidflow marks the post and emails you once a post is affected, and switches to normal publishing automatically when the review finishes.</p></blockquote>
+<h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
+<ol><li>Open <strong>Workspace Settings</strong>.</li><li>Click the <strong>Connections</strong> tab.</li><li>Click <strong>TikTok</strong>.</li><li>Sign in on TikTok&#39;s page and approve access.</li><li>You are returned to Vidflow with TikTok listed as connected.</li></ol>
+<h2 id="what-vidflow-can-publish"><a class="heading-anchor" href="#what-vidflow-can-publish" aria-label="Link to this section">#</a>What Vidflow can publish</h2>
+<p>Vidflow publishes video posts to TikTok, both from <strong>Post now</strong> on library content and from scheduled dispatch. A video file is required, TikTok cannot post text-only or image-only content.</p>
+<h2 id="the-tiktok-settings-panel"><a class="heading-anchor" href="#the-tiktok-settings-panel" aria-label="Link to this section">#</a>The TikTok settings panel</h2>
+<p>Every TikTok post, whether posted now or scheduled, includes a required settings panel:</p>
+<ul><li><strong>Posting as {your TikTok name}</strong>, confirming which account will post.</li><li><strong>Who can view this post</strong>: the exact choices come from your TikTok account&#39;s own settings and typically include Public, Friends, Followers, and Only you. Vidflow only offers the audiences your TikTok account allows.</li><li><strong>Allow comments</strong> toggle.</li><li><strong>Allow Duet</strong> and <strong>Allow Stitch</strong> toggles (video posts only).</li><li><strong>Disclose video content</strong>: turn this on if the post promotes a brand, product, or service, then choose <strong>Your brand</strong> (you are promoting yourself or your own business) or <strong>Branded content</strong> (a paid partnership or promoting another brand).</li></ul>
+<p>Branded content can never be posted privately. If disclosure is set to branded content, you must choose an audience other than Only you.</p>
+<!-- screenshot: the TikTok settings panel showing privacy, comments, duet, stitch, and disclosure options -->
+<h2 id="limits-enforced"><a class="heading-anchor" href="#limits-enforced" aria-label="Link to this section">#</a>Limits enforced</h2>
+<ul><li>Title: 150 characters.</li><li>A video file is required for every TikTok post.</li><li>You must choose who can view the post before it can be scheduled or posted.</li><li>If disclosure is turned on, you must pick Your brand or Branded content, or turn disclosure back off.</li></ul>
+<h2 id="token-lifetime-and-reconnect"><a class="heading-anchor" href="#token-lifetime-and-reconnect" aria-label="Link to this section">#</a>Token lifetime and reconnect</h2>
+<p>TikTok access tokens last about 24 hours, and Vidflow refreshes them automatically roughly 30 minutes before they expire, so day-to-day use needs no action from you. If TikTok definitively rejects a refresh, for example because the authorization was revoked on TikTok&#39;s side, Vidflow pauses publishing to that account and emails you. Reconnect from the Connections tab and anything waiting on your schedule resumes.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>My post published as private and I did not choose that.</strong> This is the TikTok review-period behavior described above. Vidflow notes it on the post and by email, and it clears up once the app review completes.</p>
+<p><strong>Branded content will not let me choose Only you.</strong> This is expected. TikTok does not allow branded content to be private. Choose a different audience, or turn off disclosure if the post is not actually a paid partnership.</p>
+<p><strong>TikTok posting suddenly stopped working.</strong> Check the Connections tab for a reconnect prompt. TikTok token refresh failures show as &quot;TikTok token refresh failed. Reconnect your TikTok account in Workspace Settings → Connected Accounts.&quot;</p>
+<p><strong>My comments, duet, or stitch toggle looks locked.</strong> Vidflow shows a hint when your TikTok account itself has that interaction type turned off. Change it in your TikTok app settings, then it will be available in Vidflow.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/client-connect-links/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Let clients connect their own accounts</span></a>
+  <a class="next-link" href="/help/connect-instagram-facebook/"><span class="prev-next-label">Next</span><span class="prev-next-title">Connect Instagram and Facebook</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

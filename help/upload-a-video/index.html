@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Upload a video or audio file - Vidflow Help</title>
+<meta name="description" content="Add a long-form video or audio file to Vidflow and let transcription and AI metadata run automatically." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="upload-a-video">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/" class="active" aria-current="page">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Adding your content</span>
+    </nav>
+    <article class="article-body">
+      <h1>Upload a video or audio file</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Upload a long-form video or audio file and Vidflow saves it as an episode, starts the transcript, and drafts a title, description, and tags in the background.</p>
+<h2 id="where-you-can-start-an-upload"><a class="heading-anchor" href="#where-you-can-start-an-upload" aria-label="Link to this section">#</a>Where you can start an upload</h2>
+<ul><li>Click <strong>Make Content</strong> at the top of the app, then <strong>Upload Episode</strong>.</li><li>Click <strong>Upload Episode</strong> on the Episodes page.</li><li>If the Episodes view of your <strong>Content Library</strong> is empty, use its <strong>Upload Video</strong> button.</li><li>In the Clip Generator, the <strong>Upload file</strong> option uploads your file to the library as a new episode, then clips it. See <a href="/help/generate-clips/">Generate clips from a long video</a>.</li></ul>
+<h2 id="upload-a-file"><a class="heading-anchor" href="#upload-a-file" aria-label="Link to this section">#</a>Upload a file</h2>
+<ol><li>Click <strong>Make Content</strong>, then <strong>Upload Episode</strong>.</li><li>Drag your file into the dialog, or click <strong>Browse files</strong>. Vidflow accepts video and audio files: MP4, MOV, MP3, WAV, and M4A.</li><li>Keep the tab open while the upload runs. Large files upload in chunks automatically, and the dialog shows progress as each part completes.</li></ol>
+<!-- screenshot: the Upload Episode dialog with the drag-and-drop zone and Browse files button -->
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Uploads are capped at 1GB per file.</p></blockquote>
+<p>When the upload finishes, Vidflow saves the episode as a draft immediately. Transcription and AI metadata generation (title, description, tags) continue in the background, so you can close the dialog and keep working.</p>
+<p>While the upload runs, you can also attach a clipping file with <strong>Add a clipping file (optional)</strong>. This is a clean version of the video without graphics, used later for AI clip generation.</p>
+<p>Each upload counts toward your plan&#39;s monthly episode allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
+<h2 id="start-from-a-youtube-url-instead"><a class="heading-anchor" href="#start-from-a-youtube-url-instead" aria-label="Link to this section">#</a>Start from a YouTube URL instead</h2>
+<p>The same dialog accepts a YouTube URL. Paste the link and click <strong>Auto-fill</strong>. Vidflow pulls the video&#39;s metadata and transcript, shows you the generated metadata to review, and saves the episode without downloading the video file. To bring in many videos from your own channel at once, see <a href="/help/import-from-youtube/">Import from YouTube</a>.</p>
+<h2 id="after-the-upload"><a class="heading-anchor" href="#after-the-upload" aria-label="Link to this section">#</a>After the upload</h2>
+<ul><li>The episode appears on the Episodes page and in your <strong>Content Library</strong> right away.</li><li>Transcription starts automatically. The notifications bell in the header shows progress. See <a href="/help/transcripts/">Transcripts</a>.</li><li>AI writes a draft title, description, and tags. Open the episode to edit any of them.</li></ul>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>Upload paused.</strong> If your connection drops mid-upload, the dialog shows which part it stopped at and a <strong>Resume</strong> button. Click <strong>Resume</strong> to continue from where it left off instead of starting over.</p>
+<p><strong>Stuck on &quot;Finalizing upload&quot;.</strong> After the last part uploads, the server assembles the file into storage. For large files this can take a few minutes. Leave the tab open until it completes.</p>
+<p><strong>&quot;Monthly episode limit reached.&quot;</strong> You have used your plan&#39;s episode allowance for the month. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a> for what counts and what to do at the cap.</p>
+<p><strong>File will not attach.</strong> The picker accepts video and audio files only. Export your media as MP4 (video) or MP3 (audio) and try again.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/transcripts/">Transcripts</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <span></span>
+  <a class="next-link" href="/help/import-from-youtube/"><span class="prev-next-label">Next</span><span class="prev-next-title">Import from YouTube</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

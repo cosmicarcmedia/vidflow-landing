@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Set up your brand voice - Vidflow Help</title>
+<meta name="description" content="Fill in your brand profile and voice settings so every clip title, caption, and post sounds like you." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="brand-voice-setup">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/" class="active" aria-current="page">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Workspaces and team</span>
+    </nav>
+    <article class="article-body">
+      <h1>Set up your brand voice</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Everything Vidflow generates, clip titles, captions, posts, scripts, draws on the brand voice settings in your workspace. Filling these in is the one setup step that changes how everything else sounds.</p>
+<h2 id="why-this-matters"><a class="heading-anchor" href="#why-this-matters" aria-label="Link to this section">#</a>Why this matters</h2>
+<p>Without a brand sheet, target audience, or voice guidance, the AI has nothing to work from and writes in a generic voice. With them filled in, clip titles, captions, and posts start sounding like your brand instead of a template.</p>
+<h2 id="your-brand-profile"><a class="heading-anchor" href="#your-brand-profile" aria-label="Link to this section">#</a>Your Brand Profile</h2>
+<p>Open Workspace Settings and go to the <strong>Brand</strong> tab. The Brand Profile card includes:</p>
+<ul><li><strong>Brand Name</strong> (required).</li><li><strong>Website</strong>, <strong>Industry</strong>, <strong>Location</strong>, and <strong>Timezone</strong>.</li><li><strong>Target Audience</strong>, a free-text field for describing your ideal listener: who they are, what they struggle with, what they want.</li><li><strong>Campaign Focus Areas</strong>, a set of topic chips you add yourself (for example, Leadership or Entrepreneurship) to steer what the AI treats as on-topic.</li></ul>
+<p>Below that is the <strong>Brand Sheet</strong> card, where you paste or type a longer brand document, or upload one. This is the single biggest input into how on-brand your generated content sounds, treat it as the one field worth spending real time on.</p>
+<!-- screenshot: the Brand Profile card with the Brand Sheet field -->
+<h2 id="your-logo"><a class="heading-anchor" href="#your-logo" aria-label="Link to this section">#</a>Your logo</h2>
+<p>The logo you upload with your Brand Profile does more than decorate your own workspace. It also white-labels the client approval portal your clients see when reviewing content, and it appears on your branded analytics reports. Upload a real logo here if you want client-facing surfaces to carry your brand instead of looking generic.</p>
+<h2 id="teaching-the-ai-your-voice"><a class="heading-anchor" href="#teaching-the-ai-your-voice" aria-label="Link to this section">#</a>Teaching the AI your voice</h2>
+<p>The <strong>AI &amp; Voice</strong> tab holds the settings that shape tone and style directly:</p>
+<ul><li><strong>Voice Profile Status</strong> shows where you stand: no active profile yet, connect a YouTube account or import a channel to unlock it, or a built profile summarized as built from a number of videos. Voice profiles are part of the Pro and Agency plan set; see <a href="/help/plans-and-features/">Plans and features</a>.</li><li><strong>Brand voice guidelines</strong> is a free-text field for extra writing direction: phrases to lean into, words to avoid, sentence rhythm, anything a style guide would normally cover.</li><li><strong>Preview my voice</strong> generates a short sample so you can check how the current settings sound before you generate real content with them.</li><li><strong>Humanize AI Writing</strong>, with a <strong>Remove AI tropes</strong> toggle, strips common AI writing patterns from generated text.</li></ul>
+<h2 id="matching-your-visual-style"><a class="heading-anchor" href="#matching-your-visual-style" aria-label="Link to this section">#</a>Matching your visual style</h2>
+<p>The AI &amp; Voice tab also includes a place to describe your visual style, so generated images and graphics match your brand look instead of a generic default. Fill this in once and every generated image draws on it.</p>
+<h2 id="the-setup-nudge"><a class="heading-anchor" href="#the-setup-nudge" aria-label="Link to this section">#</a>The setup nudge</h2>
+<p>If your brand sheet, audience, or voice guidelines are missing, Vidflow shows a banner across the Magic Tools pages: &quot;Your brand voice isn&#39;t set up yet. Until it is, the AI writes in a generic voice. Add your brand sheet, audience, and voice guidelines so everything sounds like you.&quot; Clicking <strong>Set up voice</strong> on that banner jumps you straight to the Brand Sheet field. The banner disappears once the basics are filled in.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/client-review-page/">What your client sees</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/workspaces/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Workspaces and brand spaces</span></a>
+  <a class="next-link" href="/help/invite-your-team/"><span class="prev-next-label">Next</span><span class="prev-next-title">Invite team members</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

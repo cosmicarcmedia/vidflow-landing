@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Usage limits and monthly allowances - Vidflow Help</title>
+<meta name="description" content="How Vidflow&#39;s monthly allowances work, what counts against each one, and what to do at a cap." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="usage-limits">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/" class="active" aria-current="page">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Plans, billing, and account</span>
+    </nav>
+    <article class="article-body">
+      <h1>Usage limits and monthly allowances</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Vidflow meters three things each month: episodes, AI generations, and clip generations. This page explains how the meters work, what counts against each one, and your options when you reach a cap.</p>
+<h2 id="how-allowances-work"><a class="heading-anchor" href="#how-allowances-work" aria-label="Link to this section">#</a>How allowances work</h2>
+<ul><li>Allowances reset at the start of each calendar month (UTC).</li><li><strong>Episodes</strong> are metered per brand space. Your account&#39;s monthly total is your plan&#39;s per-brand allowance multiplied by the brand spaces on your subscription.</li><li><strong>AI generations</strong> and <strong>clip generations</strong> are account-wide pools. All of your brand spaces draw from the same two pools.</li></ul>
+<p>Your plan sets the numbers:</p>
+<div class="table-wrap"><table><thead><tr><th>Plan</th><th>Episodes per month per brand space</th><th>AI generations per month</th><th>Clip generations per month</th></tr></thead><tbody><tr><td>Free</td><td>1</td><td>20</td><td>3</td></tr><tr><td>Starter</td><td>2</td><td>150</td><td>30</td></tr><tr><td>Pro</td><td>8</td><td>600</td><td>120</td></tr><tr><td>Agency</td><td>8</td><td>2,500</td><td>500</td></tr></tbody></table></div>
+<p>See <a href="/help/plans-and-features/">Plans and features</a> for the full plan matrix, including seats and connected account slots.</p>
+<h2 id="what-counts-as-an-episode"><a class="heading-anchor" href="#what-counts-as-an-episode" aria-label="Link to this section">#</a>What counts as an episode</h2>
+<p>Every long-form source you add counts as one episode, whichever way it arrives: a direct upload, a YouTube import, or an auto-import from Google Drive or Dropbox.</p>
+<h2 id="what-counts-as-an-ai-generation"><a class="heading-anchor" href="#what-counts-as-an-ai-generation" aria-label="Link to this section">#</a>What counts as an AI generation</h2>
+<p>Each AI action draws from the same pool:</p>
+<ul><li>AI writing: captions, text posts, ideas, scripts, and articles.</li><li>AI image generation.</li><li>Transcription of an uploaded file.</li></ul>
+<p>Batch actions count once per item generated. Generating ten posts in one run uses ten AI generations, not one.</p>
+<h2 id="what-counts-as-a-clip-generation"><a class="heading-anchor" href="#what-counts-as-a-clip-generation" aria-label="Link to this section">#</a>What counts as a clip generation</h2>
+<p>Every clip you generate counts as one against the pool.</p>
+<h2 id="connected-account-slots"><a class="heading-anchor" href="#connected-account-slots" aria-label="Link to this section">#</a>Connected account slots</h2>
+<p>Your plan also caps connected social accounts per brand space. Reconnecting an account that is already linked never uses a new slot.</p>
+<h2 id="tracking-your-usage"><a class="heading-anchor" href="#tracking-your-usage" aria-label="Link to this section">#</a>Tracking your usage</h2>
+<p>Open the Billing page: click your avatar, choose <strong>Account settings</strong>, then <strong>Manage plan &amp; billing</strong>. The meters near the top show <strong>Episodes this month</strong>, <strong>AI generations</strong>, and <strong>Clips</strong> against your plan&#39;s limits.</p>
+<!-- screenshot: the usage meters on the Billing & plan page -->
+<h2 id="when-you-hit-a-cap"><a class="heading-anchor" href="#when-you-hit-a-cap" aria-label="Link to this section">#</a>When you hit a cap</h2>
+<p>The action stops, and Vidflow shows a message naming the limit you reached and pointing you to the Billing page. Content you already created is not affected.</p>
+<p>Your options:</p>
+<ol><li>Wait for the monthly reset.</li><li>Upgrade your plan. Changes apply to your existing subscription right away, with prorated charges or credits. See <a href="/help/manage-billing/">Manage your subscription</a>.</li><li>On Agency, add brand spaces to raise your total episode allowance.</li></ol>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/generate-clips/">Generate clips from a long video</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/plans-and-features/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Plans and features</span></a>
+  <a class="next-link" href="/help/manage-billing/"><span class="prev-next-label">Next</span><span class="prev-next-title">Manage your subscription</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fix publishing problems - Vidflow Help</title>
+<meta name="description" content="A checklist for failed posts, ordered by how likely each cause is, with the fix for each one." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="publishing-troubleshooting">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/" class="active" aria-current="page">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Troubleshooting and FAQ</span>
+    </nav>
+    <article class="article-body">
+      <h1>Fix publishing problems</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>When a post fails, work through this checklist in order. It is ordered by how often each cause shows up, so start at the top.</p>
+<h2 id="1-check-if-the-accounts-authorization-died"><a class="heading-anchor" href="#1-check-if-the-accounts-authorization-died" aria-label="Link to this section">#</a>1. Check if the account&#39;s authorization died</h2>
+<p>The most common cause of a failed post is a connected account whose authorization stopped working on the platform&#39;s end. When this happens, Vidflow pauses publishing to that account, emails the workspace, and marks it as needing reconnect. The email reads:</p>
+<blockquote class="callout"><p>&quot;Your {platform} connection stopped working, so we&#39;ve paused publishing to it. This usually happens when {platform} expires the authorization on their end, and it takes about a minute to fix. Reconnect the account and your scheduled posts will pick right back up.&quot;</p></blockquote>
+<p><strong>Fix it:</strong></p>
+<ol><li>Go to <strong>Workspace Settings &gt; Connections</strong>.</li><li>Find the account with a needs-reconnect status.</li><li>Reconnect it by signing in again.</li></ol>
+<p>Once reconnected, anything waiting on that account resumes normally.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Reconnect timing varies by platform. YouTube and TikTok refresh tokens automatically in the background and only need reconnect when the platform itself revokes access. Meta (Instagram and Facebook) tokens are longer-lived but do not refresh automatically once they expire, so a dead Meta connection needs a manual reconnect. LinkedIn tokens last around 60 days, so expect to reconnect it periodically even without an error.</p></blockquote>
+<h2 id="2-check-the-platforms-requirements"><a class="heading-anchor" href="#2-check-the-platforms-requirements" aria-label="Link to this section">#</a>2. Check the platform&#39;s requirements</h2>
+<p>Some platforms reject posts that do not meet their format requirements, and Vidflow catches most of these before the post goes out.</p>
+<ul><li><strong>Video is required</strong> on Instagram, Facebook, and TikTok. If the content item has no video attached, posting is blocked with: &quot;{Platform} posts a video, and this item doesn&#39;t have one yet.&quot; Attach a video to the item, or post it to a platform that accepts text or images.</li><li><strong>Caption or title is over the platform&#39;s limit.</strong> Each platform enforces its own cap: X text tops out at 280 characters, Instagram captions at 2200, Facebook titles at 255 with descriptions up to 5000, TikTok titles at 150, and LinkedIn titles at 200. The post editor shows a live character counter per platform so you can catch this before it fails.</li><li><strong>TikTok compose settings are incomplete or conflict with each other.</strong> TikTok requires you to set who can view the post before it goes out. Common validation messages:<ul><li>&quot;Choose who can view your TikTok post before scheduling it.&quot; (no audience selected yet)</li><li>&quot;TikTok disclosure is on: select Your brand or Branded content, or turn disclosure off.&quot; (disclosure toggled on with no content type chosen)</li><li>&quot;Branded content on TikTok cannot be private. Choose a different audience.&quot; (branded content and a private audience were selected together; branded content can never be private)</li></ul></li></ul>
+<p>Fix any of these in the post&#39;s TikTok settings panel before retrying.</p>
+<h2 id="3-check-for-a-youtube-quota-hold"><a class="heading-anchor" href="#3-check-for-a-youtube-quota-hold" aria-label="Link to this section">#</a>3. Check for a YouTube quota hold</h2>
+<p>If YouTube posts are stuck in scheduled or publishing status, this is usually not a failure. YouTube enforces a daily upload quota, and when Vidflow hits it, the post is automatically deferred, not marked failed. Internally this shows as &quot;YouTube daily quota reached; will retry automatically after quota reset.&quot;</p>
+<p><strong>What to do:</strong> nothing. Vidflow reschedules the item for shortly after the next quota reset (YouTube&#39;s quota resets at midnight Pacific time) and retries automatically. If it still has not gone out a full day later, contact support.</p>
+<h2 id="4-check-for-an-old-x-connection-missing-media-permission"><a class="heading-anchor" href="#4-check-for-an-old-x-connection-missing-media-permission" aria-label="Link to this section">#</a>4. Check for an old X connection missing media permission</h2>
+<p>If a post with an image or video fails on X but text-only posts to the same account work fine, the X connection was likely made before Vidflow requested the media upload permission. Older connections do not have it and cannot post media until reconnected.</p>
+<p><strong>Fix it:</strong> go to <strong>Workspace Settings &gt; Connections</strong> and reconnect the X account. This grants the missing permission without losing anything else about the connection.</p>
+<h2 id="5-check-if-approval-is-holding-it-back"><a class="heading-anchor" href="#5-check-if-approval-is-holding-it-back" aria-label="Link to this section">#</a>5. Check if approval is holding it back</h2>
+<p>Content that needs approval is never picked up for publishing, whether it is on a schedule with <strong>Require Approval</strong> turned on or was imported with approval required. This is expected behavior, not a failure. The item sits in a needs-approval state until someone approves it, either from your approval workflow or directly in the Content Library.</p>
+<p>Check the item&#39;s approval badge in the Content Library. If it reads <strong>Needs Approval</strong>, that is why it has not gone out. See <a href="/help/approval-status/">Approval status in your library</a>.</p>
+<h2 id="6-retry-the-post"><a class="heading-anchor" href="#6-retry-the-post" aria-label="Link to this section">#</a>6. Retry the post</h2>
+<p>Once you have fixed the underlying cause, retry the failed post rather than recreating it:</p>
+<ul><li>From the Content Library, open the item&#39;s menu and click <strong>Retry Post</strong>.</li><li>From the Calendar, open the failed post and click <strong>Retry Post</strong>.</li></ul>
+<p>Retrying puts the post back in the queue to publish again with the fix applied.</p>
+<h2 id="7-still-failing-contact-support"><a class="heading-anchor" href="#7-still-failing-contact-support" aria-label="Link to this section">#</a>7. Still failing? Contact support</h2>
+<p>If you have checked authorization, platform requirements, YouTube quota, and approval status, and the post still fails, copy the exact failure text shown on the post and send it to support. The failure text names which platform failed and why, and that detail is the fastest way for support to diagnose it. See <a href="/help/contact-support/">Contact support</a>.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> A single post can target multiple platforms at once. If some platforms succeeded and others did not, the post shows as published overall, with the specific per-platform errors still visible on the item so you can see exactly which platform needs attention.</p></blockquote>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/faq/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Frequently asked questions</span></a>
+  <a class="next-link" href="/help/contact-support/"><span class="prev-next-label">Next</span><span class="prev-next-title">Contact support</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

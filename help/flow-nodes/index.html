@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flow nodes reference - Vidflow Help</title>
+<meta name="description" content="Every node in the flow editor palette with its options, grouped the way the palette groups them." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="flow-nodes">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/" class="active" aria-current="page">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Flows automation</span>
+    </nav>
+    <article class="article-body">
+      <h1>Flow nodes reference</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Every node you can place in a flow, with its options. Nodes are listed in the same groups as the editor palette: Triggers, Processing, Publishing, Logic, and Reviews.</p>
+<p>Two things apply to every node:</p>
+<ul><li>Each node has a <strong>Label</strong> field in its configuration panel so you can rename it on the canvas.</li><li>Generated content travels down the flow as drafts. Enrichment nodes (captions, images, tags) modify those drafts, but nothing is stored until the drafts reach a Save or Post node.</li></ul>
+<h2 id="triggers"><a class="heading-anchor" href="#triggers" aria-label="Link to this section">#</a>Triggers</h2>
+<p>A flow has one trigger, chosen in the toolbar. The trigger nodes in the palette match the same three options.</p>
+<h3>Episode Upload</h3>
+<p>Starts the flow whenever a new episode is created in this workspace. No configuration. The flow&#39;s <strong>Active</strong> switch must be on for it to fire, and each run waits for the episode&#39;s transcript before starting; see <a href="/help/flow-runs/">Runs, history, and troubleshooting</a>.</p>
+<h3>Google Drive File</h3>
+<p>Starts the flow from a file dropped into a Google Drive folder.</p>
+<ul><li><strong>Folder ID</strong>: the Drive folder to watch.</li></ul>
+<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> The Google Drive trigger is in beta. Its folder watcher is not wired up yet, so these flows do not fire on their own. You can still build and save one, and run it manually.</p></blockquote>
+<h3>Manual Trigger</h3>
+<p>Runs on demand. When you start the run you pick an episode (uses its transcript) or a saved script (uses the script text) as the source. No configuration.</p>
+<h2 id="processing"><a class="heading-anchor" href="#processing" aria-label="Link to this section">#</a>Processing</h2>
+<h3>Generate Clips</h3>
+<p>Generates short clips from the source episode. Pick the <strong>Engine</strong> first; the options change with it.</p>
+<ul><li><strong>Engine</strong>: <strong>OpusClip</strong> or <strong>Native (Beta)</strong>.</li></ul>
+<p>With <strong>Native (Beta)</strong> (Vidflow&#39;s own moment selection and rendering, no external account needed):</p>
+<ul><li><strong>Clip count</strong>: 1 to 20.</li><li><strong>Duration band</strong>: 0-1m, 1-3m, 3-5m, or any.</li><li><strong>Caption style</strong>: <strong>Standard (house default)</strong>, <strong>Bold Center Pop</strong>, <strong>Karaoke Band</strong>, <strong>Clean Minimal</strong>, <strong>Hype Impact</strong>, or <strong>Editorial Serif</strong>.</li><li><strong>Genre (optional)</strong> and <strong>Topic / prompt (optional)</strong> to steer moment selection.</li><li><strong>Auto-approve top clips</strong>: on by default.</li></ul>
+<p>With <strong>OpusClip</strong> (requires a connected OpusClip account, see <a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a>):</p>
+<ul><li><strong>Mode</strong>: <strong>ClipBasic</strong> or <strong>ClipAnything</strong>.</li><li><strong>Aspect Ratio</strong>: portrait, landscape, or square.</li><li><strong>Clip lengths</strong>: any mix of <strong>Auto</strong>, <strong>&lt;30s</strong>, <strong>30-60s</strong>, <strong>60-90s</strong>, and <strong>90s to 3min</strong>.</li><li>In ClipAnything mode, <strong>What should Opus clip?</strong> takes a free-text prompt. In ClipBasic mode you get <strong>Genre (optional)</strong> and <strong>Keywords (comma-separated)</strong> instead.</li><li><strong>Remove filler words</strong>: off by default.</li></ul>
+<h3>Magic Ideas</h3>
+<p>Generates content ideas from the episode for downstream editorial work.</p>
+<ul><li><strong>Idea Type</strong>: clips, posts, themes, or mixed.</li><li><strong>Tone</strong>: professional, casual, humorous, or educational.</li><li><strong>Max Ideas</strong>: how many to generate.</li></ul>
+<h3>Magic Text Posts</h3>
+<p>Writes AI text posts from the episode transcript.</p>
+<ul><li><strong>Post types</strong>: any mix of <strong>Quote</strong>, <strong>Insight</strong>, <strong>Tip</strong>, <strong>Story</strong>, <strong>Question</strong>, and <strong>Statistic</strong>.</li><li><strong>Tone</strong>: <strong>Professional</strong>, <strong>Casual</strong>, <strong>Witty</strong>, <strong>Inspirational</strong>, or <strong>Educational</strong>.</li><li><strong>Platforms</strong>: X, LinkedIn, Instagram, Facebook.</li><li><strong>Posts per type</strong>: 1 to 10.</li><li><strong>When done</strong>: needs_approval or auto_approve, which sets the approval state the posts land with.</li><li><strong>Include Hashtags</strong> and <strong>Include Emojis</strong>: both on by default.</li><li><strong>Custom Prompt</strong>: extra instructions for the writer.</li></ul>
+<h3>Blog Posts</h3>
+<p>Generates long-form blog content from the episode.</p>
+<ul><li><strong>Post Type</strong>: <strong>Full Article</strong>, <strong>Summary</strong>, <strong>Key Takeaways</strong>, or <strong>How-To</strong>.</li><li><strong>Length</strong>: <strong>Short</strong>, <strong>Medium</strong>, or <strong>Long</strong>.</li><li><strong>Include SEO</strong> and <strong>Include Call-to-Action</strong>: both on by default.</li><li><strong>Custom Prompt</strong>: extra instructions.</li></ul>
+<h3>Script Generator</h3>
+<p>Turns episode context into a script.</p>
+<ul><li><strong>Script Type</strong>: <strong>Video Script</strong>, <strong>Podcast Intro</strong>, <strong>Sales Pitch</strong>, <strong>Educational</strong>, or <strong>Storytelling</strong>.</li><li><strong>Duration</strong>: 30s, 60s, 2min, 5min, or Custom.</li><li><strong>Tone</strong>: <strong>Professional</strong>, <strong>Casual</strong>, <strong>Energetic</strong>, <strong>Calm</strong>, or <strong>Humorous</strong>.</li><li><strong>Include Timestamps</strong>: on by default.</li><li><strong>Custom Prompt</strong>: extra instructions.</li></ul>
+<h3>Generate Captions</h3>
+<p>Writes a tailored caption for each selected platform on every piece of content produced upstream.</p>
+<ul><li><strong>Platforms</strong>: X, LinkedIn, Instagram, Facebook.</li><li><strong>Tone</strong>: <strong>Professional</strong>, <strong>Casual</strong>, <strong>Witty</strong>, <strong>Inspirational</strong>, or <strong>Educational</strong>.</li></ul>
+<h3>Generate Images</h3>
+<p>Turns concepts or upstream posts into brand-styled images.</p>
+<ul><li><strong>Preset</strong>: appears when your workspace has image presets; applying one fills the prompt. Presets are managed in Brand Settings under Image Presets.</li><li><strong>Image type</strong>: <strong>Quote Card</strong>, <strong>Infographic</strong>, <strong>Carousel Slide</strong>, <strong>Thumbnail</strong>, <strong>Announcement</strong>, or <strong>General</strong>.</li><li><strong>Image concepts from</strong>: episode (Vidflow writes distinct concepts from the episode, one image each) or upstream (one image per upstream idea or post, for example from a <strong>Magic Ideas</strong> node connected before this one).</li><li><strong>Number of images</strong> (or <strong>Number of slides</strong> in carousel mode): 1 to 10. Shown when concepts come from the episode.</li><li><strong>Aspect Ratio</strong>: 1:1, 4:5, 3:4, or 1.91:1.</li><li><strong>Style (optional)</strong> and <strong>Prompt / direction (optional)</strong>: free-text steering.</li><li><strong>When done</strong>: needs_approval or auto_approve.</li><li><strong>Combine into one carousel</strong>: generates one coherent carousel saved as a single post instead of separate images.</li><li><strong>Caption per platform (optional)</strong>: pick platforms to get a tailored caption per platform on each image, with no separate <strong>Generate Captions</strong> node needed. With none selected, each image gets one base caption.</li></ul>
+<h3>Tag Content</h3>
+<p>Applies workspace tags to every piece of content moving through this point in the flow.</p>
+<ul><li><strong>Tags</strong>: pick from the workspace&#39;s existing tags. Tags are created in the Content Library first; see <a href="/help/tags/">Tags</a>.</li></ul>
+<p>Place this node right before a Save node so everything being saved picks up the tags.</p>
+<h2 id="publishing"><a class="heading-anchor" href="#publishing" aria-label="Link to this section">#</a>Publishing</h2>
+<h3>Save to Library</h3>
+<p>Commits everything assembled upstream (posts, images, captions, tags) into the Content Library as drafts. No options. Until a Save node runs, content stays in limbo and is not saved anywhere, so every producing flow needs this node or one of the other publishing nodes at the end.</p>
+<h3>Save to Queue</h3>
+<p>Saves upstream content to the library and adds it to a publishing queue.</p>
+<ul><li><strong>Queue</strong>: pick an existing queue or choose <strong>+ Create new queue…</strong> to make one inline.</li><li><strong>Priority</strong>: <strong>Low</strong>, <strong>Normal</strong>, or <strong>High</strong>.</li><li><strong>Add to Calendar</strong>: off by default; turning it on reveals a <strong>Scheduled Date</strong> field.</li></ul>
+<h3>Schedule Post</h3>
+<p>Saves upstream content and schedules it.</p>
+<ul><li><strong>Platforms</strong>: X, LinkedIn, Instagram, Facebook.</li><li><strong>Time (UTC)</strong>: defaults to 14:00.</li><li><strong>Repeat</strong>: <strong>Once</strong>, <strong>Daily</strong>, <strong>Weekdays</strong>, or <strong>Weekly</strong>.</li><li><strong>Delay Hours</strong>: pushes the first slot out from the time of the run.</li></ul>
+<h3>Post to X, Post to Instagram, Post to LinkedIn</h3>
+<p>Each of these saves the upstream content and queues it for that platform. No options beyond the label. Publishing then follows your normal queue and connected-account setup; see <a href="/help/schedules-and-queues/">Schedules and queues</a>.</p>
+<h2 id="logic"><a class="heading-anchor" href="#logic" aria-label="Link to this section">#</a>Logic</h2>
+<h3>Router</h3>
+<p>Splits the flow into parallel branches. Every connected branch runs. Drag a node close to the router to attach it as a branch; to detach one, right-click the connected node and choose <strong>Disconnect</strong>, or right-click the connection line and choose <strong>Delete Connection</strong>.</p>
+<p>Routers have no configuration of their own. To control what travels down each branch, put a filter on the branch&#39;s connection; see the branch filters section of <a href="/help/build-a-flow/">Build your first flow</a>.</p>
+<h3>Delay</h3>
+<p>Offsets publishing timing for everything downstream.</p>
+<ul><li><strong>Duration</strong> plus <strong>Unit</strong>: minutes, hours, or days.</li></ul>
+<p>The delay pushes out when downstream content is scheduled or queued. The run itself does not pause.</p>
+<h3>Condition</h3>
+<p>Evaluates rules before continuing. If they pass, the flow continues; if not, this branch stops.</p>
+<ul><li><strong>Conditions (one per line, all must pass)</strong>: each line is written as field operator value, for example <code>title contains AI</code> or <code>status == ready</code>. Fields: title, status, description, tags, postType, kind, triggerType. Operators: <code>==</code>, <code>!=</code>, <code>contains</code>, <code>startsWith</code>.</li></ul>
+<h2 id="reviews"><a class="heading-anchor" href="#reviews" aria-label="Link to this section">#</a>Reviews</h2>
+<h3>Approvals</h3>
+<p>Routes upstream content through an approval step before it moves on. See <a href="/help/approvals-overview/">Client approvals overview</a> for how approvals work in Vidflow.</p>
+<ul><li><strong>Approval Type</strong>: <strong>Auto-Approve</strong>, <strong>Client Review</strong>, <strong>Internal Review</strong>, or <strong>Both</strong>.</li><li><strong>Notify On</strong>: any mix of <strong>Approval Needed</strong>, <strong>Approved</strong>, and <strong>Rejected</strong>.</li><li><strong>Require Comment</strong>: off by default.</li><li><strong>Timeout Days</strong>: 1 to 30.</li></ul>
+<h3>Notify Owner</h3>
+<p>Sends an in-app notification when the run reaches this node.</p>
+<ul><li><strong>Message Template</strong>: the notification text. Left empty, it sends a default step-completed message naming the episode.</li></ul>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/build-a-flow/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Build your first flow</span></a>
+  <a class="next-link" href="/help/flow-runs/"><span class="prev-next-label">Next</span><span class="prev-next-title">Runs, history, and troubleshooting</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

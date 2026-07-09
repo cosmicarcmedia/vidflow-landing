@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI images and thumbnails - Vidflow Help</title>
+<meta name="description" content="Generate images for posts in Image Studio or standalone in the Content Library, enhance clip thumbnails, build carousels, and make light image edits." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="ai-images">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/" class="active" aria-current="page">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>AI writing and images</span>
+    </nav>
+    <article class="article-body">
+      <h1>AI images and thumbnails</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Vidflow generates images where you already work: an Image Studio inside the post editor, a standalone generator in the Content Library, AI thumbnails in the clip editor, and a light image editor for crops and filters. Every image generation counts toward your plan&#39;s monthly AI allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
+<h2 id="image-studio"><a class="heading-anchor" href="#image-studio" aria-label="Link to this section">#</a>Image Studio</h2>
+<p>Image Studio generates and refines images for a text or image post.</p>
+<ol><li>Open a text or image post from your <strong>Content Library</strong> in the edit view.</li><li>Click <strong>Image Studio</strong>. The studio opens beside the post; <strong>Close Studio</strong> hides it again.</li><li>Describe the image in the prompt box, or click <strong>Magic prompt</strong> to draft a prompt from the post&#39;s title and caption.</li><li>Pick an <strong>Aspect Ratio</strong>: 3:4, 4:5, 1:1, 9:16, 16:9, or 1.91:1. Each option notes the placements it suits, such as feed, story, or link preview.</li><li>Optional: pick a <strong>Social style</strong> preset (curated art direction), or a <strong>Style template</strong> from your brand&#39;s saved Image Presets. With a template, the template controls the look and your prompt supplies the subject.</li><li>Click <strong>Generate image</strong>.</li></ol>
+<!-- screenshot: Image Studio open beside a post, with the aspect ratio grid and a generated image selected -->
+<p>Every result lands in a strip of generations beside the preview, so you can compare attempts and return to an earlier one. From there:</p>
+<ul><li>With an image selected, the main button becomes <strong>Refine this image</strong>: describe the change and Vidflow edits that image. <strong>Regenerate from scratch</strong> starts over from the prompt alone.</li><li><strong>Upload image</strong> adds your own file to the strip, so you can refine an existing graphic or use it as-is.</li><li>Hover a thumbnail in the strip to view or edit the prompt that produced it.</li><li>Click <strong>Select this image</strong> to attach the selected image to the post.</li></ul>
+<h2 id="generate-a-standalone-image"><a class="heading-anchor" href="#generate-a-standalone-image" aria-label="Link to this section">#</a>Generate a standalone image</h2>
+<p>To create an image that is not attached to an existing post, click <strong>Generate Image</strong> at the top of your <strong>Content Library</strong>.</p>
+<!-- screenshot: Generate Image dialog in the Content Library, with a prompt, the aspect ratio row, and a generated image above Save to Library -->
+<ol><li>Describe the image in the prompt box.</li><li>Pick an <strong>Aspect Ratio</strong>: 1:1, 4:5, 3:4, or 1.91:1.</li><li>Click <strong>Generate Image</strong>. Use <strong>Regenerate</strong> for another take on the same prompt.</li><li>Optional: give the image a title. Without one, Vidflow titles it from the prompt.</li><li>Click <strong>Save to Library</strong>. The image lands in your library as a draft image post, ready to schedule or to refine further in Image Studio.</li></ol>
+<h2 id="clip-thumbnails"><a class="heading-anchor" href="#clip-thumbnails" aria-label="Link to this section">#</a>Clip thumbnails</h2>
+<p>When you edit a clip, thumbnail tools sit under the video player. Pause the video on the frame you want first.</p>
+<ul><li><strong>Use this frame as thumbnail</strong> captures the paused frame as the clip&#39;s thumbnail.</li><li><strong>AI thumbnail for Shorts</strong> generates a branded Shorts thumbnail from the current frame.</li></ul>
+<p>For the rest of the clip editor, see <a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a>.</p>
+<h2 id="edit-an-image"><a class="heading-anchor" href="#edit-an-image" aria-label="Link to this section">#</a>Edit an image</h2>
+<p>When a post has an image, an <strong>Edit image (crop, rotate, filters)</strong> link appears under the preview in the edit view. The <strong>Edit image</strong> dialog covers:</p>
+<ul><li>Rotate and flip controls.</li><li><strong>Crop aspect</strong>: Original, 1:1, 4:5, 9:16, or 16:9, with a <strong>Position</strong> slider to place the crop.</li><li><strong>Brightness</strong> and <strong>Saturation</strong> sliders, plus a <strong>Grayscale</strong> toggle.</li></ul>
+<p>Click <strong>Apply &amp; save</strong> to save the edited image, or <strong>Reset all</strong> to discard your adjustments.</p>
+<h2 id="carousel-images-paid-plans"><a class="heading-anchor" href="#carousel-images-paid-plans" aria-label="Link to this section">#</a>Carousel images (paid plans)</h2>
+<p>On image posts, the <strong>Carousel Images</strong> section turns one post into a multi-image carousel of up to 10 images. Click <strong>Add Images</strong> to upload more, add the post&#39;s current image to the set, and reorder the images. Carousel building is available on paid plans. See <a href="/help/plans-and-features/">Plans and features</a>.</p>
+<h2 id="image-presets-in-brand-settings-paid-plans"><a class="heading-anchor" href="#image-presets-in-brand-settings-paid-plans" aria-label="Link to this section">#</a>Image Presets in Brand Settings (paid plans)</h2>
+<p><strong>Brand Settings</strong> includes an <strong>Image Presets</strong> card where you save named, reusable image prompts (a name plus the prompt itself), up to 20 per brand space, for looks you use again and again, like quote cards or infographics. Saved presets appear as <strong>Style template</strong> options in Image Studio and in image generation inside Flows.</p>
+<p>The same card sets the default image model for the brand space and offers an <strong>AI Quality Pass</strong> switch: after each generation, a vision model checks the image against your brand rubric and regenerates until it passes, spending up to three generations and three reviews on a single image.</p>
+<p>Managing presets and these settings requires a paid plan. See <a href="/help/plans-and-features/">Plans and features</a>.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<ul><li><strong>Generate image stays disabled.</strong> Enter a prompt first, or click <strong>Magic prompt</strong> to draft one.</li><li><strong>Generation fails with an error.</strong> Run it again. If it keeps failing, check whether you have reached your monthly AI allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</li><li><strong>Carousel or preset controls are locked.</strong> Both are paid plan features. See <a href="/help/plans-and-features/">Plans and features</a>.</li></ul>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/blog-posts/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Blog Post Generator</span></a>
+  <span></span>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

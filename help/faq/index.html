@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frequently asked questions - Vidflow Help</title>
+<meta name="description" content="Quick answers to the questions customers ask most, with links to the full articles." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="faq">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/" class="active" aria-current="page">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Troubleshooting and FAQ</span>
+    </nav>
+    <article class="article-body">
+      <h1>Frequently asked questions</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Quick answers to common questions, each with a link to the full article if you need more detail.</p>
+<h2 id="how-do-i-get-access-to-vidflow"><a class="heading-anchor" href="#how-do-i-get-access-to-vidflow" aria-label="Link to this section">#</a>How do I get access to Vidflow?</h2>
+<p>Vidflow is invite-only during the current beta. Join the waitlist from the marketing site, and you will get access in waves. Once you are approved, you receive an email titled &quot;Your Vidflow access is ready&quot; with a link to sign in at app.vidflow.io using that same email address. See <a href="/help/getting-access/">Getting access to Vidflow</a>.</p>
+<h2 id="what-counts-as-an-ai-generation"><a class="heading-anchor" href="#what-counts-as-an-ai-generation" aria-label="Link to this section">#</a>What counts as an AI generation?</h2>
+<p>AI generations are a shared monthly pool that includes transcribing an uploaded video, writing clip titles and captions, generating text posts, ideas, scripts, and images, and any other AI-written content. Transcribing a YouTube import does not draw from this pool the same way an upload does, since import quota is tracked separately from the AI pool. Check your plan&#39;s allowance and what happens at the cap in <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
+<h2 id="why-did-my-post-fail"><a class="heading-anchor" href="#why-did-my-post-fail" aria-label="Link to this section">#</a>Why did my post fail?</h2>
+<p>A post can fail for a few reasons: the connected account&#39;s authorization expired, the platform&#39;s requirements were not met (for example, no video on a platform that requires one, or a caption over the limit), or TikTok rejected the compose settings. The post&#39;s failure text tells you which platform failed and why. Work through <a href="/help/publishing-troubleshooting/">Fix publishing problems</a> in order, it is built as a checklist from most to least likely cause.</p>
+<h2 id="why-are-my-tiktok-posts-showing-as-private"><a class="heading-anchor" href="#why-are-my-tiktok-posts-showing-as-private" aria-label="Link to this section">#</a>Why are my TikTok posts showing as private?</h2>
+<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> While TikTok&#39;s app review is pending, every post from Vidflow publishes privately (Only you) on TikTok regardless of the audience you selected. Vidflow shows this on the post and emails you when it happens. This clears up once TikTok approves the app; no action is needed on your end.</p></blockquote>
+<h2 id="why-are-my-clips-taking-a-long-time"><a class="heading-anchor" href="#why-are-my-clips-taking-a-long-time" aria-label="Link to this section">#</a>Why are my clips taking a long time?</h2>
+<p>Most clip runs finish within a few minutes of clicking <strong>Generate Clips</strong>. If nothing has appeared in your Content Library after about 30 minutes, re-run the generation rather than waiting longer, since a stuck run does not always surface an error on screen. See <a href="/help/clips-troubleshooting/">Clips troubleshooting</a>.</p>
+<h2 id="do-my-clients-need-a-vidflow-login-to-approve-content"><a class="heading-anchor" href="#do-my-clients-need-a-vidflow-login-to-approve-content" aria-label="Link to this section">#</a>Do my clients need a Vidflow login to approve content?</h2>
+<p>No. Approval links are public and tokenized: your client opens the URL and reviews content with no account and no sign-in. The page shows your logo and brand color, not Vidflow&#39;s. See <a href="/help/client-review-page/">What your client sees</a>.</p>
+<h2 id="do-captions-work-differently-on-each-platform"><a class="heading-anchor" href="#do-captions-work-differently-on-each-platform" aria-label="Link to this section">#</a>Do captions work differently on each platform?</h2>
+<p>Yes. Each platform enforces its own character limit (for example, X text caps at 280 characters and Instagram captions cap at 2200), and some platforms need extra settings, like TikTok&#39;s audience and disclosure controls. Turning on per-platform captions, a paid feature, lets you write a different caption for each platform instead of reusing one caption everywhere. See <a href="/help/post-now/">Post now</a> and <a href="/help/magic-text-posts/">Magic Text Posts</a>.</p>
+<h2 id="can-i-run-multiple-brands-from-one-account"><a class="heading-anchor" href="#can-i-run-multiple-brands-from-one-account" aria-label="Link to this section">#</a>Can I run multiple brands from one account?</h2>
+<p>Yes. Each brand lives in its own workspace, with its own content, connected accounts, brand voice, and approvals, fully isolated from your other brands. Your first workspace is free on every plan; running more than one at a time requires the Agency plan. See <a href="/help/multiple-brands/">Running multiple brands</a>.</p>
+<h2 id="what-happens-when-i-hit-my-monthly-limit"><a class="heading-anchor" href="#what-happens-when-i-hit-my-monthly-limit" aria-label="Link to this section">#</a>What happens when I hit my monthly limit?</h2>
+<p>Vidflow blocks further AI generations, clip generations, or episode uploads for that metric until the next calendar month resets it, or until you upgrade your plan. You will see a message naming which limit you hit and pointing you to the Billing page. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
+<h2 id="can-i-cancel-and-get-a-refund"><a class="heading-anchor" href="#can-i-cancel-and-get-a-refund" aria-label="Link to this section">#</a>Can I cancel and get a refund?</h2>
+<p>You can cancel anytime from the billing portal, and you keep paid access through the end of your current billing period. If you want a refund of your very first charge, email support@vidflow.io within 14 days of that charge. After 14 days, charges are non-refundable except where the law requires otherwise. See <a href="/help/manage-billing/">Manage your subscription</a>.</p>
+<h2 id="how-do-i-delete-my-data"><a class="heading-anchor" href="#how-do-i-delete-my-data" aria-label="Link to this section">#</a>How do I delete my data?</h2>
+<p>Disconnecting a platform revokes Vidflow&#39;s access to it immediately, and deleting a workspace removes all its content. For full account deletion, or a formal data deletion request, email support@vidflow.io or privacy@vidflow.io. See <a href="/help/data-privacy/">Your data and privacy</a>.</p>
+<h2 id="which-platforms-publish-automatically-on-a-schedule"><a class="heading-anchor" href="#which-platforms-publish-automatically-on-a-schedule" aria-label="Link to this section">#</a>Which platforms publish automatically on a schedule?</h2>
+<p>Content on a schedule or queue auto-publishes to X, LinkedIn, Instagram, Facebook, TikTok, and YouTube. Older queue posts created before this dispatcher only auto-publish to X and LinkedIn; any other platform on one of those older posts needs a manual publish from the Library. See <a href="/help/post-statuses/">Post statuses and failed posts</a>.</p>
+<h2 id="why-cant-i-invite-my-team"><a class="heading-anchor" href="#why-cant-i-invite-my-team" aria-label="Link to this section">#</a>Why can&#39;t I invite my team?</h2>
+<p>Team invites are a paid feature starting on the Starter plan, and how many paid seats you get depends on your plan. Client reviewers who only need to approve content are always free and unlimited, and never need an invite at all, since they use the approval link instead. See <a href="/help/invite-your-team/">Invite team members</a>.</p>
+<h2 id="why-is-flows-greyed-out-or-unavailable"><a class="heading-anchor" href="#why-is-flows-greyed-out-or-unavailable" aria-label="Link to this section">#</a>Why is Flows greyed out or unavailable?</h2>
+<p>Flows, the automation builder, requires a Pro or Agency plan. On plans below that, the feature is locked behind an upgrade prompt. See <a href="/help/flows-overview/">Flows overview</a>.</p>
+<h2 id="why-does-opusclip-say-it-isnt-connected"><a class="heading-anchor" href="#why-does-opusclip-say-it-isnt-connected" aria-label="Link to this section">#</a>Why does OpusClip say it isn&#39;t connected?</h2>
+<p>The OpusClip clip engine needs its own API key connected per workspace, from your own OpusClip account. Vidflow does not provide a shared key. Connect yours in <strong>Workspace Settings &gt; Connections</strong>, or switch to the Native engine, which needs no key. See <a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a>.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <span></span>
+  <a class="next-link" href="/help/publishing-troubleshooting/"><span class="prev-next-label">Next</span><span class="prev-next-title">Fix publishing problems</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

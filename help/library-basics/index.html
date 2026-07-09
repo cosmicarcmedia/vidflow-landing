@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Content Library basics - Vidflow Help</title>
+<meta name="description" content="Find, filter, and sort everything in your Vidflow library, and understand what the status and approval labels mean." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="library-basics">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/" class="active" aria-current="page">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Content Library</span>
+    </nav>
+    <article class="article-body">
+      <h1>Content Library basics</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>The <strong>Content Library</strong> holds everything in a workspace: text posts, images, clips, articles, and the episodes they came from. This article shows you how to find things fast and what the status labels mean.</p>
+<p>Open it from the rail: click <strong>Content Library</strong>, then <strong>All Content</strong>.</p>
+<h2 id="tabs"><a class="heading-anchor" href="#tabs" aria-label="Link to this section">#</a>Tabs</h2>
+<p>Three tabs split the library by what you are looking at:</p>
+<ul><li><strong>All Content</strong> shows every item in the workspace.</li><li><strong>Episodes</strong> shows only your long-form source videos.</li><li><strong>Clips</strong> shows only clips generated from episodes.</li></ul>
+<p>Episodes are sources, not posts. See <a href="/help/episodes-and-the-library/">Episodes vs. library content</a> for how the two relate.</p>
+<p>If the library is empty, the page offers shortcuts such as <strong>Upload Video</strong>, <strong>Import from YouTube</strong>, and <strong>Magic Text Posts</strong> to create your first content.</p>
+<h2 id="views-and-sorting"><a class="heading-anchor" href="#views-and-sorting" aria-label="Link to this section">#</a>Views and sorting</h2>
+<p>The view button on the left of the filter row switches between <strong>Grid View</strong>, <strong>Compact View</strong>, and <strong>List View</strong>.</p>
+<p>The sort menu next to it orders items by <strong>Date Created</strong>, <strong>Title A-Z</strong>, <strong>Unused First</strong>, <strong>Unapproved First</strong>, or <strong>Media Type</strong>.</p>
+<!-- screenshot: the Content Library filter row showing the view button, sort and filter menu, From episode select, Manage Tags button, and search box -->
+<h2 id="filters"><a class="heading-anchor" href="#filters" aria-label="Link to this section">#</a>Filters</h2>
+<p>The same sort menu also holds the filters. They stack with search:</p>
+<ul><li><strong>All Types</strong>, or one content type: <strong>Text</strong>, <strong>Articles</strong>, <strong>Images</strong>, <strong>Clips</strong>, <strong>Episodes</strong>.</li><li><strong>All Tags</strong>, or one of your tags. The <strong>Manage Tags</strong> button beside the menu creates and edits tags. See <a href="/help/tags/">Tags</a>.</li><li><strong>All Approval States</strong>, <strong>Needs Approval</strong>, or <strong>Approved</strong>.</li></ul>
+<p>A separate <strong>From episode</strong> select narrows the library to content created from one source episode. Pick <strong>All sources</strong> to clear it.</p>
+<h2 id="search"><a class="heading-anchor" href="#search" aria-label="Link to this section">#</a>Search</h2>
+<p>The search box matches titles by default. The toggle beside it switches scope:</p>
+<ul><li><strong>Titles</strong> searches item titles only.</li><li><strong>Full</strong> also searches captions and metadata.</li></ul>
+<h2 id="content-statuses"><a class="heading-anchor" href="#content-statuses" aria-label="Link to this section">#</a>Content statuses</h2>
+<p>Every post, image, and clip carries one status:</p>
+<ul><li><strong>Draft</strong>: a working copy. It does not publish anywhere.</li><li><strong>Queued</strong>: the item sits in a queue and goes out at the queue&#39;s next open time slot.</li><li><strong>Scheduled</strong>: the item has a specific publish date and time.</li><li><strong>Published</strong>: the item has already been posted.</li></ul>
+<p>Change a status from the item&#39;s editor. See <a href="/help/edit-content/">Edit a post</a>. Once a post is dispatched, you may also see publishing and failed states; see <a href="/help/post-statuses/">Post statuses and failed posts</a>.</p>
+<h2 id="approval-states"><a class="heading-anchor" href="#approval-states" aria-label="Link to this section">#</a>Approval states</h2>
+<p>Approval is a separate dimension from status. It tracks client review, not publishing:</p>
+<ul><li><strong>Draft</strong>: not submitted for review.</li><li><strong>Needs approval</strong>: submitted and waiting on a reviewer. The editor shows a <strong>Pending Approval</strong> badge.</li><li><strong>Approved</strong>: cleared by the reviewer.</li><li><strong>Rejected</strong>: turned down by the reviewer.</li></ul>
+<p>Approval by itself publishes nothing. An approved item still goes out through its status (queued or scheduled) or through <strong>Post Now</strong>. See <a href="/help/approval-status/">Approval status in your library</a>.</p>
+<h2 id="loading-more"><a class="heading-anchor" href="#loading-more" aria-label="Link to this section">#</a>Loading more</h2>
+<p>The library loads a window of items at a time. Click <strong>Load more content</strong> at the bottom to extend it. A counter shows how many items you are viewing out of the total.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> While a Flow is generating content, a banner appears at the top of the library and new posts show up automatically as they finish. See <a href="/help/flows-overview/">Flows overview</a>.</p></blockquote>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <span></span>
+  <a class="next-link" href="/help/edit-content/"><span class="prev-next-label">Next</span><span class="prev-next-title">Edit a post</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Post statuses and failed posts - Vidflow Help</title>
+<meta name="description" content="What each post status means, how failures are reported, and how to retry a failed post." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="post-statuses">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/" class="active" aria-current="page">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Publishing and scheduling</span>
+    </nav>
+    <article class="article-body">
+      <h1>Post statuses and failed posts</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Every post in Vidflow carries a status that tells you where it is in the publishing process, plus a separate approval state if approvals apply to it.</p>
+<h2 id="post-statuses"><a class="heading-anchor" href="#post-statuses" aria-label="Link to this section">#</a>Post statuses</h2>
+<div class="table-wrap"><table><thead><tr><th>Status</th><th>Meaning</th></tr></thead><tbody><tr><td>Draft</td><td>Not yet scheduled or sent anywhere.</td></tr><tr><td>Queued</td><td>Sitting in a queue schedule, waiting for its next open slot.</td></tr><tr><td>Scheduled</td><td>Placed on the calendar with a specific date and time.</td></tr><tr><td>Publishing</td><td>Actively being sent to one or more platforms right now.</td></tr><tr><td>Published</td><td>Successfully sent to at least one platform.</td></tr><tr><td>Failed</td><td>Every attempted platform failed.</td></tr></tbody></table></div>
+<h2 id="approval-is-a-separate-dimension"><a class="heading-anchor" href="#approval-is-a-separate-dimension" aria-label="Link to this section">#</a>Approval is a separate dimension</h2>
+<p>A post also has an approval state, independent of the statuses above: needs approval, approved, or rejected. A schedule with <strong>Require Approval</strong> turned on will not dispatch an item until it reaches approved. See <a href="/help/approvals-overview/">Client approvals overview</a> and <a href="/help/approval-status/">Approval status in your library</a>.</p>
+<h2 id="what-failed-means"><a class="heading-anchor" href="#what-failed-means" aria-label="Link to this section">#</a>What &quot;failed&quot; means</h2>
+<p>Vidflow publishes to every platform an item is set to post on, and it evaluates each platform independently. If every platform attempt fails, the item is marked <strong>Failed</strong>. If at least one platform succeeds, the item is marked <strong>Published</strong>, even if others failed.</p>
+<p>Either way, the specific error for each platform is kept and shown on the item, in the form:</p>
+<pre><code>instagram: {error}; youtube: {error}</code></pre>
+<p>So a <strong>Published</strong> item can still be worth checking: open it to see whether any of its platforms actually failed even though the overall status reads Published.</p>
+<!-- screenshot: a content card showing a Published status with a per-platform error visible -->
+<h2 id="retry-a-failed-post"><a class="heading-anchor" href="#retry-a-failed-post" aria-label="Link to this section">#</a>Retry a failed post</h2>
+<p>Click <strong>Retry Post</strong> on the item, in the Calendar&#39;s Schedule Post dialog or from the content card menu. A successful retry shows &quot;Post re-queued&quot; and the item re-enters the normal publishing flow.</p>
+<h2 id="media-links-never-go-dead"><a class="heading-anchor" href="#media-links-never-go-dead" aria-label="Link to this section">#</a>Media links never go dead</h2>
+<p>Media files are stored with signed links that expire over time. Vidflow re-signs those links at the moment of publish, not when the post was originally scheduled, so a post sitting on the calendar for weeks or months will still find a working file when its time comes.</p>
+<h2 id="email-notifications"><a class="heading-anchor" href="#email-notifications" aria-label="Link to this section">#</a>Email notifications</h2>
+<p>Your workspace can list up to three notification email addresses (Workspace Settings &gt; Notifications). Vidflow emails those addresses when a post publishes and when a post fails, according to your workspace&#39;s notification settings.</p>
+<h2 id="timezones"><a class="heading-anchor" href="#timezones" aria-label="Link to this section">#</a>Timezones</h2>
+<p>Schedules capture the timezone from your browser when you set them up, and times are shown to you in that local timezone. If you or a teammate schedule from a different timezone, keep that in mind when comparing what a given time actually means.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>A post is stuck on Publishing</strong>: this should resolve quickly. If it doesn&#39;t move to Published or Failed after a few minutes, try refreshing, and contact support if it persists.</p>
+<p><strong>Published, but something looks wrong</strong>: check the per-platform error detail on the item. A partial failure still reads Published overall, with the failing platform&#39;s error kept alongside it.</p>
+<p><strong>Retry Post doesn&#39;t fix it</strong>: the error message names the platform and the specific issue. Common causes are an expired account connection (see the platform&#39;s connect article), a caption over that platform&#39;s limit, or a missing required video. Fix the underlying issue, then retry.</p>
+<p><strong>No email arrived for a publish or failure</strong>: confirm notification emails are configured in Workspace Settings &gt; Notifications, and check spam.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/youtube-publishing/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Publish episodes to YouTube and your podcast feed</span></a>
+  <span></span>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulk actions - Vidflow Help</title>
+<meta name="description" content="Re-tag, set default accounts, copy between workspaces, or delete many library items in one pass with Bulk Manage." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="bulk-actions">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/" class="active" aria-current="page">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Content Library</span>
+    </nav>
+    <article class="article-body">
+      <h1>Bulk actions</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Bulk actions change many library items in one pass instead of opening them one at a time. They run from the <strong>Bulk Manage Content</strong> dialog.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Bulk actions are available on plans that include them. See <a href="/help/plans-and-features/">Plans and features</a>.</p></blockquote>
+<h2 id="open-bulk-manage"><a class="heading-anchor" href="#open-bulk-manage" aria-label="Link to this section">#</a>Open Bulk Manage</h2>
+<ol><li>In the rail, click <strong>Content Library</strong>, then <strong>Bulk Actions</strong>.</li><li>The library opens with the <strong>Bulk Manage Content</strong> dialog and four actions:<ul><li><strong>Re-Tag Content</strong>: add or override tags on the selected items.</li><li><strong>Select Default Accounts</strong>: add or override the default accounts the selected items post to.</li><li><strong>Delete</strong>: delete multiple items at once.</li><li><strong>Copy Content to Other Workspaces</strong>: copy the selected items into another workspace.</li></ul></li></ol>
+<!-- screenshot: the Bulk Manage Content dialog showing the four action tiles -->
+<h2 id="select-the-content"><a class="heading-anchor" href="#select-the-content" aria-label="Link to this section">#</a>Select the content</h2>
+<p>Every action starts with the same picker. Click <strong>Select content to manage</strong>, then check the items to include. Use the search box to narrow the list, and <strong>Select All</strong> or <strong>Deselect All</strong> to move faster. The dialog shows how many items are selected.</p>
+<h2 id="re-tag-content"><a class="heading-anchor" href="#re-tag-content" aria-label="Link to this section">#</a>Re-tag content</h2>
+<ol><li>Choose <strong>Re-Tag Content</strong> and select your items.</li><li>Pick the tags to apply. You can create a new tag inline.</li><li>Check <strong>Remove Existing Content Tags</strong> to replace the items&#39; tags instead of adding to them.</li><li>Apply. A confirmation reports how many items were re-tagged.</li></ol>
+<p>See <a href="/help/tags/">Tags</a> for how tags drive filters, schedules, and automation.</p>
+<h2 id="set-default-accounts"><a class="heading-anchor" href="#set-default-accounts" aria-label="Link to this section">#</a>Set default accounts</h2>
+<ol><li>Choose <strong>Select Default Accounts</strong> and select your items.</li><li>Pick the connected accounts the items should post to. <strong>Select All Accounts</strong> picks everything.</li><li>Check <strong>Remove Existing Default Accounts</strong> to replace instead of add.</li><li>Apply.</li></ol>
+<h2 id="copy-content-to-another-workspace"><a class="heading-anchor" href="#copy-content-to-another-workspace" aria-label="Link to this section">#</a>Copy content to another workspace</h2>
+<p>Useful when you run more than one brand and want to reuse content.</p>
+<ol><li>Choose <strong>Copy Content to Other Workspaces</strong> and select your items.</li><li>Pick the <strong>Destination Workspace</strong>. If the workspace switcher has nothing else to offer, the dialog says &quot;No other workspaces available.&quot;</li><li>Apply. The items are copied; the originals stay in the current workspace.</li></ol>
+<p>See <a href="/help/multiple-brands/">Running multiple brands</a>.</p>
+<h2 id="delete-in-bulk"><a class="heading-anchor" href="#delete-in-bulk" aria-label="Link to this section">#</a>Delete in bulk</h2>
+<ol><li>Choose <strong>Delete</strong> and select your items.</li><li>Confirm. The dialog warns that this permanently deletes the selected items and cannot be undone.</li></ol>
+<blockquote class="callout callout-important"><span class="callout-label">Important</span><p><strong>Important:</strong> Bulk delete is permanent. There is no undo and no trash.</p></blockquote>
+<h2 id="adding-content-in-bulk"><a class="heading-anchor" href="#adding-content-in-bulk" aria-label="Link to this section">#</a>Adding content in bulk</h2>
+<p>Bulk Manage edits content that already exists. To add many items at once, including CSV import, use the Bulk Upload page instead. See <a href="/help/bulk-upload/">Bulk upload and CSV import</a>.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/tags/">Tags</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li><li><a href="/help/library-basics/">Content Library basics</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/edit-content/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Edit a post</span></a>
+  <a class="next-link" href="/help/tags/"><span class="prev-next-label">Next</span><span class="prev-next-title">Tags</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

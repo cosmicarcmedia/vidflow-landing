@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bulk upload and CSV import - Vidflow Help</title>
+<meta name="description" content="Add many files at once with the Bulk Upload wizard, or queue weeks of pre-written posts from a CSV." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="bulk-upload">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/" class="active" aria-current="page">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Adding your content</span>
+    </nav>
+    <article class="article-body">
+      <h1>Bulk upload and CSV import</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>The Bulk Upload page does two jobs. A drag-and-drop wizard turns a batch of files into library items with AI titles and captions, and a CSV importer creates posts you have already written.</p>
+<h2 id="the-bulk-upload-wizard"><a class="heading-anchor" href="#the-bulk-upload-wizard" aria-label="Link to this section">#</a>The Bulk Upload wizard</h2>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> The wizard is a paid feature. The CSV importer further down the page works on any plan. See <a href="/help/plans-and-features/">Plans and features</a>.</p></blockquote>
+<p>The wizard runs in three steps: <strong>Drop Files</strong>, <strong>Review</strong>, and <strong>Process</strong>.</p>
+<ol><li>Click <strong>Make Content</strong>, then <strong>Bulk Upload</strong>.</li><li>Drag your files in, or click to browse. Video, audio, images, plain text, markdown, and CSV files are supported.</li><li>Set <strong>Link to source episode (optional but recommended)</strong>. Linking to an episode gives the AI context to write better titles and captions. If you stage clips without one, Vidflow shows a <strong>Missing Episode Context</strong> warning before it processes them.</li><li>Click <strong>Review Files</strong>, check the list, then click <strong>Process All</strong>.</li></ol>
+<!-- screenshot: the Bulk Upload wizard on the Drop Files step with several files staged and the episode selector visible -->
+<p>Vidflow uploads the files, writes an AI title, caption, and tags for each one, and adds everything to your <strong>Content Library</strong>. When it finishes, use <strong>View in Library</strong> to see the results or <strong>Upload More</strong> to run another batch.</p>
+<h2 id="import-posts-from-a-csv"><a class="heading-anchor" href="#import-posts-from-a-csv" aria-label="Link to this section">#</a>Import posts from a CSV</h2>
+<p>The <strong>Import from spreadsheet (CSV)</strong> card on the same page works on any plan. Use it to queue weeks of posts at once.</p>
+<ol><li>Click <strong>Template</strong> to download vidflow-import-template.csv and fill it in.</li><li>Click <strong>Import CSV</strong> and drop your file in.</li><li>Check the preview, then click <strong>Import</strong>. The button shows how many posts are ready.</li></ol>
+<h3>CSV columns</h3>
+<div class="table-wrap"><table><thead><tr><th>Column</th><th>What it does</th></tr></thead><tbody><tr><td>title</td><td>Optional title for the post.</td></tr><tr><td>caption</td><td>The post text. Required. Rows without a caption are skipped, and the preview shows how many.</td></tr><tr><td>platforms</td><td>Target platforms: instagram, facebook, tiktok, youtube, linkedin, x (twitter also works as an alias for x). Separate multiple platforms with a semicolon.</td></tr><tr><td>tags</td><td>Tags to apply. Separate multiple tags with a semicolon.</td></tr><tr><td>scheduledAt</td><td>A date and time such as 2026-07-01 09:00. Rows with a valid date import as scheduled posts. Rows without one import as drafts.</td></tr><tr><td>mediaUrl</td><td>A public link (starting with http or https) to an image to attach.</td></tr></tbody></table></div>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>The dropzone shows an upgrade prompt.</strong> The drag-and-drop wizard is a paid feature. The CSV importer on the same page still works on any plan.</p>
+<p><strong>&quot;That CSV has no data rows.&quot;</strong> The file needs a header row plus at least one content row. Start from the downloadable template.</p>
+<p><strong>&quot;No rows with a caption/body were found.&quot;</strong> Every row needs text in the caption column. Rows without one are skipped.</p>
+<p><strong>Platforms did not apply.</strong> Platform names must match the list above exactly, separated by semicolons.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/auto-import/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Auto-import from Google Drive or Dropbox</span></a>
+  <a class="next-link" href="/help/episodes-and-the-library/"><span class="prev-next-label">Next</span><span class="prev-next-title">Episodes vs. library content</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edit a post - Vidflow Help</title>
+<meta name="description" content="Open any library item to change its title, caption, platforms, tags, and status, or send it for approval." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="edit-content">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/" class="active" aria-current="page">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Content Library</span>
+    </nav>
+    <article class="article-body">
+      <h1>Edit a post</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Every item in the <strong>Content Library</strong> opens in the same editor. This article walks through editing a text post or image, then summarizes how clips and episodes differ.</p>
+<h2 id="open-the-editor"><a class="heading-anchor" href="#open-the-editor" aria-label="Link to this section">#</a>Open the editor</h2>
+<ol><li>Open the <strong>Content Library</strong> and click any item. It opens read-only first.</li><li>Click <strong>Edit Content</strong> to make changes.</li><li>Use the arrows at the top to step to the previous or next item. A counter shows your position in the current list.</li><li>Click <strong>Save</strong> when you are done, or <strong>Cancel</strong> to discard changes.</li></ol>
+<h2 id="what-you-can-edit"><a class="heading-anchor" href="#what-you-can-edit" aria-label="Link to this section">#</a>What you can edit</h2>
+<ul><li><strong>Internal Title</strong>: a name for your own reference. It is optional and never published.</li><li><strong>Caption</strong> (image posts) or <strong>Post Content</strong> (text posts): the text that publishes. A character counter tracks the limit for each platform.</li><li><strong>Tags</strong>: click tag pills to add or remove them. See <a href="/help/tags/">Tags</a>.</li><li><strong>Post to</strong>: toggle the platforms this item publishes to.</li><li><strong>Status</strong>: <strong>Draft</strong>, <strong>Queued</strong>, <strong>Scheduled</strong>, or <strong>Published</strong>. See <a href="/help/library-basics/">Content Library basics</a> for what each means.</li></ul>
+<p>On image posts, <strong>Image Studio</strong> opens an image panel beside the editor. See <a href="/help/ai-images/">AI images and thumbnails</a>.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> When TikTok is toggled on under <strong>Post to</strong>, a TikTok settings panel appears for audience, comments, and content disclosure. See <a href="/help/post-now/">Post now</a> for the details.</p></blockquote>
+<h2 id="per-platform-captions"><a class="heading-anchor" href="#per-platform-captions" aria-label="Link to this section">#</a>Per-platform captions</h2>
+<p>One item can carry a different caption for each platform.</p>
+<ol><li>Turn on the <strong>Platform specific captions</strong> switch.</li><li>A tab appears for each platform selected under <strong>Post to</strong>.</li><li>Write a caption in each tab. Leave a tab blank to use the main post content.</li><li>Each tab has its own character counter against that platform&#39;s limit.</li><li><strong>Generate all platforms</strong> drafts a caption for every platform tab at once.</li></ol>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Per-platform captions are available on plans that include them. See <a href="/help/plans-and-features/">Plans and features</a>.</p></blockquote>
+<!-- screenshot: the edit modal with the Platform specific captions switch on and per-platform caption tabs visible -->
+<h2 id="carousel-images"><a class="heading-anchor" href="#carousel-images" aria-label="Link to this section">#</a>Carousel images</h2>
+<p>Image posts can hold up to 10 images as a carousel. The <strong>Carousel Images</strong> section shows the count, and you can <strong>Add current image</strong> or <strong>Add Images</strong> to drop files or browse.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Carousels are available on plans that include them. See <a href="/help/plans-and-features/">Plans and features</a>.</p></blockquote>
+<h2 id="approval-and-publishing-actions"><a class="heading-anchor" href="#approval-and-publishing-actions" aria-label="Link to this section">#</a>Approval and publishing actions</h2>
+<p>The editor footer holds the item-level actions:</p>
+<ul><li><strong>Submit for Approval</strong> appears while the item&#39;s approval state is draft. After you submit, a <strong>Pending Approval</strong> badge shows until a reviewer acts, then the badge becomes <strong>Approved</strong> or <strong>Rejected</strong>. See <a href="/help/approval-status/">Approval status in your library</a>.</li><li><strong>Post Now</strong> publishes the item immediately to a connected platform. See <a href="/help/post-now/">Post now</a>.</li><li><strong>Delete</strong> permanently removes the post after a confirmation. This cannot be undone.</li><li><strong>Close</strong> leaves the editor.</li></ul>
+<h2 id="editing-clips"><a class="heading-anchor" href="#editing-clips" aria-label="Link to this section">#</a>Editing clips</h2>
+<p>Clips open in this same editor with extra tools: the clip transcript, AI Clip Writing, thumbnail options, and <strong>Replace content</strong>. See <a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a>.</p>
+<h2 id="editing-episodes"><a class="heading-anchor" href="#editing-episodes" aria-label="Link to this section">#</a>Editing episodes</h2>
+<p>Episodes open in the same modal as <strong>Edit Episode</strong>, with four tabs:</p>
+<ul><li><strong>Details</strong>: thumbnail, title, description, episode and season numbers, tags, the media file, and the episode status (draft, processing, ready, published, archived).</li><li><strong>Show Notes</strong>: supports Markdown and appears in podcast players and YouTube descriptions.</li><li><strong>Transcript</strong>: pull or re-pull the transcript and download it as a .txt file. See <a href="/help/transcripts/">Transcripts</a>.</li><li><strong>Generated Clips</strong>: clips created from this episode.</li></ul>
+<p>Save episode changes with <strong>Save Episode</strong>.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Episodes are deleted from the Episodes page, not from this editor.</p></blockquote>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/library-basics/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Content Library basics</span></a>
+  <a class="next-link" href="/help/bulk-actions/"><span class="prev-next-label">Next</span><span class="prev-next-title">Bulk actions</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

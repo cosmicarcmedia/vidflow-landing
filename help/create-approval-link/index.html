@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create and share an approval link - Vidflow Help</title>
+<meta name="description" content="Bundle content into a review link, set an optional expiry, and manage the link after you send it." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="create-approval-link">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/" class="active" aria-current="page">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Client approvals</span>
+    </nav>
+    <article class="article-body">
+      <h1>Create and share an approval link</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Create a link that bundles content for a client to review, then copy it and send it. This article covers creating, sharing, closing, and reopening links.</p>
+<h2 id="before-you-start"><a class="heading-anchor" href="#before-you-start" aria-label="Link to this section">#</a>Before you start</h2>
+<ul><li>Approvals are available on paid plans, Starter and up. On the Free plan the <strong>Create Approval Link</strong> button is locked and prompts you to upgrade. See <a href="/help/plans-and-features/">Plans and features</a>.</li><li>The content you want reviewed needs to be in your Content Library first.</li></ul>
+<h2 id="create-the-link"><a class="heading-anchor" href="#create-the-link" aria-label="Link to this section">#</a>Create the link</h2>
+<ol><li>In the app rail, open <strong>Approvals</strong> (in the Publish section).</li><li>Click <strong>Create Approval Link</strong>. If this is your first link, the page shows a <strong>Create First Link</strong> button instead.</li><li>Enter a <strong>Link Title</strong>, for example &quot;Week 12 Content Review&quot;. The client sees this title when they open the link.</li><li>Optionally set <strong>Expires In (days)</strong> to a number from 1 to 90. Leave it blank and the link never expires.</li><li>Under <strong>Select Content</strong>, open the picker and select the items the client should review.</li><li>Click <strong>Create Link</strong>.</li></ol>
+<!-- screenshot: the Create Approval Link dialog with title, expiry, and content selection filled in -->
+<h2 id="share-it"><a class="heading-anchor" href="#share-it" aria-label="Link to this section">#</a>Share it</h2>
+<p>The dialog switches to <strong>Approval Link Created</strong> and shows the URL in a <strong>Shareable Link</strong> field.</p>
+<ol><li>Click <strong>Copy</strong> to put the URL on your clipboard.</li><li>Click <strong>Preview Link</strong> to open the review page yourself and check it before sending.</li><li>Send the URL to your client by email, text, or any other channel. It is a plain URL; nothing else is required.</li><li>Click <strong>Done</strong> to close the dialog.</li></ol>
+<blockquote class="callout callout-important"><span class="callout-label">Important</span><p><strong>Important:</strong> Anyone who has the URL can open it, approve, and comment. There is no login gate. Share it only with the people who should sign off.</p></blockquote>
+<h2 id="manage-existing-links"><a class="heading-anchor" href="#manage-existing-links" aria-label="Link to this section">#</a>Manage existing links</h2>
+<p>Every link you have created appears on the <strong>Approvals</strong> page with a status badge: <strong>Open</strong>, <strong>Closed</strong>, or <strong>Expired</strong>. Each card shows the creation date, the expiry date if one is set, and the share URL with <strong>Copy</strong> and <strong>Open</strong> buttons.</p>
+<ul><li><strong>Close</strong> a link to shut it off. Clients who open it see an invalid-link message.</li><li><strong>Reopen</strong> a closed link to turn it back on. The same URL starts working again, so there is nothing new to resend.</li><li>Links cannot be edited after creation. Title, expiry, and content are fixed. For a different set of content, create a new link.</li></ul>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Reopening does not revive an expired link. Once the expiry date passes, the card shows <strong>Expired</strong> and the link stays dead. Create a new link instead.</p></blockquote>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p>Your client reports &quot;Approval link not found&quot;:</p>
+<ol><li>Check the link&#39;s badge on the <strong>Approvals</strong> page. If it is <strong>Closed</strong>, click <strong>Reopen</strong>.</li><li>If it is <strong>Expired</strong>, create a new link with the same content.</li><li>If it shows <strong>Open</strong>, the URL probably got truncated in transit. Click <strong>Copy</strong> on the link card and resend the full URL.</li></ol>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/approvals-overview/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Client approvals overview</span></a>
+  <a class="next-link" href="/help/client-review-page/"><span class="prev-next-label">Next</span><span class="prev-next-title">What your client sees</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

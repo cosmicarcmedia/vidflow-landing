@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Schedules and queues - Vidflow Help</title>
+<meta name="description" content="Automate posting with recurring timeslots or an ordered queue, with optional tag filters and approval gating." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="schedules-and-queues">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/" class="active" aria-current="page">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Publishing and scheduling</span>
+    </nav>
+    <article class="article-body">
+      <h1>Schedules and queues</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>A schedule automates where and when your content publishes, so you don&#39;t have to place every post on the calendar by hand.</p>
+<h2 id="create-a-schedule"><a class="heading-anchor" href="#create-a-schedule" aria-label="Link to this section">#</a>Create a schedule</h2>
+<ol><li>Open <strong>Schedules &amp; Queues</strong>.</li><li>Click <strong>Create Schedule</strong>.</li><li>Enter a <strong>Schedule Name</strong> (for example &quot;Daily Instagram Posts&quot;).</li><li>Select one or more <strong>Platforms</strong> for this schedule.</li><li>Choose a <strong>Type</strong>: <strong>Queue (ordered)</strong> or <strong>Timeslot (recurring)</strong>.</li><li>Set up the posting schedule (see below) and any filters or toggles you want.</li><li>Click <strong>Create Schedule</strong>.</li></ol>
+<!-- screenshot: the Create Schedule dialog with type selection and posting-schedule rows -->
+<p>An empty <strong>Schedules &amp; Queues</strong> page reads &quot;No schedules yet&quot; with a prompt to create one.</p>
+<h2 id="queue-vs-timeslot"><a class="heading-anchor" href="#queue-vs-timeslot" aria-label="Link to this section">#</a>Queue vs. timeslot</h2>
+<ul><li><strong>Queue (ordered)</strong>: content is released one at a time, in order, into the next open slot. Good for a steady drip of a backlog.</li><li><strong>Timeslot (recurring)</strong>: content publishes at specific recurring times you define, for example every Monday and Thursday at 11:00 AM.</li></ul>
+<h2 id="setting-times"><a class="heading-anchor" href="#setting-times" aria-label="Link to this section">#</a>Setting times</h2>
+<p>In the posting schedule section, add one or more time rows. Each row has a <strong>Time</strong> plus day-of-week letter toggles: S M T W R F S, where R stands for Thursday. Click <strong>Add another time</strong> to add more slots.</p>
+<p>If the platform supports it, an <strong>Optimal Times</strong> panel shows suggested time chips for that platform, which you can click to add directly to the schedule.</p>
+<h2 id="feed-a-schedule-with-tags"><a class="heading-anchor" href="#feed-a-schedule-with-tags" aria-label="Link to this section">#</a>Feed a schedule with tags</h2>
+<p>Under <strong>Filter by Tag</strong>, choose one or more tags. Only content carrying at least one of those tags feeds into this schedule automatically. Leave the tag filter empty to manage what&#39;s in the schedule manually instead.</p>
+<h2 id="require-approval"><a class="heading-anchor" href="#require-approval" aria-label="Link to this section">#</a>Require Approval</h2>
+<p>Turn on <strong>Require Approval</strong> to hold content until it&#39;s approved before this schedule will publish it. The toggle description reads: &quot;Content must be approved before posting.&quot; This is available on every plan.</p>
+<p>Content awaiting approval is skipped by publishing until it&#39;s approved. See <a href="/help/approvals-overview/">Client approvals overview</a> and <a href="/help/approval-status/">Approval status in your library</a> for how items get approved.</p>
+<h2 id="recycle-content-and-use-optimal-times"><a class="heading-anchor" href="#recycle-content-and-use-optimal-times" aria-label="Link to this section">#</a>Recycle Content and Use Optimal Times</h2>
+<p>Two toggles are marked with a premium badge and require a paid plan:</p>
+<ul><li><strong>Recycle Content</strong>: &quot;Automatically re-queue evergreen content after it has posted.&quot; After a recycled item publishes successfully, it&#39;s automatically re-scheduled forward on a drip interval instead of retiring, so evergreen posts keep circulating without you re-adding them.</li><li><strong>Use Optimal Times</strong>: &quot;AI-suggested best posting times&quot; for the platform, surfaced as the optimal-time chips mentioned above.</li></ul>
+<p>If you&#39;re on a plan without access to these, see <a href="/help/plans-and-features/">Plans and features</a>.</p>
+<h2 id="managing-a-queue"><a class="heading-anchor" href="#managing-a-queue" aria-label="Link to this section">#</a>Managing a queue</h2>
+<p>Open a queue schedule&#39;s <strong>View / reorder queue</strong> action from its card menu to see the items waiting inside it:</p>
+<ul><li>Each row shows position, thumbnail, title, and time.</li><li>Use the up/down controls to reorder items, then click <strong>Save order</strong>.</li><li>Toggle <strong>Shuffle queue</strong> to release items in a random order instead of the order added.</li><li><strong>Shuffle now</strong> randomizes the current order immediately (needs at least 2 items).</li></ul>
+<p>An empty queue reads &quot;Nothing queued in this schedule yet.&quot;</p>
+<h2 id="editing-pausing-and-deleting-a-schedule"><a class="heading-anchor" href="#editing-pausing-and-deleting-a-schedule" aria-label="Link to this section">#</a>Editing, pausing, and deleting a schedule</h2>
+<p>Each schedule card shows an active/paused switch, its platform badge, type badge, and status badge, along with flags for <strong>Requires Approval</strong>, <strong>Recycles Content</strong>, and <strong>Optimal Times</strong> when those are on, plus any tag filters it uses.</p>
+<p>From the card&#39;s actions menu:</p>
+<ul><li><strong>Edit Schedule</strong> to change any of its settings.</li><li><strong>Delete Schedule</strong>, which confirms: &quot;Are you sure you want to delete {name}? This cannot be undone. Posts already scheduled through this queue will not be affected.&quot; Deleting a schedule does not un-schedule content that&#39;s already been placed on the calendar through it.</li></ul>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>A tagged item isn&#39;t publishing</strong>: confirm the item actually carries one of the schedule&#39;s filter tags, and check whether <strong>Require Approval</strong> is on and the item hasn&#39;t been approved yet.</p>
+<p><strong>Recycle Content or Use Optimal Times won&#39;t turn on</strong>: these require a paid plan. See <a href="/help/plans-and-features/">Plans and features</a>.</p>
+<p><strong>Facebook or Instagram posts from a schedule aren&#39;t going out</strong>: schedules and queues publish automatically to every connected platform, including Facebook and Instagram. If a post still isn&#39;t publishing, check its status on the <a href="/help/calendar/">Calendar</a> or in <a href="/help/post-statuses/">Post statuses and failed posts</a> for a specific failure reason.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/calendar/"><span class="prev-next-label">Previous</span><span class="prev-next-title">The Calendar</span></a>
+  <a class="next-link" href="/help/youtube-publishing/"><span class="prev-next-label">Next</span><span class="prev-next-title">Publish episodes to YouTube and your podcast feed</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

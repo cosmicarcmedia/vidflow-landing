@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Runs, history, and troubleshooting - Vidflow Help</title>
+<meta name="description" content="How flow runs start, why episode-upload runs wait for the transcript, and how to read the run history." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="flow-runs">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/" class="active" aria-current="page">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Flows automation</span>
+    </nav>
+    <article class="article-body">
+      <h1>Runs, history, and troubleshooting</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>Every execution of a flow is a run. This article covers how runs start, the waiting state on episode uploads, the history log, and the most common failures.</p>
+<h2 id="how-runs-start"><a class="heading-anchor" href="#how-runs-start" aria-label="Link to this section">#</a>How runs start</h2>
+<ul><li><strong>Automatically.</strong> An <strong>Episode Upload</strong> flow with its <strong>Active</strong> switch on queues a run whenever a new episode is created in the workspace.</li><li><strong>Manually from the Flows page.</strong> Click <strong>Run</strong> on the flow card, pick an episode (uses its transcript) or a saved script (uses the script text), then click <strong>Run flow</strong>.</li><li><strong>Manually from the editor.</strong> Enter an episode&#39;s ID in <strong>Episode ID for Run</strong> and click <strong>Run</strong>. Without an ID the run starts with no source, and steps that need one are skipped.</li></ul>
+<p>A flow must be saved before it can run. In a brand-new flow, <strong>Run</strong> stays disabled until the first <strong>Save</strong>.</p>
+<h2 id="the-waiting-state"><a class="heading-anchor" href="#the-waiting-state" aria-label="Link to this section">#</a>The waiting state</h2>
+<p>Episode-upload runs do not start the moment the episode is created. The transcript is still being generated at that point, and the AI nodes need it. So the run is held in a <strong>Waiting</strong> state, shown as an amber badge on the flow card.</p>
+<ul><li>Once the episode&#39;s transcript completes, Vidflow waits a few more minutes for metadata to finish populating, then starts the run.</li><li>If the episode is not ready within about 30 minutes of upload, or transcription fails, the run is marked failed and you get a notification. Fix the transcript first (see <a href="/help/transcripts/">Transcripts</a>), then run the flow manually.</li></ul>
+<p>Manual runs skip the wait entirely and start right away, because you picked a source that already exists.</p>
+<h2 id="run-statuses"><a class="heading-anchor" href="#run-statuses" aria-label="Link to this section">#</a>Run statuses</h2>
+<p>A run moves through these statuses, visible on the flow card and in the history:</p>
+<ul><li><strong>waiting</strong>: held until the episode&#39;s transcript and metadata are ready (episode-upload runs only).</li><li><strong>pending</strong>: accepted and about to start.</li><li><strong>running</strong>: in progress. The flow card shows a violet <strong>Running</strong> badge.</li><li><strong>completed</strong>: finished.</li><li><strong>failed</strong>: stopped with an error. The history shows the error text.</li></ul>
+<h2 id="reading-the-history"><a class="heading-anchor" href="#reading-the-history" aria-label="Link to this section">#</a>Reading the history</h2>
+<p>Open the flow card menu and choose <strong>History</strong>. The Execution History panel lists recent runs, newest first, and refreshes every few seconds while open. Each entry shows the status, the trigger type, when it ran, and the duration.</p>
+<p>Click a run to expand its step log. Each step shows the node, its outcome, and a message. Steps have three outcomes:</p>
+<ul><li><strong>completed</strong>: the node did its work, often with a count (posts written, items saved).</li><li><strong>skipped</strong>: the node had nothing to act on and the run moved past it. Examples: no episode in context, nothing upstream to save, or a <strong>Condition</strong> that did not pass.</li><li><strong>failed</strong>: the node hit an error. Failed generation steps include the reason.</li></ul>
+<!-- screenshot: the Execution History panel with an expanded run showing per-step statuses -->
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>The run failed with &quot;Episode wasn&#39;t ready within 30 minutes of upload&quot;</strong> The transcript did not finish inside the wait window. Open the episode, check its transcription status, and retry the transcript if needed. Once it is ready, run the flow manually against that episode.</p>
+<p><strong>The run failed with &quot;Episode transcription failed&quot;</strong> Retry transcription from the episode, then run the flow manually.</p>
+<p><strong>Steps were skipped with &quot;No episode in context&quot;</strong> The run started without a source, usually from the editor with no <strong>Episode ID for Run</strong>. Run the flow from the Flows page instead and pick an episode or script.</p>
+<p><strong>The run completed but nothing is in the library.</strong> The flow has no Save node. Generated drafts that never reach <strong>Save to Library</strong>, <strong>Save to Queue</strong>, or a Post node are discarded when the run ends. Add one and run again.</p>
+<p><strong>Starting a run fails with &quot;flow runs in progress&quot;</strong> Vidflow caps concurrent runs at three per workspace, because each run can fan out into many AI and clip jobs. Wait for the running flows to finish, then start the next one.</p>
+<p><strong>A generation step failed with a monthly limit message.</strong> The workspace has used up its plan&#39;s monthly AI or clip allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a> for how allowances work and what to do at the cap.</p>
+<p><strong>The flow never fires on new episodes.</strong> Confirm the trigger is <strong>Episode Upload</strong> and the <strong>Active</strong> switch on the flow card is on. Google Drive flows do not fire on their own during the beta.</p>
+<p><strong>A run looks stuck on Running.</strong> Clip generation and image steps can take a while. Check the step log in <strong>History</strong> to see which node is active. If a run has clearly stalled for a long time, run the flow again or contact support at support@vidflow.io with the workspace name and the run&#39;s timestamp.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/transcripts/">Transcripts</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/flow-nodes/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Flow nodes reference</span></a>
+  <span></span>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-theme-init="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Calendar - Vidflow Help</title>
+<meta name="description" content="View, schedule, and manage your posts across a month, week, day, or list view." />
+<link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/help/assets/style.css" />
+<script>
+(function () {
+  var stored = localStorage.getItem("vf-help-theme");
+  var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+</head>
+<body data-active="calendar">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/help/">
+      <img class="brand-logo" src="/help/assets/logo.svg" alt="Vidflow" width="24" height="24" />
+      <span class="brand-name">Vidflow Help</span>
+    </a>
+    <div class="header-search">
+      <input type="search" class="search-input" placeholder="Search the help center" aria-label="Search the help center" autocomplete="off" />
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+        <span class="theme-icon-dark">&#9789;</span>
+        <span class="theme-icon-light">&#9788;</span>
+      </button>
+      <a class="btn-open-app" href="https://app.vidflow.io" rel="noopener noreferrer" target="_blank">Open Vidflow</a>
+      <button type="button" class="sidebar-toggle" aria-label="Toggle categories menu" aria-expanded="false">Categories</button>
+    </div>
+  </div>
+</header>
+<div class="article-layout">
+  <nav class="sidebar" aria-label="Help center categories">
+  <ul class="sidebar-list"><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
+  <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
+  <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
+  <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Content Library</button>
+  <ul class="sidebar-article-list"><li><a href="/help/library-basics/">Content Library basics</a></li><li><a href="/help/edit-content/">Edit a post</a></li><li><a href="/help/bulk-actions/">Bulk actions</a></li><li><a href="/help/tags/">Tags</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Connecting social accounts</button>
+  <ul class="sidebar-article-list"><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/client-connect-links/">Let clients connect their own accounts</a></li><li><a href="/help/connect-tiktok/">Connect TikTok</a></li><li><a href="/help/connect-instagram-facebook/">Connect Instagram and Facebook</a></li><li><a href="/help/connect-youtube/">Connect YouTube</a></li><li><a href="/help/connect-linkedin/">Connect LinkedIn</a></li><li><a href="/help/connect-x/">Connect X</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Publishing and scheduling</button>
+  <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/" class="active" aria-current="page">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
+  <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
+  <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Troubleshooting and FAQ</button>
+  <ul class="sidebar-article-list"><li><a href="/help/faq/">Frequently asked questions</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/contact-support/">Contact support</a></li></ul>
+</li></ul>
+</nav>
+  <main class="article-main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/help/">Help</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Publishing and scheduling</span>
+    </nav>
+    <article class="article-body">
+      <h1>The Calendar</h1>
+      <p class="article-updated">Updated July 9, 2026</p>
+      <p>The <strong>Calendar</strong> is where you see everything scheduled to publish, drag content onto a date and time, and manage or fix individual posts.</p>
+<h2 id="views"><a class="heading-anchor" href="#views" aria-label="Link to this section">#</a>Views</h2>
+<p>Open the <strong>Calendar</strong> and switch views with the switcher at the top: <strong>month</strong>, <strong>week</strong>, <strong>day</strong>, or <strong>list</strong>. A <strong>Today</strong> button jumps back to the current date from anywhere.</p>
+<ul><li><strong>Month view</strong> shows up to 3 posts per day cell, with a &quot;+{n} more&quot; link when a day has more.</li><li><strong>Week</strong> and <strong>day</strong> views show a time grid from 6 AM to 11 PM in 30-minute slots, with a red line marking the current time on today&#39;s column.</li><li><strong>List view</strong> groups posts by day (for example &quot;Today · {Month} {Day}&quot;) and shows a red <strong>Failed</strong> badge on any post with a failed status. An empty day reads &quot;Nothing scheduled yet.&quot;</li></ul>
+<h2 id="scheduling-content"><a class="heading-anchor" href="#scheduling-content" aria-label="Link to this section">#</a>Scheduling content</h2>
+<h3>Drag and drop</h3>
+<p>Drag a post from the <strong>Unscheduled</strong> rail onto a day. Holding it over a day for about half a second opens a <strong>Select time</strong> popover with hour buttons (for example &quot;9 AM&quot;) to pick the exact time.</p>
+<h3>Tap to schedule</h3>
+<p>On touch devices, tap the post instead of dragging. A banner reads &quot;Tap a day/time slot to schedule {title}.&quot; with a <strong>Cancel</strong> option; tap the destination day or time slot to confirm.</p>
+<p>Either method confirms with a toast: &quot;Scheduled for {Month Day} at {time}.&quot;</p>
+<h2 id="the-unscheduled-rail"><a class="heading-anchor" href="#the-unscheduled-rail" aria-label="Link to this section">#</a>The Unscheduled rail</h2>
+<p>The right-hand <strong>Unscheduled</strong> sidebar lists everything with no publish time yet, with a running count. Each row is labeled &quot;{type} · Library&quot; or &quot;{type} · Queue&quot;:</p>
+<ul><li><strong>Library</strong> rows are items sitting in the Content Library with no schedule attached.</li><li><strong>Queue</strong> rows are posts already attached to a schedule&#39;s queue, waiting for their next open slot.</li></ul>
+<p>Use the search box (&quot;Search posts…&quot;) to filter the rail. When everything is scheduled it reads &quot;All posts are scheduled&quot;; when a search matches nothing it reads &quot;No posts match.&quot; The rail paginates once you have more than 15 unscheduled items.</p>
+<p>A platform legend with colored swatches sits at the bottom of the Calendar so you can identify posts by platform at a glance.</p>
+<h2 id="editing-a-scheduled-post"><a class="heading-anchor" href="#editing-a-scheduled-post" aria-label="Link to this section">#</a>Editing a scheduled post</h2>
+<p>Click any post on the calendar to open the <strong>Schedule Post</strong> dialog. It shows a media preview, a status badge, and platform pills, plus <strong>Date</strong> and <strong>Time</strong> fields you can change and save.</p>
+<!-- screenshot: the Schedule Post dialog with date, time, and platform pills -->
+<p>From here you can:</p>
+<ul><li><strong>Delete</strong> the scheduled post (confirms with &quot;Delete this scheduled post?&quot;).</li><li><strong>Retry Post</strong>, shown on posts that failed.</li><li><strong>Open in Library</strong>, shown when a failure reason indicates the platform isn&#39;t supported for automatic dispatch (see below).</li><li><strong>Edit Original</strong>, which takes you to the underlying content in the Library to change title, caption, tags, or media.</li><li><strong>Cancel</strong> or <strong>Save</strong> your date/time change.</li></ul>
+<h2 id="facebook-and-instagram-know-which-kind-of-post-you-have"><a class="heading-anchor" href="#facebook-and-instagram-know-which-kind-of-post-you-have" aria-label="Link to this section">#</a>Facebook and Instagram: know which kind of post you have</h2>
+<p>Vidflow schedules content two ways, and they behave differently on Facebook and Instagram:</p>
+<ul><li><strong>Library content scheduled through a schedule or queue</strong> (see <a href="/help/schedules-and-queues/">Schedules and queues</a>) publishes automatically to every platform you&#39;ve connected, including Facebook and Instagram.</li><li><strong>Older queue-style posts</strong> created directly as calendar queue entries do not auto-publish to Facebook or Instagram. The Calendar flags these with an amber <strong>Manual publish required</strong> badge and a note: &quot;Facebook and Instagram items can be planned here, but auto-dispatch is not supported yet.&quot; To publish one, click <strong>Open in Library</strong> on the item and publish it from there with <a href="/help/post-now/">Post now</a>.</li></ul>
+<p>If you&#39;re not sure which kind of post you&#39;re looking at, the <strong>Manual publish required</strong> badge is the signal: if you see it, publish manually from the Library. If you don&#39;t see it, the post will go out on its own at the scheduled time.</p>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>A post shows Failed in list view</strong>: open it and check the failure detail, then use <strong>Retry Post</strong>, or <strong>Open in Library</strong> if the reason points to an unsupported platform for that post type. See <a href="/help/post-statuses/">Post statuses and failed posts</a>.</p>
+<p><strong>A Facebook or Instagram post never went out</strong>: check for the <strong>Manual publish required</strong> badge. If present, it needs to be published manually from the Library, not the Calendar.</p>
+<p><strong>No calendar loads at all</strong>: make sure a workspace is selected. The Calendar shows &quot;Select a workspace to view the calendar&quot; until one is active.</p>
+<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
+<ul><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/library-basics/">Content Library basics</a></li></ul>
+    </article>
+    <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/post-now/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Post now</span></a>
+  <a class="next-link" href="/help/schedules-and-queues/"><span class="prev-next-label">Next</span><span class="prev-next-title">Schedules and queues</span></a>
+</nav>
+  </main>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Still stuck? <a href="mailto:support@vidflow.io">Email support@vidflow.io</a>.</p>
+    <nav class="footer-links">
+      <a href="https://app.vidflow.io/privacy" rel="noopener noreferrer" target="_blank">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script src="/help/assets/app.js"></script>
+</body>
+</html>
