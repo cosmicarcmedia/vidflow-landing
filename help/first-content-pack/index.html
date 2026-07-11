@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Client approvals overview - Vidflow Help</title>
-<meta name="description" content="Send your client one link to review and approve content before it publishes. No client account needed." />
+<title>Your first content pack - Vidflow Help</title>
+<meta name="description" content="What happens after onboarding when you add your first episode, and how Vidflow turns it into a ready-to-schedule batch of content automatically." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
 })();
 </script>
 </head>
-<body data-active="approvals-overview">
+<body data-active="first-content-pack">
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/help/">
@@ -41,9 +41,9 @@
 </header>
 <div class="article-layout">
   <nav class="sidebar" aria-label="Help center categories">
-  <ul class="sidebar-list"><li class="sidebar-category">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
+  <ul class="sidebar-list"><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/" class="active" aria-current="page">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -65,9 +65,9 @@
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
   <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
-</li><li class="sidebar-category is-open">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Client approvals</button>
-  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/" class="active" aria-current="page">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
@@ -86,31 +86,38 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/help/">Help</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Client approvals</span>
+      <span>Getting started</span>
     </nav>
     <article class="article-body">
-      <h1>Client approvals overview</h1>
+      <h1>Your first content pack</h1>
       <p class="article-updated">Updated July 10, 2026</p>
-      <p>Approvals let you put finished content in front of a client from a single shareable link. The client reviews on any device, with no Vidflow account and no login.</p>
-<h2 id="why-approval-links"><a class="heading-anchor" href="#why-approval-links" aria-label="Link to this section">#</a>Why approval links</h2>
-<p>If you run content for clients, the review step is usually the slowest part of the pipeline: screenshots pasted into email threads, &quot;any word on last week&#39;s posts?&quot; follow-ups, and change requests scattered across three channels.</p>
-<p>An approval link replaces that. You pick the content, Vidflow generates one URL, and everything the client needs lives behind it. The page carries your logo, your workspace name, and your brand color. Vidflow&#39;s branding does not appear, so to your client it reads as your review portal.</p>
+      <p>Right after you finish or skip the onboarding wizard, Vidflow asks for one thing: your first episode. Hand it a YouTube link or a video file and it builds a full batch of content from it automatically, no need to open the Clip Generator or Magic Text Posts yourself for this first run.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
-<ol><li>Create a link from the <strong>Approvals</strong> page. Give it a title, pick the content, and set an optional expiry between 1 and 90 days.</li><li>Send the URL to your client through whatever channel you already use.</li><li>The client opens it in a browser and approves items or leaves comments. There is no reject button; change requests come back as comments.</li><li>Every approval and comment saves the moment it happens. There is no submit step for the client to forget.</li><li>You check progress from the <strong>Approvals</strong> page. Vidflow does not send you a notification when a client approves or comments, so build the check into your routine.</li></ol>
-<p>Once an item is approved, it is cleared to publish. Scheduled posts that are still waiting on approval are held back, then go out after approval.</p>
-<figure class="shot"><img src="/help/assets/screenshots/approvals-page.png" alt="The Approvals page with an open approval link card showing its share URL" loading="lazy" /></figure>
-<h2 id="where-approvals-plug-in"><a class="heading-anchor" href="#where-approvals-plug-in" aria-label="Link to this section">#</a>Where approvals plug in</h2>
-<ul><li><strong>Schedules</strong>: every schedule has a <strong>Require Approval</strong> toggle, so content must be approved before it posts through that schedule. See <a href="/help/schedules-and-queues/">Schedules and queues</a>.</li><li><strong>Auto-import</strong>: imported content can arrive marked as needing approval, so nothing a client drops in a folder publishes unseen. See <a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a>.</li><li><strong>Flows</strong>: the <strong>Approvals</strong> node routes generated content into review as part of an automated pipeline. See <a href="/help/flow-nodes/">Flow nodes reference</a>.</li></ul>
-<h2 id="availability"><a class="heading-anchor" href="#availability" aria-label="Link to this section">#</a>Availability</h2>
-<p>Approvals are available on every paid plan, from Starter up. See <a href="/help/plans-and-features/">Plans and features</a>. Your reviewers never need an account or a seat; anyone with the link can review.</p>
+<p>Submitting your first episode kicks off Vidflow&#39;s default content flow against it: the episode is transcribed, then the AI writes text posts, designs images, and writes captions, all in the brand voice and image style you set up during onboarding, tags everything, and queues it to your calendar. If you uploaded a video file, native clip generation runs too, cutting short clips straight from the footage. You do not have to trigger any of this by hand, it starts the moment the episode is submitted and you can watch it happen on a live progress screen.</p>
+<h2 id="add-your-first-episode"><a class="heading-anchor" href="#add-your-first-episode" aria-label="Link to this section">#</a>Add your first episode</h2>
+<ol><li>On the <strong>Add your first episode</strong> screen, choose <strong>Paste a YouTube link</strong> or <strong>Upload a file</strong>.</li><li>For a YouTube link, paste the URL and click <strong>Add</strong>.</li><li>For a file, click <strong>Choose video or audio file</strong> and pick a video or audio file from your computer.</li><li>Vidflow starts working immediately and switches to the progress screen.</li></ol>
+<p>You can also click <strong>Skip for now</strong> below the card to go straight to your Dashboard and add an episode later from the Make Content menu instead.</p>
+<h2 id="what-you-get-depends-on-how-you-added-it"><a class="heading-anchor" href="#what-you-get-depends-on-how-you-added-it" aria-label="Link to this section">#</a>What you get depends on how you added it</h2>
+<p>This is the one honest tradeoff worth knowing up front:</p>
+<ul><li><strong>Uploaded file</strong>: the full pack, posts, images, captions, and native clips cut straight from your video.</li><li><strong>Pasted YouTube link</strong>: posts, images, and captions from the transcript, but no clips. Native clipping needs the actual video file, which a YouTube import never downloads. If you want clips from a video you linked, upload the file as well and Vidflow adds clipping to the run.</li></ul>
+<h2 id="the-live-progress-screen"><a class="heading-anchor" href="#the-live-progress-screen" aria-label="Link to this section">#</a>The live progress screen</h2>
+<p>While your pack builds, a stage list shows each step as it happens: transcribing your episode, writing posts in your voice, designing images in your style, writing captions, tagging, adding to your calendar, and, for an uploaded file, cutting clips. Each stage shows pending, in progress, done, or skipped, with a percentage bar tracking overall progress. You can leave this page any time, the pack keeps building in the background regardless of whether you&#39;re watching.</p>
+<p>When it finishes, you land on a summary of what was made, how many posts, images, and clips, with <strong>See your content pack</strong> taking you to the Content Library and <strong>See your calendar</strong> taking you to the Calendar. If the run produced nothing (rare, but possible on a very short or unusual source), you&#39;ll see a note that the episode itself is still saved and ready to work with even though nothing generated.</p>
+<p>If something goes wrong partway through, the screen tells you plainly and offers <strong>Try again</strong> or <strong>Add a different episode</strong>, nothing you already submitted is lost either way.</p>
+<h2 id="where-results-land"><a class="heading-anchor" href="#where-results-land" aria-label="Link to this section">#</a>Where results land</h2>
+<p>Everything the first content pack generates, posts, images, clips, and the episode itself, lands in your <strong>Content Library</strong> just like anything generated later from the Clip Generator or Magic Text Posts. Generated posts and clips are already tagged and queued onto your <strong>Calendar</strong> rather than sitting unscheduled, so this first run leaves you with an actual week of content ready to review, not just raw material.</p>
 <h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
-<ul><li><strong>Batch content before sending one link.</strong> A link with a week&#39;s or a launch&#39;s worth of content turns review into one sitting for your client instead of a new link (and a new interruption) every time a piece is ready. Save the link, keep adding to it as content is created, and send it once you&#39;re ready for a review pass.</li><li><strong>Turn on Require Approval on any schedule that feeds a client workspace.</strong> Without it, a schedule publishes on its own timer regardless of whether anyone has looked at the content. With it on, nothing in that schedule goes out until it&#39;s approved, so a client link genuinely gates what reaches their audience instead of just informing them after the fact. See <a href="/help/schedules-and-queues/">Schedules and queues</a>.</li><li><strong>Set your workspace logo and brand color before your first client link goes out.</strong> The review page is white-label: no Vidflow branding, your logo and color throughout. A workspace with neither falls back to a plain icon, which undercuts the &quot;this is your review portal&quot; impression you&#39;re going for.</li><li><strong>Set an expiry that matches your actual review cadence</strong>, for example 7 days for a weekly content batch, so a stale link can&#39;t be reused to approve something you didn&#39;t intend to ship months later.</li><li><strong>Make Approve All the fast path and comments the exception.</strong> Since there&#39;s no reject button, a client only needs to act (comment) on the items they want changed. Tell them upfront: approve what&#39;s good, comment on what&#39;s not, and they can clear a whole batch in under a minute.</li></ul>
-<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
-<ul><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li></ul>
+<ul><li>Upload the video file, not just a YouTube link, if you want native clips as part of this first run.</li><li>Finish the onboarding wizard&#39;s voice and audience steps before submitting your episode, the more Vidflow knows about your brand voice going in, the less generic the first batch of posts sounds.</li><li>Use a source with clean, single-speaker audio for the best transcript and, if you uploaded a file, the strongest clip selection.</li><li>If the pack comes back thin or off-voice, that&#39;s a signal to go fill in your brand voice guidelines and target audience in Workspace Settings, then generate a fresh batch from the Clip Generator or Magic Text Posts, both read the same brand settings this first run does.</li></ul>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>I only got posts and images, no clips.</strong> You added your episode from a YouTube link. Clips need an uploaded video file. Upload the file to the same episode, or add it again through <strong>Upload Episode</strong>, and clip generation will run.</p>
+<p><strong>The progress screen has been on the same stage for a while.</strong> Transcription and generation both take a few minutes depending on video length. Leave the tab open or come back later, the run continues in the background either way.</p>
+<p><strong>It finished but nothing was generated.</strong> Some sources produce nothing usable on a first pass, most often a very short or low-content video. The episode itself is still saved. Open it from the Content Library and try the Clip Generator or Magic Text Posts on it manually.</p>
+<h2 id="related"><a class="heading-anchor" href="#related" aria-label="Link to this section">#</a>Related</h2>
+<ul><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li></ul>
     </article>
     <nav class="prev-next" aria-label="Previous and next articles">
-  <span></span>
-  <a class="next-link" href="/help/create-approval-link/"><span class="prev-next-label">Next</span><span class="prev-next-title">Create and share an approval link</span></a>
+  <a class="prev-link" href="/help/onboarding-wizard/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Set up your brand with the onboarding wizard</span></a>
+  <a class="next-link" href="/help/quickstart/"><span class="prev-next-label">Next</span><span class="prev-next-title">Quickstart: one video to a week of content</span></a>
 </nav>
   </main>
 </div>

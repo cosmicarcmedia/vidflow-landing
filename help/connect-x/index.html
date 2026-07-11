@@ -43,7 +43,7 @@
   <nav class="sidebar" aria-label="Help center categories">
   <ul class="sidebar-list"><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -52,7 +52,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -73,7 +73,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -90,8 +90,10 @@
     </nav>
     <article class="article-body">
       <h1>Connect X</h1>
-      <p class="article-updated">Updated July 9, 2026</p>
+      <p class="article-updated">Updated July 10, 2026</p>
       <p>Connect X (Twitter) to publish text and media posts from Vidflow.</p>
+<h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
+<p>Vidflow posts through X&#39;s v2 API using an OAuth 2.0 token that carries a rotating refresh token. Vidflow refreshes it automatically in the background well before it expires, and every refresh attempt is deduplicated so overlapping schedule and Post Now activity can&#39;t burn through the one-time-use refresh token by racing each other. When media is attached, it&#39;s uploaded to X first and the resulting media id is attached to the post; video uploads process on X&#39;s side asynchronously, which is why a video post can take a couple of minutes to fully appear.</p>
 <h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
 <ol><li>Open <strong>Workspace Settings</strong>.</li><li>Click the <strong>Connections</strong> tab.</li><li>Click <strong>X (Twitter)</strong>.</li><li>Sign in on X&#39;s page and approve access. X always shows its login screen here, so you can connect a different or additional account even if one is already signed in on your device.</li><li>You are returned to Vidflow with X listed as connected.</li></ol>
 <h2 id="what-vidflow-can-publish"><a class="heading-anchor" href="#what-vidflow-can-publish" aria-label="Link to this section">#</a>What Vidflow can publish</h2>
@@ -102,6 +104,8 @@
 <p>X issues rotating refresh tokens, and Vidflow refreshes them automatically in the background, deduplicated so that overlapping refresh attempts cannot burn through the token family. Most connections need no attention.</p>
 <blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Posting media requires the media.write permission scope. If your X account was connected before Vidflow requested that scope, media posts will not work until you reconnect. Text-only posts are unaffected.</p></blockquote>
 <p>If X revokes the authorization outright, Vidflow pauses that account and emails you. Reconnecting resumes anything waiting on your schedule.</p>
+<h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
+<ul><li><strong>Reconnect once, right after you first connect X, if you plan to post media.</strong> If your account was connected before Vidflow requested the media.write scope, text posts work but media silently doesn&#39;t. A single reconnect now avoids a confusing failure the first time you try to post a video or image.</li><li><strong>Write to the 280-character limit yourself rather than relying on the automatic slice.</strong> Vidflow will cut a longer scheduled caption down to fit, but a caption you&#39;ve deliberately shaped to the limit reads better than one truncated mid-thought.</li><li><strong>Give video posts a couple of minutes before treating them as stuck.</strong> X processes video uploads asynchronously on its own side, so a short delay between posting and the tweet appearing is normal, not a failure.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
 <p><strong>Media posts fail but text posts work fine.</strong> Reconnect your X account so Vidflow can request the media.write scope. This is a one-time fix.</p>
 <p><strong>My video post is taking a while to appear.</strong> X processes video uploads asynchronously. Give it a couple of minutes before treating it as stuck.</p>

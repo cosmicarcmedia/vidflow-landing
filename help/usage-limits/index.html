@@ -43,7 +43,7 @@
   <nav class="sidebar" aria-label="Help center categories">
   <ul class="sidebar-list"><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -52,7 +52,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -73,7 +73,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
 </li><li class="sidebar-category is-open">
   <button type="button" class="sidebar-category-toggle" aria-expanded="true">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/" class="active" aria-current="page">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -90,8 +90,10 @@
     </nav>
     <article class="article-body">
       <h1>Usage limits and monthly allowances</h1>
-      <p class="article-updated">Updated July 9, 2026</p>
+      <p class="article-updated">Updated July 10, 2026</p>
       <p>Vidflow meters three things each month: episodes, AI generations, and clip generations. This page explains how the meters work, what counts against each one, and your options when you reach a cap.</p>
+<h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
+<p>Every metered action checks your usage before it runs: Vidflow looks up your workspace owner&#39;s current plan and status, reads that plan&#39;s limit for the metric involved, and compares it to what you have used this calendar month. If you are under the limit, the action proceeds and the count goes up by one (or more, for batch actions); if you are at or over it, the action is blocked before anything is generated or charged, so a denied request never costs you a generation.</p>
 <h2 id="how-allowances-work"><a class="heading-anchor" href="#how-allowances-work" aria-label="Link to this section">#</a>How allowances work</h2>
 <ul><li>Allowances reset at the start of each calendar month (UTC).</li><li><strong>Episodes</strong> are metered per brand space. Your account&#39;s monthly total is your plan&#39;s per-brand allowance multiplied by the brand spaces on your subscription.</li><li><strong>AI generations</strong> and <strong>clip generations</strong> are account-wide pools. All of your brand spaces draw from the same two pools.</li></ul>
 <p>Your plan sets the numbers:</p>
@@ -104,16 +106,21 @@
 <ul><li>AI writing: captions, text posts, ideas, scripts, and articles.</li><li>AI image generation.</li><li>Transcription of an uploaded file.</li></ul>
 <p>Batch actions count once per item generated. Generating ten posts in one run uses ten AI generations, not one.</p>
 <h2 id="what-counts-as-a-clip-generation"><a class="heading-anchor" href="#what-counts-as-a-clip-generation" aria-label="Link to this section">#</a>What counts as a clip generation</h2>
-<p>Every clip you generate counts as one against the pool.</p>
+<p>Every clip you generate counts as one against the pool, regardless of which clip engine produced it.</p>
 <h2 id="connected-account-slots"><a class="heading-anchor" href="#connected-account-slots" aria-label="Link to this section">#</a>Connected account slots</h2>
-<p>Your plan also caps connected social accounts per brand space. Reconnecting an account that is already linked never uses a new slot.</p>
+<p>Your plan also caps connected social accounts per brand space. Reconnecting an account that is already linked never uses a new slot, only a genuinely new connection does.</p>
+<h2 id="free-and-trial-branding-is-separate-from-these-limits"><a class="heading-anchor" href="#free-and-trial-branding-is-separate-from-these-limits" aria-label="Link to this section">#</a>Free and trial branding is separate from these limits</h2>
+<p>Staying under your monthly allowances is about volume. Separately, native clips rendered on the Free plan or during any trial carry a small Vidflow watermark and end card, and captions get <strong>#vidflow</strong> appended, funding the free tier rather than metering it. See <a href="/help/plans-and-features/">Plans and features</a> for the full breakdown by plan.</p>
 <h2 id="tracking-your-usage"><a class="heading-anchor" href="#tracking-your-usage" aria-label="Link to this section">#</a>Tracking your usage</h2>
-<p>Open the Billing page: click your avatar, choose <strong>Account settings</strong>, then <strong>Manage plan &amp; billing</strong>. The meters near the top show <strong>Episodes this month</strong>, <strong>AI generations</strong>, and <strong>Clips</strong> against your plan&#39;s limits.</p>
+<p>Open the Billing page: click your avatar, choose <strong>Account settings</strong>, then <strong>Manage plan &amp; billing</strong>. The meters near the top show <strong>Episodes this month</strong>, <strong>AI generations</strong>, and <strong>Clips</strong> against your plan&#39;s limits, with a progress bar that turns amber near the cap and red once you hit it.</p>
 <!-- screenshot: the usage meters on the Billing & plan page -->
 <h2 id="when-you-hit-a-cap"><a class="heading-anchor" href="#when-you-hit-a-cap" aria-label="Link to this section">#</a>When you hit a cap</h2>
-<p>The action stops, and Vidflow shows a message naming the limit you reached and pointing you to the Billing page. Content you already created is not affected.</p>
+<p>The action stops, and Vidflow shows a message naming the limit you reached and pointing you to Settings → Billing to upgrade. Content you already created is not affected.</p>
 <p>Your options:</p>
 <ol><li>Wait for the monthly reset.</li><li>Upgrade your plan. Changes apply to your existing subscription right away, with prorated charges or credits. See <a href="/help/manage-billing/">Manage your subscription</a>.</li><li>On Agency, add brand spaces to raise your total episode allowance.</li></ol>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>I&#39;m well under my listed limit but still got blocked.</strong> AI generations and clip generations are account-wide pools shared across every brand space you own, not per-workspace. Check the meters on the Billing page, which reflect your whole account, not just the workspace you are currently viewing.</p>
+<p><strong>My usage did not reset when I expected.</strong> Allowances reset on the calendar month in UTC, which may be a few hours off from your local midnight depending on your timezone.</p>
 <h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
 <ul><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/generate-clips/">Generate clips from a long video</a></li></ul>
     </article>

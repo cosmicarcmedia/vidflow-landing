@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Client approvals overview - Vidflow Help</title>
-<meta name="description" content="Send your client one link to review and approve content before it publishes. No client account needed." />
+<title>The dashboard at a glance - Vidflow Help</title>
+<meta name="description" content="What each card on the Dashboard shows, from stat cards and upcoming posts to the getting-started checklist and tips." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
 })();
 </script>
 </head>
-<body data-active="approvals-overview">
+<body data-active="dashboard-basics">
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/help/">
@@ -41,9 +41,9 @@
 </header>
 <div class="article-layout">
   <nav class="sidebar" aria-label="Help center categories">
-  <ul class="sidebar-list"><li class="sidebar-category">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
+  <ul class="sidebar-list"><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Getting started</button>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/" class="active" aria-current="page">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -65,9 +65,9 @@
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Publishing and scheduling</button>
   <ul class="sidebar-article-list"><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/calendar/">The Calendar</a></li><li><a href="/help/schedules-and-queues/">Schedules and queues</a></li><li><a href="/help/youtube-publishing/">Publish episodes to YouTube and your podcast feed</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li></ul>
-</li><li class="sidebar-category is-open">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Client approvals</button>
-  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/" class="active" aria-current="page">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Client approvals</button>
+  <ul class="sidebar-article-list"><li><a href="/help/approvals-overview/">Client approvals overview</a></li><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
@@ -86,31 +86,28 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/help/">Help</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Client approvals</span>
+      <span>Getting started</span>
     </nav>
     <article class="article-body">
-      <h1>Client approvals overview</h1>
+      <h1>The dashboard at a glance</h1>
       <p class="article-updated">Updated July 10, 2026</p>
-      <p>Approvals let you put finished content in front of a client from a single shareable link. The client reviews on any device, with no Vidflow account and no login.</p>
-<h2 id="why-approval-links"><a class="heading-anchor" href="#why-approval-links" aria-label="Link to this section">#</a>Why approval links</h2>
-<p>If you run content for clients, the review step is usually the slowest part of the pipeline: screenshots pasted into email threads, &quot;any word on last week&#39;s posts?&quot; follow-ups, and change requests scattered across three channels.</p>
-<p>An approval link replaces that. You pick the content, Vidflow generates one URL, and everything the client needs lives behind it. The page carries your logo, your workspace name, and your brand color. Vidflow&#39;s branding does not appear, so to your client it reads as your review portal.</p>
+      <p>The Dashboard is what you land on when you open a workspace&#39;s <strong>Home</strong>. It is a single-page overview of where your content stands: what you&#39;ve made, what&#39;s about to publish, what needs your attention, and a couple of nudges to help you finish setting up.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
-<ol><li>Create a link from the <strong>Approvals</strong> page. Give it a title, pick the content, and set an optional expiry between 1 and 90 days.</li><li>Send the URL to your client through whatever channel you already use.</li><li>The client opens it in a browser and approves items or leaves comments. There is no reject button; change requests come back as comments.</li><li>Every approval and comment saves the moment it happens. There is no submit step for the client to forget.</li><li>You check progress from the <strong>Approvals</strong> page. Vidflow does not send you a notification when a client approves or comments, so build the check into your routine.</li></ol>
-<p>Once an item is approved, it is cleared to publish. Scheduled posts that are still waiting on approval are held back, then go out after approval.</p>
-<figure class="shot"><img src="/help/assets/screenshots/approvals-page.png" alt="The Approvals page with an open approval link card showing its share URL" loading="lazy" /></figure>
-<h2 id="where-approvals-plug-in"><a class="heading-anchor" href="#where-approvals-plug-in" aria-label="Link to this section">#</a>Where approvals plug in</h2>
-<ul><li><strong>Schedules</strong>: every schedule has a <strong>Require Approval</strong> toggle, so content must be approved before it posts through that schedule. See <a href="/help/schedules-and-queues/">Schedules and queues</a>.</li><li><strong>Auto-import</strong>: imported content can arrive marked as needing approval, so nothing a client drops in a folder publishes unseen. See <a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a>.</li><li><strong>Flows</strong>: the <strong>Approvals</strong> node routes generated content into review as part of an automated pipeline. See <a href="/help/flow-nodes/">Flow nodes reference</a>.</li></ul>
-<h2 id="availability"><a class="heading-anchor" href="#availability" aria-label="Link to this section">#</a>Availability</h2>
-<p>Approvals are available on every paid plan, from Starter up. See <a href="/help/plans-and-features/">Plans and features</a>. Your reviewers never need an account or a seat; anyone with the link can review.</p>
+<p>Every card on the Dashboard reads live data scoped to your current workspace, there&#39;s nothing to configure. Switching workspaces refreshes every card to that workspace&#39;s own numbers. If no workspace is selected yet, the Dashboard shows a <strong>No Workspace Selected</strong> message with a shortcut to create one instead of any of the cards below.</p>
+<h2 id="whats-on-the-dashboard"><a class="heading-anchor" href="#whats-on-the-dashboard" aria-label="Link to this section">#</a>What&#39;s on the Dashboard</h2>
+<ul><li><strong>Stat cards.</strong> Four numbers up top: Total Episodes, Total Content, Pending Approval, and Scheduled Posts. Each one links straight to the relevant screen (episodes in your library, the full library, Approvals, or the Calendar). A small alert icon appears on Pending Approval when it&#39;s above zero.</li><li><strong>Getting started checklist.</strong> A dismissible card that tracks six setup steps, brand voice, connecting an account, creating content, building a schedule, scheduling a post, and setting up approvals, with a progress bar and a <strong>Replay setup guide</strong> link. It disappears on its own once every step is complete, or you can dismiss it early with the X.</li><li><strong>Upcoming Scheduled Posts.</strong> The next several posts headed to your calendar, with their platforms and how soon they go out. Click any row, or <strong>View Calendar</strong>, to jump to the full Calendar.</li><li><strong>Unread Comments.</strong> Client and teammate comments left on approvals that you haven&#39;t seen yet, with a <strong>Mark all viewed</strong> shortcut and a direct link from each comment to the post, clip, or approval it belongs to.</li><li><strong>Posts Published, Last 7 Days.</strong> A stacked bar chart of what published each day, broken out by content type (image, text, clip, video, carousel, episode).</li><li><strong>Quick Actions.</strong> Shortcuts to Upload Episode, Manage Clips, Review Approvals, View Calendar, and Manage Queues, with a badge showing your pending approval count.</li><li><strong>Published by Platform.</strong> A count of published posts per connected platform, once you have at least one. This card is hidden entirely until there&#39;s data to show.</li><li><strong>Tip of the day.</strong> A small, quiet, dismissible tip card that rotates through practical suggestions. Dismissing one hides it for good; a new one can still show up on your next visit until you&#39;ve dismissed them all.</li></ul>
 <h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
-<ul><li><strong>Batch content before sending one link.</strong> A link with a week&#39;s or a launch&#39;s worth of content turns review into one sitting for your client instead of a new link (and a new interruption) every time a piece is ready. Save the link, keep adding to it as content is created, and send it once you&#39;re ready for a review pass.</li><li><strong>Turn on Require Approval on any schedule that feeds a client workspace.</strong> Without it, a schedule publishes on its own timer regardless of whether anyone has looked at the content. With it on, nothing in that schedule goes out until it&#39;s approved, so a client link genuinely gates what reaches their audience instead of just informing them after the fact. See <a href="/help/schedules-and-queues/">Schedules and queues</a>.</li><li><strong>Set your workspace logo and brand color before your first client link goes out.</strong> The review page is white-label: no Vidflow branding, your logo and color throughout. A workspace with neither falls back to a plain icon, which undercuts the &quot;this is your review portal&quot; impression you&#39;re going for.</li><li><strong>Set an expiry that matches your actual review cadence</strong>, for example 7 days for a weekly content batch, so a stale link can&#39;t be reused to approve something you didn&#39;t intend to ship months later.</li><li><strong>Make Approve All the fast path and comments the exception.</strong> Since there&#39;s no reject button, a client only needs to act (comment) on the items they want changed. Tell them upfront: approve what&#39;s good, comment on what&#39;s not, and they can clear a whole batch in under a minute.</li></ul>
-<h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
-<ul><li><a href="/help/create-approval-link/">Create and share an approval link</a></li><li><a href="/help/client-review-page/">What your client sees</a></li><li><a href="/help/approval-status/">Approval status in your library</a></li><li><a href="/help/plans-and-features/">Plans and features</a></li></ul>
+<ul><li>Treat the getting-started checklist as a punch list, not decoration, the six steps it tracks (brand voice, an account, content, a schedule, a scheduled post, approvals) are the same things that make every other part of Vidflow work better.</li><li>Use <strong>Replay setup guide</strong> any time you want a refresher on where each setting lives, it reopens the same step-by-step tour without redoing the onboarding wizard.</li><li>Check Unread Comments regularly if you run client approvals, it&#39;s the fastest way to see feedback without opening the Approvals page directly.</li><li>Watch the Posts Published chart for gaps, a flat week is usually a sign your calendar or a queue ran dry, not that publishing failed.</li></ul>
+<h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>The Dashboard says &quot;No Workspace Selected.&quot;</strong> Create or select a workspace first. See <a href="/help/workspaces/">Workspaces and brand spaces</a>.</p>
+<p><strong>A card shows zero even though I know I have content.</strong> Stat cards are scoped to the currently selected workspace. Double check you&#39;re in the right one if you manage more than one brand.</p>
+<p><strong>The getting-started checklist won&#39;t go away.</strong> It only auto-hides once all six steps are complete. Dismiss it manually with the X if you&#39;d rather not finish every step right now, you can bring it back with <strong>Replay setup guide</strong> whenever you want.</p>
+<h2 id="related"><a class="heading-anchor" href="#related" aria-label="Link to this section">#</a>Related</h2>
+<ul><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/calendar/">The Calendar</a></li></ul>
     </article>
     <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/navigating-vidflow/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Finding your way around</span></a>
   <span></span>
-  <a class="next-link" href="/help/create-approval-link/"><span class="prev-next-label">Next</span><span class="prev-next-title">Create and share an approval link</span></a>
 </nav>
   </main>
 </div>

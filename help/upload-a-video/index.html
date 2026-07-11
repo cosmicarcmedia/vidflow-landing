@@ -43,7 +43,7 @@
   <nav class="sidebar" aria-label="Help center categories">
   <ul class="sidebar-list"><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -52,7 +52,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/" class="active" aria-current="page">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -73,7 +73,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -90,14 +90,16 @@
     </nav>
     <article class="article-body">
       <h1>Upload a video or audio file</h1>
-      <p class="article-updated">Updated July 9, 2026</p>
+      <p class="article-updated">Updated July 10, 2026</p>
       <p>Upload a long-form video or audio file and Vidflow saves it as an episode, starts the transcript, and drafts a title, description, and tags in the background.</p>
+<h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
+<p>Your file uploads in chunks so large files transfer reliably, then Vidflow assembles it, saves an episode record immediately, and kicks off transcription and AI metadata generation in the background. This is the only way to get an episode with an actual video file attached, which matters later: native clip generation needs that file, and a YouTube import alone never provides it.</p>
 <h2 id="where-you-can-start-an-upload"><a class="heading-anchor" href="#where-you-can-start-an-upload" aria-label="Link to this section">#</a>Where you can start an upload</h2>
 <ul><li>Click <strong>Make Content</strong> at the top of the app, then <strong>Upload Episode</strong>.</li><li>Click <strong>Upload Episode</strong> on the Episodes page.</li><li>If the Episodes view of your <strong>Content Library</strong> is empty, use its <strong>Upload Video</strong> button.</li><li>In the Clip Generator, the <strong>Upload file</strong> option uploads your file to the library as a new episode, then clips it. See <a href="/help/generate-clips/">Generate clips from a long video</a>.</li></ul>
 <h2 id="upload-a-file"><a class="heading-anchor" href="#upload-a-file" aria-label="Link to this section">#</a>Upload a file</h2>
 <ol><li>Click <strong>Make Content</strong>, then <strong>Upload Episode</strong>.</li><li>Drag your file into the dialog, or click <strong>Browse files</strong>. Vidflow accepts video and audio files: MP4, MOV, MP3, WAV, and M4A.</li><li>Keep the tab open while the upload runs. Large files upload in chunks automatically, and the dialog shows progress as each part completes.</li></ol>
 <figure class="shot"><img src="/help/assets/screenshots/upload-episode-dialog.png" alt="The Upload Episode dialog with the drag-and-drop zone and Browse files button" loading="lazy" /></figure>
-<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Uploads are capped at 1GB per file.</p></blockquote>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> There is no fixed file size cap. Files over 1GB show a warning that the upload may take several minutes, keep the tab open until it finishes.</p></blockquote>
 <p>When the upload finishes, Vidflow saves the episode as a draft immediately. Transcription and AI metadata generation (title, description, tags) continue in the background, so you can close the dialog and keep working.</p>
 <p>While the upload runs, you can also attach a clipping file with <strong>Add a clipping file (optional)</strong>. This is a clean version of the video without graphics, used later for AI clip generation.</p>
 <p>Each upload counts toward your plan&#39;s monthly episode allowance. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</p>
@@ -110,6 +112,8 @@
 <p><strong>Stuck on &quot;Finalizing upload&quot;.</strong> After the last part uploads, the server assembles the file into storage. For large files this can take a few minutes. Leave the tab open until it completes.</p>
 <p><strong>&quot;Monthly episode limit reached.&quot;</strong> You have used your plan&#39;s episode allowance for the month. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a> for what counts and what to do at the cap.</p>
 <p><strong>File will not attach.</strong> The picker accepts video and audio files only. Export your media as MP4 (video) or MP3 (audio) and try again.</p>
+<h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
+<ul><li>Upload the actual file, don&#39;t rely on a YouTube link, if you plan to generate native clips. Clipping needs the video itself, which a YouTube import never downloads.</li><li>Attach a clean <strong>clipping file</strong> without lower thirds, logos, or on-screen graphics when you have one available. It&#39;s what the AI clip generator actually cuts from, so a clean pass gives sharper reframing around the speaker.</li><li>Keep the browser tab open on large uploads. Chunked upload and the &quot;Finalizing upload&quot; assembly step both need the tab active to finish reliably.</li><li>Use single-speaker or clearly separated audio where possible, it produces a more accurate transcript, which is what every clip, caption, and post downstream reads from.</li></ul>
 <h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
 <ul><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/transcripts/">Transcripts</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li></ul>
     </article>

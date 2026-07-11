@@ -43,7 +43,7 @@
   <nav class="sidebar" aria-label="Help center categories">
   <ul class="sidebar-list"><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -52,7 +52,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -73,7 +73,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -90,8 +90,10 @@
     </nav>
     <article class="article-body">
       <h1>Connect LinkedIn</h1>
-      <p class="article-updated">Updated July 9, 2026</p>
+      <p class="article-updated">Updated July 10, 2026</p>
       <p>Connect LinkedIn to publish posts to your LinkedIn profile from Vidflow.</p>
+<h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
+<p>Vidflow posts through LinkedIn&#39;s UGC Posts API using the person URN captured when you connected. A video post attaches your media as a ready-to-view asset alongside your text; a post with no video, or with an image, publishes as text only, since there&#39;s no verified image-attachment path today. LinkedIn&#39;s stored token has no background refresh, so publishing checks the token&#39;s expiry before every attempt and fails fast with a clear reconnect message rather than surfacing LinkedIn&#39;s own generic API error.</p>
 <h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
 <ol><li>Open <strong>Workspace Settings</strong>.</li><li>Click the <strong>Connections</strong> tab.</li><li>Click <strong>LinkedIn</strong>.</li><li>Sign in on LinkedIn&#39;s page and approve access.</li><li>You are returned to Vidflow with LinkedIn listed as connected.</li></ol>
 <h2 id="what-vidflow-can-publish"><a class="heading-anchor" href="#what-vidflow-can-publish" aria-label="Link to this section">#</a>What Vidflow can publish</h2>
@@ -100,6 +102,8 @@
 <ul><li>Title: 200 characters.</li></ul>
 <h2 id="token-lifetime-and-reconnect"><a class="heading-anchor" href="#token-lifetime-and-reconnect" aria-label="Link to this section">#</a>Token lifetime and reconnect</h2>
 <p>LinkedIn tokens last roughly 60 days. Expect a periodic reconnect prompt as that window closes. When LinkedIn expires the authorization, Vidflow pauses publishing to that account and emails you explaining what happened. Reconnecting from the Connections tab picks back up anything waiting on your schedule.</p>
+<h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
+<ul><li><strong>Expect the ~60-day reconnect and plan around it</strong>, especially for a client workspace you don&#39;t check daily. Put a recurring reminder on your own calendar so LinkedIn posting for that workspace never goes quiet for days before anyone notices.</li><li><strong>Keep titles under 200 characters from the draft stage</strong>, not as an afterthought. Vidflow enforces the cap, but writing to it from the start avoids an ugly last-second trim of your strongest line.</li><li><strong>Attach video when you want more than a text post to stand out.</strong> LinkedIn supports both from Vidflow; a video post to a professional feed tends to hold attention longer than text alone.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
 <p><strong>LinkedIn posting stopped working after a couple months.</strong> This is the expected reconnect cycle. Reconnect from the Connections tab, no data is lost.</p>
 <p><strong>I reconnected but posts are still failing.</strong> Confirm the reconnect completed and LinkedIn shows as connected rather than pending. If it still fails, contact support with the timestamp of the failed post.</p>

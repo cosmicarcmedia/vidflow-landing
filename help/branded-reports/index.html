@@ -43,7 +43,7 @@
   <nav class="sidebar" aria-label="Help center categories">
   <ul class="sidebar-list"><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Getting started</button>
-  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/what-is-vidflow/">What is Vidflow?</a></li><li><a href="/help/getting-access/">Getting access to Vidflow</a></li><li><a href="/help/signing-in/">Signing in and resetting your password</a></li><li><a href="/help/onboarding-wizard/">Set up your brand with the onboarding wizard</a></li><li><a href="/help/first-content-pack/">Your first content pack</a></li><li><a href="/help/quickstart/">Quickstart: one video to a week of content</a></li><li><a href="/help/navigating-vidflow/">Finding your way around</a></li><li><a href="/help/dashboard-basics/">The dashboard at a glance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Workspaces and team</button>
   <ul class="sidebar-article-list"><li><a href="/help/workspaces/">Workspaces and brand spaces</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/ai-shortcut/">Get the most out of Vidflow by looping in your AI</a></li><li><a href="/help/invite-your-team/">Invite team members</a></li><li><a href="/help/multiple-brands/">Running multiple brands</a></li></ul>
@@ -52,7 +52,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -73,7 +73,7 @@
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
 </li><li class="sidebar-category is-open">
   <button type="button" class="sidebar-category-toggle" aria-expanded="true">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/" class="active" aria-current="page">Branded client reports</a></li></ul>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/" class="active" aria-current="page">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -90,26 +90,31 @@
     </nav>
     <article class="article-body">
       <h1>Branded client reports</h1>
-      <p class="article-updated">Updated July 9, 2026</p>
+      <p class="article-updated">Updated July 10, 2026</p>
       <p>Generate a client-ready performance report styled with your own branding, then save it as a PDF. The report is built from the same data as the Analytics page.</p>
+<h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
+<p>Clicking <strong>Branded report</strong> builds a standalone HTML page server-side, using the same numbers the Analytics page shows for the period you have selected, and stamps it with your workspace&#39;s logo and brand color instead of Vidflow&#39;s. The page opens in a new tab and triggers your browser&#39;s print dialog automatically, so &quot;export&quot; is really &quot;print to PDF&quot; using the browser you already have open. Nothing is uploaded or emailed; the file only exists once you save it from the print dialog.</p>
 <h2 id="what-the-report-includes"><a class="heading-anchor" href="#what-the-report-includes" aria-label="Link to this section">#</a>What the report includes</h2>
 <p>The report carries your workspace logo (or your workspace initial if no logo is set), your workspace name, and your brand color. The header reads &quot;Performance Report&quot; with the covered period and the date it was generated.</p>
 <p>Sections:</p>
 <ul><li><strong>Overview</strong>: posts published, scheduled, awaiting approval, episodes, clips created, and total content.</li><li><strong>Audience</strong>: followers and change per platform.</li><li><strong>Published by platform</strong>: how published posts split across platforms.</li><li><strong>Top episodes</strong>: your top episodes ranked by clips generated.</li><li><strong>Content pipeline</strong>: draft, scheduled, and published counts.</li></ul>
 <p>The footer shows your workspace name and a small &quot;Prepared with Vidflow&quot; line.</p>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> The report does not include the per-post view, like, comment, and share numbers from <strong>Post Performance</strong>. It covers publishing volume, audience, and pipeline; for engagement on individual posts, share that section directly or screenshot it. See <a href="/help/post-performance/">Post performance</a>.</p></blockquote>
 <p>Set your logo and brand color in your workspace&#39;s brand settings; the same branding covers the client approval portal. See <a href="/help/brand-voice-setup/">Set up your brand voice</a>.</p>
 <h2 id="generate-the-report"><a class="heading-anchor" href="#generate-the-report" aria-label="Link to this section">#</a>Generate the report</h2>
 <ol><li>Open <strong>Analytics</strong> from the app rail.</li><li>Pick the period the report should cover: <strong>Last 7 days</strong>, <strong>Last 30 days</strong>, or <strong>Last 90 days</strong>.</li><li>Click <strong>Branded report</strong>.</li><li>The report opens in a new browser tab, and the print dialog appears automatically.</li><li>In the print dialog, choose your browser&#39;s save-as-PDF destination and save.</li></ol>
 <blockquote class="callout callout-important"><span class="callout-label">Important</span><p><strong>Important:</strong> The report opens as a pop-up. If your browser blocks it, Vidflow shows &quot;Allow pop-ups to open the report.&quot; Allow pop-ups for app.vidflow.io and click <strong>Branded report</strong> again.</p></blockquote>
 <!-- screenshot: the branded report open in a new tab with the browser print dialog over it -->
+<h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
+<ul><li>Set your logo and brand color before you ever need a report, not the morning of a client call. Both live in Brand Settings and apply retroactively to every report you generate after that.</li><li>Match the period to what you&#39;re actually reporting on. A monthly retainer client usually wants <strong>Last 30 days</strong>; a quarterly check-in reads better with <strong>Last 90 days</strong>.</li><li>In the print dialog, turn on &quot;Background graphics&quot; (the exact wording varies by browser) so your brand color and logo actually render in the saved PDF instead of printing as plain black and white.</li><li>Generate the report right before the call rather than saving an old copy. Since it pulls live Analytics data, a report from last week will already be stale.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
 <ul><li>Nothing opened when you clicked <strong>Branded report</strong>: your browser blocked the pop-up. Allow pop-ups for app.vidflow.io and try again.</li><li>You closed the print dialog before saving: the report tab is still open. Press Cmd+P (Mac) or Ctrl+P (Windows) in that tab to reopen it.</li><li>The report looks thin: report data fills in the same way Analytics does, as accounts connect and posts publish. See <a href="/help/analytics-overview/">Analytics overview</a>.</li></ul>
 <h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
-<ul><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/approvals-overview/">Client approvals overview</a></li></ul>
+<ul><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/post-performance/">Post performance</a></li><li><a href="/help/brand-voice-setup/">Set up your brand voice</a></li><li><a href="/help/approvals-overview/">Client approvals overview</a></li></ul>
     </article>
     <nav class="prev-next" aria-label="Previous and next articles">
   <a class="prev-link" href="/help/analytics-overview/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Analytics overview</span></a>
-  <span></span>
+  <a class="next-link" href="/help/post-performance/"><span class="prev-next-label">Next</span><span class="prev-next-title">Post performance</span></a>
 </nav>
   </main>
 </div>

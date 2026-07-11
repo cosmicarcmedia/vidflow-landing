@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Generate clips from a long video - Vidflow Help</title>
-<meta name="description" content="Turn an episode, an uploaded file, or a YouTube link into short clips with the Clip Generator." />
+<title>Post performance - Vidflow Help</title>
+<meta name="description" content="See views, likes, comments, and shares for individual posts, which platforms are supported, and how to read the table." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
 })();
 </script>
 </head>
-<body data-active="generate-clips">
+<body data-active="post-performance">
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="/help/">
@@ -50,9 +50,9 @@
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Adding your content</button>
   <ul class="sidebar-article-list"><li><a href="/help/upload-a-video/">Upload a video or audio file</a></li><li><a href="/help/import-from-youtube/">Import from YouTube</a></li><li><a href="/help/auto-import/">Auto-import from Google Drive or Dropbox</a></li><li><a href="/help/bulk-upload/">Bulk upload and CSV import</a></li><li><a href="/help/episodes-and-the-library/">Episodes vs. library content</a></li><li><a href="/help/transcripts/">Transcripts</a></li></ul>
-</li><li class="sidebar-category is-open">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="true">AI clips</button>
-  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/" class="active" aria-current="page">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+</li><li class="sidebar-category">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI clips</button>
+  <ul class="sidebar-article-list"><li><a href="/help/generate-clips/">Generate clips from a long video</a></li><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">AI writing and images</button>
   <ul class="sidebar-article-list"><li><a href="/help/magic-text-posts/">Magic Text Posts</a></li><li><a href="/help/idea-generator/">Idea Generator and Idea Library</a></li><li><a href="/help/script-generator/">Script Generator</a></li><li><a href="/help/blog-posts/">Blog Post Generator</a></li><li><a href="/help/ai-images/">AI images and thumbnails</a></li></ul>
@@ -71,9 +71,9 @@
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Flows automation</button>
   <ul class="sidebar-article-list"><li><a href="/help/flows-overview/">Flows overview</a></li><li><a href="/help/build-a-flow/">Build your first flow</a></li><li><a href="/help/flow-nodes/">Flow nodes reference</a></li><li><a href="/help/flow-runs/">Runs, history, and troubleshooting</a></li></ul>
-</li><li class="sidebar-category">
-  <button type="button" class="sidebar-category-toggle" aria-expanded="false">Analytics</button>
-  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/">Post performance</a></li></ul>
+</li><li class="sidebar-category is-open">
+  <button type="button" class="sidebar-category-toggle" aria-expanded="true">Analytics</button>
+  <ul class="sidebar-article-list"><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/post-performance/" class="active" aria-current="page">Post performance</a></li></ul>
 </li><li class="sidebar-category">
   <button type="button" class="sidebar-category-toggle" aria-expanded="false">Plans, billing, and account</button>
   <ul class="sidebar-article-list"><li><a href="/help/plans-and-features/">Plans and features</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li><li><a href="/help/manage-billing/">Manage your subscription</a></li><li><a href="/help/security/">Account security</a></li><li><a href="/help/data-privacy/">Your data and privacy</a></li></ul>
@@ -86,43 +86,34 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/help/">Help</a>
       <span class="breadcrumb-sep">/</span>
-      <span>AI clips</span>
+      <span>Analytics</span>
     </nav>
     <article class="article-body">
-      <h1>Generate clips from a long video</h1>
+      <h1>Post performance</h1>
       <p class="article-updated">Updated July 10, 2026</p>
-      <p>Use the Clip Generator to turn a long-form video into a batch of short clips. Pick a source, choose an engine, set your options, and Vidflow finds the moments and renders the clips for you.</p>
+      <p>The <strong>Post Performance</strong> table on the Analytics page shows how your individual posts are doing on the platforms where Vidflow can read that data back, not just how much you published.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
-<p>Vidflow ships two clip engines. Native, the default, is built in house: it transcribes your video word by word, has an AI read that transcript to score and pick the strongest moments, then reframes, captions, and renders each one on Vidflow&#39;s own infrastructure, no third-party account needed. OpusClip is an optional engine you connect with your own OpusClip API key; it fetches and clips the source video on OpusClip&#39;s side, which is why it can work from a bare YouTube link where Native cannot.</p>
-<h2 id="before-you-start"><a class="heading-anchor" href="#before-you-start" aria-label="Link to this section">#</a>Before you start</h2>
-<p>You need a source video: an existing episode with a video file, an uploaded video or audio file, or a YouTube link. You also need at least one clip engine available. Vidflow ships two:</p>
-<ul><li><strong>Native</strong>, Vidflow&#39;s in-house engine. No setup, works out of the box, and needs no API key.</li><li><strong>OpusClip</strong>, a third-party engine that requires your own OpusClip API key connected for the workspace.</li></ul>
-<p>See <a href="/help/native-clip-engine/">The Native clip engine</a> and <a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a> for what each one offers.</p>
-<h2 id="open-the-clip-generator"><a class="heading-anchor" href="#open-the-clip-generator" aria-label="Link to this section">#</a>Open the Clip Generator</h2>
-<ol><li>From the app rail, click <strong>Clip Generator</strong>.</li><li>Or, from an episode&#39;s detail page, click <strong>Generate Clips</strong> to open the Clip Generator with that episode preselected.</li><li>Or, from a Content Library card&#39;s menu, choose <strong>Generate Clips</strong>.</li></ol>
-<h2 id="pick-a-source"><a class="heading-anchor" href="#pick-a-source" aria-label="Link to this section">#</a>Pick a source</h2>
-<p>Under <strong>Source</strong>, choose one of three tabs:</p>
-<ol><li><strong>Existing episode</strong>: select any episode in your library that already has a video file.</li><li><strong>Upload file</strong>: click <strong>Choose video or audio file</strong> to upload a new file. This adds the file to your library as a new episode, then clips it.</li><li><strong>YouTube link</strong>: paste a YouTube URL and click <strong>Add</strong>. This adds the video to your library as a new episode, then clips it.</li></ol>
-<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> A YouTube link alone does not give you a video file to work with. If you plan to use the Native engine, upload the file directly, or import it as an episode with the video attached instead of a bare link.</p></blockquote>
-<h2 id="choose-an-engine"><a class="heading-anchor" href="#choose-an-engine" aria-label="Link to this section">#</a>Choose an engine</h2>
-<p>Near the top of the page, pick <strong>Native</strong> or <strong>OpusClip</strong>. Native is the default engine and is currently in beta; it needs no connector at all.</p>
-<p>If OpusClip is not connected for your workspace, you will see a message telling you to add your OpusClip API key in <strong>Workspace Settings, Connections</strong>, or switch to the Native engine, which needs no connector.</p>
-<h2 id="set-your-options-and-generate"><a class="heading-anchor" href="#set-your-options-and-generate" aria-label="Link to this section">#</a>Set your options and generate</h2>
-<p>Each engine has its own options panel, covered in <a href="/help/native-clip-engine/">The Native clip engine</a> and <a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a>. Once your source and options are set, click <strong>Generate Clips</strong>.</p>
-<h2 id="what-happens-next"><a class="heading-anchor" href="#what-happens-next" aria-label="Link to this section">#</a>What happens next</h2>
-<p>You will see a status card that reads &quot;Generating your clips.&quot; with the note &quot;This usually takes a few minutes. Clips land in your Content Library automatically.&quot; Click <strong>View clips</strong> to jump straight to the Clips tab in your Content Library, or navigate there any time from the app rail.</p>
-<p>A generation job also appears in your notifications, so you can keep working while it runs.</p>
-<figure class="shot"><img src="/help/assets/screenshots/clip-generator.png" alt="The Clip Generator page with the Native and OpusClip engine picker and the Source card" loading="lazy" /></figure>
+<p>After a post publishes through Vidflow, a background process checks in with each supported platform roughly every 6 hours and pulls its current view, like, comment, and share counts. Each pull overwrites that day&#39;s numbers rather than piling up duplicate rows, so what you see is always each post&#39;s latest count for that day, not a raw event log. Metrics are collected only for posts Vidflow actually published; anything you posted directly on a platform, outside Vidflow, has no way to be matched back to a library item.</p>
+<h2 id="whats-collected"><a class="heading-anchor" href="#whats-collected" aria-label="Link to this section">#</a>What&#39;s collected</h2>
+<ul><li><strong>Views</strong>: total views or impressions, where the platform exposes that number.</li><li><strong>Likes</strong>: likes or reactions.</li><li><strong>Comments</strong>: comment count.</li><li><strong>Shares</strong>: shares, retweets and quotes on X, or reposts, where the platform exposes that number.</li></ul>
+<p>Not every platform reports every metric. For example, YouTube&#39;s public API does not expose a share count, and Facebook post-level view counts require a separate permission Vidflow does not request yet, so those individual numbers read as 0 rather than being estimated.</p>
+<h2 id="which-platforms-are-supported"><a class="heading-anchor" href="#which-platforms-are-supported" aria-label="Link to this section">#</a>Which platforms are supported</h2>
+<ul><li><strong>Supported today</strong>: X, YouTube, Instagram, Facebook.</li><li><strong>Not yet supported</strong>: TikTok and LinkedIn. Vidflow can publish to both, but neither platform&#39;s API currently gives this app a reliable way to read metrics back for a specific post, so their posts are excluded from this table rather than shown with fake or guessed numbers.</li></ul>
+<h2 id="reading-the-table"><a class="heading-anchor" href="#reading-the-table" aria-label="Link to this section">#</a>Reading the table</h2>
+<ol><li>Open <strong>Analytics</strong> from the app rail and scroll to <strong>Post Performance</strong>.</li><li>Four totals across the top (<strong>Views</strong>, <strong>Likes</strong>, <strong>Comments</strong>, <strong>Shares</strong>) sum every tracked post, regardless of the Analytics period selector above.</li><li>The table lists one row per published post per platform, with its title and platform.</li><li>Click a column header (<strong>Views</strong>, <strong>Likes</strong>, <strong>Comments</strong>, <strong>Shares</strong>) to sort the table by that metric, highest first.</li></ol>
+<figure class="shot"><img src="/help/assets/screenshots/post-performance.png" alt="The Post Performance table with sortable columns and totals cards above it" loading="lazy" /></figure>
+<h2 id="when-metrics-appear"><a class="heading-anchor" href="#when-metrics-appear" aria-label="Link to this section">#</a>When metrics appear</h2>
+<p>A freshly published post does not have metrics right away. Expect numbers to show up within about 6 hours of publishing, once the next polling pass runs. Until then, or until you&#39;ve published anything trackable, the section reads &quot;No post metrics yet.&quot;</p>
 <h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
-<ul><li><strong>Upload the actual file instead of a YouTube link.</strong> Native only works on a video file it can download and reframe. Uploading directly also skips any quality loss from a re-encoded YouTube copy.</li><li><strong>Use clean, single-speaker audio when you can.</strong> The AI transcribes word by word before it scores moments, clean audio means an accurate transcript, and an accurate transcript means better moment selection and better captions.</li><li><strong>Give it a longer source.</strong> More runtime means more candidate moments for the AI to score and choose from, so a 45-minute episode gives Native more to work with than a 6-minute one.</li><li><strong>Use the topic prompt on Native to steer selection.</strong> If you only want moments about one subject, say so, moments outside that topic get discarded even if they otherwise score well.</li><li><strong>Match the caption style to where the clip is going.</strong> Busy or light-colored footage reads better with Box Background than with a plain white style. See <a href="/help/caption-styles/">Caption styles</a>.</li><li><strong>Re-render instead of settling.</strong> If a clip&#39;s captions do not land the way you want, reopen it and re-render with a different style from the library rather than starting a whole new generation run.</li></ul>
+<ul><li>Give a post a clear, distinct <strong>Internal Title</strong> before publishing. It is what shows in the Post Performance table, and a generic or blank title makes it hard to tell posts apart once you&#39;re sorting by views.</li><li>Compare like with like: sort by <strong>Views</strong> to see reach, then switch to <strong>Likes</strong> or <strong>Comments</strong> to see what actually resonated, since the highest-view post is not always the highest-engagement one.</li><li>If you&#39;re trying to judge TikTok or LinkedIn performance, check those numbers directly on the platform for now. This table will not show them until Vidflow adds support.</li><li>Use the branded report alongside this table when reporting to a client. The report summarizes publishing volume and pipeline; this table is where the platform-level engagement numbers live. See <a href="/help/branded-reports/">Branded client reports</a>.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
-<p>If clips have not appeared after roughly 30 minutes, re-run the generation or contact support. See <a href="/help/clips-troubleshooting/">Clips troubleshooting</a> for the full list of common issues, including the OpusClip-not-connected warning and the native file-required error.</p>
+<ul><li><strong>A published post never shows up here.</strong> Confirm it actually went out through Vidflow (not posted directly on the platform), and that it published to X, YouTube, Instagram, or Facebook. TikTok and LinkedIn posts are expected to be absent.</li><li><strong>Some metrics read 0 while others have real numbers.</strong> This is normal on YouTube (no share count) and Facebook (no view count) with today&#39;s permissions; it is not a bug.</li><li><strong>A post has been live for more than a day with no numbers at all.</strong> The most common cause is an expired connection on that account. Reconnect it under <strong>Workspace Settings &gt; Connections</strong>; the next polling pass picks it back up. See <a href="/help/publishing-troubleshooting/">Fix publishing problems</a>.</li><li><strong>Numbers look lower than what you see on the platform itself.</strong> Vidflow pulls on its own roughly-6-hour cycle, so there is always some lag versus checking the platform in real time.</li></ul>
 <h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
-<ul><li><a href="/help/native-clip-engine/">The Native clip engine</a></li><li><a href="/help/opusclip-engine/">Using OpusClip with Vidflow</a></li><li><a href="/help/caption-styles/">Caption styles</a></li><li><a href="/help/edit-clips/">Edit clips: captions, reframing, thumbnails</a></li><li><a href="/help/clips-troubleshooting/">Clips troubleshooting</a></li></ul>
+<ul><li><a href="/help/analytics-overview/">Analytics overview</a></li><li><a href="/help/branded-reports/">Branded client reports</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/connect-overview/">Connect your social accounts</a></li></ul>
     </article>
     <nav class="prev-next" aria-label="Previous and next articles">
+  <a class="prev-link" href="/help/branded-reports/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Branded client reports</span></a>
   <span></span>
-  <a class="next-link" href="/help/native-clip-engine/"><span class="prev-next-label">Next</span><span class="prev-next-title">The Native clip engine</span></a>
 </nav>
   </main>
 </div>
