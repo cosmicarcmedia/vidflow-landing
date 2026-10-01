@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | VidFlow</title>
+  <meta name="description" content="VidFlow plans start at $29 a month. Starter, Pro, and Agency all begin with a 7 day free trial. A card is required to start, and you can cancel anytime." />
+  <meta name="author" content="VidFlow" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0c" />
+  <link rel="canonical" href="https://vidflow.io/pricing" />
+
+  <meta property="og:title" content="Pricing | VidFlow" />
+  <meta property="og:description" content="VidFlow plans start at $29 a month. Starter, Pro, and Agency all begin with a 7 day free trial. A card is required to start, and you can cancel anytime." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vidflow.io/pricing" />
+  <meta property="og:image" content="https://vidflow.io/og-image.png" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:alt" content="VidFlow wordmark beside an illustration of a content calendar dashboard" />
+  <meta property="og:site_name" content="VidFlow" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@vidflowio" />
+  <meta name="twitter:title" content="Pricing | VidFlow" />
+  <meta name="twitter:description" content="VidFlow plans start at $29 a month. Starter, Pro, and Agency all begin with a 7 day free trial. A card is required to start, and you can cancel anytime." />
+  <meta name="twitter:image" content="https://vidflow.io/og-image.png" />
+  <meta name="twitter:image:alt" content="VidFlow wordmark beside an illustration of a content calendar dashboard" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+      {"@type": "Question", "name": "What counts as an AI generation?", "acceptedAnswer": {"@type": "Answer", "text": "AI generations are a shared monthly pool. Captions, text posts, titles and descriptions, blog posts, and images each draw from it, and your plan sets the size: 150 on Starter, 600 on Pro, and 2,500 on Agency. Clips are counted separately on the plans that include them. The usage limits article in the help center lists what draws from the pool."}},
+      {"@type": "Question", "name": "What happens when my trial ends?", "acceptedAnswer": {"@type": "Answer", "text": "After 7 days the plan you chose starts, and the card you gave at signup is charged that plan's monthly price. If you cancel before the trial ends, you are not charged."}},
+      {"@type": "Question", "name": "Can I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, anytime, during the trial or after it. The billing article in the help center walks through how."}},
+      {"@type": "Question", "name": "What does beta mean for YouTube and TikTok?", "acceptedAnswer": {"@type": "Answer", "text": "Both platforms review an app before they let it publish publicly, and VidFlow is still in that review for YouTube and TikTok. Until the reviews finish, posts to those two platforms from customer accounts publish as private. Facebook, Instagram, X, and personal LinkedIn publishing are live."}},
+      {"@type": "Question", "name": "Do my clients need accounts?", "acceptedAnswer": {"@type": "Answer", "text": "To connect their social accounts, no. You send a shared link, the client signs in with each platform, and no passwords are shared. The client never signs in to VidFlow. Posts can also require approval before they go out, and the help center shows what a client sees when reviewing."}},
+      {"@type": "Question", "name": "Can I run more than one brand?", "acceptedAnswer": {"@type": "Answer", "text": "Starter and Pro include one brand. Agency includes one and adds more at $49 a month each, with every brand in its own workspace."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a0a0c;
+      color: #e8e8eb;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(99,102,241,0.28), transparent 55%),
+        radial-gradient(ellipse 38% 24% at 90% 4%, rgba(236,72,153,0.13), transparent 60%),
+        radial-gradient(ellipse 50% 35% at 85% 85%, rgba(139,92,246,0.14), transparent 65%),
+        radial-gradient(ellipse 40% 30% at 15% 75%, rgba(99,102,241,0.08), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .wide { max-width: 1200px; }
+    .narrow { max-width: 760px; margin: 0 auto; }
+
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      z-index: 10;
+      border-bottom: 1px solid transparent;
+      transition: background 0.35s ease, border-bottom-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    nav.nav-scrolled {
+      background: rgba(12,12,22,0.48);
+      backdrop-filter: blur(20px) saturate(1.5);
+      -webkit-backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom-color: rgba(255,255,255,0.06);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo-icon {
+      width: 50px;
+      height: 34px;
+      background: transparent;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 50px; height: 34px; }
+    nav .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: #a1a1aa;
+    }
+    nav .nav-links a { transition: color 0.15s ease; }
+    nav .nav-links a:hover { color: #e8e8eb; }
+    nav .btn-nav {
+      padding: 8px 18px;
+      background: linear-gradient(135deg, #f378a2, #ef4e84 50%, #ab347a);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 14px rgba(236,72,153,0.3);
+      transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    nav .btn-nav:hover { opacity: 0.9; box-shadow: 0 4px 22px rgba(236,72,153,0.45); transform: translateY(-1px); }
+    @media (max-width: 700px) {
+      nav .nav-links .nav-link-hide { display: none; }
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(99,102,241,0.12);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #a5a5ff;
+      margin-bottom: 24px;
+    }
+    .badge .dot {
+      width: 6px;
+      height: 6px;
+      background: #6366f1;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #6366f1;
+    }
+    h1 {
+      font-size: clamp(40px, 7vw, 76px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+      margin: 0 0 24px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero-display {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: clamp(62px, 11vw, 120px);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      display: block;
+    }
+    .hero-the {
+      background: linear-gradient(180deg, #fff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .hero-sub-wrap {
+      display: block;
+      position: relative;
+      margin-top: -0.52em;
+      z-index: 2;
+    }
+    .hero-sub-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      top: -0.45em;
+      left: -200px; right: -200px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,12,0.75) 50%, rgba(10,10,12,0.9) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .hero-sub {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: clamp(24px, 4vw, 46px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #fff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      display: block;
+    }
+    .subtitle {
+      font-size: clamp(17px, 2vw, 21px);
+      color: #a1a1aa;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+
+
+    /* ── Section shared ─────────────────────────── */
+    section.section {
+      padding: 112px 0;
+      position: relative;
+    }
+    section.section + section.section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6366f1;
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin: 0 0 18px;
+      color: #fff;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+    .section-intro {
+      font-size: 17px;
+      color: #a1a1aa;
+      max-width: 620px;
+      margin: 0 0 56px;
+    }
+    .section-center .section-intro { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-center .eyebrow { display: block; text-align: center; }
+    .section-center h2 { text-align: center; }
+
+
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+    details.faq-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    details.faq-item:hover {
+      border-color: rgba(99,102,241,0.22);
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.08), 0 4px 24px rgba(99,102,241,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+    details.faq-item[open] {
+      border-color: rgba(99,102,241,0.35);
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.12), 0 4px 32px rgba(99,102,241,0.12);
+      background: rgba(99,102,241,0.04);
+    }
+    details.faq-item summary {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #fff;
+      list-style: none;
+      position: relative;
+      padding-right: 52px;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+    details.faq-item:hover summary { color: #e8e8ff; }
+    details.faq-item[open] summary { color: #c4c4ff; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      font-size: 20px;
+      font-weight: 300;
+      color: #6366f1;
+      transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), color 0.2s ease, opacity 0.2s ease;
+      width: 26px; height: 26px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 6px;
+      background: rgba(99,102,241,0.1);
+    }
+    details.faq-item[open] summary::after {
+      content: '−';
+      transform: translateY(-50%) rotate(180deg);
+      color: #818cf8;
+      background: rgba(99,102,241,0.18);
+    }
+    @keyframes faqBodyIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    details.faq-item[open] .faq-body {
+      animation: faqBodyIn 0.22s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    details.faq-item .faq-body {
+      padding: 0 24px 22px;
+      color: #a1a1aa;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+
+    /* ── Final CTA ───────────────────────────────── */
+    .final-cta {
+      padding: 80px 32px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(99,102,241,0.18), transparent 70%),
+        rgba(99,102,241,0.04);
+      border: 1px solid rgba(99,102,241,0.28);
+      border-radius: 24px;
+      margin: 40px 0 80px;
+      box-shadow: 0 0 80px rgba(99,102,241,0.08);
+    }
+    .final-cta h2 { margin-bottom: 14px; }
+    .final-cta .subtitle { margin-bottom: 28px; }
+
+    /* ── Footer ──────────────────────────────────── */
+    footer {
+      padding: 40px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #71717a;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: #a1a1aa; transition: color 0.15s ease; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 0; }
+      .hero { padding: 56px 0 36px; }
+      section.section { padding: 72px 0; }
+      .final-cta { padding: 50px 22px; border-radius: 16px; }
+    }
+
+    /* ── Gradient accent text ────────────────────── */
+    .grad {
+      background: linear-gradient(120deg, #818cf8 0%, #a855f7 52%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+
+    /* ── Mobile optimizations ────────────────────── */
+    @media (max-width: 600px) {
+      nav { padding: 14px 0; }
+      .hero { padding: 48px 0 32px; }
+      section.section { padding: 64px 0; }
+      h2 { font-size: clamp(24px, 6vw, 38px); }
+      .subtitle { font-size: 16px; }
+      .section-intro { font-size: 15px; }
+      .faq .faq-item summary { font-size: 14px; padding: 16px 18px; padding-right: 46px; }
+      .faq .faq-item .faq-body { padding: 0 18px 18px; font-size: 14px; }
+      .bento-item { padding: 20px 18px; }
+      .final-cta { padding: 48px 20px; border-radius: 14px; }
+      .distrib-container { transform: scale(0.5); transform-origin: top center; margin-bottom: -210px; }
+    }
+    @media (max-width: 420px) {
+      .distrib-container { transform: scale(0.42); transform-origin: top center; margin-bottom: -240px; }
+    }
+    @media (min-width: 601px) and (max-width: 800px) {
+      .distrib-container { transform: scale(0.68); transform-origin: top center; margin-bottom: -134px; }
+    }
+
+
+
+    /* ── Launch additions: focus, buttons, plans, screenshots ───────── */
+    :focus-visible { outline: 2px solid #c4b5fd; outline-offset: 3px; border-radius: 4px; }
+    .cf-field input:focus-visible, .cf-field textarea:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 1px; border-radius: 10px; }
+    details.faq-item summary:focus-visible { outline-offset: -3px; border-radius: 12px; }
+    .skip-link { position: absolute; left: 16px; top: -60px; z-index: 50; padding: 10px 16px; background: #fff; color: #0a0a0c; border-radius: 8px; font-weight: 600; font-size: 14px; }
+    .skip-link:focus { top: 12px; }
+    nav .btn-nav { background: linear-gradient(135deg, #cf3a77, #a82b72); box-shadow: 0 2px 14px rgba(207,58,119,0.3); white-space: nowrap; }
+    nav .nav-links a[aria-current="page"] { color: #fff; }
+    .form-note { font-size: 13px; color: #a1a1aa; }
+    .proof-stat-label { color: #a1a1aa; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 26px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; font-family: inherit; line-height: 1.2;
+      border: 1px solid transparent; cursor: pointer; text-align: center;
+      transition: opacity 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, #cf3a77, #a82b72); color: #fff; box-shadow: 0 4px 20px rgba(207,58,119,0.35); }
+    .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(207,58,119,0.5); }
+    .btn-ghost { background: rgba(255,255,255,0.03); color: #fff; border-color: rgba(255,255,255,0.28); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.07); }
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 0 auto 18px; }
+    .prose { max-width: 680px; margin: 0 auto; text-align: left; }
+    .prose p { color: #c4c4cc; font-size: 17px; margin: 0 0 18px; }
+    .section-center .prose { text-align: left; }
+
+    /* Plans: ruled rows */
+    .plans { border-top: 1px solid rgba(255,255,255,0.1); text-align: left; }
+    .plan {
+      display: grid; grid-template-columns: 210px minmax(0, 1fr) auto;
+      gap: 12px 44px; align-items: start;
+      padding: 38px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .plan-head h3 { font-size: 24px; margin: 0 0 8px; letter-spacing: -0.01em; }
+    .plan-price { margin: 0; font-size: 42px; font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1; }
+    .plan-price span { font-size: 15px; font-weight: 500; color: #a1a1aa; letter-spacing: 0; }
+    .plan-body p { margin: 0 0 10px; color: #d4d4d8; font-size: 15.5px; line-height: 1.6; }
+    .plan-body .plan-limit { color: #a1a1aa; font-size: 14.5px; margin: 0; }
+    .plan-cta { align-self: center; }
+    .trial-terms { margin: 28px 0 0; color: #d4d4d8; font-size: 16px; text-align: left; }
+    .plans-more { margin: 14px 0 0; color: #a1a1aa; font-size: 15px; text-align: left; }
+    .plans-more a, .prose a, .faq-body a, .shot-text a { color: #c4b5fd; text-decoration: underline; text-underline-offset: 3px; }
+    .plans-more a:hover, .prose a:hover, .faq-body a:hover { color: #fff; }
+    @media (max-width: 800px) {
+      .plan { grid-template-columns: 1fr; gap: 14px; padding: 30px 0; }
+      .plan-cta { align-self: start; }
+      .plan-cta .btn { width: 100%; }
+    }
+
+    /* Comparison table */
+    .compare-wrap { margin-top: 8px; }
+    table.compare { width: 100%; border-collapse: collapse; font-size: 15px; text-align: left; }
+    .compare th, .compare td { padding: 14px 16px 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); vertical-align: top; }
+    .compare thead th { color: #fff; font-size: 16px; font-weight: 700; padding-bottom: 16px; }
+    .compare tbody th { color: #e8e8eb; font-weight: 500; width: 26%; }
+    .compare td { color: #d4d4d8; }
+    @media (max-width: 700px) {
+      .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto; }
+      .compare thead { position: absolute; left: -9999px; }
+      .compare tr { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .compare th, .compare td { border: none; padding: 3px 0; }
+      .compare tbody th { color: #fff; font-weight: 700; width: auto; padding-bottom: 6px; }
+      .compare td::before { content: attr(data-label) ": "; color: #a1a1aa; font-weight: 600; }
+    }
+
+    /* App screenshots */
+    .shot { margin: 0; }
+    .shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 24px 60px rgba(0,0,0,0.55); background: #111118; }
+    .shot figcaption { margin-top: 12px; font-size: 14px; color: #a1a1aa; }
+    .shot-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: center; margin: 0 0 88px; }
+    .shot-row.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    .shot-row.flip .shot-text { order: -1; }
+    .shot-text h3 { font-size: 22px; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .shot-text p { margin: 0; color: #c4c4cc; font-size: 16px; }
+    .shot-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin: 0 0 88px; }
+    .shot-pair h3 { font-size: 18px; margin: 16px 0 6px; }
+    .shot-pair p { margin: 0; color: #c4c4cc; font-size: 15px; }
+    @media (max-width: 800px) {
+      .shot-row, .shot-row.flip, .shot-pair { grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px; }
+      .shot-row.flip .shot-text { order: 0; }
+    }
+
+    /* Platform status */
+    .platform-status { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; max-width: 640px; margin: 36px auto 0; text-align: left; }
+    .platform-status div { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15.5px; }
+    .platform-status dt { color: #e8e8eb; font-weight: 500; }
+    .platform-status dd { margin: 0; font-weight: 600; color: #86efac; }
+    .platform-status dd.beta { color: #fcd34d; }
+    .platform-note { max-width: 640px; margin: 22px auto 0; color: #c4c4cc; font-size: 15.5px; text-align: left; }
+    @media (max-width: 560px) { .platform-status { grid-template-columns: 1fr; } }
+
+    /* Who builds it: two ruled columns */
+    .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-top: 40px; text-align: left; }
+    .split > div { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 18px; }
+    .split h3 { font-size: 19px; }
+    .split p { margin: 0; color: #c4c4cc; font-size: 15.5px; }
+    @media (max-width: 700px) { .split { grid-template-columns: 1fr; gap: 28px; } }
+
+    .container { width: 100%; }
+    .hero { overflow-x: clip; }
+    .page-title { font-size: clamp(40px, 7vw, 64px); }
+    .pricing-intro { padding: 72px 0 56px; text-align: center; }
+    .pricing-intro .subtitle { margin-bottom: 0; }
+    .cta-note { color: #a1a1aa; font-size: 14px; margin: 14px 0 0; }
+
+    footer { color: #a1a1aa; }
+    footer .footer-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+    .cf-field input::placeholder, .cf-field textarea::placeholder { color: #8e8e99; }
+    .cf-success { color: #86efac; }
+
+    @media (max-width: 600px) {
+      nav { gap: 10px; }
+      nav .nav-links { gap: 14px; font-size: 14px; }
+      nav .btn-nav { padding: 9px 13px; font-size: 13.5px; }
+      .logo { font-size: 16px; gap: 6px; }
+      .logo-icon, .logo-icon svg { width: 40px; height: 27px; }
+      .hero-cta .btn { width: 100%; }
+      .plan-price { font-size: 36px; }
+      .hero-display { font-size: min(12.2vw, 62px); white-space: nowrap; }
+      .distrib-wrap { display: none; }
+    }
+    @media (max-width: 380px) {
+      nav .nav-links { gap: 10px; }
+      .logo { font-size: 15px; }
+    }
+
+
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    section.section-tight { padding: 0 0 72px; }
+    .logo { color: inherit; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="container">
+    <header role="banner">
+    <nav aria-label="Main navigation">
+      <a class="logo" href="/" aria-label="VidFlow home">
+        <span class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1190.75 1007.59">
+            <defs>
+              <linearGradient id="vf-logo-g" x1="0" y1="503.8" x2="1190.75" y2="503.8" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f0628c"/>
+                <stop offset=".07" stop-color="#ef5d89"/>
+                <stop offset=".28" stop-color="#ef5285"/>
+                <stop offset=".54" stop-color="#ef4f84"/>
+                <stop offset=".69" stop-color="#e94c83"/>
+                <stop offset=".89" stop-color="#da4680"/>
+                <stop offset="1" stop-color="#ce427f"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#vf-logo-g)" d="M1186.75,567.15c-1.77,13.94-13.63,24.39-27.69,24.35l-32.24-.09c-12.59-.04-23.72,8.37-26.92,20.55-5.25,19.95-12.01,39.76-20.34,59.3-7.44,17.45-15.91,34.15-25.31,50.06-6.43,10.88-4.66,24.73,4.25,33.69l22.74,22.87c9.91,9.96,10.81,25.75,2.15,36.81-25.85,33.01-55.45,62.25-87.89,87.34-11.1,8.59-26.86,7.56-36.76-2.39l-22.73-22.86c-8.89-8.94-22.72-10.84-33.61-4.48-34.27,20-71.18,35.17-109.6,45.03-12.21,3.14-20.71,14.2-20.75,26.81l-.09,32.22c-.04,14.03-10.53,25.84-24.46,27.54-40.73,4.97-82.33,4.99-123.9-.3-13.94-1.77-24.39-13.63-24.35-27.69l.09-32.24c.04-12.59-8.37-23.72-20.55-26.92-19.95-5.25-39.76-12.01-59.3-20.34-17.45-7.44-34.15-15.91-50.05-25.31-10.88-6.43-24.73-4.66-33.69,4.25l-22.86,22.73c-9.98,9.92-25.77,10.8-36.84,2.12-33.02-25.86-62.26-55.47-87.35-87.92-6.66-8.61-23.91-20.28-64.38-19.92-.18,0-.33-.01-.5-.01h-52.24c-26.45,0-47.82-21.78-47.13-48.39.66-25.73,22.46-45.9,48.19-45.9h24.61s6.23,0,6.23,0h74.3c.71,0,1.41.02,2.11.05,0,0,43.52,0,74.9-.02,19.08,0,36.93,9.06,48.53,24.21,37.26,48.68,87.38,88.42,147.88,113.2,181.91,74.51,390.66-11.54,466.65-193.97,76.07-182.64-12.06-394.47-195.14-469.45-145.57-59.62-308.31-16.42-406.47,96.71-19.73,22.73-48.47,35.61-78.57,35.57-46.27-.06-74.69-.09-74.69-.09-.05-.03-25.69-.06-25.74-.1h11.05c-26.45,0-47.82-21.78-47.13-48.39.66-25.73,22.46-45.9,48.19-45.9h1.29c.66-.05,1.35-.08,2.07-.08,11.84,0,31.6-8.96,37.75-16.82,25.86-33.03,55.45-62.27,87.9-87.37,11.11-8.6,26.89-7.6,36.79,2.36l22.73,22.86c8.89,8.94,22.72,10.84,33.61,4.48,34.27-20,71.18-35.17,109.6-45.03,12.21-3.14,20.71-14.2,20.75-26.81l.09-32.23c.04-14.03,10.53-25.84,24.46-27.54,40.73-4.97,82.33-5,123.9.3,13.94,1.77,24.39,13.63,24.35,27.69l-.09,32.24c-.04,12.59,8.37,23.72,20.55,26.92,19.95,5.25,39.76,12.01,59.3,20.34,17.45,7.44,34.15,15.91,50.06,25.31,10.88,6.43,24.73,4.66,33.69-4.25l22.87-22.74c9.96-9.91,25.75-10.81,36.81-2.15,33.01,25.85,62.25,55.45,87.34,87.89,8.59,11.1,7.56,26.86-2.39,36.76l-22.86,22.73c-8.94,8.89-10.84,22.72-4.48,33.61,20,34.27,35.17,71.18,45.03,109.6,3.14,12.21,14.2,20.71,26.81,20.75l32.23.09c14.03.04,25.84,10.53,27.54,24.46,4.97,40.73,4.99,82.33-.3,123.9ZM120.69,304.18h5.82c26.04,0,47.15-21.11,47.15-47.15s-21.11-47.15-47.15-47.15h-5.82c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15ZM181.03,535.49c-.63,0-1.26-.02-1.88-.05h9.39c-25.74,0-47.53,20.18-48.19,45.9-.68,26.61,20.68,48.39,47.13,48.39h-8.31c.62-.03,1.23-.05,1.86-.05h139.57c14.98,0,25.96-14.29,21.87-28.7-2.9-10.19-5.35-20.52-7.35-30.96-3.83-20.01-21.21-34.53-41.58-34.53h-46.76s-65.75,0-65.75,0ZM47.15,467.1h197.52c26.04,0,47.91-21.33,51.32-47.15,5.06-38.25,0-47.15-47.15-47.15H47.15c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15ZM97.64,582.58c0-26.04-21.11-47.15-47.15-47.15h-3.35c-26.04,0-47.15,21.11-47.15,47.15s21.11,47.15,47.15,47.15h3.35c26.04,0,47.15-21.11,47.15-47.15ZM640.25,662.51l210.78-121.7c28.49-16.45,28.49-57.58,0-74.03l-210.78-121.7c-28.49-16.45-64.11,4.11-64.11,37.01v243.39c0,32.9,35.62,53.46,64.11,37.01Z"/>
+          </svg>
+        </span>
+        VidFlow
+      </a>
+      <div class="nav-links">
+        <a href="/#how" class="nav-link-hide">How it works</a>
+        <a href="/#features" class="nav-link-hide">Features</a>
+        <a href="/pricing" class="nav-link-hide" aria-current="page">Pricing</a>
+        <a href="/help/" class="nav-link-hide">Help</a>
+        <a href="https://app.vidflow.io">Sign in</a>
+        <a href="https://app.vidflow.io" class="btn-nav">Start free trial</a>
+      </div>
+    </nav>
+    </header>
+    <main id="main">
+      <section class="pricing-intro">
+        <h1 class="page-title">Pricing</h1>
+        <p class="subtitle">Every plan starts with a 7 day free trial. A card is required to start, and you can cancel anytime.</p>
+      </section>
+
+      <section class="section-tight">
+      <div class="plans" id="plans">
+        <article class="plan" aria-labelledby="plan-starter">
+          <div class="plan-head">
+            <h3 id="plan-starter">Starter</h3>
+            <p class="plan-price">$29<span> a month</span></p>
+          </div>
+          <div class="plan-body">
+            <p>One brand, one seat, and three connected social accounts. Scheduling and publishing, approvals, AI captions, text posts, titles and descriptions, blog posts, and brand voice matching are all included.</p>
+            <p class="plan-limit">150 AI generations a month. No image generation and no clip generation.</p>
+          </div>
+          <div class="plan-cta"><a class="btn btn-primary" href="https://app.vidflow.io" aria-label="Start free trial on Starter">Start free trial</a></div>
+        </article>
+        <article class="plan" aria-labelledby="plan-pro">
+          <div class="plan-head">
+            <h3 id="plan-pro">Pro</h3>
+            <p class="plan-price">$79<span> a month</span></p>
+          </div>
+          <div class="plan-body">
+            <p>One brand, two seats, and ten connected accounts. Everything in Starter, plus clip generation with 120 clips and 8 episodes a month, AI image generation, automated flows, and bulk tools.</p>
+            <p class="plan-limit">600 AI generations a month.</p>
+          </div>
+          <div class="plan-cta"><a class="btn btn-primary" href="https://app.vidflow.io" aria-label="Start free trial on Pro">Start free trial</a></div>
+        </article>
+        <article class="plan" aria-labelledby="plan-agency">
+          <div class="plan-head">
+            <h3 id="plan-agency">Agency</h3>
+            <p class="plan-price">$199<span> a month</span></p>
+          </div>
+          <div class="plan-body">
+            <p>Ten seats and unlimited connected accounts. Everything in Pro, with 500 clips and 2,500 AI generations a month and 8 episodes per brand.</p>
+            <p class="plan-limit">One brand is included. Each additional brand workspace is $49 a month.</p>
+          </div>
+          <div class="plan-cta"><a class="btn btn-primary" href="https://app.vidflow.io" aria-label="Start free trial on Agency">Start free trial</a></div>
+        </article>
+      </div>
+        <p class="plans-more">Need more brands? Agency includes one and adds each additional brand workspace at $49 a month.</p>
+      </section>
+
+      <section class="section" id="compare">
+        <h2>Compare the plans</h2>
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead>
+              <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Starter</th><th scope="col">Pro</th><th scope="col">Agency</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">Price</th>
+              <td data-label="Starter">$29 a month</td>
+              <td data-label="Pro">$79 a month</td>
+              <td data-label="Agency">$199 a month</td>
+            </tr>
+            <tr>
+              <th scope="row">Brands</th>
+              <td data-label="Starter">1</td>
+              <td data-label="Pro">1</td>
+              <td data-label="Agency">1 included, $49 a month for each additional brand</td>
+            </tr>
+            <tr>
+              <th scope="row">Seats</th>
+              <td data-label="Starter">1</td>
+              <td data-label="Pro">2</td>
+              <td data-label="Agency">10</td>
+            </tr>
+            <tr>
+              <th scope="row">Connected social accounts</th>
+              <td data-label="Starter">3</td>
+              <td data-label="Pro">10</td>
+              <td data-label="Agency">Unlimited</td>
+            </tr>
+            <tr>
+              <th scope="row">AI generations a month</th>
+              <td data-label="Starter">150</td>
+              <td data-label="Pro">600</td>
+              <td data-label="Agency">2,500</td>
+            </tr>
+            <tr>
+              <th scope="row">Clip generation</th>
+              <td data-label="Starter">Not included</td>
+              <td data-label="Pro">120 clips a month, 8 episodes a month</td>
+              <td data-label="Agency">500 clips a month, 8 episodes per brand</td>
+            </tr>
+            <tr>
+              <th scope="row">AI image generation</th>
+              <td data-label="Starter">Not included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Automated flows</th>
+              <td data-label="Starter">Not included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Bulk tools</th>
+              <td data-label="Starter">Not included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Scheduling and publishing</th>
+              <td data-label="Starter">Included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Approvals</th>
+              <td data-label="Starter">Included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">AI captions, text posts, titles and descriptions</th>
+              <td data-label="Starter">Included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Blog posts</th>
+              <td data-label="Starter">Included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Brand voice matching</th>
+              <td data-label="Starter">Included</td>
+              <td data-label="Pro">Included</td>
+              <td data-label="Agency">Included</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="narrow">
+          <h2>Questions about plans and trials</h2>
+          <div class="faq">
+            <details class="faq-item">
+              <summary>What counts as an AI generation?</summary>
+              <div class="faq-body">AI generations are a shared monthly pool. Captions, text posts, titles and descriptions, blog posts, and images each draw from it, and your plan sets the size: 150 on Starter, 600 on Pro, and 2,500 on Agency. Clips are counted separately on the plans that include them. The <a href="/help/usage-limits/">usage limits article</a> in the help center lists what draws from the pool.</div>
+            </details>
+            <details class="faq-item">
+              <summary>What happens when my trial ends?</summary>
+              <div class="faq-body">After 7 days the plan you chose starts, and the card you gave at signup is charged that plan's monthly price. If you cancel before the trial ends, you are not charged.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I cancel?</summary>
+              <div class="faq-body">Yes, anytime, during the trial or after it. The <a href="/help/manage-billing/">billing article</a> in the help center walks through how.</div>
+            </details>
+            <details class="faq-item">
+              <summary>What does beta mean for YouTube and TikTok?</summary>
+              <div class="faq-body">Both platforms review an app before they let it publish publicly, and VidFlow is still in that review for YouTube and TikTok. Until the reviews finish, posts to those two platforms from customer accounts publish as private. Facebook, Instagram, X, and personal LinkedIn publishing are live.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Do my clients need accounts?</summary>
+              <div class="faq-body">To connect their social accounts, no. You send a shared link, the client signs in with each platform, and no passwords are shared. The client never signs in to VidFlow. Posts can also require approval before they go out, and the <a href="/help/client-review-page/">help center</a> shows what a client sees when reviewing.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I run more than one brand?</summary>
+              <div class="faq-body">Starter and Pro include one brand. Agency includes one and adds more at $49 a month each, with every brand in its own workspace.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <div class="final-cta">
+        <h2>Start your 7 day free trial</h2>
+        <p class="subtitle">A card is required to start, and you can cancel anytime.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://app.vidflow.io">Start free trial</a>
+          <a class="btn btn-ghost" href="/help/">Read the help center</a>
+        </div>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <div>&copy; <span id="year">2026</span> VidFlow. Made by Cosmic Arc Media LLC in San Angelo, Texas.</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/pricing">Pricing</a>
+        <a href="/help/">Help center</a>
+        <a href="https://app.vidflow.io/privacy">Privacy</a>
+        <a href="https://app.vidflow.io/terms">Terms</a>
+        <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      var nav = document.querySelector('nav');
+      if (!nav) return;
+      var update = function () { nav.classList.toggle('nav-scrolled', window.scrollY > 10); };
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
