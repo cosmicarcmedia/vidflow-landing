@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Connect X - Vidflow Help</title>
-<meta name="description" content="Link X (Twitter) to Vidflow to publish posts and know the media size limit." />
+<meta name="description" content="X publishing is currently turned off. Existing X connections stay on file." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -91,7 +91,8 @@
     <article class="article-body">
       <h1>Connect X</h1>
       <p class="article-updated">Updated July 10, 2026</p>
-      <p>Connect X (Twitter) to publish text and media posts from Vidflow.</p>
+      <blockquote class="callout"><p><strong>X publishing is currently turned off.</strong> X is not offered when you connect accounts, and nothing is posted to an X account that is already connected. The steps below apply if X is turned back on.</p></blockquote>
+<p>Connect X (Twitter) to publish text and media posts from Vidflow.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Vidflow posts through X&#39;s v2 API using an OAuth 2.0 token that carries a rotating refresh token. Vidflow refreshes it automatically in the background well before it expires, and every refresh attempt is deduplicated so overlapping schedule and Post Now activity can&#39;t burn through the one-time-use refresh token by racing each other. When media is attached, it&#39;s uploaded to X first and the resulting media id is attached to the post; video uploads process on X&#39;s side asynchronously, which is why a video post can take a couple of minutes to fully appear.</p>
 <h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>

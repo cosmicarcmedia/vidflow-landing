@@ -90,29 +90,29 @@
     </nav>
     <article class="article-body">
       <h1>Usage limits and monthly allowances</h1>
-      <p class="article-updated">Updated July 10, 2026</p>
+      <p class="article-updated">Updated October 1, 2026</p>
       <p>Vidflow meters three things each month: episodes, AI generations, and clip generations. This page explains how the meters work, what counts against each one, and your options when you reach a cap.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Every metered action checks your usage before it runs: Vidflow looks up your workspace owner&#39;s current plan and status, reads that plan&#39;s limit for the metric involved, and compares it to what you have used this calendar month. If you are under the limit, the action proceeds and the count goes up by one (or more, for batch actions); if you are at or over it, the action is blocked before anything is generated or charged, so a denied request never costs you a generation.</p>
 <h2 id="how-allowances-work"><a class="heading-anchor" href="#how-allowances-work" aria-label="Link to this section">#</a>How allowances work</h2>
 <ul><li>Allowances reset at the start of each calendar month (UTC).</li><li><strong>Episodes</strong> are metered per brand space. Your account&#39;s monthly total is your plan&#39;s per-brand allowance multiplied by the brand spaces on your subscription.</li><li><strong>AI generations</strong> and <strong>clip generations</strong> are account-wide pools. All of your brand spaces draw from the same two pools.</li></ul>
 <p>Your plan sets the numbers:</p>
-<div class="table-wrap"><table><thead><tr><th>Plan</th><th>Episodes per month per brand space</th><th>AI generations per month</th><th>Clip generations per month</th></tr></thead><tbody><tr><td>Free</td><td>1</td><td>20</td><td>3</td></tr><tr><td>Starter</td><td>2</td><td>150</td><td>30</td></tr><tr><td>Pro</td><td>8</td><td>600</td><td>120</td></tr><tr><td>Agency</td><td>8</td><td>2,500</td><td>500</td></tr></tbody></table></div>
-<p>See <a href="/help/plans-and-features/">Plans and features</a> for the full plan matrix, including seats and connected account slots.</p>
+<div class="table-wrap"><table><thead><tr><th>Plan</th><th>Episodes per month per brand space</th><th>AI generations per month</th><th>Clip generations per month</th></tr></thead><tbody><tr><td>Free</td><td>1</td><td>20</td><td>3</td></tr><tr><td>Starter</td><td>2</td><td>150</td><td>None (Pro feature)</td></tr><tr><td>Pro</td><td>8</td><td>600</td><td>120</td></tr><tr><td>Agency</td><td>8</td><td>2,500</td><td>500</td></tr></tbody></table></div>
+<p>Starter does not generate clips, so it has no clip allowance and no <strong>Clips</strong> meter. See <a href="/help/plans-and-features/">Plans and features</a> for the full plan matrix, including seats and connected account slots.</p>
 <h2 id="what-counts-as-an-episode"><a class="heading-anchor" href="#what-counts-as-an-episode" aria-label="Link to this section">#</a>What counts as an episode</h2>
 <p>Every long-form source you add counts as one episode, whichever way it arrives: a direct upload, a YouTube import, or an auto-import from Google Drive or Dropbox.</p>
 <h2 id="what-counts-as-an-ai-generation"><a class="heading-anchor" href="#what-counts-as-an-ai-generation" aria-label="Link to this section">#</a>What counts as an AI generation</h2>
 <p>Each AI action draws from the same pool:</p>
-<ul><li>AI writing: captions, text posts, ideas, scripts, and articles.</li><li>AI image generation.</li><li>Transcription of an uploaded file.</li></ul>
+<ul><li>AI writing: captions, text posts, ideas, scripts, and articles.</li><li>AI image generation (Pro and Agency).</li><li>Transcription of an uploaded file.</li></ul>
 <p>Batch actions count once per item generated. Generating ten posts in one run uses ten AI generations, not one.</p>
 <h2 id="what-counts-as-a-clip-generation"><a class="heading-anchor" href="#what-counts-as-a-clip-generation" aria-label="Link to this section">#</a>What counts as a clip generation</h2>
-<p>Every clip you generate counts as one against the pool, regardless of which clip engine produced it.</p>
+<p>Every clip you generate counts as one against the pool, regardless of which clip engine produced it. Clip generation is part of Pro and Agency. During a trial of Pro or Agency, clips draw from the trial&#39;s 10-clip allowance instead.</p>
 <h2 id="connected-account-slots"><a class="heading-anchor" href="#connected-account-slots" aria-label="Link to this section">#</a>Connected account slots</h2>
 <p>Your plan also caps connected social accounts per brand space. Reconnecting an account that is already linked never uses a new slot, only a genuinely new connection does.</p>
 <h2 id="free-and-trial-branding-is-separate-from-these-limits"><a class="heading-anchor" href="#free-and-trial-branding-is-separate-from-these-limits" aria-label="Link to this section">#</a>Free and trial branding is separate from these limits</h2>
 <p>Staying under your monthly allowances is about volume. Separately, native clips rendered on the Free plan or during any trial carry a small Vidflow watermark and end card, and captions get <strong>#vidflow</strong> appended, funding the free tier rather than metering it. See <a href="/help/plans-and-features/">Plans and features</a> for the full breakdown by plan.</p>
 <h2 id="tracking-your-usage"><a class="heading-anchor" href="#tracking-your-usage" aria-label="Link to this section">#</a>Tracking your usage</h2>
-<p>Open the Billing page: click your avatar, choose <strong>Account settings</strong>, then <strong>Manage plan &amp; billing</strong>. The meters near the top show <strong>Episodes this month</strong>, <strong>AI generations</strong>, and <strong>Clips</strong> against your plan&#39;s limits, with a progress bar that turns amber near the cap and red once you hit it.</p>
+<p>Open the Billing page: click your avatar, choose <strong>Account settings</strong>, then <strong>Manage plan &amp; billing</strong>. The meters near the top show <strong>Episodes this month</strong>, <strong>AI generations</strong>, and, on plans that generate clips, <strong>Clips</strong> against your plan&#39;s limits, with a progress bar that turns amber near the cap and red once you hit it.</p>
 <!-- screenshot: the usage meters on the Billing & plan page -->
 <h2 id="when-you-hit-a-cap"><a class="heading-anchor" href="#when-you-hit-a-cap" aria-label="Link to this section">#</a>When you hit a cap</h2>
 <p>The action stops, and Vidflow shows a message naming the limit you reached and pointing you to Settings → Billing to upgrade. Content you already created is not affected.</p>

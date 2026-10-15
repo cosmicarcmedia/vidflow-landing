@@ -12,7 +12,7 @@ Vidflow automates the entire post-production content pipeline:
 - **Vertical reframing** — Converts 16:9 horizontal video to 9:16 vertical with face-aware auto-cropping, no manual editing required.
 - **Burn-in captions** — Generates word-level captions in the brand's style, with configurable positioning and platform-aware sizing.
 - **Brand voice profiles** — Learns tone, vocabulary, and themes from existing content and applies them to AI-generated text posts.
-- **Multi-platform publishing** — Publishes video, image, and text content to YouTube, TikTok, Instagram, LinkedIn, Facebook, and X / Twitter from a single queue.
+- **Multi-platform publishing** — Publishes video, image, and text content to YouTube, TikTok, Instagram, LinkedIn, and Facebook from a single queue.
 - **Client approval workflow** — Agencies send clients a secure review link; clients approve or leave comments without needing a Vidflow account.
 - **Content calendar** — Drag-and-drop scheduler with recurring slot support and automatic queue filling.
 - **AI image generation** — Creates thumbnails, quote cards, and visual posts locked to the brand's style.

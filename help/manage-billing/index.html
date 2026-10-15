@@ -90,7 +90,7 @@
     </nav>
     <article class="article-body">
       <h1>Manage your subscription</h1>
-      <p class="article-updated">Updated July 10, 2026</p>
+      <p class="article-updated">Updated October 1, 2026</p>
       <p>Everything billing-related lives on one page in the app, including current pricing for every plan. Reach for this page to start a plan, switch plans, update payment details, cancel, or request a refund.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Vidflow does not run its own billing ledger, Stripe is the system of record for your card, invoices, and subscription state. When you start a trial or switch plans, Vidflow talks to Stripe to create or update the subscription, then a webhook syncs the result (plan, status, trial end date, brand space count) back into your account so the app always reflects what Stripe actually has on file. Because of that sync, changes made in the Stripe portal (canceling, updating a card) show up back in Vidflow automatically, no separate step needed.</p>
@@ -103,6 +103,7 @@
 <ol><li>On the Billing page, pick a plan.</li><li>Click <strong>Start 7-day trial</strong>.</li><li>Complete checkout. Payment is handled by Stripe, and you can enter a promotion code during checkout.</li></ol>
 <h2 id="switch-plans"><a class="heading-anchor" href="#switch-plans" aria-label="Link to this section">#</a>Switch plans</h2>
 <p>To upgrade or downgrade, click <strong>Switch to [plan name]</strong> on the plan you want. The change applies to your existing subscription immediately, and prorated charges or credits appear on your next invoice. Switching never creates a second subscription, an existing subscriber is always updated in place rather than sent through checkout again.</p>
+<p>If you move from Pro or Agency down to Starter, you keep everything you already made and can still schedule and publish it. Clip and image jobs that are already running finish, and new clip and image generation is blocked until you switch back up. See <a href="/help/plans-and-features/">Plans and features</a>.</p>
 <p>On the Agency plan you can also adjust extra brand spaces from the plan card with the stepper and confirm with <strong>Update brand spaces</strong>. Extra spaces are billed as an add-on quantity on the same subscription.</p>
 <blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> if your plan shows a green <strong>Complimentary</strong> badge, Vidflow granted your account free full access and no payment is needed.</p></blockquote>
 <h2 id="update-your-card-or-view-invoices"><a class="heading-anchor" href="#update-your-card-or-view-invoices" aria-label="Link to this section">#</a>Update your card or view invoices</h2>
