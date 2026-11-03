@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Connect X - Vidflow Help</title>
-<meta name="description" content="X publishing is currently turned off. Existing X connections stay on file." />
+<meta name="description" content="Link X (Twitter) to Vidflow to publish posts, know the media size limit, and see the monthly X post cap for your plan." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,9 +90,8 @@
     </nav>
     <article class="article-body">
       <h1>Connect X</h1>
-      <p class="article-updated">Updated July 10, 2026</p>
-      <blockquote class="callout"><p><strong>X publishing is currently turned off.</strong> X is not offered when you connect accounts, and nothing is posted to an X account that is already connected. The steps below apply if X is turned back on.</p></blockquote>
-<p>Connect X (Twitter) to publish text and media posts from Vidflow.</p>
+      <p class="article-updated">Updated October 22, 2026</p>
+      <p>Connect X (Twitter) to publish text and media posts from Vidflow.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Vidflow posts through X&#39;s v2 API using an OAuth 2.0 token that carries a rotating refresh token. Vidflow refreshes it automatically in the background well before it expires, and every refresh attempt is deduplicated so overlapping schedule and Post Now activity can&#39;t burn through the one-time-use refresh token by racing each other. When media is attached, it&#39;s uploaded to X first and the resulting media id is attached to the post; video uploads process on X&#39;s side asynchronously, which is why a video post can take a couple of minutes to fully appear.</p>
 <h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
@@ -101,19 +100,25 @@
 <p>Text and media posts to your connected X account, from <strong>Post now</strong> on library content and from scheduled dispatch on both content items and legacy queue posts.</p>
 <h2 id="limits-enforced"><a class="heading-anchor" href="#limits-enforced" aria-label="Link to this section">#</a>Limits enforced</h2>
 <ul><li>Post text: 280 characters. Scheduled content items are automatically sliced to this length.</li><li>Media: 512MB hard cap. Video uploads process asynchronously on X&#39;s side, which can take up to about 2 minutes before the post finishes.</li></ul>
+<h2 id="monthly-x-post-cap"><a class="heading-anchor" href="#monthly-x-post-cap" aria-label="Link to this section">#</a>Monthly X post cap</h2>
+<p>Each workspace has a monthly allowance of X posts, set by plan:</p>
+<div class="table-wrap"><table><thead><tr><th>Plan</th><th>X posts per month per workspace</th></tr></thead><tbody><tr><td>Starter</td><td>30</td></tr><tr><td>Pro</td><td>100</td></tr><tr><td>Agency</td><td>300</td></tr><tr><td>Trial</td><td>30</td></tr></tbody></table></div>
+<ul><li>Only an X post that publishes counts. A post that fails, or one that is held back, does not use any of the allowance.</li><li>The count shows on the <strong>Billing</strong> page next to your other usage meters.</li><li>When the cap is reached, the X part of a post does not go out and the post shows a message that the monthly X cap was reached. The post&#39;s other platforms publish normally.</li><li>The count resets when the next month starts, and X posting resumes then. You can also upgrade to a larger plan for a higher cap. See <a href="/help/usage-limits/">Usage limits and monthly allowances</a>.</li><li>A workspace with no active plan or trial cannot post to X.</li></ul>
 <h2 id="token-lifetime-and-reconnect"><a class="heading-anchor" href="#token-lifetime-and-reconnect" aria-label="Link to this section">#</a>Token lifetime and reconnect</h2>
 <p>X issues rotating refresh tokens, and Vidflow refreshes them automatically in the background, deduplicated so that overlapping refresh attempts cannot burn through the token family. Most connections need no attention.</p>
 <blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> Posting media requires the media.write permission scope. If your X account was connected before Vidflow requested that scope, media posts will not work until you reconnect. Text-only posts are unaffected.</p></blockquote>
 <p>If X revokes the authorization outright, Vidflow pauses that account and emails you. Reconnecting resumes anything waiting on your schedule.</p>
 <h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
-<ul><li><strong>Reconnect once, right after you first connect X, if you plan to post media.</strong> If your account was connected before Vidflow requested the media.write scope, text posts work but media silently doesn&#39;t. A single reconnect now avoids a confusing failure the first time you try to post a video or image.</li><li><strong>Write to the 280-character limit yourself rather than relying on the automatic slice.</strong> Vidflow will cut a longer scheduled caption down to fit, but a caption you&#39;ve deliberately shaped to the limit reads better than one truncated mid-thought.</li><li><strong>Give video posts a couple of minutes before treating them as stuck.</strong> X processes video uploads asynchronously on its own side, so a short delay between posting and the tweet appearing is normal, not a failure.</li></ul>
+<ul><li><strong>Reconnect once if you plan to post media and connected X a while ago.</strong> If your account was connected before Vidflow requested the media.write scope, text posts work but media does not. A single reconnect avoids a confusing failure the first time you try to post a video or image.</li><li><strong>Write to the 280-character limit yourself.</strong> Vidflow cuts a longer scheduled caption down to fit, but a caption you shaped to the limit reads better than one cut off mid-thought.</li><li><strong>Give video posts a couple of minutes before treating them as stuck.</strong> X processes video uploads on its own side, so a short delay between posting and the post appearing is normal.</li><li><strong>Keep an eye on the monthly X post count on the Billing page</strong> if you post to X often. See the monthly X post cap below.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
 <p><strong>Media posts fail but text posts work fine.</strong> Reconnect your X account so Vidflow can request the media.write scope. This is a one-time fix.</p>
 <p><strong>My video post is taking a while to appear.</strong> X processes video uploads asynchronously. Give it a couple of minutes before treating it as stuck.</p>
 <p><strong>My media was rejected for size.</strong> Confirm the file is under 512MB. Vidflow enforces this cap before attempting the upload.</p>
 <p><strong>X connection stopped working entirely.</strong> Check the Connections tab for a reconnect prompt and sign in again.</p>
+<p><strong>My post went to my other platforms but not to X.</strong> Check the Billing page. If the workspace has used its monthly X allowance, the X part of the post is skipped with a message and goes out again only after the count resets next month.</p>
+<p><strong>X posts do not show metrics in Analytics.</strong> Vidflow does not collect X metrics yet. See <a href="/help/post-performance/">Post performance</a>.</p>
 <h2 id="related-articles"><a class="heading-anchor" href="#related-articles" aria-label="Link to this section">#</a>Related articles</h2>
-<ul><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li></ul>
+<ul><li><a href="/help/connect-overview/">Connect your social accounts</a></li><li><a href="/help/post-now/">Post now</a></li><li><a href="/help/post-statuses/">Post statuses and failed posts</a></li><li><a href="/help/publishing-troubleshooting/">Fix publishing problems</a></li><li><a href="/help/usage-limits/">Usage limits and monthly allowances</a></li></ul>
     </article>
     <nav class="prev-next" aria-label="Previous and next articles">
   <a class="prev-link" href="/help/connect-linkedin/"><span class="prev-next-label">Previous</span><span class="prev-next-title">Connect LinkedIn</span></a>

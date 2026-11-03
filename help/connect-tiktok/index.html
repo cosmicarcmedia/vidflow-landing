@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Connect TikTok - Vidflow Help</title>
-<meta name="description" content="Link TikTok to Vidflow and understand the settings every TikTok post requires." />
+<meta name="description" content="TikTok is coming soon for new connections. See how an already connected TikTok account posts and the settings every TikTok post requires." />
 <link rel="icon" type="image/svg+xml" href="/help/assets/logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,12 +90,14 @@
     </nav>
     <article class="article-body">
       <h1>Connect TikTok</h1>
-      <p class="article-updated">Updated July 10, 2026</p>
-      <p>Connect TikTok to publish and schedule videos to your TikTok account directly from Vidflow.</p>
-<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> TikTok posts currently publish as private (visible only to you) while the TikTok app review completes. Vidflow marks the post and emails you once a post is affected, and switches to normal publishing automatically when the review finishes.</p></blockquote>
+      <p class="article-updated">Updated October 20, 2026</p>
+      <p>Publish and schedule videos to your TikTok account directly from Vidflow.</p>
+<blockquote class="callout"><p><strong>Coming soon:</strong> New TikTok connections are not open yet. The <strong>TikTok</strong> option shows as Coming soon on the Connections tab and on client connect links until TikTok finishes reviewing Vidflow&#39;s app. An account that is already connected keeps working, and you can reconnect it from the Connected Accounts list on the <strong>Connections</strong> tab.</p></blockquote>
+<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> Posts from the current TikTok app publish as private (visible only to you) while TikTok&#39;s review completes. Vidflow marks the post and emails you once a post is affected, and switches to normal publishing automatically when the review finishes.</p></blockquote>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Vidflow uploads your video file directly to TikTok&#39;s Content Posting API, in chunks for larger files, rather than pointing TikTok at a URL. Before every post, Vidflow asks TikTok for your account&#39;s current creator settings, live, not cached, so the privacy options and comment/duet/stitch toggles you see always match what your TikTok account actually allows right now. TikTok itself enforces which privacy levels an app is allowed to use: an app still under review is capped at posting privately no matter what you request, and Vidflow surfaces that as a note on the post rather than hiding the difference.</p>
 <h2 id="connect-steps"><a class="heading-anchor" href="#connect-steps" aria-label="Link to this section">#</a>Connect steps</h2>
+<p>These steps apply once new TikTok connections open. Until then, an account that is already connected can be reconnected from the Connections tab.</p>
 <ol><li>Open <strong>Workspace Settings</strong>.</li><li>Click the <strong>Connections</strong> tab.</li><li>Click <strong>TikTok</strong>.</li><li>Sign in on TikTok&#39;s page and approve access.</li><li>You are returned to Vidflow with TikTok listed as connected.</li></ol>
 <h2 id="what-vidflow-can-publish"><a class="heading-anchor" href="#what-vidflow-can-publish" aria-label="Link to this section">#</a>What Vidflow can publish</h2>
 <p>Vidflow publishes video posts to TikTok, both from <strong>Post now</strong> on library content and from scheduled dispatch. A video file is required, TikTok cannot post text-only or image-only content.</p>
@@ -111,6 +113,7 @@
 <h2 id="get-better-results"><a class="heading-anchor" href="#get-better-results" aria-label="Link to this section">#</a>Get better results</h2>
 <ul><li><strong>Check your TikTok app&#39;s own privacy, comment, duet, and stitch settings before you post from Vidflow</strong>, not after. Vidflow&#39;s panel can only offer what your TikTok account allows, so if an option you expect is missing or greyed out, the fix is in TikTok&#39;s own settings, not Vidflow&#39;s.</li><li><strong>Decide your disclosure answer before you open the settings panel.</strong> Knowing upfront whether a post is your own brand or a paid partnership means you won&#39;t have to change your chosen audience mid-post when branded content blocks the private option.</li><li><strong>Expect private-only posting during the review period, and plan content accordingly.</strong> Anything posted to TikTok right now goes out as Only you until Vidflow&#39;s app review completes. Save anything time-sensitive or campaign-critical for after the review clears rather than TikTok, or post it there manually in the meantime.</li><li><strong>Leave the account connected even during the review period.</strong> Scheduled posts keep the audience you originally chose stored on the item; once the review clears, anything still waiting to publish goes out at that audience automatically, nothing needs to be rebuilt. Posts that already went out as private during the review period stay private, TikTok does not retroactively change a published post&#39;s visibility.</li></ul>
 <h2 id="troubleshooting"><a class="heading-anchor" href="#troubleshooting" aria-label="Link to this section">#</a>Troubleshooting</h2>
+<p><strong>I cannot connect a new TikTok account.</strong> New TikTok connections are coming soon and open once TikTok finishes reviewing Vidflow&#39;s app. Accounts that are already connected are not affected.</p>
 <p><strong>My post published as private and I did not choose that.</strong> This is the TikTok review-period behavior described above. Vidflow notes it on the post and by email, and it clears up once the app review completes.</p>
 <p><strong>Branded content will not let me choose Only you.</strong> This is expected. TikTok does not allow branded content to be private. Choose a different audience, or turn off disclosure if the post is not actually a paid partnership.</p>
 <p><strong>TikTok posting suddenly stopped working.</strong> Check the Connections tab for a reconnect prompt. TikTok token refresh failures show as &quot;TikTok token refresh failed. Reconnect your TikTok account in Workspace Settings → Connected Accounts.&quot;</p>

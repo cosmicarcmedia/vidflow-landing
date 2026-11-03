@@ -90,7 +90,7 @@
     </nav>
     <article class="article-body">
       <h1>Fix publishing problems</h1>
-      <p class="article-updated">Updated July 10, 2026</p>
+      <p class="article-updated">Updated October 22, 2026</p>
       <p>When a post fails, work through this checklist in order. It is ordered by how often each cause shows up, so start at the top.</p>
 <h2 id="how-it-works"><a class="heading-anchor" href="#how-it-works" aria-label="Link to this section">#</a>How it works</h2>
 <p>Every scheduled or queued post is picked up by a background dispatcher that publishes to each of its target platforms independently, records a per-platform result, and marks the item&#39;s overall status from those results. That is why one post can show as published while carrying a specific error for just one platform: each platform call succeeds or fails on its own.</p>
@@ -108,9 +108,8 @@
 <h2 id="3-check-for-a-youtube-quota-hold"><a class="heading-anchor" href="#3-check-for-a-youtube-quota-hold" aria-label="Link to this section">#</a>3. Check for a YouTube quota hold</h2>
 <p>If YouTube posts are stuck in scheduled or publishing status, this is usually not a failure. YouTube enforces a daily upload quota, and when Vidflow hits it, the post is automatically deferred, not marked failed. Internally this shows as &quot;YouTube daily quota reached; will retry automatically after quota reset.&quot;</p>
 <p><strong>What to do:</strong> nothing. Vidflow reschedules the item for shortly after the next quota reset (YouTube&#39;s quota resets at midnight Pacific time) and retries automatically. If it still has not gone out a full day later, contact support.</p>
-<blockquote class="callout callout-beta"><span class="callout-label">Beta note</span><p><strong>Beta note:</strong> Separately from quota, a YouTube upload that succeeds still publishes as <strong>Private</strong> rather than your chosen visibility, until Vidflow&#39;s YouTube integration completes Google&#39;s app verification. This is not a failure and needs no retry; change the video&#39;s visibility directly in YouTube Studio once you&#39;ve reviewed it.</p></blockquote>
+<blockquote class="callout callout-note"><span class="callout-label">Note</span><p><strong>Note:</strong> A YouTube video published from a schedule or queue takes the <strong>YouTube privacy</strong> setting on that queue (Unlisted by default). If a video went out as Unlisted when you wanted it public, change the setting on the queue for future posts, and change that video&#39;s visibility in YouTube Studio. If YouTube applies a different visibility than the one requested, Vidflow notes it on the post.</p></blockquote>
 <h2 id="4-check-for-an-old-x-connection-missing-media-permission"><a class="heading-anchor" href="#4-check-for-an-old-x-connection-missing-media-permission" aria-label="Link to this section">#</a>4. Check for an old X connection missing media permission</h2>
-<p>X publishing is currently turned off, so this step does not apply for now.</p>
 <p>If a post with an image or video fails on X but text-only posts to the same account work fine, the X connection was likely made before Vidflow requested the media upload permission. Older connections do not have it and cannot post media until reconnected.</p>
 <p><strong>Fix it:</strong> go to <strong>Workspace Settings &gt; Connections</strong> and reconnect the X account. This grants the missing permission without losing anything else about the connection.</p>
 <h2 id="5-check-if-approval-is-holding-it-back"><a class="heading-anchor" href="#5-check-if-approval-is-holding-it-back" aria-label="Link to this section">#</a>5. Check if approval is holding it back</h2>
