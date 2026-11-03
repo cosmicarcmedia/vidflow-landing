@@ -1406,6 +1406,58 @@
       .distrib-wrap { height: 176px; }
     }
 
+    /* Hero recording of Flows in the live app */
+    .hero-demo {
+      --demo-w: min(1200px, 100vw - 48px);
+      margin: 36px calc((var(--demo-w) - 100%) / -2) 0;
+      text-align: left;
+    }
+    .demo-frame {
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: #111118;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+    }
+    .demo-bar {
+      display: grid; grid-template-columns: 1fr minmax(0, 340px) 1fr; align-items: center; gap: 12px;
+      height: 40px; padding: 0 10px 0 14px;
+      background: #17171e; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .demo-dots { display: flex; gap: 7px; }
+    .demo-dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .demo-url {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 12.5px; color: #b4b4bd; letter-spacing: 0.01em;
+      background: rgba(255,255,255,0.05); border-radius: 6px; padding: 4px 10px;
+      white-space: nowrap; overflow: hidden;
+    }
+    .demo-url svg { width: 11px; height: 11px; flex: none; opacity: 0.7; }
+    .demo-toggle {
+      justify-self: end;
+      font: inherit; font-size: 12.5px; font-weight: 500; color: #b4b4bd;
+      background: transparent; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px;
+      padding: 3px 11px; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .demo-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+    .demo-frame video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #111118; }
+    .demo-caption { margin-top: 14px; font-size: 13px; color: #8e8e99; text-align: center; }
+    .hero .social-proof { margin-top: 36px; }
+    /* Laptop screens: tighten the hero so the recording shows in the first screen */
+    @media (min-width: 801px) and (max-height: 900px) {
+      .hero { padding-top: 36px; }
+      .hero .hero-display { font-size: clamp(56px, 7.4vw, 88px); }
+      .hero .subtitle { margin-bottom: 20px; }
+      .hero-demo { margin-top: 24px; }
+    }
+    @media (max-width: 800px) {
+      .demo-bar { grid-template-columns: auto minmax(0, 1fr) auto; height: 34px; }
+      .demo-dots i { width: 8px; height: 8px; }
+    }
+    @media (max-width: 600px) {
+      .hero-demo { --demo-w: calc(100vw - 32px); margin-top: 28px; }
+      .demo-frame { border-radius: 10px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
       .fviz-arrow-line, .fviz-arrow-tip, .dp-node { transition: none; opacity: 1; transform: none; animation: none; }
@@ -1466,6 +1518,23 @@
         ✓ You're on the list. The 1-to-30 Map is on its way to your inbox right now.
       </div>
       <div class="form-error" id="form-error"></div>
+
+      <figure class="hero-demo" id="hero-demo">
+        <div class="demo-frame">
+          <div class="demo-bar">
+            <span class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="demo-url"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>app.vidflow.io</span>
+            <button type="button" class="demo-toggle" id="demo-toggle" hidden>Pause</button>
+          </div>
+          <video id="demo-video" muted loop playsinline preload="metadata" width="1920" height="1080" poster="/assets/video/vidflow-flow-demo-poster.jpg" aria-label="A 30 second screen recording of Flows in the live app: a pipeline that turns one upload into clips, posts, images and captions, with a client approval step dropped in.">
+            <source src="/assets/video/vidflow-flow-demo-720.webm" type="video/webm" media="(max-width: 800px)" />
+            <source src="/assets/video/vidflow-flow-demo-720.mp4" type="video/mp4" media="(max-width: 800px)" />
+            <source src="/assets/video/vidflow-flow-demo.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-flow-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption class="demo-caption">A screen recording of Flows in the live app, in our demo workspace.</figcaption>
+      </figure>
 
       <div class="social-proof">
         <div class="proof-stat">
@@ -2534,6 +2603,36 @@
         raf = requestAnimationFrame(tick);
       }
       tick();
+    })();
+
+    // Hero recording: plays while on screen, with a pause button. Reduced motion keeps the poster.
+    (() => {
+      const v = document.getElementById('demo-video');
+      if (!v) return;
+      const toggle = document.getElementById('demo-toggle');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let held = reduce;
+      const tryPlay = () => v.play().catch(() => {});
+      const setToggle = () => {
+        const on = !v.paused;
+        toggle.textContent = on ? 'Pause' : 'Play';
+        toggle.setAttribute('aria-label', on ? 'Pause the recording' : 'Play the recording');
+      };
+      toggle.hidden = false;
+      toggle.addEventListener('click', () => {
+        if (v.paused) { held = false; tryPlay(); } else { held = true; v.pause(); }
+      });
+      v.addEventListener('play', setToggle);
+      v.addEventListener('pause', setToggle);
+      setToggle();
+      if (reduce) return;
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) { if (!held) tryPlay(); } else v.pause();
+        }), { threshold: 0.1 }).observe(v);
+      } else {
+        tryPlay();
+      }
     })();
 
     // App recordings: play while on screen, pause off screen. Reduced motion keeps the poster.
