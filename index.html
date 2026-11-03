@@ -1383,6 +1383,29 @@
       .distrib-container { transform: scale(0.68); transform-origin: top center; margin-bottom: -134px; }
     }
 
+    /* Phones and tablets: these kept the page wider than the screen. The 760px platform diagram scales, so it comes out of flow and centers on the wrap, which takes the scaled height. */
+    @media (max-width: 1100px) {
+      .hero-sub-wrap::before { left: -24px; right: -24px; }
+    }
+    /* Tablets: the five-column diagram is wider than the page below about 860px, so stack it as on phones */
+    @media (min-width: 701px) and (max-width: 860px) {
+      .fviz { grid-template-columns: 1fr; grid-template-rows: auto; gap: 16px; }
+      .fviz-arrow { flex-direction: row; padding: 0; }
+      .fviz-arrow-line { width: 32px; }
+    }
+    @media (max-width: 800px) {
+      .distrib-wrap { position: relative; height: 286px; }
+      .distrib-container { position: absolute; top: 0; left: 50%; margin: 0 0 0 -380px; }
+    }
+    @media (max-width: 600px) {
+      .distrib-wrap { height: 210px; }
+      .hero-sub { white-space: normal; }
+      .bento-approval { flex-wrap: wrap; }
+    }
+    @media (max-width: 420px) {
+      .distrib-wrap { height: 176px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
       .fviz-arrow-line, .fviz-arrow-tip, .dp-node { transition: none; opacity: 1; transform: none; animation: none; }
