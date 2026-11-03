@@ -1258,6 +1258,9 @@
       background: rgba(255,255,255,0.03);
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
+    .screenrec-note { margin: 48px 0 0; font-size: 14px; color: #a1a1aa; }
+    .screenrec-note + .screenrec-grid { margin-top: 20px; }
+    .screenrec-video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0b0b14; }
     .screenrec-card:hover { border-color: rgba(99,102,241,0.3); box-shadow: 0 0 28px rgba(99,102,241,0.1); }
     .screenrec-placeholder {
       aspect-ratio: 16/9;
@@ -2106,72 +2109,73 @@
         </div><!-- /distrib-container -->
       </div><!-- /distrib-wrap -->
 
-      <!-- Screen recording placeholders -->
+      <!-- Screen recordings of the live app, Cosmic Arc Media workspace, October 2026 -->
+      <p class="screenrec-note">Screen recordings of the live app, in our own agency workspace, October 2026.</p>
       <div class="screenrec-grid">
 
         <div class="screenrec-card reveal">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-upload-import-cut-poster.jpg" aria-label="Screen recording: the Upload Episode dialog, then setting up an import source.">
+            <source src="/assets/video/vidflow-upload-import-cut.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-upload-import-cut.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
             <h4>Upload &amp; auto-import</h4>
-            <p>Show dragging an episode file in, then the auto-import from a connected Google Drive folder triggering automatically.</p>
+            <p>Upload a long video or audio file, or bring files in from Google Drive or Dropbox.</p>
           </div>
         </div>
 
         <div class="screenrec-card reveal" style="--reveal-delay:80ms">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-clip-generator-poster.jpg" aria-label="Screen recording: the Clip Generator, choosing a source, clip count, length and caption style.">
+            <source src="/assets/video/vidflow-clip-generator.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-clip-generator.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
             <h4>AI clip generation</h4>
-            <p>Walk through the clip review screen — AI-selected moments, trim handles, reframe preview, caption overlay toggle.</p>
+            <p>Pick an episode or upload a file, then set how many clips, how long, and which caption style.</p>
           </div>
         </div>
 
         <div class="screenrec-card reveal" style="--reveal-delay:160ms">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-calendar-poster.jpg" aria-label="Screen recording: the content calendar in month view, then week view.">
+            <source src="/assets/video/vidflow-calendar.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-calendar.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
             <h4>Content calendar &amp; scheduling</h4>
-            <p>Drag posts onto calendar slots, set recurring times per platform, confirm the queue populates automatically.</p>
+            <p>See every scheduled post by month or week, with unscheduled items in the sidebar ready to drag in.</p>
           </div>
         </div>
 
         <div class="screenrec-card reveal" style="--reveal-delay:240ms">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-review-page-poster.jpg" aria-label="Screen recording: scrolling a client review page with approval status, media, captions and comment boxes.">
+            <source src="/assets/video/vidflow-review-page.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-review-page.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
             <h4>Client approval flow</h4>
-            <p>Send a review link, show the client-side approval view (no login), then watch status update to Approved in the dashboard.</p>
+            <p>What your client sees from the link: each post with its media and caption, a comment box, and an approve button. No login.</p>
           </div>
         </div>
 
         <div class="screenrec-card reveal" style="--reveal-delay:320ms">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-brand-voice-poster.jpg" aria-label="Screen recording: workspace settings, the AI and Voice tab, then the brand profile.">
+            <source src="/assets/video/vidflow-brand-voice.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-brand-voice.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
-            <h4>Multi-workspace dashboard</h4>
-            <p>Switch between client workspaces, show brand voice profiles, role-based access controls, and white-label approval emails.</p>
+            <h4>Brand voice for each client</h4>
+            <p>Each workspace keeps its own voice profile and writing guidelines, so captions stay in that client's voice.</p>
           </div>
         </div>
 
         <div class="screenrec-card reveal" style="--reveal-delay:400ms">
-          <div class="screenrec-placeholder">
-            <div class="screenrec-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg></div>
-            <span class="screenrec-placeholder-label">Recording needed</span>
-          </div>
+          <video class="screenrec-video" data-autoplay muted loop playsinline preload="none" width="1600" height="900" poster="/assets/video/vidflow-analytics-cut-poster.jpg" aria-label="Screen recording: the post performance table in analytics, sorted by likes and views.">
+            <source src="/assets/video/vidflow-analytics-cut.webm" type="video/webm" />
+            <source src="/assets/video/vidflow-analytics-cut.mp4" type="video/mp4" />
+          </video>
           <div class="screenrec-info">
-            <h4>Cross-platform analytics</h4>
-            <p>Show unified analytics view across platforms, then export a branded client report in one click.</p>
+            <h4>Analytics &amp; client reports</h4>
+            <p>Audience, publishing history, and post performance in one view. Pick 7, 30 or 90 days and save a branded report as a PDF.</p>
           </div>
         </div>
 
@@ -2507,6 +2511,27 @@
         raf = requestAnimationFrame(tick);
       }
       tick();
+    })();
+
+    // App recordings: play while on screen, pause off screen. Reduced motion keeps the poster.
+    (() => {
+      const vids = document.querySelectorAll('video[data-autoplay]');
+      if (!vids.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        vids.forEach(v => { v.controls = true; });
+        return;
+      }
+      if (!('IntersectionObserver' in window)) {
+        vids.forEach(v => v.play().catch(() => {}));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.play().catch(() => {});
+          else e.target.pause();
+        });
+      }, { threshold: 0.35 });
+      vids.forEach(v => io.observe(v));
     })();
   </script>
 </body>
