@@ -2,23 +2,23 @@
 
 > AI-powered video content automation platform built for content agencies.
 
-Vidflow turns one long-form video or podcast episode into a full week of social media content in under an hour. It is designed primarily for content agencies running social media for multiple brands and clients, and also works well for individual creators and podcasters.
+Vidflow turns one long-form video or podcast episode into a full week of social media content. It is designed primarily for content agencies running social media for multiple brands and clients, and also works well for individual creators and podcasters.
 
 ## What Vidflow Does
 
 Vidflow automates the entire post-production content pipeline:
 
-- **AI clip generation** — Automatically identifies 10–30 best moments from a long-form episode and generates short-form clips optimized for TikTok, Instagram Reels, and YouTube Shorts.
+- **AI clip generation:** Reads the transcript, picks the strongest moments from a long-form episode, and generates up to 20 short-form clips per run for Instagram Reels and YouTube Shorts.
 - **Vertical reframing** — Converts 16:9 horizontal video to 9:16 vertical with face-aware auto-cropping, no manual editing required.
 - **Burn-in captions** — Generates word-level captions in the brand's style, with configurable positioning and platform-aware sizing.
 - **Brand voice profiles** — Learns tone, vocabulary, and themes from existing content and applies them to AI-generated text posts.
 - **Multi-platform publishing:** Publishes video, image, and text content to Facebook, Instagram (through a Facebook Page), and YouTube from a single queue. LinkedIn is in beta for personal profiles. TikTok is coming soon.
-- **Client approval workflow** — Agencies send clients a secure review link; clients approve or leave comments without needing a Vidflow account.
+- **Client approval workflow:** Agencies send clients a secure review link. Clients approve or leave comments without needing a Vidflow account.
 - **Content calendar** — Drag-and-drop scheduler with recurring slot support and automatic queue filling.
 - **AI image generation** — Creates thumbnails, quote cards, and visual posts locked to the brand's style.
 - **Blog and long-form output** — Converts episode transcripts into LinkedIn articles, Substack posts, or blog drafts.
-- **Auto-import** — Watches Google Drive or Dropbox folders and ingests new episodes automatically.
-- **Cross-platform analytics** — Unified view of performance across all connected platforms with branded client reports.
+- **Import from cloud storage:** Pick files from Google Drive, or watch a Dropbox folder and bring in new files hourly.
+- **Analytics and client reports:** Audience, publishing history, and post performance, with a branded report saved as a PDF.
 - **Multi-brand workspaces** — Agencies manage multiple client brands with separate voice profiles, approval flows, and publishing accounts.
 
 ## Who It's For
