@@ -1552,6 +1552,56 @@
       .how-tab-label b { margin: 0; }
       .how-panel .step { padding: 20px; }
     }
+
+    /* Click-to-enlarge lightbox for the page videos. The script adds the classes and the dialog. */
+    .vlb-host { position: relative; }
+    video.vlb-src { cursor: zoom-in; touch-action: manipulation; }
+    video.vlb-src:focus-visible { outline: 2px solid #a5a5ff; outline-offset: -3px; }
+    .how-stage .how-video:not(.is-active) { pointer-events: none; }
+    .vlb-hint, .vlb-bgbtn {
+      width: 30px; height: 30px; padding: 0; display: grid; place-items: center;
+      color: #cfcadf; background: rgba(14,10,28,0.62); border: 1px solid rgba(255,255,255,0.14); border-radius: 50%;
+    }
+    .vlb-hint svg, .vlb-bgbtn svg, .vlb-close svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .vlb-hint { position: absolute; z-index: 3; top: 10px; right: 10px; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; }
+    .vlb-hint--b { top: auto; bottom: 10px; }
+    .vlb-src:hover + .vlb-hint, .vlb-src:focus-visible + .vlb-hint { opacity: 1; color: #fff; }
+    .how-video:not(.is-active) + .vlb-hint { display: none; }
+    @media (hover: none) { .vlb-hint { opacity: 0.8; width: 26px; height: 26px; top: 8px; right: 8px; } .vlb-hint--b { top: auto; bottom: 8px; } }
+    .vlb-bgbtn { position: absolute; z-index: 2; bottom: 14px; right: calc(min(0px, calc(50% - 50vw + 20px)) + 38px); cursor: pointer; opacity: 0.75; transition: opacity 0.15s ease; }
+    .vlb-bgbtn:hover { opacity: 1; color: #fff; }
+    .vlb-bgbtn:focus-visible { opacity: 1; outline: 2px solid #a5a5ff; outline-offset: 2px; }
+    @media (max-width: 800px) { .vlb-bgbtn { right: 38px; } }
+
+    html.vlb-lock { overflow: hidden; padding-right: var(--vlb-sbw, 0px); }
+    .vlb {
+      position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; box-sizing: border-box;
+      padding: max(64px, calc(env(safe-area-inset-top) + 56px)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+      border: 0; background: rgba(6,6,12,0.94); color: #fff; overflow: hidden; overscroll-behavior: contain; touch-action: pinch-zoom;
+      container-type: size;
+    }
+    .vlb[open] { display: grid; place-items: center; animation: vlb-in 0.18s ease-out; }
+    .vlb::backdrop { background: transparent; }
+    @keyframes vlb-in { from { opacity: 0; } to { opacity: 1; } }
+    .vlb-video {
+      display: block; height: auto; max-width: none; background: #000; border-radius: 6px;
+      aspect-ratio: var(--vlb-ar, 1.7778);
+      width: min(calc(100vw - 40px), calc((100vh - 84px) * var(--vlb-ar, 1.7778)));
+      box-shadow: 0 30px 90px rgba(0,0,0,0.6);
+    }
+    @supports (width: 1cqw) { .vlb-video { width: min(100cqw, calc(100cqh * var(--vlb-ar, 1.7778))); } }
+    .vlb-close {
+      position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); width: 44px; height: 44px; padding: 0;
+      display: grid; place-items: center; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 50%; cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .vlb-close svg { width: 18px; height: 18px; }
+    .vlb-close:hover { background: rgba(255,255,255,0.2); }
+    .vlb-close:focus-visible { outline: 2px solid #a5a5ff; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      .vlb[open] { animation: none; }
+      .vlb-hint, .vlb-bgbtn, .vlb-close { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -2915,6 +2965,137 @@
       } else {
         onScreen = true;
         sync();
+      }
+    })();
+
+    // Click-to-enlarge lightbox for every page video. One shared <dialog>, opened from the small video
+    // (click, tap, Enter or Space). Page videos are paused while it is open and resume when it closes,
+    // so the How it works slideshow cannot advance behind it. Nothing plays or loads until it is opened.
+    (() => {
+      const dlg = document.createElement('dialog');
+      if (typeof dlg.showModal !== 'function') return;
+      const root = document.documentElement;
+      const ICON_EXPAND = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.5 2.5h4v4M13.5 2.5 9 7M6.5 13.5h-4v-4M2.5 13.5 7 9"/></svg>';
+      const ICON_CLOSE = '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4 4 14"/></svg>';
+
+      dlg.className = 'vlb';
+      dlg.setAttribute('aria-label', 'Enlarged video');
+      dlg.innerHTML = '<button type="button" class="vlb-close" aria-label="Close enlarged video">' + ICON_CLOSE + '</button>';
+      const lb = document.createElement('video');
+      lb.className = 'vlb-video';
+      lb.muted = true; lb.loop = true; lb.controls = true; lb.playsInline = true; lb.preload = 'none';
+      dlg.appendChild(lb);
+      document.body.appendChild(dlg);
+
+      const pageVideos = [...document.querySelectorAll('video')].filter((p) => p !== lb);
+      const resume = new Set();
+      let opener = null, scrollY = 0, downOnBackdrop = false;
+
+      const open = (v, trigger) => {
+        if (dlg.open) return;
+        opener = trigger;
+        resume.clear();
+        pageVideos.forEach((p) => { if (!p.paused) { resume.add(p); p.pause(); } });
+
+        lb.removeAttribute('src');
+        lb.querySelectorAll('source').forEach((s) => s.remove());
+        // currentSrc is the file the small video already picked (phone or desktop); cloning the sources is the fallback.
+        if (v.currentSrc) lb.src = v.currentSrc;
+        else v.querySelectorAll('source').forEach((s) => lb.appendChild(s.cloneNode(true)));
+        lb.poster = v.poster || '';
+        lb.preload = 'auto';
+        const label = v.dataset.vlbLabel;
+        if (label) lb.setAttribute('aria-label', label); else lb.removeAttribute('aria-label');
+        const w = parseFloat(v.getAttribute('width')), h = parseFloat(v.getAttribute('height'));
+        lb.style.setProperty('--vlb-ar', w > 0 && h > 0 ? (w / h).toFixed(4) : '1.7778');
+        const t = v.currentTime;
+        if (t > 0.2) lb.addEventListener('loadedmetadata', () => { if (t < lb.duration - 0.2) lb.currentTime = t; }, { once: true });
+        lb.load();
+
+        scrollY = window.scrollY;
+        root.style.setProperty('--vlb-sbw', Math.max(0, window.innerWidth - root.clientWidth) + 'px');
+        root.classList.add('vlb-lock');
+        dlg.showModal();
+        lb.play().catch(() => {});
+      };
+
+      dlg.addEventListener('close', () => {
+        lb.pause();
+        lb.removeAttribute('src');
+        lb.querySelectorAll('source').forEach((s) => s.remove());
+        lb.load();
+        root.classList.remove('vlb-lock');
+        root.style.removeProperty('--vlb-sbw');
+        if (Math.abs(window.scrollY - scrollY) > 1) window.scrollTo({ top: scrollY, left: 0, behavior: 'instant' });
+        resume.forEach((p) => p.play().catch(() => {}));
+        resume.clear();
+        if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+        opener = null;
+      });
+      // Anything the page tries to start while the lightbox is open waits until it closes.
+      document.addEventListener('play', (e) => {
+        if (!dlg.open || e.target === lb || !(e.target instanceof HTMLVideoElement)) return;
+        resume.add(e.target);
+        e.target.pause();
+      }, true);
+
+      dlg.querySelector('.vlb-close').addEventListener('click', () => dlg.close());
+      // Close on a click outside the video, but not when a scrub drag started on the video and ended outside it.
+      dlg.addEventListener('pointerdown', (e) => { downOnBackdrop = e.target === dlg; });
+      dlg.addEventListener('click', (e) => { if (e.target === dlg && downOnBackdrop) dlg.close(); downOnBackdrop = false; });
+
+      pageVideos.forEach((v) => {
+        if (v.id === 'hero-bg-video') return;
+        const label = v.getAttribute('aria-label') || '';
+        v.dataset.vlbLabel = label;
+        v.classList.add('vlb-src');
+        v.setAttribute('aria-label', 'Enlarge video' + (label ? ': ' + label : ''));
+        v.setAttribute('role', 'button');
+        v.tabIndex = 0;
+        const hint = document.createElement('span');
+        hint.className = 'vlb-hint' + (v.id === 'demo-video' ? ' vlb-hint--b' : '');
+        hint.setAttribute('aria-hidden', 'true');
+        hint.innerHTML = ICON_EXPAND;
+        v.parentElement.classList.add('vlb-host');
+        v.after(hint);
+
+        v.addEventListener('click', (e) => {
+          if (v.getAttribute('aria-hidden') === 'true') return;
+          // Reduced motion shows the native controls on some videos; leave the control bar alone.
+          if (v.controls && e.clientY > v.getBoundingClientRect().bottom - 56) return;
+          open(v, v);
+        });
+        v.addEventListener('keydown', (e) => {
+          if (e.target !== v || e.repeat || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          if (v.getAttribute('aria-hidden') === 'true') return;
+          e.preventDefault();
+          open(v, v);
+        });
+
+        // Only the visible slideshow clip is a button. The others are stacked behind it and hidden from assistive tech.
+        if (v.classList.contains('how-video')) {
+          const sync = () => {
+            const live = v.classList.contains('is-active');
+            v.tabIndex = live ? 0 : -1;
+            if (live) v.setAttribute('role', 'button'); else v.removeAttribute('role');
+          };
+          new MutationObserver(sync).observe(v, { attributes: true, attributeFilter: ['class'] });
+          sync();
+        }
+      });
+
+      // The hero background sits behind the page text and is hidden from assistive tech, so it gets a real button beside its pause button.
+      const bg = document.getElementById('hero-bg-video');
+      const bgToggle = document.getElementById('hero-bg-toggle');
+      if (bg && bgToggle) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'vlb-bgbtn';
+        btn.setAttribute('aria-label', 'Enlarge the background animation');
+        btn.innerHTML = ICON_EXPAND;
+        btn.addEventListener('click', () => open(bg, btn));
+        bgToggle.after(btn);
       }
     })();
   </script>
