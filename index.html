@@ -1495,6 +1495,63 @@
       .reveal, .fviz-ep-card, .fviz-clip, .fviz-post, .fviz-cal, .fviz-cal-event,
       .fviz-arrow-line, .fviz-arrow-tip, .dp-node { transition: none; opacity: 1; transform: none; animation: none; }
     }
+
+    /* How it works: one step at a time, the animation on the left and the step on the right. */
+    .how-show {
+      --show-w: min(1200px, 100vw - 48px);
+      margin: 44px calc((var(--show-w) - 100%) / -2) 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      grid-template-areas: "media panels" "tabs tabs";
+      gap: 24px 36px;
+      align-items: center;
+      text-align: left;
+    }
+    .how-media { grid-area: media; min-width: 0; }
+    .how-panels { grid-area: panels; min-width: 0; }
+    .how-tabs { grid-area: tabs; display: none; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .how-stage { position: relative; aspect-ratio: 16 / 9; background: #111118; overflow: hidden; }
+    .how-stage .how-video { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; opacity: 0; transition: opacity 0.35s ease; }
+    .how-stage .how-video.is-active { opacity: 1; }
+    .how-panel + .how-panel { margin-top: 28px; }
+    .how-panel .step { padding: 22px 24px; }
+    .how-panel .step-number { margin-bottom: 12px; }
+    .how-graphic.fviz { display: block; margin: 0 0 16px; max-width: none; }
+    .how-graphic.how-reset, .how-graphic.how-reset * { transition: none !important; }
+    .how-graphic.fviz.visible .fviz-ep-card { transition-delay: 0.05s; }
+    .how-graphic.fviz.visible .fviz-clip:nth-child(1) { transition-delay: 0.05s; }
+    .how-graphic.fviz.visible .fviz-clip:nth-child(2) { transition-delay: 0.13s; }
+    .how-graphic.fviz.visible .fviz-clip:nth-child(3) { transition-delay: 0.21s; }
+    .how-graphic.fviz.visible .fviz-post:nth-child(1) { transition-delay: 0.25s; }
+    .how-graphic.fviz.visible .fviz-post:nth-child(2) { transition-delay: 0.33s; }
+    .how-graphic.fviz.visible .fviz-post:nth-child(3) { transition-delay: 0.41s; }
+    .how-graphic.fviz.visible .fviz-cal { transition-delay: 0.05s; }
+    .how-graphic.fviz.visible .fviz-cal-event { transition-delay: calc(0.2s + var(--ei, 0) * 0.05s); }
+    .how-show.is-ready .how-tabs { display: grid; }
+    .how-show.is-ready .how-panels { display: grid; }
+    .how-show.is-ready .how-panel { grid-area: 1 / 1; align-self: center; margin: 0; visibility: hidden; opacity: 0; transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
+    .how-show.is-ready .how-panel.is-active { visibility: visible; opacity: 1; transition: opacity 0.3s ease 0.1s, visibility 0s; }
+    .how-tab { appearance: none; background: none; border: 0; min-height: 44px; padding: 8px 0 4px; font: inherit; font-size: 14px; font-weight: 500; line-height: 1.35; color: #8e8e99; text-align: left; cursor: pointer; transition: color 0.2s ease; }
+    .how-tab:hover { color: #d4d4d8; }
+    .how-tab.is-active { color: #fff; }
+    .how-tab:focus-visible { outline: 2px solid #a5a5ff; outline-offset: 4px; border-radius: 4px; }
+    .how-tab--blue { --tab: #3b82f6; }
+    .how-tab--violet { --tab: #a855f7; }
+    .how-tab--emerald { --tab: #34d399; }
+    .how-tab-bar { display: block; height: 3px; margin-bottom: 10px; border-radius: 2px; background: rgba(255,255,255,0.12); overflow: hidden; }
+    .how-tab-bar i { display: block; width: 100%; height: 100%; background: var(--tab); transform: scaleX(0); transform-origin: left; }
+    .how-tab-label { display: block; }
+    .how-tab-label b { margin-right: 8px; font-weight: 700; color: var(--tab); }
+    @media (max-width: 900px) {
+      .how-show { grid-template-columns: minmax(0, 1fr); grid-template-areas: "media" "tabs" "panels"; gap: 16px; }
+    }
+    @media (max-width: 800px) { .how-show { --show-w: calc(100vw - 32px); margin-top: 32px; } }
+    @media (max-width: 600px) {
+      .how-tab { text-align: center; }
+      .how-tab-text { display: none; }
+      .how-tab-label b { margin: 0; }
+      .how-panel .step { padding: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -1708,9 +1765,48 @@
       <h2>From raw episode to a full client content calendar.</h2>
       <p class="section-intro">Three steps. No Franken-stack of five tools, no spreadsheets, no client logins.</p>
 
-      <div class="fviz" id="fviz" aria-hidden="true">
-
-        <!-- ① Episode -->
+      <div class="how-show reveal" id="how-show">
+        <div class="how-media">
+          <div class="demo-frame">
+            <div class="demo-bar">
+              <span class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="demo-url"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>app.vidflow.io</span>
+              <button type="button" class="demo-toggle" id="how-toggle" hidden>Pause</button>
+            </div>
+            <div class="how-stage">
+              <video class="how-video is-active" muted playsinline preload="metadata" width="1280" height="720" poster="/assets/video/vidflow-upload-motion-poster.jpg" aria-label="An animation of an episode uploading into Vidflow, processing until it is ready, and clips auto-importing from cloud folders into the content library.">
+                <source src="/assets/video/vidflow-upload-motion.webm" type="video/webm" />
+                <source src="/assets/video/vidflow-upload-motion.mp4" type="video/mp4" />
+              </video>
+              <video class="how-video" muted playsinline preload="none" width="1280" height="720" poster="/assets/video/vidflow-clips-motion-poster.jpg" aria-label="An animation of Vidflow reading a transcript, picking moments on the timeline, reframing them to vertical clips, and adding captions." aria-hidden="true">
+                <source src="/assets/video/vidflow-clips-motion.webm" type="video/webm" />
+                <source src="/assets/video/vidflow-clips-motion.mp4" type="video/mp4" />
+              </video>
+              <video class="how-video" muted playsinline preload="none" width="1280" height="720" poster="/assets/video/vidflow-calendar-motion-poster.jpg" aria-label="An animation of posts being dragged from the unscheduled list onto the calendar, then one post being opened to change its time." aria-hidden="true">
+                <source src="/assets/video/vidflow-calendar-motion.webm" type="video/webm" />
+                <source src="/assets/video/vidflow-calendar-motion.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <p class="demo-caption">Animated from VidFlow's real interface, using real Cosmic Arc content.</p>
+        </div>
+        <div class="how-tabs" role="tablist" aria-label="Steps">
+          <button type="button" class="how-tab how-tab--blue is-active" role="tab" id="how-tab-1" aria-controls="how-panel-1" aria-selected="true">
+            <span class="how-tab-bar" aria-hidden="true"><i></i></span>
+            <span class="how-tab-label"><b>1</b><span class="how-tab-text">Drop in the episode</span></span>
+          </button>
+          <button type="button" class="how-tab how-tab--violet" role="tab" id="how-tab-2" aria-controls="how-panel-2" aria-selected="false" tabindex="-1">
+            <span class="how-tab-bar" aria-hidden="true"><i></i></span>
+            <span class="how-tab-label"><b>2</b><span class="how-tab-text">AI builds the campaign</span></span>
+          </button>
+          <button type="button" class="how-tab how-tab--emerald" role="tab" id="how-tab-3" aria-controls="how-panel-3" aria-selected="false" tabindex="-1">
+            <span class="how-tab-bar" aria-hidden="true"><i></i></span>
+            <span class="how-tab-label"><b>3</b><span class="how-tab-text">Approve and schedule everywhere</span></span>
+          </button>
+        </div>
+        <div class="how-panels">
+          <div class="how-panel is-active" role="tabpanel" id="how-panel-1" aria-labelledby="how-tab-1">
+            <div class="fviz how-graphic" aria-hidden="true">
         <div>
           <div class="fviz-ep-card">
             <div class="fviz-ep-wave">
@@ -1730,15 +1826,15 @@
           </div>
           <div class="fviz-col-label fviz-col-label--blue">Episode upload</div>
         </div>
-
-        <!-- Arrow 1 -->
-        <div class="fviz-arrow fviz-arrow-1">
-          <div class="fviz-arrow-line"></div>
-          <div class="fviz-arrow-tip">›</div>
-          <div class="fviz-arrow-label">AI clips</div>
+            </div>
+            <div class="step">
+          <div class="step-number step-number--blue">1</div>
+          <h3>Drop in the episode</h3>
+          <p>Upload long-form video or audio, or auto-import from Google Drive or Dropbox. Vidflow transcribes it, finds the key moments, and tags everything.</p>
         </div>
-
-        <!-- ② Content pieces -->
+          </div>
+          <div class="how-panel" role="tabpanel" id="how-panel-2" aria-labelledby="how-tab-2">
+            <div class="fviz how-graphic" aria-hidden="true">
         <div class="fviz-content-col">
           <div class="fviz-clips">
             <div class="fviz-clip">
@@ -1786,15 +1882,16 @@
           </div>
           <div class="fviz-col-label">AI built content</div>
         </div>
-
-        <!-- Arrow 2 -->
-        <div class="fviz-arrow fviz-arrow-2">
-          <div class="fviz-arrow-line"></div>
-          <div class="fviz-arrow-tip">›</div>
-          <div class="fviz-arrow-label">scheduled</div>
+            </div>
+            <div class="step">
+          <div class="step-number step-number--violet">2</div>
+          <h3>AI builds the campaign</h3>
+          <p>Vidflow cuts up to 20 short clips per run, reframes them vertical, generates platform-native captions in your client's brand voice, and creates matching image and text posts.</p>
         </div>
+          </div>
+          <div class="how-panel" role="tabpanel" id="how-panel-3" aria-labelledby="how-tab-3">
+            <div class="fviz how-graphic" aria-hidden="true">
 
-        <!-- ③ Calendar -->
         <div>
           <div class="fviz-cal">
             <div class="fviz-cal-head">
@@ -1836,23 +1933,13 @@
           </div>
           <div class="fviz-col-label fviz-col-label--emerald">Content calendar</div>
         </div>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-number step-number--blue">1</div>
-          <h3>Drop in the episode</h3>
-          <p>Upload long-form video or audio, or auto-import from Google Drive or Dropbox. Vidflow transcribes it, finds the key moments, and tags everything.</p>
-        </div>
-        <div class="step">
-          <div class="step-number step-number--violet">2</div>
-          <h3>AI builds the campaign</h3>
-          <p>Vidflow cuts up to 20 short clips per run, reframes them vertical, generates platform-native captions in your client's brand voice, and creates matching image and text posts.</p>
-        </div>
-        <div class="step">
+            </div>
+            <div class="step">
           <div class="step-number step-number--emerald">3</div>
           <h3>Approve and schedule everywhere</h3>
           <p>Drag posts onto a single calendar, send clients an approval link (no login), and publish to Facebook, Instagram, and YouTube, with LinkedIn in beta and TikTok coming soon. Podcast episodes get an RSS feed for podcast apps.</p>
+        </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2726,6 +2813,109 @@
         });
       }, { threshold: 0.35 });
       vids.forEach(v => io.observe(v));
+    })();
+
+    // How it works slideshow: each clip plays through, then the next step comes up.
+    // Choosing a step stops the advancing and that step's clip loops. Reduced motion starts paused on the poster.
+    (() => {
+      const root = document.getElementById('how-show');
+      if (!root) return;
+      const videos = [...root.querySelectorAll('.how-video')];
+      const panels = [...root.querySelectorAll('.how-panel')];
+      const tabs = [...root.querySelectorAll('.how-tab')];
+      const bars = tabs.map(t => t.querySelector('.how-tab-bar i'));
+      const toggle = document.getElementById('how-toggle');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let current = 0, onScreen = false, held = reduce, advancing = !reduce, raf = 0;
+
+      const paint = () => {
+        const v = videos[current];
+        if (v.duration) bars[current].style.transform = `scaleX(${Math.min(v.currentTime / v.duration, 1)})`;
+        raf = v.paused ? 0 : requestAnimationFrame(paint);
+      };
+      const setToggle = () => { toggle.textContent = videos[current].paused ? 'Play' : 'Pause'; };
+      const sync = () => {
+        const v = videos[current];
+        if (onScreen && !held) v.play().catch(() => {}); else v.pause();
+      };
+      const replayGraphic = (panel) => {
+        const g = panel.querySelector('.how-graphic');
+        if (reduce) { g.classList.add('visible'); return; }
+        g.classList.add('how-reset');
+        g.classList.remove('visible');
+        void g.offsetWidth;
+        g.classList.remove('how-reset');
+        void g.offsetWidth;
+        g.classList.add('visible');
+      };
+      const warmNext = (i) => {
+        const next = videos[(i + 1) % videos.length];
+        if (next.preload === 'none') { next.preload = 'auto'; next.load(); }
+      };
+      const show = (i) => {
+        if (i !== current) {
+          const prev = videos[current];
+          prev.pause();
+          prev.classList.remove('is-active');
+          prev.setAttribute('aria-hidden', 'true');
+          if (prev.readyState > 0) prev.currentTime = 0;
+        }
+        current = i;
+        const v = videos[i];
+        v.classList.add('is-active');
+        v.removeAttribute('aria-hidden');
+        if (v.readyState > 0) v.currentTime = 0;
+        tabs.forEach((t, j) => {
+          const on = j === i;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+          bars[j].style.transform = j < i ? 'scaleX(1)' : 'scaleX(0)';
+        });
+        panels.forEach((p, j) => p.classList.toggle('is-active', j === i));
+        replayGraphic(panels[i]);
+        warmNext(i);
+        setToggle();
+        sync();
+      };
+
+      root.classList.add('is-ready');
+      toggle.hidden = false;
+      setToggle();
+      videos.forEach((v) => {
+        v.addEventListener('play', () => { if (v === videos[current]) { setToggle(); warmNext(current); if (!raf) raf = requestAnimationFrame(paint); } });
+        v.addEventListener('pause', () => { if (v === videos[current]) setToggle(); });
+        v.addEventListener('ended', () => {
+          if (v !== videos[current]) return;
+          if (advancing) { show((current + 1) % videos.length); return; }
+          v.currentTime = 0;
+          sync();
+        });
+      });
+      toggle.addEventListener('click', () => {
+        held = !videos[current].paused;
+        sync();
+      });
+      tabs.forEach((t, i) => t.addEventListener('click', () => {
+        advancing = false;
+        held = reduce;
+        show(i);
+      }));
+      root.querySelector('.how-tabs').addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const i = (current + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+        advancing = false;
+        show(i);
+        tabs[i].focus();
+      });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((es) => es.forEach((e) => { onScreen = e.isIntersecting; sync(); }), { threshold: 0.35 })
+          .observe(root.querySelector('.how-stage'));
+      } else {
+        onScreen = true;
+        sync();
+      }
     })();
   </script>
 </body>
