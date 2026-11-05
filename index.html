@@ -400,6 +400,7 @@
     form.waitlist button:active { transform: translateY(0); }
     form.waitlist button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-note { font-size: 13px; color: #71717a; }
+    .form-beta-note { font-size: 13px; color: #a1a1aa; max-width: 480px; margin: 0 auto 10px; }
 
     /* ── Social proof strip ──────────────────────── */
     .social-proof {
@@ -1478,6 +1479,7 @@
     @media (max-width: 1100px) { .hero .hero-sub-wrap::before { left: -24px; right: -24px; } }
     .hero .subtitle { color: #dcd8ea; }
     .hero .form-note { color: #cdc8de; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .hero .form-beta-note { color: #cdc8de; }
     .hero .badge { background: rgba(30,24,70,0.72); }
     form.waitlist input[type="email"] { background: rgba(14,10,28,0.82); border-color: rgba(255,255,255,0.22); }
     form.waitlist input[type="email"]::placeholder { color: #9a95ad; }
@@ -1664,6 +1666,7 @@
         <input type="email" name="email" placeholder="you@agency.com" required autocomplete="email" />
         <button type="submit" id="submit-btn">Join the agency waitlist</button>
       </form>
+      <p class="form-beta-note" id="beta-note">Vidflow is in beta testing with a small group right now. If you want in, join the waitlist.</p>
       <p class="form-note">Join today and we send you the 1-to-30 Map instantly (the exact checklist that turns one video into 30 pieces of content), plus your invite when your wave opens. Founder pricing locked for the first 100 accounts.</p>
       <p class="form-note" style="margin-top:6px;">Run an agency? <a href="/approvals" style="color:inherit;text-decoration:underline;">Grab the Approval Pack instead</a>.</p>
       <div class="form-success" id="form-success">
@@ -2607,6 +2610,7 @@
         <input type="email" name="email" placeholder="you@agency.com" required autocomplete="email" />
         <button type="submit">Join the agency waitlist</button>
       </form>
+      <p class="form-beta-note">Vidflow is in beta testing with a small group right now. Join the waitlist and you'll hear from us when it opens up.</p>
     </div>
 
     </main>
@@ -2693,6 +2697,7 @@
           if (isTopForm) {
             form.style.display = 'none';
             document.querySelector('.form-note').style.display = 'none';
+            document.getElementById('beta-note').style.display = 'none';
             success.classList.add('visible');
           } else {
             btn.textContent = '✓ Joined';
